@@ -6,7 +6,8 @@
 
 ## 評測結果
 
-> 35 筆申報、12 家公司、2016–2026 年、涵蓋 Large / Accelerated / Non-accelerated filer / Smaller reporting compan
+> 35 筆申報、12 家公司、2016–2026 年、涵蓋 Large / Accelerated / Non-accelerated filer / Smaller reporting company
+> Ground truth 由本人人工標註，使用自行開發的標註工具 [SEC-10-K-Annotation-Tool](https://github.com/LLMSystems/SEC-10-K-Annotation-Tool)
 
 | 指標 | 數值 |
 |---|---|
