@@ -14,7 +14,7 @@ import requests
 from bs4 import BeautifulSoup
 
 from src.models import (
-    FilingInput, FilingOutput, FilingInfo, FilingMetadata,
+    FilingInput, FilingOutput, FilingInfo, FilingMetadata, TimingStats,
 )
 from src.parsers.base import BaseParser
 from src.patterns import (
@@ -75,14 +75,20 @@ class Pipeline:
         logger.info(f"處理：{metadata.company_name} ({metadata.cik}) {metadata.accession_number}")
 
         # 2. 下載 HTML
+        t0 = time.perf_counter()
         html = self._fetch_html(html_url)
+        fetch_sec = time.perf_counter() - t0
 
         # 3. 轉換純文字
+        t0 = time.perf_counter()
         text = self._preprocess(html)
+        preprocess_sec = time.perf_counter() - t0
         logger.info(f"純文字長度：{len(text):,} 字元")
 
         # 4. Parser 找 Item 位置
+        t0 = time.perf_counter()
         parse_result = self.parser.parse(text, metadata)
+        parse_sec = time.perf_counter() - t0
         logger.info(
             f"Parser [{parse_result.parser_name}] 信心={parse_result.confidence:.2f}，"
             f"找到 {len(parse_result.raw_items)} 個 Items"
@@ -92,7 +98,9 @@ class Pipeline:
                 logger.warning(f"  ⚠ {w}")
 
         # 5. Postprocess → 產出最終 ItemResult
+        t0 = time.perf_counter()
         items = self.postprocessor.process(parse_result.raw_items, text, metadata)
+        postprocess_sec = time.perf_counter() - t0
 
         output = FilingOutput(
             filing_info=FilingInfo(
@@ -103,6 +111,12 @@ class Pipeline:
                 filer_category=metadata.filer_category,
             ),
             items=items,
+            timing=TimingStats(
+                fetch_html_sec=round(fetch_sec, 3),
+                preprocess_sec=round(preprocess_sec, 3),
+                parse_sec=round(parse_sec, 3),
+                postprocess_sec=round(postprocess_sec, 3),
+            ),
         )
 
         if save_to is not None:
@@ -434,7 +448,6 @@ class Pipeline:
         return text
 
     def _get(self, url: str) -> requests.Response:
-        time.sleep(0.15)
         resp = requests.get(
             url,
             headers={"User-Agent": USER_AGENT, "Accept-Encoding": "gzip, deflate"},

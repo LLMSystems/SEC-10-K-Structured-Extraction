@@ -65,10 +65,23 @@ class FilingInfo(BaseModel):
     filer_category: Optional[str] = None   # "Large accelerated filer", etc.
 
 
+class TimingStats(BaseModel):
+    """各步驟耗時（秒）"""
+    fetch_html_sec: float
+    preprocess_sec: float
+    parse_sec: float
+    postprocess_sec: float
+
+    @property
+    def total_sec(self) -> float:
+        return self.fetch_html_sec + self.preprocess_sec + self.parse_sec + self.postprocess_sec
+
+
 class FilingOutput(BaseModel):
     """API 輸出"""
     filing_info: FilingInfo
     items: list[ItemResult]
+    timing: Optional[TimingStats] = None
 
 
 # ──────────────────────────────────────────────

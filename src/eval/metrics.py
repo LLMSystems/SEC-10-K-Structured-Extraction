@@ -90,6 +90,7 @@ class FilingEvalResult:
     items:                list[ItemEvalResult]
     level:                str           # "PASS" / "WARNING" / "FAIL" / "ERROR"
     error:                Optional[str] = None
+    timing:               Optional[dict] = None  # fetch/preprocess/parse/postprocess 秒數
 
 
 @dataclass
@@ -101,6 +102,7 @@ class EvalSummary:
     total_critical_regressions: int
     total_warnings:            int
     level:                     str
+    avg_timing:                Optional[dict] = None  # 各步驟平均耗時（秒）
 
 
 # ══════════════════════════════════════════════════════════════
@@ -432,6 +434,17 @@ class MetricsRunner:
         accuracy = correct / total if total > 0 else 0.0
         level    = self._filing_level(accuracy, criticals, item_results)
 
+        timing_dict: Optional[dict] = None
+        if pred_output.timing is not None:
+            t = pred_output.timing
+            timing_dict = {
+                "fetch_html_sec":  t.fetch_html_sec,
+                "preprocess_sec":  t.preprocess_sec,
+                "parse_sec":       t.parse_sec,
+                "postprocess_sec": t.postprocess_sec,
+                "total_sec":       t.total_sec,
+            }
+
         return FilingEvalResult(
             ticker               = ticker,
             year                 = year,
@@ -441,6 +454,7 @@ class MetricsRunner:
             critical_regressions = criticals,
             items                = item_results,
             level                = level,
+            timing               = timing_dict,
         )
 
     @staticmethod
@@ -496,6 +510,16 @@ class MetricsRunner:
         else:
             level = "PASS"
 
+        # 平均耗時（只取有 timing 資料的 filing）
+        timed = [r.timing for r in results if r.timing is not None]
+        avg_timing: Optional[dict] = None
+        if timed:
+            keys = ("fetch_html_sec", "preprocess_sec", "parse_sec", "postprocess_sec", "total_sec")
+            avg_timing = {
+                k: round(statistics.mean(t[k] for t in timed), 3)
+                for k in keys
+            }
+
         return EvalSummary(
             run_at                     = run_at,
             gt_dir                     = str(self.gt_dir),
@@ -504,6 +528,7 @@ class MetricsRunner:
             total_critical_regressions = total_critical,
             total_warnings             = total_warnings,
             level                      = level,
+            avg_timing                 = avg_timing,
         )
 
     # ──────────────────────────────────────────────────────────
@@ -530,6 +555,22 @@ class MetricsRunner:
             f"| 評估 Filing 數 | {len(summary.filings)} |",
             "",
         ]
+
+        # ── 平均耗時 ──────────────────────────────────────────────
+        if summary.avg_timing:
+            at = summary.avg_timing
+            lines += [
+                "## 平均耗時",
+                "",
+                "| 步驟 | 平均耗時（秒） |",
+                "|---|---|",
+                f"| 下載 HTML | {at['fetch_html_sec']:.3f} |",
+                f"| 預處理（preprocess） | {at['preprocess_sec']:.3f} |",
+                f"| 解析（parse） | {at['parse_sec']:.3f} |",
+                f"| 後處理（postprocess） | {at['postprocess_sec']:.3f} |",
+                f"| **合計** | **{at['total_sec']:.3f}** |",
+                "",
+            ]
 
         # ── 收集所有有效 filing 的 items ──────────────────────────
         valid_items = [
