@@ -141,11 +141,21 @@ class RegexParser(BaseParser):
             for i, (start, matched, q) in enumerate(high_q):
                 window_start = max(0, start - 50)
                 window_end = start + len(matched) + 50
+                
+                before = text[window_start:start]
                 context = text[window_start:window_end].lower()
-                if REFERENCE_PATTERN.search(context) and not ITEM_PATTERN.search(text[window_start:start]):
+                
+                recent_before = text[max(0, start - 10):start]
+                has_period_nearby = "." in recent_before
+                
+                if REFERENCE_PATTERN.search(context) and not ITEM_PATTERN.search(before) and not has_period_nearby:
                     high_q[i] = (start, matched, 0)
                     
             high_q = [(s, m) for s, m, q in high_q if q == 1]
+            
+            # 如果 item 15 的start 在len(text)*0.5 之前，則很可能是目錄中的引用，降級品質
+            if num == "15":
+                high_q = [(s, m) for s, m in high_q if s > len(text) * 0.5]
 
             if high_q:
                 if len(high_q) > 1:
@@ -198,6 +208,11 @@ class RegexParser(BaseParser):
             if i + 1 < len(items):
                 item.end_char = items[i + 1].start_char
             else:
+                # 如果最後一個item 的起點已經超過terminal，則拿下一個TERMINAL_PATTERN.search(text) 的位置作為 end_char，避免 end_char 在文字結尾導致切出空字串
+                if item.start_char >= terminal:
+                    m = TERMINAL_PATTERN.search(text, item.start_char)
+                    if m:
+                        terminal = m.start()
                 item.end_char = terminal
         return items
 

@@ -1,3 +1,5 @@
 requests
 pydantic
 bs4
+lxml
+rapidfuzz>=3.0.0
