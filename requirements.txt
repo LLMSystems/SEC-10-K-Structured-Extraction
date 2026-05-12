@@ -3,7 +3,5 @@ pydantic
 bs4
 lxml
 rapidfuzz>=3.0.0
-fastapi
-uvicorn[standard]
-httpx
-aiosqlite
+tabulate
+tabulate_html
