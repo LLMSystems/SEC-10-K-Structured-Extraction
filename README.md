@@ -1,7 +1,10 @@
-# SEC 10-K Structured Extraction
+<div align="center">
+
+# SEC 10-K 財報結構化抽取工具
 
 將 SEC EDGAR 上的 Form 10-K 年報解析成標準化 JSON，自動識別所有 Item 的內容與狀態（`extracted` / `incorporated_by_reference` / `not_applicable` / `reserved` / `missing`）。
 
+</div>
 ---
 
 ## 評測結果
