@@ -226,7 +226,7 @@ pip install -r requirements.txt
 ```
 
 ### 使用方式
-
+**同步**
 ```python
 from src.pipeline import Pipeline
 from src.models import FilingInput
@@ -246,6 +246,30 @@ result = pipeline.run(FilingInput(
 
 # 儲存結果（JSON + Markdown）
 result = pipeline.run(input, save_to="output/")
+```
+
+**異步**
+```python
+from src.async_pipeline import AsyncPipeline
+from src.models import FilingInput
+import asyncio
+
+async def main():
+    pipeline = AsyncPipeline()
+
+    # 方式一：CIK + Accession Number
+    result = await pipeline.run_async(FilingInput(
+        cik="0000320193",
+        accession_number="0000320193-23-000106",
+    ))
+
+    # 方式二：直接給 URL
+    result = await pipeline.run_async(FilingInput(
+        url="https://www.sec.gov/Archives/edgar/data/.../filing.htm",
+    ))
+
+if __name__ == "__main__":
+    asyncio.run(main())
 ```
 
 ### 輸出格式
