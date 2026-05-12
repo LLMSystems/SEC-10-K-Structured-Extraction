@@ -24,6 +24,7 @@
 | LLM 費用 | **$0** |
 
 上述詳細結果可參考以下[彙整檔案](eval_datasets/results/驗測結果/summary.md)
+標註資料(ground truth)檔案詳見 [標註資料](eval_datasets/ground_truth)
 
 ---
 
