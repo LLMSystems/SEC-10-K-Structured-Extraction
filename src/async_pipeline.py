@@ -7,6 +7,7 @@ AsyncPipeline
 from __future__ import annotations
 import asyncio
 import logging
+from urllib.parse import urlparse
 import time
 
 import httpx
@@ -38,20 +39,34 @@ class AsyncPipeline(Pipeline):
         url = SUBMISSIONS_URL.format(cik=cik_padded)
         resp = await self._get_async(url)
         return resp.json()
+    
+    async def parse_sec_url(self, url: str):
+        path = urlparse(url).path
+
+        # /Archives/edgar/data/320193/000032019325000079/aapl-20250927.htm
+        parts = path.strip("/").split("/")
+
+        cik_raw = parts[3]
+        acc_clean = parts[4]
+
+        cik = cik_raw.zfill(10)
+        
+        accession = (
+            f"{acc_clean[:10]}-"
+            f"{acc_clean[10:12]}-"
+            f"{acc_clean[12:]}"
+        )
+
+        return cik, accession
 
     async def _resolve_input_async(
         self, input: FilingInput
     ) -> tuple[FilingMetadata, str]:
-        if input.url:
-            return FilingMetadata(
-                cik="unknown",
-                accession_number="unknown",
-                company_name="unknown",
-                fiscal_year_end="unknown",
-            ), input.url
-
-        cik = input.cik.strip().lstrip("0").zfill(10)
-        accession = input.accession_number.strip()
+        if input.url and (not input.cik or not input.accession_number):
+            cik, accession = await self.parse_sec_url(input.url)
+        else:
+            cik = input.cik.strip().lstrip("0").zfill(10)
+            accession = input.accession_number.strip()
 
         sub = await self._get_submissions_async(cik)
         company_name = sub.get("name", "Unknown")
