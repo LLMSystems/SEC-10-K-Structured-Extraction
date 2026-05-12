@@ -373,7 +373,7 @@ class Pipeline:
         table_html_store: list[str] = []
 
         # 允許保留的屬性（只保結構，去掉 style/class/width/height 等排版雜訊）
-        _KEEP_ATTRS = {"colspan", "rowspan"}
+        _KEEP_ATTRS = {"colspan", "rowspan", "href"}
 
         for table in soup.find_all("table"):
             # compact（無分隔）用於偵測，能正確合併 inline 斷字（"I"+"TEM"="ITEM"）
