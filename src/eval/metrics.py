@@ -22,6 +22,7 @@ src/eval/metrics.py
 
 from __future__ import annotations
 
+import asyncio
 import json
 import logging
 import re
@@ -300,6 +301,167 @@ class MetricsRunner:
         self.gt_dir     = Path(gt_dir)
         self.output_dir = Path(output_dir)
         self.pipeline   = pipeline or Pipeline()
+
+    async def run_async(self, concurrency: int = 5) -> EvalSummary:
+        """
+        非同步版評估：多筆 filing 並發下載，速度遠快於同步版。
+
+        Args:
+            concurrency: 最大並發數（預設 5，避免觸發 SEC rate limit）
+        """
+        from src.async_pipeline import AsyncPipeline
+
+        run_at     = datetime.now().strftime("%Y-%m-%d_%H-%M-%S")
+        result_dir = self.output_dir / run_at
+        (result_dir / "per_filing").mkdir(parents=True, exist_ok=True)
+
+        if not self.gt_dir.exists():
+            raise FileNotFoundError(
+                f"Ground truth 目錄不存在：{self.gt_dir}\n"
+                f"請確認路徑正確，或用 --ground-truth 指定正確目錄。"
+            )
+
+        gt_files = sorted(self.gt_dir.rglob("*.json"))
+        if not gt_files:
+            raise FileNotFoundError(
+                f"在 {self.gt_dir} 找不到任何 ground truth JSON。\n"
+                f"預期結構：{{TICKER}}/{{YEAR}}/{{CIK}}_{{FY_END}}_{{ACC}}.json"
+            )
+
+        logger.info(f"找到 {len(gt_files)} 份 ground truth，並發數={concurrency}，開始評估…")
+
+        pipeline = AsyncPipeline()
+        sem = asyncio.Semaphore(concurrency)
+
+        async def bounded(gt_path: Path) -> FilingEvalResult:
+            async with sem:
+                return await self._eval_one_async(gt_path, pipeline)
+
+        filing_results: list[FilingEvalResult] = await asyncio.gather(
+            *[bounded(p) for p in gt_files]
+        )
+
+        for result in filing_results:
+            out_name = f"{result.ticker}_{result.year}.json"
+            (result_dir / "per_filing" / out_name).write_text(
+                json.dumps(asdict(result), ensure_ascii=False, indent=2),
+                encoding="utf-8",
+            )
+            logger.info(
+                f"  [{result.level}] {result.ticker} {result.year} "
+                f"status_acc={result.status_accuracy:.1%}  "
+                f"critical={result.critical_regressions}"
+            )
+
+        summary = self._aggregate(list(filing_results), run_at)
+
+        (result_dir / "summary.json").write_text(
+            json.dumps(asdict(summary), ensure_ascii=False, indent=2),
+            encoding="utf-8",
+        )
+        md = self._render_markdown(summary)
+        (result_dir / "summary.md").write_text(md, encoding="utf-8")
+
+        logger.info(
+            f"\n整體結果：{summary.level}  "
+            f"status_acc={summary.overall_status_accuracy:.1%}  "
+            f"critical={summary.total_critical_regressions}  "
+            f"warnings={summary.total_warnings}"
+        )
+        logger.info(f"報告已存至：{result_dir}")
+        return summary
+
+    async def _eval_one_async(
+        self, gt_path: Path, pipeline: "AsyncPipeline"  # type: ignore[name-defined]
+    ) -> FilingEvalResult:
+        """_eval_one 的 async 版，呼叫 AsyncPipeline.run_async()。"""
+        from src.async_pipeline import AsyncPipeline as _AP
+
+        parts  = gt_path.parts
+        ticker = parts[-3]
+        year   = parts[-2]
+        label  = f"{ticker} {year}"
+
+        logger.info(f"評估：{label}  ({gt_path.name})")
+
+        gt_data   = json.loads(gt_path.read_text(encoding="utf-8"))
+        gt_output = FilingOutput.model_validate(gt_data)
+        fi        = gt_data["filing_info"]
+
+        try:
+            pred_output = await pipeline.run_async(
+                FilingInput(
+                    cik=fi["cik"],
+                    accession_number=fi["accession_number"],
+                )
+            )
+        except Exception as exc:
+            logger.error(f"  Pipeline 失敗 ({label})：{exc}")
+            return FilingEvalResult(
+                ticker=ticker,
+                year=year,
+                gt_file=str(gt_path),
+                filing_info=fi,
+                status_accuracy=0.0,
+                critical_regressions=-1,
+                items=[],
+                level="ERROR",
+                error=str(exc),
+            )
+
+        pred_map: dict[str, ItemResult] = {
+            item.item_number: item for item in pred_output.items
+        }
+
+        item_results: list[ItemEvalResult] = []
+        for gt_item in gt_output.items:
+            pred_item = pred_map.get(gt_item.item_number)
+            if pred_item is None:
+                gt_len = len(gt_item.content_text) if gt_item.content_text else 0
+                item_results.append(ItemEvalResult(
+                    item_number  = gt_item.item_number,
+                    gt_status    = gt_item.status,
+                    pred_status  = "<absent>",
+                    status_match = False,
+                    gt_len       = gt_len,
+                    pred_len     = 0,
+                    length_ratio = None,
+                    head_match   = None,
+                    tail_match   = None,
+                    severity     = "critical",
+                    note         = "Pred 輸出中完全缺少此 item_number",
+                ))
+            else:
+                item_results.append(_classify_item(gt_item, pred_item))
+
+        total     = len(item_results)
+        correct   = sum(1 for r in item_results if r.status_match)
+        criticals = sum(1 for r in item_results if r.severity == "critical")
+        accuracy  = correct / total if total > 0 else 0.0
+        level     = self._filing_level(accuracy, criticals, item_results)
+
+        timing_dict: Optional[dict] = None
+        if pred_output.timing is not None:
+            t = pred_output.timing
+            timing_dict = {
+                "fetch_html_sec":  t.fetch_html_sec,
+                "preprocess_sec":  t.preprocess_sec,
+                "parse_sec":       t.parse_sec,
+                "postprocess_sec": t.postprocess_sec,
+                "total_sec":       t.total_sec,
+            }
+
+        return FilingEvalResult(
+            ticker               = ticker,
+            year                 = year,
+            gt_file              = str(gt_path),
+            filing_info          = fi,
+            status_accuracy      = round(accuracy, 4),
+            critical_regressions = criticals,
+            items                = item_results,
+            level                = level,
+            timing               = timing_dict,
+        )
 
     def run(self) -> EvalSummary:
         """執行完整評估，回傳 EvalSummary 並將報告寫到磁碟。"""
