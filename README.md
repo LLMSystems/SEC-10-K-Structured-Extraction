@@ -5,6 +5,7 @@
 將 SEC EDGAR 上的 Form 10-K 年報解析成標準化 JSON，自動識別所有 Item 的內容與狀態（`extracted` / `incorporated_by_reference` / `not_applicable` / `reserved` / `missing`）。
 
 </div>
+
 ---
 
 ## 評測結果
@@ -71,30 +72,81 @@ Item 1.  /  ITEM 1A:  /  Item 7—  /  ITEM 7A\n
 
 ---
 
+## XBRL 財報擷取（Item 8）
+
+除了文字結構化抽取，本專案另提供從 XBRL 直接還原 Item 8 主要財務報表的功能。
+
+### 運作方式
+
+從 SEC EDGAR 下載四份 XBRL 原始檔案並解析：
+
+| 來源檔案 | 用途 |
+|---|---|
+| Instance Document (`.xml`) | 所有財務數字與 context（期間、幣別、維度） |
+| Presentation Linkbase (`_pre.xml`) | 各財務報表的展示順序與層級 |
+| Label Linkbase (`_lab.xml`) | 將 XBRL concept 名稱轉換為人類可讀標籤 |
+| Schema (`.xsd`) | Role 定義（收益表、資產負債表等的識別） |
+
+解析後自動分類為三個區塊：
+
+- **Main Statements**：損益表、綜合損益表、資產負債表、股東權益表、現金流量表
+- **Numeric Disclosures**：附註中的數字揭露（可含多維度拆分）
+- **Text Disclosures**：附註中的文字 block（含 HTML 表格轉 Markdown）
+
+### 使用方式
+
+```python
+from src.item8_xbrl_facts import get_item8_xbrl_facts
+from src.render_item8_markdown import write_item8_markdown
+
+cik = "0000019617"
+accession_number = "0001628280-26-008131"
+
+payload = get_item8_xbrl_facts(cik, accession_number)
+write_item8_markdown(payload, f"{cik}_{accession_number}_item8.md")
+```
+
+### 輸出
+
+`write_item8_markdown` 產生一份 Markdown 報告，包含：
+- 各財務報表以多期間欄位呈現（例如 FY2025 vs FY2024）
+- 數字自動格式化（千分位、USD/share）
+- 多維度揭露（如分業務線、分地區）展開為子表格
+
+---
+
 ## 系統架構
 
 ```
 src/
-├── models.py          資料結構（FilingInput / FilingOutput / RawItem…）
-├── patterns.py        全部 Regex Pattern 集中定義
-├── pipeline.py        主流程串接
-├── postprocessor.py   Item status 分類
-└── parsers/
-    ├── base.py        Parser 介面
-    ├── regex_parser.py 主 Parser
-    ├── hybrid.py      調度器（支援未來接入 LLM fallback）
-    └── llm_parser.py  LLM Parser stub（架構已備，尚未實作）
+├── models.py               資料結構（FilingInput / FilingOutput / RawItem…）
+├── patterns.py             全部 Regex Pattern 集中定義
+├── pipeline.py             10-K 文字抽取主流程
+├── async_pipeline.py       非同步版本 Pipeline
+├── postprocessor.py        Item status 分類
+├── item8_xbrl_facts.py     XBRL 財報擷取（Instance / Presentation / Label / Schema）
+├── render_item8_markdown.py XBRL 結果渲染為 Markdown 報告
+├── parsers/
+│   ├── base.py             Parser 介面
+│   ├── regex_parser.py     主 Parser（規則式）
+│   ├── hybrid.py           調度器（支援未來接入 LLM fallback）
+│   └── llm_parser.py       LLM Parser stub（架構已備，尚未實作）
 └── eval/
-    ├── metrics.py        評測程式
-    ├── runner.py
+    ├── metrics.py          評測程式（比對 ground truth、產生報告）
+    └── runner.py           批次執行多筆 filing 的評測入口
 ```
 
-**Pipeline 各步驟說明：**
+**10-K 文字抽取 Pipeline 各步驟：**
 
 - **fetch**：呼叫 SEC EDGAR Submissions API 取得公司 metadata，組出 HTML URL 後下載。
 - **preprocess**：用 BeautifulSoup 解析 HTML；拆除 iXBRL 命名空間 tag（`ix:*`）、修復 inline 斷字（`I\nTEM` → `ITEM`）、將章節標題型 table 轉純文字、清除頁碼與頁眉。
 - **parse**：RegexParser 用三種 pattern 找 Item 標題位置，去重後以相鄰 Item 的起點作為前一個 Item 的終點。
 - **postprocess**：依序偵測 `incorporated_by_reference`（Part III 含引用字樣）、`reserved`（Item 6 依年份規則、或內容只有「Reserved」）、`not_applicable`（內容只有 N/A）、`extracted`（正常），找不到則標記 `missing`。
+
+**XBRL 財報擷取流程：**
+
+- **`item8_xbrl_facts.py`**：下載 Schema / Presentation / Label / Instance 四份 XBRL 檔案，解析 role 定義、labels、contexts、facts，按財務報表類型分類輸出。
+- **`render_item8_markdown.py`**：將擷取結果渲染為多期間財務報表 Markdown，包含數字格式化、多維度揭露展開、HTML 附註表格轉換。
 
 ---
 
