@@ -58,6 +58,16 @@ class HybridParser(BaseParser):
         if self.fallback is None or primary_result.confidence >= self.threshold:
             return primary_result
 
+        if not primary_result.raw_items:
+            logger.info(
+                f"[{self.primary.name}] 未找到任何 Item，直接改用 {self.fallback.name} fallback"
+            )
+            fallback_result = self.fallback.parse(text, metadata)
+            if fallback_result.raw_items:
+                fallback_result.warnings = list(primary_result.warnings) + list(fallback_result.warnings)
+                return fallback_result
+            return primary_result
+
         # 找出信心不足的 Item
         low_confidence_items = [
             item for item in primary_result.raw_items

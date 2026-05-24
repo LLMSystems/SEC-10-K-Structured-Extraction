@@ -5,7 +5,7 @@
 
 from __future__ import annotations
 from typing import Optional, Literal
-from pydantic import BaseModel, model_validator
+from pydantic import BaseModel, Field, model_validator
 
 
 # ──────────────────────────────────────────────
@@ -88,6 +88,20 @@ class FilingOutput(BaseModel):
 # Parser 內部資料結構
 # ──────────────────────────────────────────────
 
+class RawSpan(BaseModel):
+    """Multi-span parser 用的單段文字範圍"""
+    start_char: int
+    end_char: int
+    source: Optional[str] = None
+
+
+RawItemStatusHint = Literal[
+    "none_declared",
+    "reserved_declared",
+    "by_reference_declared",
+]
+
+
 class RawItem(BaseModel):
     """
     Parser 找到的原始候選 Item，帶信心分數。
@@ -97,6 +111,8 @@ class RawItem(BaseModel):
     title_text: str                    # 找到的原始標題文字（未正規化）
     start_char: int                    # 在純文字中的起始位置
     end_char: Optional[int] = None    # 在純文字中的結束位置（填到下一個 Item 的 start）
+    spans: list[RawSpan] = Field(default_factory=list)
+    status_hint: Optional[RawItemStatusHint] = None
     confidence: float = 1.0           # 0.0–1.0，parser 對這個切割的信心
 
 

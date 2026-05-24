@@ -17,6 +17,7 @@ from src.models import (
     FilingInput, FilingOutput, FilingInfo, FilingMetadata, TimingStats,
 )
 from src.parsers.base import BaseParser
+from src.parsers.cross_reference_multispan_parser import CrossReferenceMultiSpanParser
 from src.patterns import (
     ITEM_IN_TABLE_PATTERN,
     PAGE_NUMBER_PATTERN,
@@ -51,7 +52,7 @@ class Pipeline:
         # 預設用 HybridParser（目前 fallback=None，等同純 regex）
         self.parser: BaseParser = parser or HybridParser(
             primary=RegexParser(),
-            fallback=None,
+            fallback=CrossReferenceMultiSpanParser(),
         )
         self.postprocessor = PostProcessor()
 
@@ -363,10 +364,36 @@ class Pipeline:
         for tag in soup(["script", "style"]):
             tag.decompose()
 
+        # 移除 hidden iXBRL / XBRL header metadata，避免大量隱藏 facts 汙染正文文字。
+        for tag in soup.find_all(
+            style=lambda value: value and "display:none" in value.replace(" ", "").lower()
+        ):
+            tag.decompose()
+
         # 拆除 iXBRL 命名空間標籤（ix:* / xbrli:* 等），保留其文字內容
         # unwrap() 會把標籤本身移除，但子節點留在原位
         for tag in soup.find_all(lambda t: ":" in t.name):
             tag.unwrap()
+
+        # 從 TOC table 收集 item -> fragment 連結，並在正文目標前注入 marker，
+        # 讓 fallback parser 可以從純文字中回推正文 offset。
+        toc_anchor_ids: set[str] = set()
+        for table in soup.find_all("table"):
+            table_text_compact = table.get_text("", strip=True)
+            item_refs = {m.upper() for m in ITEM_IN_TABLE_PATTERN.findall(table_text_compact)}
+            if len(item_refs) < 4:
+                continue
+
+            for link in table.find_all("a", href=True):
+                href = link.get("href", "")
+                if "#" not in href:
+                    continue
+                toc_anchor_ids.add(href.split("#", 1)[1])
+
+        for anchor_id in toc_anchor_ids:
+            target = soup.find(id=anchor_id)
+            if target is not None:
+                target.insert_before(f"\n[[ANCHOR:{anchor_id}]]\n")
 
         # ── 用 placeholder 替換所有 <table>，避免 get_text() 破壞結構 ──
         PLACEHOLDER_PREFIX = "\x00TABLE\x00"

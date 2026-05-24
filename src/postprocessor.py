@@ -11,6 +11,7 @@ Postprocessor
 """
 
 from __future__ import annotations
+import re
 from src.models import RawItem, ItemResult, FilingMetadata
 from src.patterns import (
     ITEM_META,
@@ -28,6 +29,23 @@ def _strip_html(text: str) -> str:
     return HTML_TAG_PATTERN.sub(" ", text)
 
 
+PART_III_BY_REF_ITEMS = {"10", "11", "12", "13", "14"}
+PART_III_BY_REF_DECL_PATTERN = re.compile(
+    r"documents\s+incorporated\s+by\s+reference.{0,1500}?part\s+iii",
+    re.IGNORECASE | re.DOTALL,
+)
+PROXY_REFERENCE_PATTERN = re.compile(
+    r"proxy\s+statement|annual\s+stockholders'?\s+meeting",
+    re.IGNORECASE,
+)
+ITEM_16_SIGNATURE_PATTERN = re.compile(
+    r"pursuant\s+to\s+the\s+requirements\s+of\s+section\s+13\s+or\s+15\(d\)|"
+    r"\bregistrant\b.{0,80}\bby:\b|"
+    r"\bsignatures?\b",
+    re.IGNORECASE | re.DOTALL,
+)
+
+
 class PostProcessor:
 
     def process(
@@ -41,6 +59,7 @@ class PostProcessor:
         """
         # 建立 item_number → RawItem 的 map
         raw_map: dict[str, RawItem] = {item.item_number: item for item in raw_items}
+        part_iii_by_ref_excerpt = self._find_part_iii_by_reference_excerpt(full_text)
 
         results: list[ItemResult] = []
 
@@ -53,7 +72,13 @@ class PostProcessor:
 
             if num not in raw_map:
                 # Parser 沒找到這個 Item
-                result = self._handle_missing(num, part, std_title, metadata)
+                result = self._handle_missing(
+                    num,
+                    part,
+                    std_title,
+                    metadata,
+                    part_iii_by_ref_excerpt,
+                )
             else:
                 raw = raw_map[num]
                 content = self._extract_content(raw, full_text)
@@ -69,8 +94,37 @@ class PostProcessor:
 
     def _extract_content(self, raw: RawItem, full_text: str) -> str:
         """從 full_text 切出這個 Item 的內容文字"""
+        if raw.status_hint and not raw.spans and raw.end_char is None:
+            return ""
+
+        if raw.spans:
+            parts: list[str] = []
+            for span in sorted(raw.spans, key=lambda s: s.start_char):
+                snippet = full_text[span.start_char:span.end_char].strip()
+                if snippet:
+                    parts.append(snippet)
+            return "\n\n".join(parts).strip()
+
         end = raw.end_char if raw.end_char is not None else len(full_text)
         return full_text[raw.start_char:end].strip()
+
+    def _find_part_iii_by_reference_excerpt(self, full_text: str) -> str | None:
+        plain = self._normalize_ws(_strip_html(full_text))
+        if not plain:
+            return None
+
+        search_space = plain[:25000]
+        match = PART_III_BY_REF_DECL_PATTERN.search(search_space)
+        if not match:
+            return None
+
+        snippet = search_space[match.start(): min(len(search_space), match.end() + 400)]
+        if not BY_REF_PATTERN.search(snippet):
+            return None
+        if not PROXY_REFERENCE_PATTERN.search(snippet):
+            return None
+
+        return snippet.strip()
 
     def _classify(
         self,
@@ -84,6 +138,37 @@ class PostProcessor:
         """判斷這個 Item 的 status"""
 
         stripped = content.strip()
+
+        if raw.status_hint == "reserved_declared":
+            return ItemResult(
+                part=part,
+                item_number=num,
+                item_title=std_title,
+                content_text=None,
+                char_range=None,
+                status="reserved",
+            )
+
+        if raw.status_hint == "none_declared":
+            return ItemResult(
+                part=part,
+                item_number=num,
+                item_title=std_title,
+                content_text=None,
+                char_range=None,
+                status="not_applicable",
+            )
+
+        if raw.status_hint == "by_reference_declared":
+            return ItemResult(
+                part=part,
+                item_number=num,
+                item_title=std_title,
+                content_text=stripped or None,
+                char_range=self._item_char_range(raw),
+                status="incorporated_by_reference",
+            )
+
         # 剝掉 HTML tag 後的純文字版本，用於 pattern 偵測與長度判斷。
         # content_text 仍保留原始（含 HTML）以便 Markdown 正確渲染表格。
         plain = _strip_html(stripped)
@@ -98,7 +183,7 @@ class PostProcessor:
                 item_number=num,
                 item_title=std_title,
                 content_text=stripped,
-                char_range=(raw.start_char, raw.end_char or len(plain)),
+                char_range=self._item_char_range(raw),
                 status="incorporated_by_reference",
             )
 
@@ -151,13 +236,23 @@ class PostProcessor:
                 status="not_applicable",
             )
 
+        if num == "16" and ITEM_16_SIGNATURE_PATTERN.search(plain):
+            return ItemResult(
+                part=part,
+                item_number=num,
+                item_title=std_title,
+                content_text=None,
+                char_range=None,
+                status="not_applicable",
+            )
+
         # 6. 正常抽取（保留含 HTML 的原始 stripped，讓表格在 MD 中可渲染）
         return ItemResult(
             part=part,
             item_number=num,
             item_title=std_title,
             content_text=stripped,
-            char_range=(raw.start_char, raw.end_char or len(plain)),
+            char_range=self._item_char_range(raw),
             status="extracted",
         )
 
@@ -167,6 +262,7 @@ class PostProcessor:
         part: str,
         std_title: str,
         metadata: FilingMetadata,
+        part_iii_by_ref_excerpt: str | None = None,
     ) -> ItemResult:
         """Parser 沒找到這個 Item 時，根據規則推斷 status"""
 
@@ -178,6 +274,16 @@ class PostProcessor:
                 content_text=None,
                 char_range=None,
                 status="reserved",
+            )
+
+        if num in PART_III_BY_REF_ITEMS and part_iii_by_ref_excerpt:
+            return ItemResult(
+                part=part,
+                item_number=num,
+                item_title=std_title,
+                content_text=part_iii_by_ref_excerpt,
+                char_range=None,
+                status="incorporated_by_reference",
             )
 
         # Item 16（Form 10-K Summary）是選填的，沒有也正常
@@ -204,3 +310,14 @@ class PostProcessor:
             char_range=None,
             status="missing",
         )
+
+    def _normalize_ws(self, text: str) -> str:
+        return re.sub(r"\s+", " ", text).strip()
+
+    def _item_char_range(self, raw: RawItem) -> tuple[int, int] | None:
+        if raw.spans:
+            ordered = sorted(raw.spans, key=lambda span: span.start_char)
+            return (ordered[0].start_char, ordered[-1].end_char)
+        if raw.end_char is None:
+            return None
+        return (raw.start_char, raw.end_char)
