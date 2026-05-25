@@ -4,7 +4,8 @@
 """
 
 from __future__ import annotations
-from typing import Optional, Literal
+from dataclasses import dataclass, field
+from typing import Any, Optional, Literal
 from pydantic import BaseModel, Field, model_validator
 
 
@@ -88,6 +89,25 @@ class FilingOutput(BaseModel):
 # Parser 內部資料結構
 # ──────────────────────────────────────────────
 
+@dataclass
+class PreprocessedDocument:
+    """
+    Shared parser input that preserves both the original HTML and the derived
+    text representation.
+    """
+    raw_html: bytes
+    normalized_html: str
+    text: str
+    extra: dict[str, Any] = field(default_factory=dict)
+
+
+@dataclass
+class PageMarker:
+    page_number: int
+    marker_start: int
+    marker_end: int
+
+
 class RawSpan(BaseModel):
     """Multi-span parser 用的單段文字範圍"""
     start_char: int
@@ -113,6 +133,7 @@ class RawItem(BaseModel):
     end_char: Optional[int] = None    # 在純文字中的結束位置（填到下一個 Item 的 start）
     spans: list[RawSpan] = Field(default_factory=list)
     status_hint: Optional[RawItemStatusHint] = None
+    by_reference_text: Optional[str] = None
     confidence: float = 1.0           # 0.0–1.0，parser 對這個切割的信心
 
 

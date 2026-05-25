@@ -104,13 +104,13 @@ class AsyncPipeline(Pipeline):
         loop = asyncio.get_running_loop()
 
         t0 = time.perf_counter()
-        text = await loop.run_in_executor(None, self._preprocess, html)
+        doc = await loop.run_in_executor(None, self._preprocess, html)
         preprocess_sec = time.perf_counter() - t0
-        logger.info(f"純文字長度：{len(text):,} 字元")
+        logger.info(f"純文字長度：{len(doc.text):,} 字元")
 
         t0 = time.perf_counter()
         parse_result = await loop.run_in_executor(
-            None, self.parser.parse, text, metadata
+            None, self.parser.parse, doc, metadata
         )
         parse_sec = time.perf_counter() - t0
         logger.info(
@@ -125,7 +125,7 @@ class AsyncPipeline(Pipeline):
             None,
             self.postprocessor.process,
             parse_result.raw_items,
-            text,
+            doc.text,
             metadata,
         )
         postprocess_sec = time.perf_counter() - t0

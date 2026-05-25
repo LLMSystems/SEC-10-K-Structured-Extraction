@@ -6,6 +6,7 @@ Pipeline
 from __future__ import annotations
 import json
 import logging
+import re
 import time
 from pathlib import Path
 from datetime import datetime
@@ -14,10 +15,11 @@ import requests
 from bs4 import BeautifulSoup
 
 from src.models import (
-    FilingInput, FilingOutput, FilingInfo, FilingMetadata, TimingStats,
+    FilingInput, FilingOutput, FilingInfo, FilingMetadata, TimingStats, PreprocessedDocument, PageMarker,
 )
 from src.parsers.base import BaseParser
 from src.parsers.cross_reference_multispan_parser import CrossReferenceMultiSpanParser
+from src.parsers.pdf_style_cross_reference_parser import PdfStyleCrossReferenceParser
 from src.patterns import (
     ITEM_IN_TABLE_PATTERN,
     PAGE_NUMBER_PATTERN,
@@ -36,6 +38,7 @@ logger = logging.getLogger(__name__)
 USER_AGENT = "10K-Parser contact@example.com"
 BASE_URL = "https://www.sec.gov"
 SUBMISSIONS_URL = "https://data.sec.gov/submissions/CIK{cik}.json"
+PAGE_MARKER_PATTERN = re.compile(r"\[\[PAGE:(?P<page>\d+)\]\]")
 
 
 class Pipeline:
@@ -52,7 +55,10 @@ class Pipeline:
         # 預設用 HybridParser（目前 fallback=None，等同純 regex）
         self.parser: BaseParser = parser or HybridParser(
             primary=RegexParser(),
-            fallback=CrossReferenceMultiSpanParser(),
+            fallback=[
+                CrossReferenceMultiSpanParser(),
+                PdfStyleCrossReferenceParser(),
+            ],
         )
         self.postprocessor = PostProcessor()
 
@@ -82,13 +88,13 @@ class Pipeline:
 
         # 3. 轉換純文字
         t0 = time.perf_counter()
-        text = self._preprocess(html)
+        doc = self._preprocess(html)
         preprocess_sec = time.perf_counter() - t0
-        logger.info(f"純文字長度：{len(text):,} 字元")
+        logger.info(f"純文字長度：{len(doc.text):,} 字元")
 
         # 4. Parser 找 Item 位置
         t0 = time.perf_counter()
-        parse_result = self.parser.parse(text, metadata)
+        parse_result = self.parser.parse(doc, metadata)
         parse_sec = time.perf_counter() - t0
         logger.info(
             f"Parser [{parse_result.parser_name}] 信心={parse_result.confidence:.2f}，"
@@ -100,7 +106,7 @@ class Pipeline:
 
         # 5. Postprocess → 產出最終 ItemResult
         t0 = time.perf_counter()
-        items = self.postprocessor.process(parse_result.raw_items, text, metadata)
+        items = self.postprocessor.process(parse_result.raw_items, doc.text, metadata)
         postprocess_sec = time.perf_counter() - t0
 
         output = FilingOutput(
@@ -121,7 +127,7 @@ class Pipeline:
         )
 
         if save_to is not None:
-            self._save(output, metadata, text, Path(save_to))
+            self._save(output, metadata, doc.text, Path(save_to))
 
         return output
 
@@ -351,7 +357,7 @@ class Pipeline:
         resp = self._get(url)
         return resp.content
 
-    def _preprocess(self, html: bytes) -> str:
+    def _preprocess(self, html: bytes) -> PreprocessedDocument:
         """
         HTML → 混合文字（保留 <table> 的 HTML 結構）
 
@@ -381,19 +387,26 @@ class Pipeline:
         for table in soup.find_all("table"):
             table_text_compact = table.get_text("", strip=True)
             item_refs = {m.upper() for m in ITEM_IN_TABLE_PATTERN.findall(table_text_compact)}
-            if len(item_refs) < 4:
+            hash_links = [
+                link for link in table.find_all("a", href=True)
+                if "#" in link.get("href", "")
+            ]
+            if len(item_refs) < 4 and len(hash_links) < 4:
                 continue
 
-            for link in table.find_all("a", href=True):
-                href = link.get("href", "")
-                if "#" not in href:
-                    continue
-                toc_anchor_ids.add(href.split("#", 1)[1])
+            for link in hash_links:
+                toc_anchor_ids.add(link.get("href", "").split("#", 1)[1])
 
         for anchor_id in toc_anchor_ids:
             target = soup.find(id=anchor_id)
             if target is not None:
                 target.insert_before(f"\n[[ANCHOR:{anchor_id}]]\n")
+
+        for footer_div in self._iter_page_footer_divs(soup):
+            page_number = self._extract_footer_page_number(footer_div)
+            if page_number is None:
+                continue
+            footer_div.insert_after(f"\n[[PAGE:{page_number}]]\n")
 
         # ── 用 placeholder 替換所有 <table>，避免 get_text() 破壞結構 ──
         PLACEHOLDER_PREFIX = "\x00TABLE\x00"
@@ -434,6 +447,11 @@ class Pipeline:
                 table.replace_with(placeholder)
 
         # 取得純文字（此時 <table> 已被 placeholder 取代）
+        normalized_html = str(soup)
+        for i, table_html in enumerate(table_html_store):
+            placeholder = f"{PLACEHOLDER_PREFIX}{i}\x00"
+            normalized_html = normalized_html.replace(placeholder, table_html)
+
         raw_text = soup.get_text(separator="\n")
 
         # 合併多餘空行，同時保留 placeholder 行不動
@@ -472,7 +490,90 @@ class Pipeline:
             placeholder = f"{PLACEHOLDER_PREFIX}{i}\x00"
             text = text.replace(placeholder, f"\n\n{table_html}\n\n")
 
-        return text
+        page_markers = self._collect_page_markers(text)
+        page_start_to_pos = self._build_page_start_to_pos(page_markers)
+        page_end_to_pos = {
+            marker.page_number: marker.marker_start
+            for marker in page_markers
+        }
+
+        return PreprocessedDocument(
+            raw_html=html,
+            normalized_html=normalized_html,
+            text=text,
+            extra={
+                "page_markers": page_markers,
+                "page_start_to_pos": page_start_to_pos,
+                "page_end_to_pos": page_end_to_pos,
+            },
+        )
+
+    def _iter_page_footer_divs(self, soup: BeautifulSoup):
+        for tag in soup.find_all("div", style=True):
+            style = tag.get("style", "").replace(" ", "").lower()
+            if "height:36pt" not in style or "position:relative" not in style:
+                continue
+
+            footer = tag.find(
+                "div",
+                style=lambda value: value
+                and "position:absolute" in value.replace(" ", "").lower()
+                and "bottom:0" in value.replace(" ", "").lower(),
+            )
+            if footer is None:
+                continue
+
+            center = footer.find(
+                "div",
+                style=lambda value: value and "text-align:center" in value.replace(" ", "").lower(),
+            )
+            if center is None:
+                continue
+
+            yield tag
+
+    def _extract_footer_page_number(self, footer_div) -> int | None:
+        center = footer_div.find(
+            "div",
+            style=lambda value: value and "text-align:center" in value.replace(" ", "").lower(),
+        )
+        if center is None:
+            return None
+
+        page_text = center.get_text(" ", strip=True).replace("\xa0", " ").strip()
+        if not page_text.isdigit():
+            return None
+
+        return int(page_text)
+
+    def _collect_page_markers(self, text: str) -> list[PageMarker]:
+        markers: list[PageMarker] = []
+        for match in PAGE_MARKER_PATTERN.finditer(text):
+            markers.append(
+                PageMarker(
+                    page_number=int(match.group("page")),
+                    marker_start=match.start(),
+                    marker_end=match.end(),
+                )
+            )
+        return markers
+
+    def _build_page_start_to_pos(self, page_markers: list[PageMarker]) -> dict[int, int]:
+        if not page_markers:
+            return {}
+
+        ordered = sorted(page_markers, key=lambda marker: marker.page_number)
+        page_start_to_pos: dict[int, int] = {
+            ordered[0].page_number: 0,
+        }
+
+        previous = ordered[0]
+        for marker in ordered[1:]:
+            if marker.page_number == previous.page_number + 1:
+                page_start_to_pos[marker.page_number] = previous.marker_end
+            previous = marker
+
+        return page_start_to_pos
 
     def _get(self, url: str) -> requests.Response:
         resp = requests.get(

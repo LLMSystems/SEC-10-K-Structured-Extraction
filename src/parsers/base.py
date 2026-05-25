@@ -7,7 +7,7 @@ from __future__ import annotations
 from abc import ABC, abstractmethod
 from dataclasses import dataclass, field
 
-from src.models import RawItem, FilingMetadata
+from src.models import RawItem, FilingMetadata, PreprocessedDocument
 
 
 @dataclass
@@ -40,7 +40,7 @@ class BaseParser(ABC):
         ...
 
     @abstractmethod
-    def parse(self, text: str, metadata: FilingMetadata) -> ParseResult:
+    def parse(self, doc: PreprocessedDocument, metadata: FilingMetadata) -> ParseResult:
         """
         從純文字中找出所有 Item 的位置與內容。
 

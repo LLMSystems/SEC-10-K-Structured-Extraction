@@ -12,7 +12,7 @@ from dataclasses import dataclass, field
 
 from bs4 import BeautifulSoup
 
-from src.models import FilingMetadata, RawItem, RawSpan
+from src.models import FilingMetadata, RawItem, RawSpan, PreprocessedDocument
 from src.parsers.base import BaseParser, ParseResult
 from src.patterns import ITEM_META, ITEM_NUMBERS
 
@@ -60,7 +60,8 @@ class CrossReferenceMultiSpanParser(BaseParser):
     def name(self) -> str:
         return "cross_reference_multispan"
 
-    def parse(self, text: str, metadata: FilingMetadata) -> ParseResult:
+    def parse(self, doc: PreprocessedDocument, metadata: FilingMetadata) -> ParseResult:
+        text = doc.text
         warnings: list[str] = []
 
         frag_to_body_pos = {

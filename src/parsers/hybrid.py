@@ -1,18 +1,8 @@
-"""
-Hybrid Parser（調度器）
-先跑 RegexParser，對信心低於門檻的 Item 再呼叫 LLMParser 補強。
-
-這個設計讓你可以：
-  - 第一階段：hybrid = HybridParser(primary=regex, fallback=None)
-              → 純 regex，LLM 完全不介入
-  - 第二階段：hybrid = HybridParser(primary=regex, fallback=llm, threshold=0.7)
-              → regex 信心 < 0.7 的 Item 才呼叫 LLM
-  - 第三階段：針對特定 edge case 調整 threshold
-"""
-
 from __future__ import annotations
+
 import logging
-from src.models import RawItem, FilingMetadata
+
+from src.models import FilingMetadata, RawItem, PreprocessedDocument
 from src.parsers.base import BaseParser, ParseResult
 
 logger = logging.getLogger(__name__)
@@ -20,87 +10,93 @@ logger = logging.getLogger(__name__)
 
 class HybridParser(BaseParser):
     """
-    混合策略調度器。
-
-    Args:
-        primary:   主 parser（目前是 RegexParser）
-        fallback:  備用 parser（LLMParser，可為 None 表示不啟用）
-        threshold: 低於此信心分數才觸發 fallback（預設 0.7）
-        item_threshold: 單一 Item 的信心門檻（預設同 threshold）
+    Run a primary parser first, then try one or more fallback parsers when the
+    primary parser fails entirely or returns low-confidence items.
     """
 
     def __init__(
         self,
         primary: BaseParser,
-        fallback: BaseParser | None = None,
+        fallback: BaseParser | list[BaseParser] | tuple[BaseParser, ...] | None = None,
         threshold: float = 0.7,
         item_threshold: float | None = None,
     ):
         self.primary = primary
-        self.fallback = fallback
+        if fallback is None:
+            self.fallbacks: list[BaseParser] = []
+        elif isinstance(fallback, (list, tuple)):
+            self.fallbacks = list(fallback)
+        else:
+            self.fallbacks = [fallback]
         self.threshold = threshold
         self.item_threshold = item_threshold if item_threshold is not None else threshold
 
     @property
     def name(self) -> str:
-        fallback_name = self.fallback.name if self.fallback else "none"
+        fallback_name = ",".join(parser.name for parser in self.fallbacks) if self.fallbacks else "none"
         return f"hybrid({self.primary.name}+{fallback_name})"
 
-    def parse(self, text: str, metadata: FilingMetadata) -> ParseResult:
-        # 先跑主 parser
-        primary_result = self.primary.parse(text, metadata)
+    def parse(self, doc: PreprocessedDocument, metadata: FilingMetadata) -> ParseResult:
+        primary_result = self.primary.parse(doc, metadata)
         logger.info(
-            f"[{self.primary.name}] 信心={primary_result.confidence:.2f}，"
-            f"找到 {len(primary_result.raw_items)} 個 Items"
+            f"[{self.primary.name}] confidence={primary_result.confidence:.2f}, "
+            f"items={len(primary_result.raw_items)}"
         )
 
-        # 如果沒有 fallback 或整體信心夠高，直接回傳
-        if self.fallback is None or primary_result.confidence >= self.threshold:
+        if not self.fallbacks or primary_result.confidence >= self.threshold:
             return primary_result
 
         if not primary_result.raw_items:
-            logger.info(
-                f"[{self.primary.name}] 未找到任何 Item，直接改用 {self.fallback.name} fallback"
-            )
-            fallback_result = self.fallback.parse(text, metadata)
-            if fallback_result.raw_items:
+            fallback_result = self._run_fallback_chain(doc, metadata)
+            if fallback_result is not None:
                 fallback_result.warnings = list(primary_result.warnings) + list(fallback_result.warnings)
                 return fallback_result
             return primary_result
 
-        # 找出信心不足的 Item
         low_confidence_items = [
             item for item in primary_result.raw_items
             if item.confidence < self.item_threshold
         ]
-
         if not low_confidence_items:
             return primary_result
 
         logger.info(
-            f"有 {len(low_confidence_items)} 個 Item 信心不足，"
-            f"交給 {self.fallback.name} 補強"
+            f"{len(low_confidence_items)} low-confidence items detected; trying fallback chain"
         )
 
-        # 對低信心 Item 呼叫 fallback
-        # 目前策略：把整份文字丟給 fallback，讓它重新找這些 Item
-        # TODO: 改成只傳入低信心 Item 附近的 snippet，節省 LLM token
-        fallback_result = self.fallback.parse(text, metadata)
+        for fallback in self.fallbacks:
+            fallback_result = fallback.parse(doc, metadata)
+            if not fallback_result.raw_items:
+                continue
+            return self._merge(primary_result, fallback_result, low_confidence_items, fallback)
 
-        # 合併結果：用 fallback 的結果取代低信心的 primary 結果
-        merged = self._merge(primary_result, fallback_result, low_confidence_items)
-        return merged
+        return primary_result
+
+    def _run_fallback_chain(
+        self,
+        doc: PreprocessedDocument,
+        metadata: FilingMetadata,
+    ) -> ParseResult | None:
+        collected_warnings: list[str] = []
+        for fallback in self.fallbacks:
+            logger.info(f"[{self.primary.name}] no items found; trying fallback {fallback.name}")
+            fallback_result = fallback.parse(doc, metadata)
+            if fallback_result.raw_items:
+                fallback_result.warnings = collected_warnings + list(fallback_result.warnings)
+                return fallback_result
+            collected_warnings.extend(
+                f"[{fallback.name}] {warning}"
+                for warning in fallback_result.warnings
+            )
+        return None
 
     def _merge(
         self,
         primary: ParseResult,
         fallback: ParseResult,
         to_replace: list[RawItem],
+        fallback_parser: BaseParser,
     ) -> ParseResult:
-        """
-        用 fallback 的結果取代 primary 中信心不足的 Items。
-        保留 primary 中信心足夠的 Items 不動。
-        """
         replace_nums = {item.item_number for item in to_replace}
         fallback_map = {item.item_number: item for item in fallback.raw_items}
 
@@ -111,23 +107,22 @@ class HybridParser(BaseParser):
             if item.item_number in replace_nums and item.item_number in fallback_map:
                 fb_item = fallback_map[item.item_number]
                 logger.info(
-                    f"Item {item.item_number}：用 {self.fallback.name} 結果取代 "
-                    f"（信心 {item.confidence:.2f} → {fb_item.confidence:.2f}）"
+                    f"Replacing item {item.item_number} with {fallback_parser.name} "
+                    f"({item.confidence:.2f} -> {fb_item.confidence:.2f})"
                 )
                 merged_items.append(fb_item)
             else:
                 merged_items.append(item)
 
-        # 加入 fallback 找到但 primary 完全沒找到的 Item
         primary_nums = {item.item_number for item in primary.raw_items}
         for item in fallback.raw_items:
             if item.item_number not in primary_nums:
-                logger.info(f"Item {item.item_number}：由 {self.fallback.name} 補充找到")
+                logger.info(f"Adding item {item.item_number} from fallback {fallback_parser.name}")
                 merged_items.append(item)
-                warnings.append(f"Item {item.item_number} 由 fallback parser 補充")
+                warnings.append(f"Item {item.item_number} added by fallback parser")
 
-        # 重新排序
         from src.parsers.regex_parser import ITEM_NUMBERS
+
         order = {n: i for i, n in enumerate(ITEM_NUMBERS)}
         merged_items.sort(key=lambda x: order.get(x.item_number, 99))
 

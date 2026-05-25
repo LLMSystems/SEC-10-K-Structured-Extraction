@@ -29,6 +29,10 @@ def _strip_html(text: str) -> str:
     return HTML_TAG_PATTERN.sub(" ", text)
 
 
+ANCHOR_MARKER_PATTERN = re.compile(r"\[\[ANCHOR:[^\]]+\]\]")
+PAGE_MARKER_PATTERN = re.compile(r"\[\[PAGE:\d+\]\]")
+
+
 PART_III_BY_REF_ITEMS = {"10", "11", "12", "13", "14"}
 PART_III_BY_REF_DECL_PATTERN = re.compile(
     r"documents\s+incorporated\s+by\s+reference.{0,1500}?part\s+iii",
@@ -100,13 +104,15 @@ class PostProcessor:
         if raw.spans:
             parts: list[str] = []
             for span in sorted(raw.spans, key=lambda s: s.start_char):
-                snippet = full_text[span.start_char:span.end_char].strip()
+                snippet = self._remove_internal_markers(
+                    full_text[span.start_char:span.end_char]
+                ).strip()
                 if snippet:
                     parts.append(snippet)
             return "\n\n".join(parts).strip()
 
         end = raw.end_char if raw.end_char is not None else len(full_text)
-        return full_text[raw.start_char:end].strip()
+        return self._remove_internal_markers(full_text[raw.start_char:end]).strip()
 
     def _find_part_iii_by_reference_excerpt(self, full_text: str) -> str | None:
         plain = self._normalize_ws(_strip_html(full_text))
@@ -160,6 +166,15 @@ class PostProcessor:
             )
 
         if raw.status_hint == "by_reference_declared":
+            if not raw.spans:
+                return ItemResult(
+                    part=part,
+                    item_number=num,
+                    item_title=std_title,
+                    content_text=raw.by_reference_text or None,
+                    char_range=None,
+                    status="incorporated_by_reference",
+                )
             return ItemResult(
                 part=part,
                 item_number=num,
@@ -313,6 +328,11 @@ class PostProcessor:
 
     def _normalize_ws(self, text: str) -> str:
         return re.sub(r"\s+", " ", text).strip()
+
+    def _remove_internal_markers(self, text: str) -> str:
+        text = ANCHOR_MARKER_PATTERN.sub("", text)
+        text = PAGE_MARKER_PATTERN.sub("", text)
+        return text
 
     def _item_char_range(self, raw: RawItem) -> tuple[int, int] | None:
         if raw.spans:
