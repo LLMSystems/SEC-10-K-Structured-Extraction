@@ -128,7 +128,7 @@
         245270,
         245411
       ],
-      "status": "extracted"
+      "status": "incorporated_by_reference"
     },
     {
       "part": "Part II",
@@ -164,12 +164,9 @@
       "part": "Part II",
       "item_number": "9C",
       "item_title": "Disclosure Regarding Foreign Jurisdictions that Prevent Inspections",
-      "content_text": "Item 9C. Disclosure Regarding Foreign Jurisdictions\nthat Prevent Inspections\n\n\nNot applicable.\n\n\n\n\nPART III",
-      "char_range": [
-        255556,
-        255666
-      ],
-      "status": "extracted"
+      "content_text": null,
+      "char_range": null,
+      "status": "not_applicable"
     },
     {
       "part": "Part III",

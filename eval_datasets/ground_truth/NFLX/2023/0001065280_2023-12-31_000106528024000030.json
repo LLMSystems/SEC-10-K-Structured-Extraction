@@ -33,12 +33,9 @@
       "part": "Part I",
       "item_number": "1B",
       "item_title": "Unresolved Staff Comments",
-      "content_text": "Item 1B.\nUnresolved Staff Comments\nNone.",
-      "char_range": [
-        112886,
-        112927
-      ],
-      "status": "extracted"
+      "content_text": null,
+      "char_range": null,
+      "status": "not_applicable"
     },
     {
       "part": "Part I",
@@ -137,12 +134,9 @@
       "part": "Part II",
       "item_number": "9",
       "item_title": "Changes in and Disagreements with Accountants on Accounting and Financial Disclosure",
-      "content_text": "Item 9.\nChanges in and Disagreements with Accountants on Accounting and Financial Disclosure\nNone.\nTable of Contents",
-      "char_range": [
-        203828,
-        203945
-      ],
-      "status": "extracted"
+      "content_text": null,
+      "char_range": null,
+      "status": "not_applicable"
     },
     {
       "part": "Part II",
@@ -170,12 +164,9 @@
       "part": "Part II",
       "item_number": "9C",
       "item_title": "Disclosure Regarding Foreign Jurisdictions that Prevent Inspections",
-      "content_text": "Item 9C.\nDisclosure Regarding Foreign Jurisdictions that Prevent Inspections\nNot applicable.\nTable of Contents\nPART III",
-      "char_range": [
-        214174,
-        214294
-      ],
-      "status": "extracted"
+      "content_text": null,
+      "char_range": null,
+      "status": "not_applicable"
     },
     {
       "part": "Part III",

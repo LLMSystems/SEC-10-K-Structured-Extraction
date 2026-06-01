@@ -33,12 +33,9 @@
       "part": "Part I",
       "item_number": "1B",
       "item_title": "Unresolved Staff Comments",
-      "content_text": "ITEM 1B.\nUNRESOLVED STAFF COMMENTS\n\n\nNone.",
-      "char_range": [
-        192510,
-        192555
-      ],
-      "status": "extracted"
+      "content_text": null,
+      "char_range": null,
+      "status": "not_applicable"
     },
     {
       "part": "Part I",
@@ -129,12 +126,9 @@
       "part": "Part II",
       "item_number": "9",
       "item_title": "Changes in and Disagreements with Accountants on Accounting and Financial Disclosure",
-      "content_text": "ITEM 9.\nCHANGES IN AND DISAGREEMENTS WITH ACCOUNTANTS ON ACCOUNTING AND FINANCIAL DISCLOSURE\n\n\nNone.",
-      "char_range": [
-        758771,
-        758878
-      ],
-      "status": "extracted"
+      "content_text": null,
+      "char_range": null,
+      "status": "not_applicable"
     },
     {
       "part": "Part II",
@@ -151,12 +145,9 @@
       "part": "Part II",
       "item_number": "9B",
       "item_title": "Other Information",
-      "content_text": "ITEM 9B.\nOTHER INFORMATION\n\n\nNone.",
-      "char_range": [
-        763241,
-        763282
-      ],
-      "status": "extracted"
+      "content_text": null,
+      "char_range": null,
+      "status": "not_applicable"
     },
     {
       "part": "Part II",
@@ -236,12 +227,9 @@
       "part": "Part IV",
       "item_number": "16",
       "item_title": "Form 10-K Summary",
-      "content_text": "ITEM 16.\nSUMMARY\n\n\nNone",
-      "char_range": [
-        909418,
-        909446
-      ],
-      "status": "extracted"
+      "content_text": null,
+      "char_range": null,
+      "status": "not_applicable"
     }
   ]
 }

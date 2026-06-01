@@ -33,12 +33,9 @@
       "part": "Part I",
       "item_number": "1B",
       "item_title": "Unresolved Staff Comments",
-      "content_text": "Item\n1B. Unresolved Staff Comments\n\n\nNone.",
-      "char_range": [
-        295906,
-        295951
-      ],
-      "status": "extracted"
+      "content_text": null,
+      "char_range": null,
+      "status": "not_applicable"
     },
     {
       "part": "Part I",
@@ -131,7 +128,7 @@
         356935,
         357175
       ],
-      "status": "extracted"
+      "status": "incorporated_by_reference"
     },
     {
       "part": "Part II",
@@ -159,23 +156,17 @@
       "part": "Part II",
       "item_number": "9B",
       "item_title": "Other Information",
-      "content_text": "Item\n9B. Other Information\n\n\nNone\n.",
-      "char_range": [
-        366431,
-        366469
-      ],
-      "status": "extracted"
+      "content_text": null,
+      "char_range": null,
+      "status": "not_applicable"
     },
     {
       "part": "Part II",
       "item_number": "9C",
       "item_title": "Disclosure Regarding Foreign Jurisdictions that Prevent Inspections",
-      "content_text": "Item\n9C. Disclosure Regarding Foreign Jurisdictions that Prevent Inspections\n\n\nNot\napplicable.\n\n\n\n\n\n\n<table cellpadding=\"0\" style=\"width: 100%; border-spacing: 0px;\"><tr><td> </td></tr></table>\n\n\n\n\nPARTIII",
-      "char_range": [
-        366469,
-        366677
-      ],
-      "status": "extracted"
+      "content_text": null,
+      "char_range": null,
+      "status": "not_applicable"
     },
     {
       "part": "Part III",
@@ -244,12 +235,9 @@
       "part": "Part IV",
       "item_number": "16",
       "item_title": "Form 10-K Summary",
-      "content_text": "Item\n16. Form 10–K Summary\n\n\nNone.\n\n\n\n\n\n\n<table cellpadding=\"0\" style=\"width: 100%; border-spacing: 0px;\"><tr><td> </td></tr></table>",
-      "char_range": [
-        430446,
-        430584
-      ],
-      "status": "extracted"
+      "content_text": null,
+      "char_range": null,
+      "status": "not_applicable"
     }
   ]
 }

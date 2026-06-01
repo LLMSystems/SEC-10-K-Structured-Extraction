@@ -1,0 +1,7 @@
+{
+  "ticker": "CITI",
+  "cik": "0000831001",
+  "accession_number": "0000831001-26-000011",
+  "report_date": "2025-12-31",
+  "error": "sequence item 169: expected str instance, NoneType found"
+}

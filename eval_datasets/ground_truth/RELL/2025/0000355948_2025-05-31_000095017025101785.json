@@ -33,12 +33,9 @@
       "part": "Part I",
       "item_number": "1B",
       "item_title": "Unresolved Staff Comments",
-      "content_text": "ITEM 1B. Unresolve\nd Staff Comments\nNone.",
-      "char_range": [
-        86447,
-        86489
-      ],
-      "status": "extracted"
+      "content_text": null,
+      "char_range": null,
+      "status": "not_applicable"
     },
     {
       "part": "Part I",
@@ -66,12 +63,9 @@
       "part": "Part I",
       "item_number": "3",
       "item_title": "Legal Proceedings",
-      "content_text": "ITEM 3. Legal\nProceedings\nNone.",
-      "char_range": [
-        99210,
-        99242
-      ],
-      "status": "extracted"
+      "content_text": null,
+      "char_range": null,
+      "status": "not_applicable"
     },
     {
       "part": "Part I",
@@ -241,12 +235,9 @@
       "part": "Part IV",
       "item_number": "16",
       "item_title": "Form 10-K Summary",
-      "content_text": "ITEM 16. Form\n10-K Summary\nNone",
-      "char_range": [
-        467665,
-        467697
-      ],
-      "status": "extracted"
+      "content_text": null,
+      "char_range": null,
+      "status": "not_applicable"
     }
   ]
 }

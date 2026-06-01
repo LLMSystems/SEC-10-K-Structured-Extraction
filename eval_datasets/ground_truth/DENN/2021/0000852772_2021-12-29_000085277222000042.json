@@ -33,12 +33,9 @@
       "part": "Part I",
       "item_number": "1B",
       "item_title": "Unresolved Staff Comments",
-      "content_text": "Item 1B.\nUnresolved Staff Comments\n\nNone.",
-      "char_range": [
-        115589,
-        115632
-      ],
-      "status": "extracted"
+      "content_text": null,
+      "char_range": null,
+      "status": "not_applicable"
     },
     {
       "part": "Part I",
@@ -120,18 +117,15 @@
         248113,
         248244
       ],
-      "status": "extracted"
+      "status": "incorporated_by_reference"
     },
     {
       "part": "Part II",
       "item_number": "9",
       "item_title": "Changes in and Disagreements with Accountants on Accounting and Financial Disclosure",
-      "content_text": "Item 9.\n\nChanges in and Disagreements with Accountants on Accounting and Financial Disclosure\n\nNone.",
-      "char_range": [
-        248244,
-        248346
-      ],
-      "status": "extracted"
+      "content_text": null,
+      "char_range": null,
+      "status": "not_applicable"
     },
     {
       "part": "Part II",
@@ -148,23 +142,17 @@
       "part": "Part II",
       "item_number": "9B",
       "item_title": "Other Information",
-      "content_text": "Item 9B.\nOther Information\n\nNone.",
-      "char_range": [
-        255515,
-        255549
-      ],
-      "status": "extracted"
+      "content_text": null,
+      "char_range": null,
+      "status": "not_applicable"
     },
     {
       "part": "Part II",
       "item_number": "9C",
       "item_title": "Disclosure Regarding Foreign Jurisdictions that Prevent Inspections",
-      "content_text": "Item 9C.\nDisclosure Regarding Foreign Jurisdictions that Prevent Inspections.\nNone.\nPART III",
-      "char_range": [
-        255549,
-        255643
-      ],
-      "status": "extracted"
+      "content_text": null,
+      "char_range": null,
+      "status": "not_applicable"
     },
     {
       "part": "Part III",
@@ -236,12 +224,9 @@
       "part": "Part IV",
       "item_number": "16",
       "item_title": "Form 10-K Summary",
-      "content_text": "Item 16.\nForm 10-K Summary\n\nNone.\nDENNY’S CORPORATION AND SUBSIDIARIES",
-      "char_range": [
-        277898,
-        277971
-      ],
-      "status": "extracted"
+      "content_text": null,
+      "char_range": null,
+      "status": "not_applicable"
     }
   ]
 }

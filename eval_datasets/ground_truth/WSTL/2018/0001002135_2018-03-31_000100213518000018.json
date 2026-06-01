@@ -33,12 +33,9 @@
       "part": "Part I",
       "item_number": "1B",
       "item_title": "Unresolved Staff Comments",
-      "content_text": "ITEM 1B.\nUNRESOLVED STAFF COMMENTS\n\nNone.\n-\n-\nTable of Contents",
-      "char_range": [
-        72633,
-        72698
-      ],
-      "status": "extracted"
+      "content_text": null,
+      "char_range": null,
+      "status": "not_applicable"
     },
     {
       "part": "Part I",
@@ -85,12 +82,9 @@
       "part": "Part II",
       "item_number": "6",
       "item_title": "Reserved",
-      "content_text": "ITEM 6.\nSELECTED FINANCIAL DATA\n\nNot applicable to smaller reporting companies.",
-      "char_range": [
-        85717,
-        85798
-      ],
-      "status": "extracted"
+      "content_text": null,
+      "char_range": null,
+      "status": "not_applicable"
     },
     {
       "part": "Part II",
@@ -145,12 +139,9 @@
       "part": "Part II",
       "item_number": "9B",
       "item_title": "Other Information",
-      "content_text": "ITEM 9B.\nOTHER INFORMATION\n\nNone.\n-\n-\nTable of Contents\nPART III",
-      "char_range": [
-        141700,
-        141766
-      ],
-      "status": "extracted"
+      "content_text": null,
+      "char_range": null,
+      "status": "not_applicable"
     },
     {
       "part": "Part II",
@@ -230,12 +221,9 @@
       "part": "Part IV",
       "item_number": "16",
       "item_title": "Form 10-K Summary",
-      "content_text": "",
-      "char_range": [
-        171704,
-        145456
-      ],
-      "status": "extracted"
+      "content_text": null,
+      "char_range": null,
+      "status": "not_applicable"
     }
   ]
 }

@@ -123,12 +123,9 @@
       "part": "Part II",
       "item_number": "9",
       "item_title": "Changes in and Disagreements with Accountants on Accounting and Financial Disclosure",
-      "content_text": "Item 9.\n\nChanges in and Disagreements With Accountants on Accounting and Financial Disclosure\nNone.",
-      "char_range": [
-        513269,
-        513369
-      ],
-      "status": "extracted"
+      "content_text": null,
+      "char_range": null,
+      "status": "not_applicable"
     },
     {
       "part": "Part II",

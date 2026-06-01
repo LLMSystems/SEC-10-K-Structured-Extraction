@@ -33,12 +33,9 @@
       "part": "Part I",
       "item_number": "1B",
       "item_title": "Unresolved Staff Comments",
-      "content_text": "Item 1B.\nUNRESOLVED STAFF COMMENTS\nNone.\n​\n​\n​",
-      "char_range": [
-        119587,
-        119634
-      ],
-      "status": "extracted"
+      "content_text": null,
+      "char_range": null,
+      "status": "not_applicable"
     },
     {
       "part": "Part I",
@@ -129,12 +126,9 @@
       "part": "Part II",
       "item_number": "9",
       "item_title": "Changes in and Disagreements with Accountants on Accounting and Financial Disclosure",
-      "content_text": "Item 9.\nCHANGES IN AND DISAGREEMENTS WITH ACCOUNTANTS ON ACCOUNTING AND FINANCIAL DISCLOSURE\nNone.\n​",
-      "char_range": [
-        455316,
-        455417
-      ],
-      "status": "extracted"
+      "content_text": null,
+      "char_range": null,
+      "status": "not_applicable"
     },
     {
       "part": "Part II",
@@ -162,12 +156,9 @@
       "part": "Part II",
       "item_number": "9C",
       "item_title": "Disclosure Regarding Foreign Jurisdictions that Prevent Inspections",
-      "content_text": "Item 9C.\nDISCLOSURE REGARDING FOREIGN JURISDICTIONS THAT PREVENT INSPECTIONS\n​\nNot Applicable.\n​\n​",
-      "char_range": [
-        459856,
-        459955
-      ],
-      "status": "extracted"
+      "content_text": null,
+      "char_range": null,
+      "status": "not_applicable"
     },
     {
       "part": "Part III",
@@ -239,12 +230,9 @@
       "part": "Part IV",
       "item_number": "16",
       "item_title": "Form 10-K Summary",
-      "content_text": "Item 16.\nFORM 10-K SUMMARY\nNone.\n​\n​\n​\n​\n\n\n​",
-      "char_range": [
-        480820,
-        480865
-      ],
-      "status": "extracted"
+      "content_text": null,
+      "char_range": null,
+      "status": "not_applicable"
     }
   ]
 }

@@ -224,12 +224,9 @@
       "part": "Part IV",
       "item_number": "16",
       "item_title": "Form 10-K Summary",
-      "content_text": "ITEM 16.\nSUMMARY\n\n\nNone",
-      "char_range": [
-        1007669,
-        1007695
-      ],
-      "status": "extracted"
+      "content_text": null,
+      "char_range": null,
+      "status": "not_applicable"
     }
   ]
 }

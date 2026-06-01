@@ -33,12 +33,9 @@
       "part": "Part I",
       "item_number": "1B",
       "item_title": "Unresolved Staff Comments",
-      "content_text": "ITEM 1B.\nUNRESOLVED STAFF COMMENTS\n\nNone.\n-\n-\nTable of Contents",
-      "char_range": [
-        69767,
-        69832
-      ],
-      "status": "extracted"
+      "content_text": null,
+      "char_range": null,
+      "status": "not_applicable"
     },
     {
       "part": "Part I",
@@ -148,12 +145,9 @@
       "part": "Part II",
       "item_number": "9B",
       "item_title": "Other Information",
-      "content_text": "ITEM 9B.\nOTHER INFORMATION\n\nNone.\n-\n-\nTable of Contents\nPART III",
-      "char_range": [
-        178061,
-        178127
-      ],
-      "status": "extracted"
+      "content_text": null,
+      "char_range": null,
+      "status": "not_applicable"
     },
     {
       "part": "Part II",

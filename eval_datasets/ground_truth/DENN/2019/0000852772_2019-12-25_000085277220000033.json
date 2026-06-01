@@ -33,12 +33,9 @@
       "part": "Part I",
       "item_number": "1B",
       "item_title": "Unresolved Staff Comments",
-      "content_text": "Item 1B.\nUnresolved Staff Comments\n\nNone.",
-      "char_range": [
-        116892,
-        116935
-      ],
-      "status": "extracted"
+      "content_text": null,
+      "char_range": null,
+      "status": "not_applicable"
     },
     {
       "part": "Part I",
@@ -123,18 +120,15 @@
         289050,
         289181
       ],
-      "status": "extracted"
+      "status": "incorporated_by_reference"
     },
     {
       "part": "Part II",
       "item_number": "9",
       "item_title": "Changes in and Disagreements with Accountants on Accounting and Financial Disclosure",
-      "content_text": "Item 9.\n\nChanges in and Disagreements with Accountants on Accounting and Financial Disclosure\n\nNone.",
-      "char_range": [
-        289181,
-        289283
-      ],
-      "status": "extracted"
+      "content_text": null,
+      "char_range": null,
+      "status": "not_applicable"
     },
     {
       "part": "Part II",
@@ -151,12 +145,9 @@
       "part": "Part II",
       "item_number": "9B",
       "item_title": "Other Information",
-      "content_text": "Item 9B.\nOther Information\n\nNone.\n\nPART III",
-      "char_range": [
-        296987,
-        297032
-      ],
-      "status": "extracted"
+      "content_text": null,
+      "char_range": null,
+      "status": "not_applicable"
     },
     {
       "part": "Part II",
@@ -236,12 +227,9 @@
       "part": "Part IV",
       "item_number": "16",
       "item_title": "Form 10-K Summary",
-      "content_text": "Item 16.\nForm 10-K Summary\n\nNone.\nDENNY’S CORPORATION AND SUBSIDIARIES",
-      "char_range": [
-        321536,
-        321609
-      ],
-      "status": "extracted"
+      "content_text": null,
+      "char_range": null,
+      "status": "not_applicable"
     }
   ]
 }
