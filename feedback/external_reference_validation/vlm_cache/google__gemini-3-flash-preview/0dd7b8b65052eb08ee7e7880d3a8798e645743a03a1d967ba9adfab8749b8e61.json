@@ -1,0 +1,9 @@
+{
+  "base_url": "https://openrouter.ai/api/v1",
+  "created_at": 1780695271,
+  "image_sha256": "d240bff2c41812393dcd33c1cf24d718a1888a64aa7544e0f52f9e4d044aafe4",
+  "model": "google/gemini-3-flash-preview",
+  "prompt": "You are shown one page from a SEC 10-K filing rendered as an image.\nThis page contains the BEGINNING of \"Item 7A. Quantitative and Qualitative Disclosures About Market Risk\".\nFind the \"Item 7A\" heading, then transcribe VERBATIM the first 5 lines of text that come immediately after it. Include any report title, addressee, or sub-heading exactly as printed — do NOT skip them; only ignore page running-headers, page numbers, and footers.\nOutput ONLY the transcribed text, no commentary, no quotes, no formatting.",
+  "source_path": "tier2\\dataset\\NFLX_2025\\pages\\page_034.png",
+  "text": "We are exposed to market risks related to interest rate changes, which affect the market values of our investments and debt, as well as foreign\ncurrency fluctuations.\nInterest Rate Risk\nAt December 31, 2025, our cash equivalents were generally invested in money market funds and time deposits. Interest paid on such funds\nfluctuates with the prevailing interest rate."
+}

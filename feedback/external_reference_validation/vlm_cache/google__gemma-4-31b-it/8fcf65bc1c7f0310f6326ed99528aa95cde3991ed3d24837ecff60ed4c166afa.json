@@ -1,0 +1,9 @@
+{
+  "base_url": "https://openrouter.ai/api/v1",
+  "created_at": 1780684688,
+  "image_sha256": "62148fefd4f08c7409eaa53c9d09ece898ce58108805d74049fa9d50efdc2316",
+  "model": "google/gemma-4-31b-it",
+  "prompt": "You are shown one page from a SEC 10-K filing rendered as an image.\nThe text of Item \"3. Legal Proceedings\" ENDS somewhere on this page; the next section is \"Item 4. Mine Safety Disclosures\".\nFind where Item 3 ends: right before the \"Item 4\" heading if that heading appears on this page, otherwise at the very bottom of the page.\nTranscribe VERBATIM the 5 lines of Item 3 that come immediately BEFORE that ending point (its final lines). Give the running prose closest to the end — do NOT transcribe lines from the top or middle of the page, and do NOT transcribe a data table or figure; if the very end is a table, give the prose just before it. Ignore running headers, page numbers, footers.\nOutput ONLY the transcribed text, no commentary, no quotes, no formatting.",
+  "source_path": "tier2/dataset/WMT_2026/pages/page_030.png",
+  "text": "Federal Trade Commission and State Attorneys General Driver Performance Litigation: Federal Trade Commission, et al. v. Walmart Inc.,\nN.D. Cal., 2/26/26.\nMexico Antitrust Matter: Comisión Federal de Competencia Económica de México, Investigative Inquiry v. Nova Wal-Mart de México, S.de\nR.L. de C.V. (Docket IO-002-2020, consolidated with Docket OE-026-2020), Mexico, 10/6/23.\nIndia Antitrust Matter: Competition Commission of India, Case No. 40 of 2019, order initiating investigation 1/13/20."
+}

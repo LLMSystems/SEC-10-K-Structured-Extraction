@@ -1,0 +1,9 @@
+{
+  "base_url": "https://openrouter.ai/api/v1",
+  "created_at": 1780694051,
+  "image_sha256": "fc0e746deb99b5bff97732e994c7d6e7215a5f9399f857d5ef3fd9b358ac6d9b",
+  "model": "qwen/qwen3.5-122b-a10b",
+  "prompt": "You are shown one page from a SEC 10-K filing rendered as an image.\nItem \"1. Business\" ENDS on this page; the next section is \"Item 1A. Risk Factors\".\nFirst locate the bottom edge of Item 1's text:\n- If the \"Item 1A\" heading is visible on this page, Item 1 ends on the line directly ABOVE that heading.\n- Otherwise Item 1 runs all the way to the very bottom of the page.\nThen transcribe VERBATIM the LAST 5 lines of Item 1 at that bottom edge — the FINAL lines right before the section ends, NOT lines from the top or middle of the page. Ignore running headers, page numbers, footers.\nOutput ONLY the transcribed text, no commentary, no quotes, no formatting.",
+  "source_path": "tier2\\dataset\\GDC_2023\\pages\\page_023.png",
+  "text": "From time to time, we may be involved in various claims and legal proceedings arising in the ordinary course of business. None of our Company or our subsidiaries is currently a party to any such claims or proceedings which, if decided adversely to the Company, would either, individually or in the aggregate, have a material adverse effect on our business, financial condition, results of operations or cash flows."
+}

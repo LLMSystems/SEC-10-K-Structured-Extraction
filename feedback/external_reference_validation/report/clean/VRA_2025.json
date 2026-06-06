@@ -1,0 +1,95 @@
+{
+  "label": "VRA_2025",
+  "ticker": "VRA",
+  "year": "2025",
+  "cik": "0001495320",
+  "accession_number": "0001495320-25-000019",
+  "company_name": "Vera Bradley, Inc.",
+  "pdf": "tier2/out/0001495320_2025-02-01_000149532025000019/0001495320_2025-02-01_000149532025000019.pdf",
+  "pdf_pages": 87,
+  "n_extracted": 11,
+  "n_exact": 11,
+  "n_fuzzy": 0,
+  "n_miss": 0,
+  "out_of_order": 0,
+  "items": [
+    {
+      "item": "1",
+      "page": 5,
+      "match": "exact",
+      "flag": null,
+      "snippet": "in july 2019, vera bradley, inc. acquired a 75% in"
+    },
+    {
+      "item": "1A",
+      "page": 16,
+      "match": "exact",
+      "flag": null,
+      "snippet": "you should carefully consider all of the informati"
+    },
+    {
+      "item": "1C",
+      "page": 28,
+      "match": "exact",
+      "flag": null,
+      "snippet": "cyber risk management and strategy"
+    },
+    {
+      "item": "2",
+      "page": 28,
+      "match": "exact",
+      "flag": null,
+      "snippet": "location primary use approximate square footage le"
+    },
+    {
+      "item": "3",
+      "page": 29,
+      "match": "exact",
+      "flag": null,
+      "snippet": "item 3. legal proceedings we may be involved from "
+    },
+    {
+      "item": "5",
+      "page": 30,
+      "match": "exact",
+      "flag": null,
+      "snippet": "our common stock is listed on the nasdaq global se"
+    },
+    {
+      "item": "7",
+      "page": 32,
+      "match": "exact",
+      "flag": null,
+      "snippet": "you should read the following discussion in conjun"
+    },
+    {
+      "item": "7A",
+      "page": 42,
+      "match": "exact",
+      "flag": null,
+      "snippet": "we are subject to interest rate risk in connection"
+    },
+    {
+      "item": "8",
+      "page": 43,
+      "match": "exact",
+      "flag": null,
+      "snippet": "index to consolidated financial statements"
+    },
+    {
+      "item": "9A",
+      "page": 80,
+      "match": "exact",
+      "flag": null,
+      "snippet": "our management, with the participation of our chie"
+    },
+    {
+      "item": "15",
+      "page": 83,
+      "match": "exact",
+      "flag": null,
+      "snippet": "(1) consolidated financial statements"
+    }
+  ],
+  "category": "clean"
+}

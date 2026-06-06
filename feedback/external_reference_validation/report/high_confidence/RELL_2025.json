@@ -1,0 +1,95 @@
+{
+  "label": "RELL_2025",
+  "ticker": "RELL",
+  "year": "2025",
+  "cik": "0000355948",
+  "accession_number": "0000950170-25-101785",
+  "company_name": "RICHARDSON ELECTRONICS, LTD.",
+  "pdf": "tier2/out/0000355948_2025-05-31_000095017025101785/0000355948_2025-05-31_000095017025101785.pdf",
+  "pdf_pages": 75,
+  "n_extracted": 11,
+  "n_exact": 11,
+  "n_fuzzy": 0,
+  "n_miss": 0,
+  "out_of_order": 0,
+  "items": [
+    {
+      "item": "1",
+      "page": 4,
+      "match": "exact",
+      "flag": null,
+      "snippet": "richardson electronics, ltd. (the \"company,\" \"we,\""
+    },
+    {
+      "item": "1A",
+      "page": 9,
+      "match": "exact",
+      "flag": null,
+      "snippet": "business and operational risks"
+    },
+    {
+      "item": "1C",
+      "page": 18,
+      "match": "exact",
+      "flag": null,
+      "snippet": "risk management and strategy"
+    },
+    {
+      "item": "2",
+      "page": 20,
+      "match": "exact",
+      "flag": null,
+      "snippet": "our facility locations, their primary use and segm"
+    },
+    {
+      "item": "5",
+      "page": 21,
+      "match": "exact",
+      "flag": null,
+      "snippet": "unregistered sales of equity securities"
+    },
+    {
+      "item": "7",
+      "page": 23,
+      "match": "exact",
+      "flag": null,
+      "snippet": "the following discussion should be read in conjunc"
+    },
+    {
+      "item": "7A",
+      "page": 34,
+      "match": "exact",
+      "flag": null,
+      "snippet": "risk management and market sensitive financial ins"
+    },
+    {
+      "item": "8",
+      "page": 35,
+      "match": "exact",
+      "flag": null,
+      "snippet": "report of independent registered public accounting"
+    },
+    {
+      "item": "9A",
+      "page": 65,
+      "match": "exact",
+      "flag": null,
+      "snippet": "management’s report on internal control over finan"
+    },
+    {
+      "item": "9B",
+      "page": 68,
+      "match": "exact",
+      "flag": null,
+      "snippet": "10b5-1 trading arrangement"
+    },
+    {
+      "item": "15",
+      "page": 71,
+      "match": "exact",
+      "flag": null,
+      "snippet": "(a) list of documents filed as a part of this repo"
+    }
+  ],
+  "category": "clean"
+}

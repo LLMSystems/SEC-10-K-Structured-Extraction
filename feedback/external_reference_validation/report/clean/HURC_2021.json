@@ -1,0 +1,109 @@
+{
+  "label": "HURC_2021",
+  "ticker": "HURC",
+  "year": "2021",
+  "cik": "0000315374",
+  "accession_number": "0001558370-22-000137",
+  "company_name": "HURCO COMPANIES INC",
+  "pdf": "tier2/out/0000315374_2021-10-31_000155837022000137/0000315374_2021-10-31_000155837022000137.pdf",
+  "pdf_pages": 100,
+  "n_extracted": 13,
+  "n_exact": 13,
+  "n_fuzzy": 0,
+  "n_miss": 0,
+  "out_of_order": 0,
+  "items": [
+    {
+      "item": "1",
+      "page": 5,
+      "match": "exact",
+      "flag": null,
+      "snippet": "hurco companies, inc. is an international, industr"
+    },
+    {
+      "item": "1A",
+      "page": 21,
+      "match": "exact",
+      "flag": null,
+      "snippet": "in this section, we describe what we believe to be"
+    },
+    {
+      "item": "2",
+      "page": 32,
+      "match": "exact",
+      "flag": null,
+      "snippet": "the following table sets forth the principal use, "
+    },
+    {
+      "item": "3",
+      "page": 33,
+      "match": "exact",
+      "flag": null,
+      "snippet": "from time to time, we are involved in various clai"
+    },
+    {
+      "item": "4",
+      "page": 33,
+      "match": "exact",
+      "flag": null,
+      "snippet": "information about our executive officers"
+    },
+    {
+      "item": "5",
+      "page": 34,
+      "match": "exact",
+      "flag": null,
+      "snippet": "market for the registrant's common equity, related"
+    },
+    {
+      "item": "6",
+      "page": 35,
+      "match": "exact",
+      "flag": null,
+      "snippet": "the selected financial data presented below has be"
+    },
+    {
+      "item": "7",
+      "page": 36,
+      "match": "exact",
+      "flag": null,
+      "snippet": "hurco companies, inc. is an international, industr"
+    },
+    {
+      "item": "7A",
+      "page": 51,
+      "match": "exact",
+      "flag": null,
+      "snippet": "interest on borrowings under our bank credit agree"
+    },
+    {
+      "item": "8",
+      "page": 55,
+      "match": "exact",
+      "flag": null,
+      "snippet": "report of independent registered public accounting"
+    },
+    {
+      "item": "9A",
+      "page": 92,
+      "match": "exact",
+      "flag": null,
+      "snippet": "there have been no changes in our internal control"
+    },
+    {
+      "item": "9B",
+      "page": 92,
+      "match": "exact",
+      "flag": null,
+      "snippet": "during the fourth quarter of fiscal 2021, the audi"
+    },
+    {
+      "item": "15",
+      "page": 95,
+      "match": "exact",
+      "flag": null,
+      "snippet": "exhibits and financial statement schedules"
+    }
+  ],
+  "category": "clean"
+}

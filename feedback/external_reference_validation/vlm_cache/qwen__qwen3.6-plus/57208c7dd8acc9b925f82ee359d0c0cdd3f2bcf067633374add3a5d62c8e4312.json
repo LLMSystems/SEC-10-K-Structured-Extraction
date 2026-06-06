@@ -1,0 +1,9 @@
+{
+  "base_url": "https://openrouter.ai/api/v1",
+  "created_at": 1780695744,
+  "image_sha256": "5c67f00d53d6ee94da9751d2df02dd890cf072819c5af496f2600a269ce3b07d",
+  "model": "qwen/qwen3.6-plus",
+  "prompt": "You are shown one page from a SEC 10-K filing rendered as an image.\nThis page contains the BEGINNING of \"Item 7. Management's Discussion and Analysis of Financial Condition and Results of Operations\".\nFind the \"Item 7\" heading, then transcribe VERBATIM the first 5 lines of text that come immediately after it. Include any report title, addressee, or sub-heading exactly as printed — do NOT skip them; only ignore page running-headers, page numbers, and footers.\nOutput ONLY the transcribed text, no commentary, no quotes, no formatting.",
+  "source_path": "tier2\\dataset\\RELL_2025\\pages\\page_023.png",
+  "text": "The following discussion should be read in conjunction with the consolidated financial statements and related notes.\n\nManagement’s Discussion and Analysis of Financial Condition and Results of Operations (“MD&A”) is intended to assist the reader in\nbetter understanding our business, results of operations, financial condition, changes in financial condition, critical accounting estimates and\nsignificant developments. MD&A is provided as a supplement to, and should be read in conjunction with, our consolidated financial statements and\nthe accompanying notes appearing elsewhere in this filing. This section is organized as follows:"
+}

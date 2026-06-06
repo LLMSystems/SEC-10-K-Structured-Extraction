@@ -1,0 +1,9 @@
+{
+  "base_url": "https://openrouter.ai/api/v1",
+  "created_at": 1780697164,
+  "image_sha256": "ed2c22e71563c284cb0420d0d0436a7b89a4efc850310e5134ef33e4be7b6f70",
+  "model": "google/gemini-2.5-pro",
+  "prompt": "You are shown one page from a SEC 10-K filing rendered as an image.\nItem \"1A. Risk Factors\" ENDS on this page; the next section is \"Item 1B. Unresolved Staff Comments\".\nFirst locate the bottom edge of Item 1A's text:\n- If the \"Item 1B\" heading is visible on this page, Item 1A ends on the line directly ABOVE that heading.\n- Otherwise Item 1A runs all the way to the very bottom of the page.\nThen transcribe VERBATIM the LAST 5 lines of Item 1A at that bottom edge — the FINAL lines right before the section ends, NOT lines from the top or middle of the page. Ignore running headers, page numbers, footers.\nOutput ONLY the transcribed text, no commentary, no quotes, no formatting.",
+  "source_path": "tier2\\dataset\\NFLX_2025\\pages\\page_019.png",
+  "text": "transaction, and the WBD transaction may disrupt our current plans or operations.\nThe success of the WBD transaction will depend, in part, on our ability to successfully integrate the acquired businesses and realize the\nanticipated benefits, including synergies. Difficulties in integrating the acquired businesses may result in the failure to realize anticipated synergies in\nthe expected timeframes, in operational challenges, and in the diversion of management's attention from ongoing business opportunities, challenges\nand risks, as well as in unforeseen expenses associated with the WBD transaction, which may have an adverse impact on our financial results."
+}

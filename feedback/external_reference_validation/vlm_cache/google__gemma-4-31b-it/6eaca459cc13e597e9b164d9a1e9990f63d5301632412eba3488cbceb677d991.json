@@ -1,0 +1,9 @@
+{
+  "base_url": "https://openrouter.ai/api/v1",
+  "created_at": 1780690761,
+  "image_sha256": "4a1ce86ff3f5f6f69f64582e3cd5e9dfe4fdab49983b42bae6c8f149241c026d",
+  "model": "google/gemma-4-31b-it",
+  "prompt": "You are shown one page from a SEC 10-K filing rendered as an image.\nThis page contains the BEGINNING of \"Item 12. Security Ownership of Certain Beneficial Owners and Management and Related Stockholder Matters\".\nFind the \"Item 12\" heading, then transcribe VERBATIM the first 5 lines of text that come immediately after it. Include any report title, addressee, or sub-heading exactly as printed — do NOT skip them; only ignore page running-headers, page numbers, and footers.\nOutput ONLY the transcribed text, no commentary, no quotes, no formatting.",
+  "source_path": "tier2\\dataset\\GDC_2023\\pages\\page_070.png",
+  "text": "The following table sets forth information regarding the beneficial ownership of our common stock as of April 1, 2024 based on information obtained\nfrom the persons named below, with respect to the beneficial ownership of shares of our common stock, by:\n• each person known by us to be the beneficial owner of more than 5% of our outstanding shares of common stock;\n• each of our executive officers and directors that beneficially owns shares of our common stock; and\n• all our executive officers and directors as a group."
+}

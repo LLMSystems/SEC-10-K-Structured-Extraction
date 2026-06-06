@@ -1,0 +1,9 @@
+{
+  "base_url": "https://openrouter.ai/api/v1",
+  "created_at": 1780681670,
+  "image_sha256": "31bcc2e60af8a954b2d23b8d305cc967f216ed6f5c027dab9ce3f682f1816eb3",
+  "model": "google/gemma-4-31b-it",
+  "prompt": "You are shown one page from a SEC 10-K filing rendered as an image.\nThis page contains the END of \"Item 9B. Other Information\". The next section is \"Item 15. Exhibits, Financial Statement Schedules\".\nTranscribe VERBATIM the last 5 lines of \"Item 9B\" body text before the next item begins:\nif the \"Item 15\" heading appears on this page, take the 5 lines just before it; otherwise Item 9B continues to the bottom, so take the last 5 lines of the page (ignore running headers, page numbers, footers).\nRespond with ONLY a JSON object: {\"lines\": [\"line 1\", \"line 2\", ...]}",
+  "source_path": "tier2/dataset/RELL_2025/pages/page_070.png",
+  "text": "```json\n{\"lines\": [\"initial ownership and reports of changes in ownership in RELL common stock. To the best of our knowledge, RELL's directors, executive officers\", \"and 10 percent stockholders complied with the requirements of Section 16(a) in a timely manner during fiscal 2025.\", \"ITEM 13. Certain Relationships and Related Transactions and Director Independence\", \"Information concerning certain relationships and related transactions will be contained in our Proxy Statement to be issued in connection\", \"with our Annual Meeting of Stockholders scheduled to be held on October 7, 2025 and is incorporated herein by reference.\"]}\n```"
+}

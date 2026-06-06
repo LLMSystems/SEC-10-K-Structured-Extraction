@@ -1,0 +1,9 @@
+{
+  "base_url": "https://openrouter.ai/api/v1",
+  "created_at": 1780694085,
+  "image_sha256": "31dfb453caa9d28bfe251cf4a1fdb770bebb952b2e3eebc529ef854df2e54f90",
+  "model": "qwen/qwen3.5-122b-a10b",
+  "prompt": "You are shown one page from a SEC 10-K filing rendered as an image.\nItem \"5. Market for Registrant's Common Equity, Related Stockholder Matters and Issuer Purchases of Equity Securities\" ENDS on this page; the next section is \"Item 6. Reserved\".\nFirst locate the bottom edge of Item 5's text:\n- If the \"Item 6\" heading is visible on this page, Item 5 ends on the line directly ABOVE that heading.\n- Otherwise Item 5 runs all the way to the very bottom of the page.\nThen transcribe VERBATIM the LAST 5 lines of Item 5 at that bottom edge — the FINAL lines right before the section ends, NOT lines from the top or middle of the page. Ignore running headers, page numbers, footers.\nOutput ONLY the transcribed text, no commentary, no quotes, no formatting.",
+  "source_path": "tier2\\dataset\\NFLX_2025\\pages\\page_023.png",
+  "text": "Index and the stocks represented in the RDG Internet Composite Index, respectively, and reinvestment of any dividends. Historical stock price\nperformance should not be relied upon as an indication of future stock price performance.\n\nCumulative Return.jpg\n\nItem 6.      [Reserved]"
+}

@@ -1,0 +1,377 @@
+[
+  {
+    "label": "GDC_2023",
+    "ticker": "GDC",
+    "year": "2023",
+    "company_name": "GD Culture Group Ltd",
+    "pdf_pages": 121,
+    "n_items": 16,
+    "n_unique": 16,
+    "confidence": 1.0,
+    "min_page_gap": 0,
+    "detail": [
+      {
+        "item": "1",
+        "page": 6,
+        "hit_pages": 1
+      },
+      {
+        "item": "1A",
+        "page": 24,
+        "hit_pages": 1
+      },
+      {
+        "item": "1C",
+        "page": 45,
+        "hit_pages": 1
+      },
+      {
+        "item": "2",
+        "page": 45,
+        "hit_pages": 1
+      },
+      {
+        "item": "3",
+        "page": 45,
+        "hit_pages": 1
+      },
+      {
+        "item": "5",
+        "page": 46,
+        "hit_pages": 1
+      },
+      {
+        "item": "7",
+        "page": 49,
+        "hit_pages": 1
+      },
+      {
+        "item": "7A",
+        "page": 58,
+        "hit_pages": 1
+      },
+      {
+        "item": "9",
+        "page": 58,
+        "hit_pages": 1
+      },
+      {
+        "item": "9A",
+        "page": 58,
+        "hit_pages": 1
+      },
+      {
+        "item": "10",
+        "page": 61,
+        "hit_pages": 1
+      },
+      {
+        "item": "11",
+        "page": 67,
+        "hit_pages": 1
+      },
+      {
+        "item": "12",
+        "page": 70,
+        "hit_pages": 1
+      },
+      {
+        "item": "13",
+        "page": 72,
+        "hit_pages": 1
+      },
+      {
+        "item": "14",
+        "page": 73,
+        "hit_pages": 1
+      },
+      {
+        "item": "15",
+        "page": 74,
+        "hit_pages": 1
+      }
+    ]
+  },
+  {
+    "label": "TSLA_2023",
+    "ticker": "TSLA",
+    "year": "2023",
+    "company_name": "Tesla, Inc.",
+    "pdf_pages": 114,
+    "n_items": 12,
+    "n_unique": 12,
+    "confidence": 1.0,
+    "min_page_gap": 0,
+    "detail": [
+      {
+        "item": "1",
+        "page": 5,
+        "hit_pages": 1
+      },
+      {
+        "item": "1A",
+        "page": 15,
+        "hit_pages": 1
+      },
+      {
+        "item": "1C",
+        "page": 30,
+        "hit_pages": 1
+      },
+      {
+        "item": "2",
+        "page": 31,
+        "hit_pages": 1
+      },
+      {
+        "item": "3",
+        "page": 31,
+        "hit_pages": 1
+      },
+      {
+        "item": "5",
+        "page": 32,
+        "hit_pages": 1
+      },
+      {
+        "item": "7",
+        "page": 34,
+        "hit_pages": 1
+      },
+      {
+        "item": "7A",
+        "page": 46,
+        "hit_pages": 1
+      },
+      {
+        "item": "8",
+        "page": 47,
+        "hit_pages": 1
+      },
+      {
+        "item": "9A",
+        "page": 95,
+        "hit_pages": 1
+      },
+      {
+        "item": "9B",
+        "page": 96,
+        "hit_pages": 1
+      },
+      {
+        "item": "15",
+        "page": 98,
+        "hit_pages": 1
+      }
+    ]
+  },
+  {
+    "label": "WMT_2026",
+    "ticker": "WMT",
+    "year": "2026",
+    "company_name": "Walmart Inc.",
+    "pdf_pages": 87,
+    "n_items": 12,
+    "n_unique": 12,
+    "confidence": 1.0,
+    "min_page_gap": 1,
+    "detail": [
+      {
+        "item": "1",
+        "page": 6,
+        "hit_pages": 1
+      },
+      {
+        "item": "1A",
+        "page": 13,
+        "hit_pages": 1
+      },
+      {
+        "item": "1C",
+        "page": 27,
+        "hit_pages": 1
+      },
+      {
+        "item": "2",
+        "page": 29,
+        "hit_pages": 1
+      },
+      {
+        "item": "3",
+        "page": 30,
+        "hit_pages": 1
+      },
+      {
+        "item": "5",
+        "page": 31,
+        "hit_pages": 1
+      },
+      {
+        "item": "7",
+        "page": 33,
+        "hit_pages": 1
+      },
+      {
+        "item": "7A",
+        "page": 46,
+        "hit_pages": 1
+      },
+      {
+        "item": "8",
+        "page": 48,
+        "hit_pages": 1
+      },
+      {
+        "item": "9A",
+        "page": 80,
+        "hit_pages": 1
+      },
+      {
+        "item": "9B",
+        "page": 81,
+        "hit_pages": 1
+      },
+      {
+        "item": "15",
+        "page": 83,
+        "hit_pages": 1
+      }
+    ]
+  },
+  {
+    "label": "NFLX_2025",
+    "ticker": "NFLX",
+    "year": "2025",
+    "company_name": "NETFLIX INC",
+    "pdf_pages": 83,
+    "n_items": 11,
+    "n_unique": 11,
+    "confidence": 1.0,
+    "min_page_gap": 0,
+    "detail": [
+      {
+        "item": "1",
+        "page": 4,
+        "hit_pages": 1
+      },
+      {
+        "item": "1A",
+        "page": 7,
+        "hit_pages": 1
+      },
+      {
+        "item": "1C",
+        "page": 19,
+        "hit_pages": 1
+      },
+      {
+        "item": "2",
+        "page": 21,
+        "hit_pages": 1
+      },
+      {
+        "item": "3",
+        "page": 21,
+        "hit_pages": 1
+      },
+      {
+        "item": "5",
+        "page": 22,
+        "hit_pages": 1
+      },
+      {
+        "item": "7",
+        "page": 24,
+        "hit_pages": 1
+      },
+      {
+        "item": "7A",
+        "page": 34,
+        "hit_pages": 1
+      },
+      {
+        "item": "9A",
+        "page": 37,
+        "hit_pages": 1
+      },
+      {
+        "item": "9B",
+        "page": 39,
+        "hit_pages": 1
+      },
+      {
+        "item": "15",
+        "page": 41,
+        "hit_pages": 1
+      }
+    ]
+  },
+  {
+    "label": "RELL_2025",
+    "ticker": "RELL",
+    "year": "2025",
+    "company_name": "RICHARDSON ELECTRONICS, LTD.",
+    "pdf_pages": 75,
+    "n_items": 11,
+    "n_unique": 11,
+    "confidence": 1.0,
+    "min_page_gap": 1,
+    "detail": [
+      {
+        "item": "1",
+        "page": 4,
+        "hit_pages": 1
+      },
+      {
+        "item": "1A",
+        "page": 9,
+        "hit_pages": 1
+      },
+      {
+        "item": "1C",
+        "page": 18,
+        "hit_pages": 1
+      },
+      {
+        "item": "2",
+        "page": 20,
+        "hit_pages": 1
+      },
+      {
+        "item": "5",
+        "page": 21,
+        "hit_pages": 1
+      },
+      {
+        "item": "7",
+        "page": 23,
+        "hit_pages": 1
+      },
+      {
+        "item": "7A",
+        "page": 34,
+        "hit_pages": 1
+      },
+      {
+        "item": "8",
+        "page": 35,
+        "hit_pages": 1
+      },
+      {
+        "item": "9A",
+        "page": 65,
+        "hit_pages": 1
+      },
+      {
+        "item": "9B",
+        "page": 68,
+        "hit_pages": 1
+      },
+      {
+        "item": "15",
+        "page": 71,
+        "hit_pages": 1
+      }
+    ]
+  }
+]

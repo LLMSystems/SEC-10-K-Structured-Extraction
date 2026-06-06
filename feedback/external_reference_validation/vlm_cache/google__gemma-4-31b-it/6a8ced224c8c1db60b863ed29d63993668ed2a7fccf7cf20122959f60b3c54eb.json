@@ -1,0 +1,9 @@
+{
+  "base_url": "https://openrouter.ai/api/v1",
+  "created_at": 1780684682,
+  "image_sha256": "eadab10e0847b2fe6ac56f2d7366465b8dd2363b08751f4a417b7ce499ecf0a6",
+  "model": "google/gemma-4-31b-it",
+  "prompt": "You are shown one page from a SEC 10-K filing rendered as an image.\nThe text of Item \"9A. Controls and Procedures\" ENDS somewhere on this page; the next section is \"Item 9B. Other Information\".\nFind where Item 9A ends: right before the \"Item 9B\" heading if that heading appears on this page, otherwise at the very bottom of the page.\nTranscribe VERBATIM the 5 lines of Item 9A that come immediately BEFORE that ending point (its final lines). Give the running prose closest to the end — do NOT transcribe lines from the top or middle of the page, and do NOT transcribe a data table or figure; if the very end is a table, give the prose just before it. Ignore running headers, page numbers, footers.\nOutput ONLY the transcribed text, no commentary, no quotes, no formatting.",
+  "source_path": "tier2/dataset/WMT_2026/pages/page_080.png",
+  "text": "There have been no changes in the Company's internal control over financial reporting as of January 31, 2026, that have materially affected, or are\nreasonably likely to materially affect, the Company's internal control over financial reporting."
+}

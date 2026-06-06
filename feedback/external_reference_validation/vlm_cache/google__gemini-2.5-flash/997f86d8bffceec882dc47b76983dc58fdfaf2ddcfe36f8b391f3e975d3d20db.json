@@ -1,0 +1,9 @@
+{
+  "base_url": "https://openrouter.ai/api/v1",
+  "created_at": 1780695008,
+  "image_sha256": "9d555fde8aea9db94ca8dce859128975ea66dcd2cfc39e9de5d16e8f2e1c95bf",
+  "model": "google/gemini-2.5-flash",
+  "prompt": "You are shown one page from a SEC 10-K filing rendered as an image.\nThis page contains the BEGINNING of \"Item 9A. Controls and Procedures\".\nFind the \"Item 9A\" heading, then transcribe VERBATIM the first 5 lines of text that come immediately after it. Include any report title, addressee, or sub-heading exactly as printed — do NOT skip them; only ignore page running-headers, page numbers, and footers.\nOutput ONLY the transcribed text, no commentary, no quotes, no formatting.",
+  "source_path": "tier2\\dataset\\NFLX_2025\\pages\\page_037.png",
+  "text": "(a) Evaluation of Disclosure Controls and Procedures\nOur management, with the participation of our co-Chief Executive Officers and Chief Financial Officer, evaluated the effectiveness of our\ndisclosure controls and procedures (as defined in Rules 13a-15(e) and 15d-15(e) under the Exchange Act) as of the end of the period covered by this\nAnnual Report on Form 10-K. Based on that evaluation, our co-Chief Executive Officers and Chief Financial Officer concluded that our disclosure\ncontrols and procedures as of the end of the period covered by this Annual Report on Form 10-K were effective in providing reasonable assurance"
+}

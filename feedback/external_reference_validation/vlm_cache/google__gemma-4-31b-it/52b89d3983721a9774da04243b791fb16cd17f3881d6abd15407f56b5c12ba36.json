@@ -1,0 +1,9 @@
+{
+  "base_url": "https://openrouter.ai/api/v1",
+  "created_at": 1780690761,
+  "image_sha256": "a5e1fcff2769b0ab7257a73b736df48462f8e83203f85d6bf077454aedd0dbff",
+  "model": "google/gemma-4-31b-it",
+  "prompt": "You are shown one page from a SEC 10-K filing rendered as an image.\nItem \"13. Certain Relationships and Related Transactions, and Director Independence\" ENDS on this page; the next section is \"Item 14. Principal Accountant Fees and Services\".\nFirst locate the bottom edge of Item 13's text:\n- If the \"Item 14\" heading is visible on this page, Item 13 ends on the line directly ABOVE that heading.\n- Otherwise Item 13 runs all the way to the very bottom of the page.\nThen transcribe VERBATIM the LAST 5 lines of Item 13 at that bottom edge — the FINAL lines right before the section ends, NOT lines from the top or middle of the page. Ignore running headers, page numbers, footers.\nOutput ONLY the transcribed text, no commentary, no quotes, no formatting.",
+  "source_path": "tier2\\dataset\\GDC_2023\\pages\\page_072.png",
+  "text": "company’s board of directors, would interfere with the director’s exercise of independent judgment in carrying out the responsibilities of a director.\nOur board of directors has determined that Mr. Shuhaieng Zhang, Mr. Mingyue Cai and Mr. Yi Zhong are “independent directors” as defined in the\nNasdaq listing standards and applicable SEC rules. Our independent directors have regularly scheduled meetings at which only independent directors\nare present."
+}

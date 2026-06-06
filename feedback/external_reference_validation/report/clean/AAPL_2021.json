@@ -1,0 +1,95 @@
+{
+  "label": "AAPL_2021",
+  "ticker": "AAPL",
+  "year": "2021",
+  "cik": "0000320193",
+  "accession_number": "0000320193-21-000105",
+  "company_name": "Apple Inc.",
+  "pdf": "tier2/out/0000320193_2021-09-25_000032019321000105/0000320193_2021-09-25_000032019321000105.pdf",
+  "pdf_pages": 63,
+  "n_extracted": 11,
+  "n_exact": 11,
+  "n_fuzzy": 0,
+  "n_miss": 0,
+  "out_of_order": 0,
+  "items": [
+    {
+      "item": "1",
+      "page": 4,
+      "match": "exact",
+      "flag": null,
+      "snippet": "the company designs, manufactures and markets smar"
+    },
+    {
+      "item": "1A",
+      "page": 9,
+      "match": "exact",
+      "flag": null,
+      "snippet": "the company’s business, reputation, results of ope"
+    },
+    {
+      "item": "2",
+      "page": 20,
+      "match": "exact",
+      "flag": null,
+      "snippet": "the company’s headquarters are located in cupertin"
+    },
+    {
+      "item": "3",
+      "page": 20,
+      "match": "exact",
+      "flag": null,
+      "snippet": "the outcome of litigation is inherently uncertain."
+    },
+    {
+      "item": "5",
+      "page": 21,
+      "match": "exact",
+      "flag": null,
+      "snippet": "the company’s common stock is traded on the nasdaq"
+    },
+    {
+      "item": "7",
+      "page": 23,
+      "match": "exact",
+      "flag": null,
+      "snippet": "the following discussion should be read in conjunc"
+    },
+    {
+      "item": "7A",
+      "page": 29,
+      "match": "exact",
+      "flag": null,
+      "snippet": "interest rate and foreign currency risk management"
+    },
+    {
+      "item": "8",
+      "page": 31,
+      "match": "exact",
+      "flag": null,
+      "snippet": "index to consolidated financial statements page co"
+    },
+    {
+      "item": "9A",
+      "page": 58,
+      "match": "exact",
+      "flag": null,
+      "snippet": "inherent limitations over internal controls"
+    },
+    {
+      "item": "9B",
+      "page": 59,
+      "match": "exact",
+      "flag": null,
+      "snippet": "disclosure pursuant to section 13(r) of the exchan"
+    },
+    {
+      "item": "15",
+      "page": 60,
+      "match": "exact",
+      "flag": null,
+      "snippet": "documents filed as part of this report"
+    }
+  ],
+  "category": "clean"
+}

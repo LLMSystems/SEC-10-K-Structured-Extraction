@@ -1,0 +1,9 @@
+{
+  "base_url": "https://openrouter.ai/api/v1",
+  "created_at": 1780694070,
+  "image_sha256": "c1185fabb528313ba006a5d064590d34591e23e922f4c0d3f54401c9839e0ace",
+  "model": "qwen/qwen3.5-122b-a10b",
+  "prompt": "You are shown one page from a SEC 10-K filing rendered as an image.\nThis page contains the BEGINNING of \"Item 11. Executive Compensation\".\nFind the \"Item 11\" heading, then transcribe VERBATIM the first 5 lines of text that come immediately after it. Include any report title, addressee, or sub-heading exactly as printed — do NOT skip them; only ignore page running-headers, page numbers, and footers.\nOutput ONLY the transcribed text, no commentary, no quotes, no formatting.",
+  "source_path": "tier2\\dataset\\GDC_2023\\pages\\page_067.png",
+  "text": "The following table provides disclosure concerning all compensation paid for services to GDC in all capacities for our fiscal years ended December 31, 2023 and 2022 provided by (i) each person serving as our principal executive officer (“PEO”), (ii) each person serving as our principal financial officer (“PFO”) and (iii) our two most highly compensated executive officers other than our PEO and PFO whose total compensation exceeded $100,000 (collectively with the PEO, referred to as the “named executive officers” in this Executive Compensation section).\nSummary Compensation Table\nName and Principal Position\tFiscal Year\tSalary ($)\tBonus ($)\tStock Awards ($)\tOption Awards ($)\tOther Compensation ($)\tTotal ($)\nXiao Jian Wang (1)\t2023\t34,725\t65,275\t-\t-\t-\t100,000\n(CEO, President, Chairman of the Board, and Director)\t2022\t-\t-\t-\t-\t-\t-"
+}

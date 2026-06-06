@@ -1,0 +1,216 @@
+{
+  "label": "NFLX_2025",
+  "model": "google/gemini-3-flash-preview",
+  "threshold": 75,
+  "items": [
+    {
+      "item": "1",
+      "title": "Business",
+      "bucket": "prose",
+      "start_page": 4,
+      "end_page": 6,
+      "head": {
+        "ratio": 100.0,
+        "pass": true,
+        "pred": "ABOUT US\nNetflix, Inc. (“Netflix”, the “Company”, “registrant”, “we”, or “us”) is one of the world’s leading entertainment services offering TV series,\nfilms, games and live programming across a wide variety of genres and languages. Members can play, pause and resume watching as much as they\nwant, anytime, anywhere, and can change their plans at any time.\nOur core strategy is to grow our business ",
+        "gt": "about us netflix, inc. (“netflix”, the “company”, “registrant”, “we”, or “us”) is one of the world’s leading entertainment services offering tv series, films, games and live programming across a wide variety of genres and languages. members can play, pause and resume watching as much as they want, a"
+      },
+      "tail": {
+        "ratio": 96.9,
+        "pass": true,
+        "pred": "Investors and others should note that we announce material financial and other information to our investors using our investor relations website\n(ir.netflix.net), SEC filings, press releases, public conference calls and webcasts. We use these channels as well as social media and blogs to\ncommunicate with our members and the public about our company, our services and other issues. It is possible th",
+        "gt": "mation we post on social media and blogs could be deemed to be material information. therefore, we encourage investors, the media, and others interested in our company to review the information we post on the social media channels and blogs listed on our investor relations website. table of contents"
+      }
+    },
+    {
+      "item": "1A",
+      "title": "Risk Factors",
+      "bucket": "prose",
+      "start_page": 7,
+      "end_page": 19,
+      "head": {
+        "ratio": 100.0,
+        "pass": true,
+        "pred": "If any of the following risks actually occur, our business, financial condition and results of operations could be harmed. In that case, the trading\nprice of our common stock could decline, and you could lose all or part of your investment.\nRisks Related to Our Business\nIf our efforts to attract and retain members are not successful, our business will be adversely affected.\nWe must continually add",
+        "gt": "if any of the following risks actually occur, our business, financial condition and results of operations could be harmed. in that case, the trading price of our common stock could decline, and you could lose all or part of your investment. risks related to our business if our efforts to attract and"
+      },
+      "tail": {
+        "ratio": 100.0,
+        "pass": true,
+        "pred": "The success of the WBD transaction will depend, in part, on our ability to successfully integrate the acquired businesses and realize the\nanticipated benefits, including synergies. Difficulties in integrating the acquired businesses may result in the failure to realize anticipated synergies in\nthe expected timeframes, in operational challenges, and in the diversion of management’s attention from o",
+        "gt": "synergies in the expected timeframes, in operational challenges, and in the diversion of management’s attention from ongoing business opportunities, challenges and risks, as well as in unforeseen expenses associated with the wbd transaction, which may have an adverse impact on our financial results."
+      }
+    },
+    {
+      "item": "1C",
+      "title": "Cybersecurity",
+      "bucket": "prose",
+      "start_page": 19,
+      "end_page": 20,
+      "head": {
+        "ratio": 100.0,
+        "pass": true,
+        "pred": "We have an enterprise-wide information security program designed to identify, protect, detect and respond to and manage reasonably\nforeseeable cybersecurity risks and threats. To protect our information systems from cybersecurity threats, we use various security tools that help\nprevent, identify, escalate, investigate, resolve and recover from identified vulnerabilities and security incidents in a",
+        "gt": "we have an enterprise-wide information security program designed to identify, protect, detect and respond to and manage reasonably foreseeable cybersecurity risks and threats. to protect our information systems from cybersecurity threats, we use various security tools that help prevent, identify, es"
+      },
+      "tail": {
+        "ratio": 96.9,
+        "pass": true,
+        "pred": "The Board oversees our annual enterprise risk assessment, where we assess key risks within the company, including security and technology\nrisks and cybersecurity threats. The Audit Committee of the Board oversees our cybersecurity risk and receives regular reports from our Senior\nDirector, Security, Privacy & Assurance on various cybersecurity matters, including risk assessments, mitigation strate",
+        "gt": "es our cybersecurity risk and receives regular reports from our senior director, security, privacy & assurance on various cybersecurity matters, including risk assessments, mitigation strategies, areas of emerging risks, incidents and industry trends, and other areas of importance. table of contents"
+      }
+    },
+    {
+      "item": "2",
+      "title": "Properties",
+      "bucket": "prose",
+      "start_page": 21,
+      "end_page": 21,
+      "head": {
+        "ratio": 100.0,
+        "pass": true,
+        "pred": "We have leased principal properties in both Los Gatos, California, which is the location of our corporate headquarters, and in Los Angeles,\nCalifornia. In addition, we own and lease various office and production space throughout the world.\nWe believe that our existing facilities are adequate to meet current requirements, and that suitable additional or substitute space will be\navailable as needed ",
+        "gt": "we have leased principal properties in both los gatos, california, which is the location of our corporate headquarters, and in los angeles, california. in addition, we own and lease various office and production space throughout the world. we believe that our existing facilities are adequate to meet"
+      },
+      "tail": {
+        "ratio": 100.0,
+        "pass": true,
+        "pred": "Item 2. Properties\nWe have leased principal properties in both Los Gatos, California, which is the location of our corporate headquarters, and in Los Angeles,\nCalifornia. In addition, we own and lease various office and production space throughout the world.\nWe believe that our existing facilities are adequate to meet current requirements, and that suitable additional or substitute space will be\na",
+        "gt": "ffice and production space throughout the world. we believe that our existing facilities are adequate to meet current requirements, and that suitable additional or substitute space will be available as needed to accommodate any further physical expansion of operations and for any additional offices."
+      }
+    },
+    {
+      "item": "3",
+      "title": "Legal Proceedings",
+      "bucket": "prose",
+      "start_page": 21,
+      "end_page": 21,
+      "head": {
+        "ratio": 100.0,
+        "pass": true,
+        "pred": "Information with respect to this item may be found in Note 9 Commitments and Contingencies in the accompanying notes to our consolidated\nfinancial statements included in Part II, Item 8, “Financial Statements and Supplementary Data” of this Annual Report on Form 10-K, under the\ncaption “Legal Proceedings” which information is incorporated herein by reference.\nItem 4. Mine Safety Disclosures\nNot ap",
+        "gt": "information with respect to this item may be found in note 9 commitments and contingencies in the accompanying notes to our consolidated financial statements included in part ii, item 8, “financial statements and supplementary data” of this annual report on form 10-k, under the caption “legal procee"
+      },
+      "tail": {
+        "ratio": 100.0,
+        "pass": true,
+        "pred": "Item 3. Legal Proceedings\nInformation with respect to this item may be found in Note 9 Commitments and Contingencies in the accompanying notes to our consolidated\nfinancial statements included in Part II, Item 8, “Financial Statements and Supplementary Data” of this Annual Report on Form 10-K, under the\ncaption “Legal Proceedings” which information is incorporated herein by reference.",
+        "gt": "commitments and contingencies in the accompanying notes to our consolidated financial statements included in part ii, item 8, “financial statements and supplementary data” of this annual report on form 10-k, under the caption “legal proceedings” which information is incorporated herein by reference."
+      }
+    },
+    {
+      "item": "5",
+      "title": "Market for Registrant's Common Equity, Related Stockholder Matters and Issuer Purchases of Equity Securities",
+      "bucket": "prose",
+      "start_page": 22,
+      "end_page": 23,
+      "head": {
+        "ratio": 75.8,
+        "pass": true,
+        "pred": "Market Information\nOur common stock is traded on the NASDAQ Global Select Market under the symbol “NFLX”.\nStock Split\nOn November 14, 2025, the Company completed a ten-for-one forward stock split of the Company's issued common stock (the \"Stock Split\").\nEach shareholder as of the record date of November 10, 2025 received nine additional shares of common stock for every share held. References made",
+        "gt": "item 5. market for registrant’s common equity, related stockholder matters and issuer purchases of equity securities market information our common stock is traded on the nasdaq global select market under the symbol “nflx”. stock split on november 14, 2025, the company completed a ten-for-one forward"
+      },
+      "tail": {
+        "ratio": 100.0,
+        "pass": true,
+        "pred": "The following graph compares, for the five year period ended December 31, 2025, the total cumulative stockholder return on the Company’s\ncommon stock, with the total cumulative return of the NASDAQ Composite Index, the S&P 500 Index and the RDG Internet Composite Index.\nMeasurement points are the last trading day of each of the Company’s fiscal years ended December 31, 2020, December 31, 2021, Dec",
+        "gt": "in the nasdaq composite index, the stocks represented in the s&p 500 index and the stocks represented in the rdg internet composite index, respectively, and reinvestment of any dividends. historical stock price performance should not be relied upon as an indication of future stock price performance."
+      }
+    },
+    {
+      "item": "7",
+      "title": "Management's Discussion and Analysis of Financial Condition and Results of Operations",
+      "bucket": "prose",
+      "start_page": 24,
+      "end_page": 34,
+      "head": {
+        "ratio": 81.4,
+        "pass": true,
+        "pred": "This section of this Form 10-K generally discusses 2025 and 2024 items and year-to-year comparisons between 2025 and 2024. Discussions of\n2023 items and year-to-year comparisons between 2024 and 2023 that are not included in this Form 10-K can be found in “Management's Discussion\nand Analysis of Financial Condition and Results of Operations” in Part II, Item 7 of the Company's Annual Report on For",
+        "gt": "item 7. management’s discussion and analysis of financial condition and results of operations this section of this form 10-k generally discusses 2025 and 2024 items and year-to-year comparisons between 2025 and 2024. discussions of 2023 items and year-to-year comparisons between 2024 and 2023 that a"
+      },
+      "tail": {
+        "ratio": 100.0,
+        "pass": true,
+        "pred": "Recent Accounting Pronouncements\nThe information set forth under Note 1 to the consolidated financial statements under the caption “Basis of Presentation and Summary of\nSignificant Accounting Policies” is incorporated herein by reference.",
+        "gt": "further information regarding income taxes. table of contents recent accounting pronouncements the information set forth under note 1 to the consolidated financial statements under the caption “basis of presentation and summary of significant accounting policies” is incorporated herein by reference."
+      }
+    },
+    {
+      "item": "7A",
+      "title": "Quantitative and Qualitative Disclosures About Market Risk",
+      "bucket": "prose",
+      "start_page": 34,
+      "end_page": 36,
+      "head": {
+        "ratio": 100.0,
+        "pass": true,
+        "pred": "We are exposed to market risks related to interest rate changes, which affect the market values of our investments and debt, as well as foreign\ncurrency fluctuations.\nInterest Rate Risk\nAt December 31, 2025, our cash equivalents were generally invested in money market funds and time deposits. Interest paid on such funds\nfluctuates with the prevailing interest rate.",
+        "gt": "we are exposed to market risks related to interest rate changes, which affect the market values of our investments and debt, as well as foreign currency fluctuations. interest rate risk at december 31, 2025, our cash equivalents were generally invested in money market funds and time deposits. intere"
+      },
+      "tail": {
+        "ratio": 100.0,
+        "pass": true,
+        "pred": "Consolidated Statements of Operations. We also designate certain contracts as fair value hedges to mitigate the foreign exchange risk on the\nremeasurement of our foreign-currency denominated debt. The gains or losses on these derivative instruments included in the assessment of hedge\neffectiveness are recorded in “Interest and other income (expense),” net with the offsetting foreign currency remea",
+        "gt": "her than the functional currencies as of december 31, 2025 and december 31, 2024, income before income taxes would have been approximately $1 million and $38 million lower, respectively, after considering the offsetting impact of the foreign currency exchange contracts and our net investment hedges."
+      }
+    },
+    {
+      "item": "9A",
+      "title": "Controls and Procedures",
+      "bucket": "prose",
+      "start_page": 37,
+      "end_page": 38,
+      "head": {
+        "ratio": 100.0,
+        "pass": true,
+        "pred": "(a) Evaluation of Disclosure Controls and Procedures\nOur management, with the participation of our co-Chief Executive Officers and Chief Financial Officer, evaluated the effectiveness of our\ndisclosure controls and procedures (as defined in Rules 13a-15(e) and 15d-15(e) under the Exchange Act) as of the end of the period covered by this\nAnnual Report on Form 10-K. Based on that evaluation, our co-",
+        "gt": "(a) evaluation of disclosure controls and procedures our management, with the participation of our co-chief executive officers and chief financial officer, evaluated the effectiveness of our disclosure controls and procedures (as defined in rules 13a-15(e) and 15d-15(e) under the exchange act) as of"
+      },
+      "tail": {
+        "ratio": 96.2,
+        "pass": true,
+        "pred": "Because of its inherent limitations, internal control over financial reporting may not prevent or detect misstatements. Also, projections of any\nevaluation of effectiveness to future periods are subject to the risk that controls may become inadequate because of changes in conditions, or that the\ndegree of compliance with the policies or procedures may deteriorate.\n/s/ Ernst & Young LLP\nSan Jose, C",
+        "gt": "luation of effectiveness to future periods are subject to the risk that controls may become inadequate because of changes in conditions, or that the degree of compliance with the policies or procedures may deteriorate. /s/ ernst &amp; young llp san jose, california january 23, 2026 table of contents"
+      }
+    },
+    {
+      "item": "9B",
+      "title": "Other Information",
+      "bucket": "prose",
+      "start_page": 39,
+      "end_page": 39,
+      "head": {
+        "ratio": 100.0,
+        "pass": true,
+        "pred": "Rule 10b5-1 Trading Plans\nThe adoption or termination of contracts, instructions or written plans for the purchase or sale of our securities by our Section 16 officers and\ndirectors for the three months ended December 31, 2025, each of which is intended to satisfy the affirmative defense conditions of Rule 10b5-1(c)\nunder the Exchange Act (“Rule 10b5-1 Plan”), were as follows:\nAggregate # of",
+        "gt": "rule 10b5-1 trading plans the adoption or termination of contracts, instructions or written plans for the purchase or sale of our securities by our section 16 officers and directors for the three months ended december 31, 2025, each of which is intended to satisfy the affirmative defense conditions "
+      },
+      "tail": {
+        "ratio": 100.0,
+        "pass": true,
+        "pred": "(4) Upon termination of Mr. Peters' prior plan (described in footnote 3), on October 30, 2025, Mr. Peters entered into a pre-arranged stock trading plan pursuant to Rule 10b5-1 that provides for the potential exercise of vested stock options and the associated sale of up to 2,951,230 shares of Netflix common stock. This figure includes 380,720 PSUs that are expected to vest during the term of the ",
+        "gt": "mmon stock. the plan expires on december 31, 2026, or upon the earlier completion of all authorized transactions under the plan. other than those disclosed above, none of our directors or officers adopted or terminated a “non-rule 10b5-1 trading arrangement” as defined in item 408 of regulation s-k."
+      }
+    },
+    {
+      "item": "15",
+      "title": "Exhibits, Financial Statement Schedules",
+      "bucket": "prose",
+      "start_page": 41,
+      "end_page": 41,
+      "head": {
+        "ratio": 100.0,
+        "pass": true,
+        "pred": "(a) The following documents are filed as part of this Annual Report on Form 10-K:\n(1) Financial Statements:\nThe financial statements are filed as part of this Annual Report on Form 10-K under “Item 8. Financial Statements and Supplementary\nData.”\n(2) Financial Statement Schedules:",
+        "gt": "(a) the following documents are filed as part of this annual report on form 10-k: (1) financial statements: the financial statements are filed as part of this annual report on form 10-k under “item 8. financial statements and supplementary data.” (2) financial statement schedules: the financial stat"
+      },
+      "tail": {
+        "ratio": 100.0,
+        "pass": true,
+        "pred": "(2) Financial Statement Schedules:\nThe financial statement schedules are omitted as they are either not applicable or the information required is presented in the financial\nstatements and notes thereto under “Item 8. Financial Statements and Supplementary Data.”\n(3) Exhibits:\nSee Exhibit Index immediately following the signature page of this Annual Report on Form 10-K.",
+        "gt": "e omitted as they are either not applicable or the information required is presented in the financial statements and notes thereto under “item 8. financial statements and supplementary data.” (3) exhibits: see exhibit index immediately following the signature page of this annual report on form 10-k."
+      }
+    }
+  ]
+}

@@ -1,0 +1,293 @@
+{
+  "label": "GDC_2023",
+  "model": "google/gemini-3.1-flash-lite",
+  "threshold": 75,
+  "items": [
+    {
+      "item": "1",
+      "title": "Business",
+      "bucket": "prose",
+      "start_page": 6,
+      "end_page": 23,
+      "head": {
+        "ratio": 99.7,
+        "pass": true,
+        "pred": "Overview\nGD Culture Group Limited (formerly known as JM Global Holding Company, TMSR Holding Company Limited, and Code Chain New Continent\nLimited), focuses its business on three segments mainly through the Company and two subsidiaries, AI Catalysis and Shanghai Xianzhui: 1) AI-\ndriven digital human creation and customization; 2) Live streaming and e-commerce and 3) Live streaming interactive game",
+        "gt": "overview gd culture group limited (formerly known as jm global holding company, tmsr holding company limited, and code chain new continent limited), focuses its business on three segments mainly through the company and two subsidiaries, ai catalysis and shanghai xianzhui : 1) ai-driven digital human"
+      },
+      "tail": {
+        "ratio": 100.0,
+        "pass": true,
+        "pred": "From time to time, we may be involved in various claims and legal proceedings arising in the ordinary course of business. None of our Company or\nour subsidiaries is currently a party to any such claims or proceedings which, if decided adversely to the Company, would either, individually or in\nthe aggregate, have a material adverse effect on our business, financial condition, results of operations ",
+        "gt": "siness. none of our company or our subsidiaries is currently a party to any such claims or proceedings which, if decided adversely to the company, would either, individually or in the aggregate, have a material adverse effect on our business, financial condition, results of operations or cash flows."
+      }
+    },
+    {
+      "item": "1A",
+      "title": "Risk Factors",
+      "bucket": "prose",
+      "start_page": 24,
+      "end_page": 44,
+      "head": {
+        "ratio": 100.0,
+        "pass": true,
+        "pred": "An investment in our shares of common stock involves a high degree of risk. You should carefully consider the following risk factors, together with the\nother information contained in this Report, before you decide to buy any of our securities. Any of the following risks could cause our business, results\nof operations and financial condition to suffer materially, causing the market price of our sha",
+        "gt": "an investment in our shares of common stock involves a high degree of risk. you should carefully consider the following risk factors, together with the other information contained in this report, before you decide to buy any of our securities. any of the following risks could cause our business, res"
+      },
+      "tail": {
+        "ratio": 100.0,
+        "pass": true,
+        "pred": "projections by inexperienced sales persons; (iv) excessive and undisclosed bid-ask differentials and markups by selling broker-dealers; and (v) the\nwholesale dumping of the same securities by promoters and broker-dealers after prices have been manipulated to a desired level, resulting in investor\nlosses. Our management is aware of the abuses that have occurred historically in the penny stock marke",
+        "gt": "market. although we do not expect to be in a position to dictate the behavior of the market or of broker-dealers who participate in the market, management will strive within the confines of practical limitations to prevent the described patterns from being established with respect to our securities."
+      }
+    },
+    {
+      "item": "1C",
+      "title": "Cybersecurity",
+      "bucket": "prose",
+      "start_page": 45,
+      "end_page": 45,
+      "head": {
+        "ratio": 100.0,
+        "pass": true,
+        "pred": "To meet our business objectives, we rely on both internal information technology (IT) systems and networks, and those of third parties and their\nvendors, to process and store sensitive data, including confidential research, business plans, financial information, intellectual property, and personal\ndata of ours and our customers that may be subject to legal protection, and promote the continuity of",
+        "gt": "to meet our business objectives, we rely on both internal information technology (it) systems and networks, and those of third parties and their vendors, to process and store sensitive data, including confidential research, business plans, financial information, intellectual property, and personal d"
+      },
+      "tail": {
+        "ratio": 100.0,
+        "pass": true,
+        "pred": "response plans to evaluate, identify, and handle material risks associated with cybersecurity threats.\nAs of December 31, 2023, we have not identified any risks from known cybersecurity threats, including as a result of any previous cybersecurity\nincidents, that have materially affected or are reasonably likely to materially affect us, including our business strategy, results of operations or\nfina",
+        "gt": "cluding our business strategy, results of operations or financial condition. however, we face certain ongoing cybersecurity threats that, if realized, are reasonably likely to materially affect us. additional information on cybersecurity risks we face is discussed in part i, item 1a, “risk factors.”"
+      }
+    },
+    {
+      "item": "2",
+      "title": "Properties",
+      "bucket": "prose",
+      "start_page": 45,
+      "end_page": 45,
+      "head": {
+        "ratio": 100.0,
+        "pass": true,
+        "pred": "Facilities\nOur current executive office is located at 810 Seventh Avenue, 22nd Floor, New York, NY 10019. The rent for this space is approximately $31,000\nper month. The term of the lease is five years and five months, starting from September 22, 2023. We consider our current office space adequate for\nour current operations.\nIntellectual Properties",
+        "gt": "facilities our current executive office is located at 810 seventh avenue, 22nd floor, new york, ny 10019. the rent for this space is approximately $31,000 per month. the term of the lease is five years and five months, starting from september 22, 2023. we consider our current office space adequate f"
+      },
+      "tail": {
+        "ratio": 100.0,
+        "pass": true,
+        "pred": "We entered into a software purchase agreement with Northeast Management LLC, a seller unaffiliated with us. Pursuant to the software purchase\nagreement, we purchased all of the seller’s right, title, and interest in and to the software, Tribal Light. We have used and plan to continue using the\nsoftware to develop video games. We operate the game through interactive live stream, facilitating real-t",
+        "gt": "tware to develop video games. we operate the game through interactive live stream, facilitating real-time engagement between players and viewers through interactive features embedded within the live streaming platform. we have the right to use the two domains: gdculturegroup.com and aicatalysis.com."
+      }
+    },
+    {
+      "item": "3",
+      "title": "Legal Proceedings",
+      "bucket": "table_tail_covered",
+      "start_page": 45,
+      "end_page": 45,
+      "tail": {
+        "skipped": "table 結尾，邊界由下一個 item 5 的 head 覆蓋"
+      },
+      "head": {
+        "ratio": 100.0,
+        "pass": true,
+        "pred": "To the knowledge of our management, there is no litigation currently pending or contemplated against us, any of our officers or directors in their\ncapacity as such or against any of our property.",
+        "gt": "to the knowledge of our management, there is no litigation currently pending or contemplated against us, any of our officers or directors in their capacity as such or against any of our property."
+      }
+    },
+    {
+      "item": "5",
+      "title": "Market for Registrant's Common Equity, Related Stockholder Matters and Issuer Purchases of Equity Securities",
+      "bucket": "prose",
+      "start_page": 46,
+      "end_page": 48,
+      "head": {
+        "ratio": 95.5,
+        "pass": true,
+        "pred": "(a) Market Information\nOur common stock is traded on the Nasdaq Capital Market under the symbol “GDC”.\n(b) Holders\nOn April 1, 2024, there are approximately 336 holders of record of our common stock.",
+        "gt": "item 5. market for registrant’s common equity, related stockholder matters, and issuer purchases of equity securities (a) market information our common stock is traded on the nasdaq capital market under the symbol “gdc”. (b) holders on april 1, 2024, there are approximately 336 holders of record of "
+      },
+      "tail": {
+        "ratio": 84.4,
+        "pass": true,
+        "pred": "The Company issued 400,000 shares of common stock on January 11, 2024. See “Part I – Item 1. Business – Recent Business Development – Equity\nPurchase Agreement dated October 27, 2023 and the Amendment to the Equity Purchase Agreement dated November 10, 2023.”\nThe Company issued warrants to purchase up to 331,236 shares of common stock to the placement agent of a registered direct offering on Novem",
+        "gt": "ued warrants to purchase up to 40,514 shares of common stock to the placement agent of a registered direct offering on march 26, 2024. see “part i – item 1. business – recent business development – march 2024 offering.” (f) purchases of equity securities by the issuer and affiliated purchasers none."
+      }
+    },
+    {
+      "item": "7",
+      "title": "Management's Discussion and Analysis of Financial Condition and Results of Operations",
+      "bucket": "prose",
+      "start_page": 49,
+      "end_page": 57,
+      "head": {
+        "ratio": 81.4,
+        "pass": true,
+        "pred": "The following discussion and analysis of the results of our operations and financial condition should be read in conjunction with our financial\nstatements, and the notes to those financial statements that are included elsewhere in this Report. All monetary figures are presented in U.S. dollars,\nunless otherwise indicated.\nOur Management’s Discussion and Analysis contains not only statements that a",
+        "gt": "item 7. management’s discussion and analysis of financial condition and results of operations the following discussion and analysis of the results of our operations and financial condition should be read in conjunction with our financial statements, and the notes to those financial statements that a"
+      },
+      "tail": {
+        "ratio": 100.0,
+        "pass": true,
+        "pred": "A majority of the Company’s operating activities and a significant portion of the Company’s assets and liabilities are denominated in RMB, which is\nnot freely convertible into foreign currencies. All foreign exchange transactions take place either through the Peoples’ Bank of China (“PBOC”) or\nother authorized financial institutions at exchange rates quoted by PBOC. Approval of foreign currency pa",
+        "gt": "ubmitting a payment application form together with suppliers’ invoices and signed contracts. the value of rmb is subject to changes in central government policies and to international economic and political developments affecting supply and demand in the china foreign exchange trading system market."
+      }
+    },
+    {
+      "item": "7A",
+      "title": "Quantitative and Qualitative Disclosures About Market Risk",
+      "bucket": "table_tail_covered",
+      "start_page": 58,
+      "end_page": 58,
+      "tail": {
+        "skipped": "table 結尾，邊界由下一個 item 9 的 head 覆蓋"
+      },
+      "head": {
+        "ratio": 100.0,
+        "pass": true,
+        "pred": "Disclosure in response to this Item is not required for a smaller reporting company.\nItem 8. Financial Statements and Supplementary Data\nReference is made to Pages F-1 through F-37 comprising a portion of this Report on Form 10-K.\nItem 9. Changes in and Disagreements with Accountants on Accounting and Financial Disclosure.\nOn October 9, 2023, the Company notified its independent registered public ",
+        "gt": "disclosure in response to this item is not required for a smaller reporting company."
+      }
+    },
+    {
+      "item": "9",
+      "title": "Changes in and Disagreements with Accountants on Accounting and Financial Disclosure",
+      "bucket": "table_tail_covered",
+      "start_page": 58,
+      "end_page": 58,
+      "tail": {
+        "skipped": "table 結尾，邊界由下一個 item 9A 的 head 覆蓋"
+      },
+      "head": {
+        "ratio": 99.7,
+        "pass": true,
+        "pred": "On October 9, 2023, the Company notified its independent registered public accounting firm, Enrome LLP, its decision to dismiss Enrome LLP as the\nCompany’s auditor. The report of Enrome LLP on the financial statements of the Company for the fiscal year ended December 31, 2022 and the\nrelated statements of operations and comprehensive income (loss), changes in stockholders’ equity (deficit), and ca",
+        "gt": ". on october 9, 2023, the company notified its independent registered public accounting firm, enrome llp, its decision to dismiss enrome llp as the company’s auditor. the report of enrome llp on the financial statements of the company for the fiscal year ended december 31, 2022 and the related state"
+      }
+    },
+    {
+      "item": "9A",
+      "title": "Controls and Procedures",
+      "bucket": "prose",
+      "start_page": 58,
+      "end_page": 60,
+      "head": {
+        "ratio": 99.7,
+        "pass": true,
+        "pred": "Evaluation of Disclosure Controls and Procedures\nUnder the supervision and with the participation of our management, including our Chief Executive Officers, President and Chief Financial Officer (the “Certifying Officers”), we carried out an evaluation of the effectiveness of the design and operation of our disclosure controls and procedures as defined in Rules 13a-15(e) and 15d-15(e) under the Ex",
+        "gt": ". evaluation of disclosure controls and procedures under the supervision and with the participation of our management, including our chief executive officers, president and chief financial officer (the “certifying officers”), we carried out an evaluation of the effectiveness of the design and operat"
+      },
+      "tail": {
+        "ratio": 100.0,
+        "pass": true,
+        "pred": "We plan to engage outside consultant to supplement efforts to improve our internal control over financial reporting;\n\nWe plan to acquire applicable training for our financial and accounting staff to enhance our understanding of U.S. GAAP and internal control over financial reporting\n\nChanges in Internal Control over Financial Reporting\n\nThere were no changes in our internal control over financial ",
+        "gt": "o changes in our internal control over financial reporting (as such term is defined in rules 13a-15(f) and 15d-15(f) of the exchange act) during the most recent fiscal quarter that have materially affected, or are reasonably likely to materially affect, our internal control over financial reporting."
+      }
+    },
+    {
+      "item": "10",
+      "title": "Directors, Executive Officers and Corporate Governance",
+      "bucket": "prose",
+      "start_page": 61,
+      "end_page": 65,
+      "head": {
+        "ratio": 100.0,
+        "pass": true,
+        "pred": "The following table sets forth the name, age and position of each of our executive officers and directors as of the date of this report:\n\nName                                     Age      Position\nXiao Jian Wang                           35       Chief Executive Officer, President, Chairman of the Board, and Director\nZihao Zhao                               29       Chief Financial Officer",
+        "gt": "the following table sets forth the name, age and position of each of our executive officers and directors as of the date of this report: name age position xiao jian wang 35 chief executive officer, president, chairman of the board, and director zihao zhao 29 chief financial officer lu cai 33 chief o"
+      },
+      "tail": {
+        "ratio": 100.0,
+        "pass": true,
+        "pred": "We have adopted a Code of Ethics that applies to all of our employees, including our chief executive officer, chief financial officer and principal\naccounting officer. Our Code of Ethics is attached as an exhibit to this Report. If we amend or grant a waiver of one or more of the provisions of our\nCode of Ethics, we intend to satisfy the requirements under Item 5.05 of Form 8-K regarding the discl",
+        "gt": " under item 5.05 of form 8-k regarding the disclosure of amendments to or waivers from provisions of our code of ethics that apply to our principal executive officer, principal financial officer and principal accounting officer by posting the required information on our website at the above address."
+      }
+    },
+    {
+      "item": "11",
+      "title": "Executive Compensation",
+      "bucket": "table_tail_covered",
+      "start_page": 67,
+      "end_page": 70,
+      "tail": {
+        "skipped": "table 結尾，邊界由下一個 item 12 的 head 覆蓋"
+      },
+      "head": {
+        "ratio": 100.0,
+        "pass": true,
+        "pred": "The following table provides disclosure concerning all compensation paid for services to GDC in all capacities for our fiscal years ended December\n31, 2023 and 2022 provided by (i) each person serving as our principal executive officer (“PEO”), (ii) each person serving as our principal financial\nofficer (“PFO”) and (iii) our two most highly compensated executive officers other than our PEO and PFO",
+        "gt": "the following table provides disclosure concerning all compensation paid for services to gdc in all capacities for our fiscal years ended december 31, 2023 and 2022 provided by (i) each person serving as our principal executive officer (“peo”), (ii) each person serving as our principal financial off"
+      }
+    },
+    {
+      "item": "12",
+      "title": "Security Ownership of Certain Beneficial Owners and Management and Related Stockholder Matters",
+      "bucket": "table_tail_covered",
+      "start_page": 70,
+      "end_page": 71,
+      "tail": {
+        "skipped": "table 結尾，邊界由下一個 item 13 的 head 覆蓋"
+      },
+      "head": {
+        "ratio": 99.7,
+        "pass": true,
+        "pred": "The following table sets forth information regarding the beneficial ownership of our common stock as of April 1, 2024 based on information obtained from the persons named below, with respect to the beneficial ownership of shares of our common stock, by:\n• each person known by us to be the beneficial owner of more than 5% of our outstanding shares of common stock;\n• each of our executive officers a",
+        "gt": "the following table sets forth information regarding the beneficial ownership of our common stock as of april 1, 2024 based on information obtained from the persons named below, with respect to the beneficial ownership of shares of our common stock, by: ● each person known by us to be the beneficial"
+      }
+    },
+    {
+      "item": "13",
+      "title": "Certain Relationships and Related Transactions, and Director Independence",
+      "bucket": "prose",
+      "start_page": 72,
+      "end_page": 72,
+      "head": {
+        "ratio": 100.0,
+        "pass": true,
+        "pred": "Certain Relationships and Related Transactions\nExcept for the employment agreements previously entered into between us and certain of our named executive officers, and the related party\ntransaction described below, none of our directors or named executive officers, nor any person who owned of record or was known to own\nbeneficially more than 5% of the outstanding Shares of our common stock, nor an",
+        "gt": "certain relationships and related transactions except for the employment agreements previously entered into between us and certain of our named executive officers, and the related party transaction described below, none of our directors or named executive officers, nor any person who owned of record"
+      },
+      "tail": {
+        "ratio": 100.0,
+        "pass": true,
+        "pred": "other than an officer or employee of the company or its subsidiaries or any other individual having a relationship which in the opinion of the\ncompany’s board of directors, would interfere with the director’s exercise of independent judgment in carrying out the responsibilities of a director.\nOur board of directors has determined that Mr. Shuaiheng Zhang, Mr. Mingyue Cai and Mr. Yi Zhong are “inde",
+        "gt": "r board of directors has determined that mr. shuaiheng zhang, mr. mingyue cai and mr. yi zhong are “independent directors” as defined in the nasdaq listing standards and applicable sec rules. our independent directors have regularly scheduled meetings at which only independent directors are present."
+      }
+    },
+    {
+      "item": "14",
+      "title": "Principal Accountant Fees and Services",
+      "bucket": "prose",
+      "start_page": 73,
+      "end_page": 73,
+      "head": {
+        "ratio": 99.7,
+        "pass": true,
+        "pred": "HTL was appointed by the Company to serve as its independent registered public accounting firm for fiscal years ended December 31, 2023. During\nthe period from October 11, 2022 to October 9, 2023, Enrome LLP, (“Enrome”) served as the independent registered public accounting firm of the\nCompany. The following is a summary of fees paid or to be paid to HTL or Enrome for services rendered.\nAudit Fees",
+        "gt": ". htl was appointed by the company to serve as its independent registered public accounting firm for fiscal years ended december 31, 2023. during the period from october 11, 2022 to october 9, 2023, enrome llp, (“enrome”) served as the independent registered public accounting firm of the company. th"
+      },
+      "tail": {
+        "ratio": 98.6,
+        "pass": true,
+        "pred": "Our audit committee was formed upon the consummation of our initial public offering. As a result, the audit committee did not pre-approve all of the\nforegoing services, although any services rendered prior to the formation of our audit committee were approved by our board of directors. Since the\nformation of our audit committee, and on a going-forward basis, the audit committee has and will pre-ap",
+        "gt": "g services and permitted non-audit services to be performed for us by our auditors, including the fees and terms thereof (subject to the de minimis exceptions for non-audit services described in the exchange act which are approved by the audit committee prior to the completion of the audit). part iv"
+      }
+    },
+    {
+      "item": "15",
+      "title": "Exhibits, Financial Statement Schedules",
+      "bucket": "table_tail_last",
+      "start_page": 74,
+      "end_page": 78,
+      "tail": {
+        "skipped": "table 結尾且為最後一個 item → 未驗證"
+      },
+      "head": {
+        "ratio": 100.0,
+        "pass": true,
+        "pred": "(a) The following documents are filed as part of this Report:\n(1) Financial Statements\n(2) Financial Statements Schedule\nAll financial statement schedules are omitted because they are not applicable or the amounts are immaterial and not required, or the required information is presented in the financial statements and notes thereto in is Item 15 of Part IV below.",
+        "gt": "(a) the following documents are filed as part of this report: (1) financial statements (2) financial statements schedule all financial statement schedules are omitted because they are not applicable or the amounts are immaterial and not required, or the required information is presented in the finan"
+      }
+    }
+  ]
+}

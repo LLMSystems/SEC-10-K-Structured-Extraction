@@ -1,0 +1,9 @@
+{
+  "base_url": "https://openrouter.ai/api/v1",
+  "created_at": 1780694114,
+  "image_sha256": "61a81513d50c528fa4403033f49c70b239460db19e5531792e762674ab6d648f",
+  "model": "qwen/qwen3.5-122b-a10b",
+  "prompt": "You are shown one page from a SEC 10-K filing rendered as an image.\nItem \"8. Financial Statements and Supplementary Data\" ENDS on this page; the next section is \"Item 9. Changes in and Disagreements with Accountants on Accounting and Financial Disclosure\".\nFirst locate the bottom edge of Item 8's text:\n- If the \"Item 9\" heading is visible on this page, Item 8 ends on the line directly ABOVE that heading.\n- Otherwise Item 8 runs all the way to the very bottom of the page.\nThen transcribe VERBATIM the LAST 5 lines of Item 8 at that bottom edge — the FINAL lines right before the section ends, NOT lines from the top or middle of the page. Ignore running headers, page numbers, footers.\nOutput ONLY the transcribed text, no commentary, no quotes, no formatting.",
+  "source_path": "tier2\\dataset\\TSLA_2023\\pages\\page_093.png",
+  "text": "During the years ended December 31, 2022 and 2021, we recorded $204 million and $101 million, respectively, of impairment losses on digital assets. During the years ended December 31, 2022 and 2021 we also realized gains of $64 million and $128 million, respectively, in connection with converting our holdings of digital assets into fiat currency. We also recorded other expenses of $36 million during the second quarter of the year ended December 31, 2022, related to employee terminations."
+}

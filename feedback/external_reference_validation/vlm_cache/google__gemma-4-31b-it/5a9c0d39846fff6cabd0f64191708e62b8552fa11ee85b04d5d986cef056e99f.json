@@ -1,0 +1,9 @@
+{
+  "base_url": "https://openrouter.ai/api/v1",
+  "created_at": 1780693323,
+  "image_sha256": "713fed6aabb29704676586978a63d144b81a5c6f6ebd3b87772a9c06c9c84f92",
+  "model": "google/gemma-4-31b-it",
+  "prompt": "You are shown one page from a SEC 10-K filing rendered as an image.\nItem \"7A. Quantitative and Qualitative Disclosures About Market Risk\" ENDS on this page; the next section is \"Item 8. Financial Statements and Supplementary Data\".\nLocate the bottom edge of Item 7A's text on the page.\n- If the \"Item 8\" heading is visible on this page, then Item 7A ends on the line directly ABOVE that heading.\n- Otherwise, Item 7A continues to the bottom of the page.\nThen transcribe VERBATIM the LAST 5 lines of Item 7A immediately before it ends. These must be the FINAL lines right before the section ends, NOT lines from the top or middle of the page. Ignore running headers, page numbers, footers.\nOutput ONLY the transcribed text, no commentary, no quotes, no formatting.",
+  "source_path": "tier2\\dataset\\NFLX_2025\\pages\\page_036.png",
+  "text": "the functional currencies as of December 31, 2025 and December 31, 2024, income before income taxes would have been approximately $1 million and\n$38 million lower, respectively, after considering the offsetting impact of the foreign currency exchange contracts and our net investment hedges."
+}

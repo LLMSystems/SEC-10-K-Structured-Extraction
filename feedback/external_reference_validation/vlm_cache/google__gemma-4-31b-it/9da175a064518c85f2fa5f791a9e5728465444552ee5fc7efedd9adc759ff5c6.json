@@ -1,0 +1,9 @@
+{
+  "base_url": "https://openrouter.ai/api/v1",
+  "created_at": 1780692766,
+  "image_sha256": "ed2c22e71563c284cb0420d0d0436a7b89a4efc850310e5134ef33e4be7b6f70",
+  "model": "google/gemma-4-31b-it",
+  "prompt": "You are shown one page from a SEC 10-K filing rendered as an image.\nItem \"1A. Risk Factors\" ENDS on this page; the next section is \"Item 1B. Unresolved Staff Comments\".\nFirst locate where Item 1A stops on this page:\n- If the \"Item 1B\" heading is visible on this page, Item 1A ends on the line directly ABOVE that heading.\n- Ignore ALL text below that heading; it belongs to the next section, not Item 1A.\n- The target section may have started on a previous page and may leave only a short carryover at the very TOP of this page.\n- If the next-section heading appears near the top, the answer may be only the few lines immediately above that heading.\n- Only if no later section heading appears on this page should you use the bottom of the page as Item 1A's ending.\nThen transcribe VERBATIM the LAST 5 lines of Item 1A right before the section ends. The answer must come only from Item 1A, even if the next section occupies most of the page. Ignore running headers, page numbers, footers.\nOutput ONLY the transcribed text, no commentary, no quotes, no formatting.",
+  "source_path": "tier2\\dataset\\NFLX_2025\\pages\\page_019.png",
+  "text": "The success of the WBD transaction will depend, in part, on our ability to successfully integrate the acquired businesses and realize the\nanticipated benefits, including synergies. Difficulties in integrating the acquired businesses may result in the failure to realize anticipated synergies in\nthe expected timeframes, in operational challenges, and in the diversion of management’s attention from ongoing business opportunities, challenges\nand risks, as well as in unforeseen expenses associated with the WBD transaction, which may have an adverse impact on our financial results."
+}

@@ -1,0 +1,42 @@
+[
+  {
+    "label": "GDC_2023",
+    "company": "GD Culture Group Ltd",
+    "cik": "0001641398",
+    "accession_number": "0001213900-24-029042",
+    "pdf_pages": 121,
+    "n_items": 16
+  },
+  {
+    "label": "NFLX_2025",
+    "company": "NETFLIX INC",
+    "cik": "0001065280",
+    "accession_number": "0001065280-26-000034",
+    "pdf_pages": 83,
+    "n_items": 11
+  },
+  {
+    "label": "RELL_2025",
+    "company": "RICHARDSON ELECTRONICS, LTD.",
+    "cik": "0000355948",
+    "accession_number": "0000950170-25-101785",
+    "pdf_pages": 75,
+    "n_items": 11
+  },
+  {
+    "label": "TSLA_2023",
+    "company": "Tesla, Inc.",
+    "cik": "0001318605",
+    "accession_number": "0001628280-24-002390",
+    "pdf_pages": 114,
+    "n_items": 12
+  },
+  {
+    "label": "WMT_2026",
+    "company": "Walmart Inc.",
+    "cik": "0000104169",
+    "accession_number": "0000104169-26-000055",
+    "pdf_pages": 87,
+    "n_items": 12
+  }
+]

@@ -1,0 +1,9 @@
+{
+  "base_url": "https://openrouter.ai/api/v1",
+  "created_at": 1780694814,
+  "image_sha256": "b620d8f189e4aaf58fded4b8f55966a41aa267f70acab5967016b49603299be1",
+  "model": "moonshotai/kimi-k2.6:free",
+  "prompt": "You are shown one page from a SEC 10-K filing rendered as an image.\nThis page contains the BEGINNING of \"Item 5. Market for Registrant's Common Equity, Related Stockholder Matters and Issuer Purchases of Equity Securities\".\nFind the \"Item 5\" heading, then transcribe VERBATIM the first 5 lines of text that come immediately after it. Include any report title, addressee, or sub-heading exactly as printed — do NOT skip them; only ignore page running-headers, page numbers, and footers.\nOutput ONLY the transcribed text, no commentary, no quotes, no formatting.",
+  "source_path": "tier2\\dataset\\NFLX_2025\\pages\\page_022.png",
+  "text": "Market Information\n\nOur common stock is traded on the NASDAQ Global Select Market under the symbol \"NFLX\".\n\nStock Split\n\nOn November 14, 2025, the Company completed a ten-for-one forward stock split of the Company's issued common stock (the \"Stock Split\"). Each shareholder as of the record date of November 10, 2025 received nine additional shares of common stock for every share held. References made to share or per share amounts in the accompanying consolidated financial statements and applicable disclosures have been retroactively adjusted to reflect the Stock Split. See Note 10 Stockholders' Equity for additional information."
+}

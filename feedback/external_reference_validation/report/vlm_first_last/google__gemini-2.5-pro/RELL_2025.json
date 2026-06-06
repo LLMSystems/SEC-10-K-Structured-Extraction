@@ -1,0 +1,207 @@
+{
+  "label": "RELL_2025",
+  "model": "google/gemini-2.5-pro",
+  "threshold": 75,
+  "items": [
+    {
+      "item": "1",
+      "title": "Business",
+      "bucket": "prose",
+      "start_page": 4,
+      "end_page": 8,
+      "head": {
+        "ratio": 96.0,
+        "pass": true,
+        "pred": "General\n\nRichardson Electronics, Ltd. (the \"Company,\" \"we,\" \"our\") is a leading global manufacturer of engineered solutions, green energy products,\npower grid and microwave tubes, and related consumables; power conversion and RF and microwave components including green energy solutions;\ntubes for diagnostic imaging equipment; and customized display solutions. More than 55% of our products are manu",
+        "gt": "partiitem 1. b usiness general richardson electronics, ltd. (the \"company,\" \"we,\" \"our\") is a leading global manufacturer of engineered solutions, green energy products, power grid and microwave tubes, and related consumables; power conversion and rf and microwave components including green energy s"
+      },
+      "tail": {
+        "ratio": 99.8,
+        "pass": true,
+        "pred": "our corporate governance, including our Code of Conduct (including any related amendments or waivers) and information concerning our executive\nofficers, directors and committees of the Board (including committee charters) is also available on our website. The foregoing information regarding\nour website is provided for convenience and the content of our website is not deemed to be incorporated by r",
+        "gt": "tent of our website is not deemed to be incorporated by reference in this report filed with the sec. additionally, the sec maintains an internet site through which our reports, proxy and information statements and our other sec filings can be located; the address of that site is http://www.sec.gov ."
+      }
+    },
+    {
+      "item": "1A",
+      "title": "Risk Factors",
+      "bucket": "prose",
+      "start_page": 9,
+      "end_page": 17,
+      "head": {
+        "ratio": 100.0,
+        "pass": true,
+        "pred": "Investors should carefully consider the following risk factors in addition to the other information included and incorporated by reference in\nthis Annual Report on Form 10-K that we believe are applicable to our businesses and the industries in which we operate. While we believe we have\nidentified the key risk factors affecting our businesses, there may be additional risks and uncertainties that a",
+        "gt": "in addition to the other information included and incorporated by reference in this annual report on form 10-k that we believe are applicable to our businesses and the industries in which we operate. while we believe we have identified the key risk factors affecting our businesses, there may be addi"
+      },
+      "tail": {
+        "ratio": 100.0,
+        "pass": true,
+        "pred": "cause the market price for our common stock to change, including: (i) our operating results as compared to investors' expectations in any period, (ii)\nmarket perceptions concerning our future earnings prospects, (iii) adverse changes in general market conditions or economic trends and (iv) changes\nor events in our industry or the world, such as market reactions to public health issues, natural dis",
+        "gt": " to public health issues, natural disasters, changes in global, national, or regional economies, inflation, governmental policies, political unrest, military action and armed conflicts (in europe and the middle east), terrorist activities, political and social turmoil, civil unrest and other crises."
+      }
+    },
+    {
+      "item": "1C",
+      "title": "Cybersecurity",
+      "bucket": "prose",
+      "start_page": 18,
+      "end_page": 19,
+      "head": {
+        "ratio": 99.7,
+        "pass": true,
+        "pred": "Risk Management and Strategy\nWe are focused on the growing threat of cybersecurity risks we face in today's global business environment and have identified\ncybersecurity as an important enterprise risk. Our cybersecurity risk management program is part of our overall enterprise risk management program,\nand focuses on identifying, assessing, managing, and remediating material risks from cybersecuri",
+        "gt": "risk management and strategy we are focused on the growing threat of cybersecurity risks we face in today’s global business environment and have identified cybersecurity as an important enterprise risk. our cybersecurity risk management program is part of our overall enterprise risk management progr"
+      },
+      "tail": {
+        "ratio": 100.0,
+        "pass": true,
+        "pred": "• Key cyber risk metrics\n• Projects and initiatives\nThe Audit Committee delegates day-to-day management of cybersecurity risks to the Company's senior management, which includes our\nCFO, who reports directly to the Chief Executive Officer. Our CFO leads a team of dedicated professionals who are responsible for a wide range of\nrisk assessment and management and leads specialized teams of internal a",
+        "gt": "which includes our cfo, who reports directly to the chief executive officer. our cfo leads a team of dedicated professionals who are responsible for a wide range of risk assessment and management and leads specialized teams of internal and external experts focusing on distinct categories of threats."
+      }
+    },
+    {
+      "item": "2",
+      "title": "Properties",
+      "bucket": "table_tail_covered",
+      "start_page": 20,
+      "end_page": 20,
+      "tail": {
+        "skipped": "table 結尾，邊界由下一個 item 5 的 head 覆蓋"
+      },
+      "head": {
+        "ratio": 96.6,
+        "pass": true,
+        "pred": "The Company owns one facility and leases 24 facilities. We own our corporate facility and largest distribution center, which is located on\napproximately 100 acres in LaFox, Illinois and consists of approximately 224,000 square feet of manufacturing, warehouse and office space. We\nmaintain geographically diverse facilities because we believe this provides value to our customers and suppliers, and l",
+        "gt": "item 2. p roperties the company owns one facility and leases 24 facilities. we own our corporate facility and largest distribution center, which is located on approximately 100 acres in lafox, illinois and consists of approximately 224,000 square feet of manufacturing, warehouse and office space. we"
+      }
+    },
+    {
+      "item": "5",
+      "title": "Market for Registrant's Common Equity, Related Stockholder Matters and Issuer Purchases of Equity Securities",
+      "bucket": "figure_tail_covered",
+      "start_page": 21,
+      "end_page": 22,
+      "tail": {
+        "skipped": "figure 結尾，邊界由下一個 item 7 的 head 覆蓋"
+      },
+      "head": {
+        "ratio": 98.1,
+        "pass": true,
+        "pred": "Unregistered Sales of Equity Securities\nThere were no sales of unregistered equity securities in fiscal 2025.\nShare Repurchases\nThere were no share repurchases in fiscal 2025.\nDividends",
+        "gt": "item 5. market for the registrant’s common equity, related s tockholder matters and issuer purchases of equity securities unregistered sales of equity securities there were no sales of unregistered equity securities in fiscal 2025. share repurchases there were no share repurchases in fiscal 2025. di"
+      }
+    },
+    {
+      "item": "7",
+      "title": "Management's Discussion and Analysis of Financial Condition and Results of Operations",
+      "bucket": "prose",
+      "start_page": 23,
+      "end_page": 33,
+      "head": {
+        "ratio": 80.6,
+        "pass": true,
+        "pred": "The following discussion should be read in conjunction with the consolidated financial statements and related notes.\nManagement's Discussion and Analysis of Financial Condition and Results of Operations (\"MD&A\") is intended to assist the reader in\nbetter understanding our business, results of operations, financial condition, changes in financial condition, critical accounting estimates and\nsignifi",
+        "gt": "item 7. management’s discussion and analysis of financial condition and results of operations the following discussion should be read in conjunction with the consolidated financial statements and related notes. management’s discussion and analysis of financial condition and results of operations (“m"
+      },
+      "tail": {
+        "ratio": 100.0,
+        "pass": true,
+        "pred": "positive evidence of equal or greater significance is needed to overcome the negative evidence before a tax benefit is recognized for deductible\ntemporary differences and loss carryforwards.\nNew Accounting Pronouncements\nA summary of the New Accounting Pronouncements is provided in Note 4, Significant Accounting Policies and Disclosures, of the notes to\nour consolidated financial statements in Par",
+        "gt": "porary differences and loss carryforwards. new accounting pronouncements a summary of the new accounting pronouncements is provided in note 4, significant accounting policies and disclosures, of the notes to our consolidated financial statements in part ii, item 8 of this annual report on form 10-k."
+      }
+    },
+    {
+      "item": "7A",
+      "title": "Quantitative and Qualitative Disclosures About Market Risk",
+      "bucket": "prose",
+      "start_page": 34,
+      "end_page": 34,
+      "head": {
+        "ratio": 87.0,
+        "pass": true,
+        "pred": "Risk Management and Market Sensitive Financial Instruments\nWe are exposed to many different market risks with the various industries we serve. The primary financial risk we are exposed to is foreign\ncurrency exchange, as certain operations, assets and liabilities of ours are denominated in foreign currencies. We manage these risks through normal\noperating and financing activities.\nForeign Currency",
+        "gt": "item 7a. quantitative and qualitat ive disclosures about market risk risk management and market sensitive financial instruments we are exposed to many different market risks with the various industries we serve. the primary financial risk we are exposed to is foreign currency exchange, as certain op"
+      },
+      "tail": {
+        "ratio": 99.7,
+        "pass": true,
+        "pred": "ended June 1, 2024, while the total liabilities would have decreased by an estimated $1.4 million as of the fiscal year ended May 31, 2025 and an\nestimated $1.2 million as of the fiscal year ended June 1, 2024.\nThe interpretation and analysis of these disclosures should not be considered in isolation since such variances in exchange rates would\nlikely influence other economic factors. Such factors",
+        "gt": "es in exchange rates would likely influence other economic factors. such factors, which are not readily quantifiable, would likely also affect our operations. additional disclosure regarding various market risks is set forth in part i, item 1a , risk factors , of our annual report on this form 10-k."
+      }
+    },
+    {
+      "item": "8",
+      "title": "Financial Statements and Supplementary Data",
+      "bucket": "table_tail_covered",
+      "start_page": 35,
+      "end_page": 64,
+      "tail": {
+        "skipped": "table 結尾，邊界由下一個 item 9A 的 head 覆蓋"
+      },
+      "head": {
+        "ratio": 100.0,
+        "pass": true,
+        "pred": "Report of Independent Registered Public Accounting Firm\nBoard of Directors and Stockholders\nRichardson Electronics, Ltd.\nLaFox, Illinois\nOpinion on the Consolidated Financial Statements",
+        "gt": "item 8. financial statemen ts and supplementary data report of independent registered public accounting firm board of directors and stockholders richardson electronics, ltd. lafox, illinois opinion on the consolidated financial statements we have audited the accompanying consolidated balance sheets "
+      }
+    },
+    {
+      "item": "9A",
+      "title": "Controls and Procedures",
+      "bucket": "prose",
+      "start_page": 65,
+      "end_page": 67,
+      "head": {
+        "ratio": 99.7,
+        "pass": true,
+        "pred": "(a)\nEvaluation of Disclosure Controls and Procedures\nManagement of the Company, with the participation of the Chief Executive Officer and the Chief Financial Officer, evaluated the\neffectiveness of the design and operation of the Company's disclosure controls and procedures (as defined in Rules 13a-15(e) and 15d-15(e) of the\nSecurities Exchange Act of 1934, as amended (the “Exchange Act”)) as of M",
+        "gt": "management of the company, with the participation of the chief executive officer and the chief financial officer, evaluated the effectiveness of the design and operation of the company’s disclosure controls and procedures (as defined in rules 13a-15(e) and 15d-15(e) of the securities exchange act of"
+      },
+      "tail": {
+        "ratio": 100.0,
+        "pass": true,
+        "pred": "evaluation of effectiveness to future periods are subject to the risk that controls may become inadequate because of changes in conditions, or that the\ndegree of compliance with the policies or procedures may deteriorate.\n/s/ BDO USA, P.C.\nChicago, Illinois\nAugust 4, 2025",
+        "gt": "s. also, projections of any evaluation of effectiveness to future periods are subject to the risk that controls may become inadequate because of changes in conditions, or that the degree of compliance with the policies or procedures may deteriorate. /s/ bdo usa, p.c. chicago, illinois august 4, 2025"
+      }
+    },
+    {
+      "item": "9B",
+      "title": "Other Information",
+      "bucket": "prose",
+      "start_page": 68,
+      "end_page": 68,
+      "head": {
+        "ratio": 94.9,
+        "pass": true,
+        "pred": "10b5-1 Trading Arrangement\nDuring the most recently completed fiscal quarter, no director or officer of the Company adopted, modified or terminated a \"Rule 10b5-1\ntrading arrangement\" or a \"non-Rule 10b5-1 trading arrangement\" (in each case, as defined in Item 408 of Regulation S-K).\nInsider Trading Policies\nThe Company has adopted insider trading policies and procedures governing the purchase, sa",
+        "gt": "item 9b. o ther information 10b5-1 trading arrangement during the most recently completed fiscal quarter, no director or officer of the company adopted , modified or terminated a \"rule 10b5-1 trading arrangement\" or a \"non-rule 10b5-1 trading arrangement\" (in each case, as defined in item 408 of reg"
+      },
+      "tail": {
+        "ratio": 99.7,
+        "pass": true,
+        "pred": "\"trading arrangement\" or a \"non-Rule 10b5-1 trading arrangement\" (in each case, as defined in Item 408 of Regulation S-K).\n\nInsider Trading Policies\n\nThe Company has adopted insider trading policies and procedures governing the purchase, sale and other disposition of its securities by\ndirectors, officers and employees that management believes are reasonably designed to promote compliance with insi",
+        "gt": "ities by directors, officers and employees that management believes are reasonably designed to promote compliance with insider trading laws, rules, and regulations, and any listing standards applicable to the company. a copy of the company’s insider trading policy is attached as exhibit 19.1 hereto."
+      }
+    },
+    {
+      "item": "15",
+      "title": "Exhibits, Financial Statement Schedules",
+      "bucket": "prose",
+      "start_page": 71,
+      "end_page": 71,
+      "head": {
+        "ratio": 90.3,
+        "pass": true,
+        "pred": "(a) List of Documents Filed as a Part of This Report:\n(1) Index to Consolidated Financial Statements:\nReport of BDO USA, P.C., Independent Registered Public Accounting Firm.\nConsolidated Balance Sheets as of May 31, 2025 and June 1, 2024.\nConsolidated Statements of Comprehensive Income for each of the three years ended May 31, 2025, June 1, 2024 and May 27, 2023.",
+        "gt": "item 15. exhibits and fina ncial statement schedules (a) list of documents filed as a part of this report: (1) index to consolidated financial statements: report of bdo usa, p.c., independent registered public accounting firm. consolidated balance sheets as of may 31, 2025 and june 1, 2024. consolid"
+      },
+      "tail": {
+        "ratio": 100.0,
+        "pass": true,
+        "pred": "Our consolidated financial statements being filed as part of this Form 10-K are filed on Item 8 of this Form 10-K. All other schedules for\nwhich provision is made in the applicable accounting regulations of the Securities and Exchange Commission are not required under the related\ninstructions or are inapplicable and therefore have been omitted.\n(c) Financial Statements required by S-X (17 CFR 210)",
+        "gt": "m 10-k. all other schedules for which provision is made in the applicable accounting regulations of the securities and exchange commission are not required under the related instructions or are inapplicable and therefore have been omitted. (c) financial statements required by s-x (17 cfr 210). none."
+      }
+    }
+  ]
+}

@@ -1,0 +1,9 @@
+{
+  "base_url": "https://openrouter.ai/api/v1",
+  "created_at": 1780681714,
+  "image_sha256": "5c8cf6c8744eeb08e5c2cb28294a52b6be407c8e057276a1b690cebd90e92d08",
+  "model": "google/gemma-4-31b-it",
+  "prompt": "You are shown one page from a SEC 10-K filing rendered as an image.\nThis page contains the END of \"Item 15. Exhibits, Financial Statement Schedules\". The next section is \"Item . \".\nTranscribe VERBATIM the last 5 lines of \"Item 15\" body text before the next item begins:\nif the \"Item \" heading appears on this page, take the 5 lines just before it; otherwise Item 15 continues to the bottom, so take the last 5 lines of the page (ignore running headers, page numbers, footers).\nRespond with ONLY a JSON object: {\"lines\": [\"line 1\", \"line 2\", ...]}",
+  "source_path": "tier2/dataset/RELL_2025/pages/page_071.png",
+  "text": "```json\n{\"lines\": [\"(b) Financial Statements and Financial Statement Schedules.\", \"Our consolidated financial statements being filed as part of this Form 10-K are filed on Item 8 of this Form 10-K. All other schedules for\", \"which provision is made in the applicable accounting regulations of the Securities and Exchange Commission are not required under the related\", \"instructions or are inapplicable and therefore have been omitted.\", \"(c) Financial Statements required by S-X (17 CFR 210).\"]}\n```"
+}

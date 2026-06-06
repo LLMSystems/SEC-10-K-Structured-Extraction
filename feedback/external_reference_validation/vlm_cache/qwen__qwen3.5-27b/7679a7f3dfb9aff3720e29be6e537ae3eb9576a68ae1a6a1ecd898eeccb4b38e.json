@@ -1,0 +1,9 @@
+{
+  "base_url": "https://openrouter.ai/api/v1",
+  "created_at": 1780685617,
+  "image_sha256": "75bd50cf8b472abe4ce01710d11964f169c2999614e1462aa4360ba33ff34656",
+  "model": "qwen/qwen3.5-27b",
+  "prompt": "You are shown one page from a SEC 10-K filing rendered as an image.\nItem \"2. Properties\" ENDS on this page; the next section is \"Item 3. Legal Proceedings\".\nFirst locate the bottom edge of Item 2's text:\n- If the \"Item 3\" heading is visible on this page, Item 2 ends on the line directly ABOVE that heading.\n- Otherwise Item 2 runs all the way to the very bottom of the page.\nThen transcribe VERBATIM the LAST 5 lines of Item 2 at that bottom edge — the FINAL lines right before the section ends, NOT lines from the top or middle of the page. Ignore running headers, page numbers, footers.\nOutput ONLY the transcribed text, no commentary, no quotes, no formatting.",
+  "source_path": "tier2/dataset/TSLA_2023/pages/page_031.png",
+  "text": "Gigafactory Shanghai Shanghai, China *\nGigafactory New York Buffalo, New York Leased\nMegafactory Lathrop, California Leased\n* We own the building and the land use rights with an initial term of 50 years. The land use rights are treated as operating lease right-of-use\nassets."
+}

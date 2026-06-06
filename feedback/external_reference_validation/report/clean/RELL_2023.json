@@ -1,0 +1,81 @@
+{
+  "label": "RELL_2023",
+  "ticker": "RELL",
+  "year": "2023",
+  "cik": "0000355948",
+  "accession_number": "0000950170-23-035840",
+  "company_name": "RICHARDSON ELECTRONICS, LTD.",
+  "pdf": "tier2/out/0000355948_2023-05-27_000095017023035840/0000355948_2023-05-27_000095017023035840.pdf",
+  "pdf_pages": 72,
+  "n_extracted": 9,
+  "n_exact": 9,
+  "n_fuzzy": 0,
+  "n_miss": 0,
+  "out_of_order": 0,
+  "items": [
+    {
+      "item": "1",
+      "page": 4,
+      "match": "exact",
+      "flag": null,
+      "snippet": "richardson electronics, ltd. (the \"company\", \"we\","
+    },
+    {
+      "item": "1A",
+      "page": 9,
+      "match": "exact",
+      "flag": null,
+      "snippet": "business and operational risks"
+    },
+    {
+      "item": "2",
+      "page": 18,
+      "match": "exact",
+      "flag": null,
+      "snippet": "our facility locations, their primary use and segm"
+    },
+    {
+      "item": "5",
+      "page": 19,
+      "match": "exact",
+      "flag": null,
+      "snippet": "unregistered sales of equity securities"
+    },
+    {
+      "item": "7",
+      "page": 21,
+      "match": "exact",
+      "flag": null,
+      "snippet": "the following discussion should be read in conjunc"
+    },
+    {
+      "item": "7A",
+      "page": 33,
+      "match": "exact",
+      "flag": null,
+      "snippet": "risk management and market sensitive financial ins"
+    },
+    {
+      "item": "8",
+      "page": 34,
+      "match": "exact",
+      "flag": null,
+      "snippet": "report of independent registered public accounting"
+    },
+    {
+      "item": "9A",
+      "page": 62,
+      "match": "exact",
+      "flag": null,
+      "snippet": "management’s report on internal control over finan"
+    },
+    {
+      "item": "15",
+      "page": 68,
+      "match": "exact",
+      "flag": null,
+      "snippet": "list of documents filed as a part of this report:"
+    }
+  ],
+  "category": "clean"
+}

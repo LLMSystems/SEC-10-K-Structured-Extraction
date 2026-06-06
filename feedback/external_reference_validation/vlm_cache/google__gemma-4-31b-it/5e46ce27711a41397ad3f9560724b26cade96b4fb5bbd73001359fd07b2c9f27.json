@@ -1,0 +1,9 @@
+{
+  "base_url": "https://openrouter.ai/api/v1",
+  "created_at": 1780684622,
+  "image_sha256": "c1f708f08f64346fef84a0d311149f269d3523b17afe05fdea9a772dc085d092",
+  "model": "google/gemma-4-31b-it",
+  "prompt": "You are shown one page from a SEC 10-K filing rendered as an image.\nThe text of Item \"3. Legal Proceedings\" ENDS somewhere on this page; the next section is \"Item 4. Mine Safety Disclosures\".\nFind where Item 3 ends: right before the \"Item 4\" heading if that heading appears on this page, otherwise at the very bottom of the page.\nTranscribe VERBATIM the 5 lines of Item 3 that come immediately BEFORE that ending point (its final lines). Give the running prose closest to the end — do NOT transcribe lines from the top or middle of the page, and do NOT transcribe a data table or figure; if the very end is a table, give the prose just before it. Ignore running headers, page numbers, footers.\nOutput ONLY the transcribed text, no commentary, no quotes, no formatting.",
+  "source_path": "tier2/dataset/NFLX_2025/pages/page_021.png",
+  "text": "Information with respect to this item may be found in Note 9 Commitments and Contingencies in the accompanying notes to our consolidated\nfinancial statements included in Part II, Item 8, “Financial Statements and Supplementary Data” of this Annual Report on Form 10-K, under the\ncaption “Legal Proceedings” which information is incorporated herein by reference."
+}

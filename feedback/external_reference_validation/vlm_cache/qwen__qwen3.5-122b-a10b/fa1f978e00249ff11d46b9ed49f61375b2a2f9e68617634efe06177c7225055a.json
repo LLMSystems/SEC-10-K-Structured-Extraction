@@ -1,0 +1,9 @@
+{
+  "base_url": "https://openrouter.ai/api/v1",
+  "created_at": 1780694093,
+  "image_sha256": "59a56cdd4773bd9658752280b6dfbd74359d8aa7a06a5306d84db6f55b5f5ee0",
+  "model": "qwen/qwen3.5-122b-a10b",
+  "prompt": "You are shown one page from a SEC 10-K filing rendered as an image.\nItem \"9B. Other Information\" ENDS on this page; the next section is \"Item 9C. Disclosure Regarding Foreign Jurisdictions that Prevent Inspections\".\nFirst locate the bottom edge of Item 9B's text:\n- If the \"Item 9C\" heading is visible on this page, Item 9B ends on the line directly ABOVE that heading.\n- Otherwise Item 9B runs all the way to the very bottom of the page.\nThen transcribe VERBATIM the LAST 5 lines of Item 9B at that bottom edge — the FINAL lines right before the section ends, NOT lines from the top or middle of the page. Ignore running headers, page numbers, footers.\nOutput ONLY the transcribed text, no commentary, no quotes, no formatting.",
+  "source_path": "tier2\\dataset\\NFLX_2025\\pages\\page_039.png",
+  "text": "Item 408 of Regulation S-K.\n\nOther than those disclosed above, none of our directors or officers adopted or terminated a “non-Rule 10b5-1 trading arrangement” as defined in\nItem 9C. Disclosure Regarding Foreign Jurisdictions that Prevent Inspections\nNot applicable.\n33"
+}

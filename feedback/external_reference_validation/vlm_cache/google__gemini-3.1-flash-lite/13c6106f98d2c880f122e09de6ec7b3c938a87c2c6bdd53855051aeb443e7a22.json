@@ -1,0 +1,9 @@
+{
+  "base_url": "https://openrouter.ai/api/v1",
+  "created_at": 1780696765,
+  "image_sha256": "6cff91f3d13a09d1d59bb8143b7db552bcc137324f53b99a36711ce10d40f76e",
+  "model": "google/gemini-3.1-flash-lite",
+  "prompt": "You are shown one page from a SEC 10-K filing rendered as an image.\nItem \"7. Management's Discussion and Analysis of Financial Condition and Results of Operations\" ENDS on this page; the next section is \"Item 7A. Quantitative and Qualitative Disclosures About Market Risk\".\nFirst locate the bottom edge of Item 7's text:\n- If the \"Item 7A\" heading is visible on this page, Item 7 ends on the line directly ABOVE that heading.\n- Otherwise Item 7 runs all the way to the very bottom of the page.\nThen transcribe VERBATIM the LAST 5 lines of Item 7 at that bottom edge — the FINAL lines right before the section ends, NOT lines from the top or middle of the page. Ignore running headers, page numbers, footers.\nOutput ONLY the transcribed text, no commentary, no quotes, no formatting.",
+  "source_path": "tier2\\dataset\\TSLA_2023\\pages\\page_045.png",
+  "text": "Net cash from financing activities changed by $6.12 billion to $2.59 billion net cash provided by financing activities during the year ended\nDecember 31, 2023 from $3.53 billion net cash used in financing activities during the year ended December 31, 2022. The change was primarily due\nto a $3.93 billion increase in proceeds from issuances of debt and a $2.01 billion decrease in repayments of debt. See Note 11, Debt, to the\nconsolidated financial statements included elsewhere in this Annual Report on Form 10-K for further details regarding our debt obligations.\nSee Note 2, Summary of Significant Accounting Policies, to the consolidated financial statements included elsewhere in this Annual Report on\nForm 10-K."
+}

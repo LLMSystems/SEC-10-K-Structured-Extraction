@@ -1,0 +1,9 @@
+{
+  "base_url": "https://openrouter.ai/api/v1",
+  "created_at": 1780690715,
+  "image_sha256": "83f53e0a8c1412ad2181676b94f6642e9320104865c61dd6a2a927c14c4cce8e",
+  "model": "google/gemma-4-31b-it",
+  "prompt": "You are shown one page from a SEC 10-K filing rendered as an image.\nItem \"1A. Risk Factors\" ENDS on this page; the next section is \"Item 1B. Unresolved Staff Comments\".\nFirst locate the bottom edge of Item 1A's text:\n- If the \"Item 1B\" heading is visible on this page, Item 1A ends on the line directly ABOVE that heading.\n- Otherwise Item 1A runs all the way to the very bottom of the page.\nThen transcribe VERBATIM the LAST 5 lines of Item 1A at that bottom edge — the FINAL lines right before the section ends, NOT lines from the top or middle of the page. Ignore running headers, page numbers, footers.\nOutput ONLY the transcribed text, no commentary, no quotes, no formatting.",
+  "source_path": "tier2\\dataset\\GDC_2023\\pages\\page_044.png",
+  "text": "position to dictate the behavior of the market or of broker-dealers who participate in the market, management will strive within the confines of\npractical limitations to prevent the described patterns from being established with respect to our securities."
+}

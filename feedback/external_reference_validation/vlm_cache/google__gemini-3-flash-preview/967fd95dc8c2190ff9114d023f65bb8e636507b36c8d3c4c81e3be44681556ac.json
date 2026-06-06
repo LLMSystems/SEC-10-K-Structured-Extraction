@@ -1,0 +1,9 @@
+{
+  "base_url": "https://openrouter.ai/api/v1",
+  "created_at": 1780695227,
+  "image_sha256": "91ba84d98ee6183d91052798aa1d3458830bcef7c58ac1a9b3847486404c706b",
+  "model": "google/gemini-3-flash-preview",
+  "prompt": "You are shown one page from a SEC 10-K filing rendered as an image.\nItem \"1C. Cybersecurity\" ENDS on this page; the next section is \"Item 2. Properties\".\nFirst locate the bottom edge of Item 1C's text:\n- If the \"Item 2\" heading is visible on this page, Item 1C ends on the line directly ABOVE that heading.\n- Otherwise Item 1C runs all the way to the very bottom of the page.\nThen transcribe VERBATIM the LAST 5 lines of Item 1C at that bottom edge — the FINAL lines right before the section ends, NOT lines from the top or middle of the page. Ignore running headers, page numbers, footers.\nOutput ONLY the transcribed text, no commentary, no quotes, no formatting.",
+  "source_path": "tier2\\dataset\\GDC_2023\\pages\\page_045.png",
+  "text": "As of December 31, 2023, we have not identified any risks from known cybersecurity threats, including as a result of any previous cybersecurity\nincidents, that have materially affected or are reasonably likely to materially affect us, including our business strategy, results of operations or\nfinancial condition. However, we face certain ongoing cybersecurity threats that, if realized, are reasonably likely to materially affect us. Additional\ninformation on cybersecurity risks we face is discussed in Part I, Item 1A, “Risk Factors.”"
+}

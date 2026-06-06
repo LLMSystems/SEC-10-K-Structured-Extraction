@@ -1,0 +1,9 @@
+{
+  "base_url": "https://openrouter.ai/api/v1",
+  "created_at": 1780697134,
+  "image_sha256": "4d55312dde89ce5c0826190dce650426d141bf084e9b83909b0caf75b5578a35",
+  "model": "google/gemini-2.5-pro",
+  "prompt": "You are shown one page from a SEC 10-K filing rendered as an image.\nItem \"14. Principal Accountant Fees and Services\" ENDS on this page; the next section is \"Item 15. Exhibits, Financial Statement Schedules\".\nFirst locate the bottom edge of Item 14's text:\n- If the \"Item 15\" heading is visible on this page, Item 14 ends on the line directly ABOVE that heading.\n- Otherwise Item 14 runs all the way to the very bottom of the page.\nThen transcribe VERBATIM the LAST 5 lines of Item 14 at that bottom edge — the FINAL lines right before the section ends, NOT lines from the top or middle of the page. Ignore running headers, page numbers, footers.\nOutput ONLY the transcribed text, no commentary, no quotes, no formatting.",
+  "source_path": "tier2\\dataset\\GDC_2023\\pages\\page_073.png",
+  "text": "Our audit committee was formed upon the consummation of our initial public offering. As a result, the audit committee did not pre-approve all of the\nforegoing services, although any services rendered prior to the formation of our audit committee were approved by our board of directors. Since the\nformation of our audit committee, and on a going-forward basis, the audit committee has and will pre-approve all auditing services and permitted\nnon-audit services to be performed for us by our auditors, including the fees and terms thereof (subject to the de minimis exceptions for non-audit\nservices described in the Exchange Act which are approved by the audit committee prior to the completion of the audit)."
+}

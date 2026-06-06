@@ -1,0 +1,9 @@
+{
+  "base_url": "https://openrouter.ai/api/v1",
+  "created_at": 1780692759,
+  "image_sha256": "732dfd844c8a8c05696c9ac296244f3b67bf7fea9c987761f24a68de438e7983",
+  "model": "qwen/qwen3.6-27b",
+  "prompt": "You are shown one page from a SEC 10-K filing rendered as an image.\nThis page contains the BEGINNING of \"Item 1. Business\".\nFind the \"Item 1\" heading, then transcribe VERBATIM the first 5 lines of text that come immediately after it. Include any report title, addressee, or sub-heading exactly as printed — do NOT skip them; only ignore page running-headers, page numbers, and footers.\nOutput ONLY the transcribed text, no commentary, no quotes, no formatting.",
+  "source_path": "tier2\\dataset\\NFLX_2025\\pages\\page_004.png",
+  "text": "ABOUT US\nNetflix, Inc. (“Netflix”, the “Company”, “registrant”, “we”, or “us”) is one of the world’s leading entertainment services offering TV series,\nfilms, games and live programming across a wide variety of genres and languages. Members can play, pause and resume watching as much as they\nwant, anytime, anywhere, and can change their plans at any time."
+}

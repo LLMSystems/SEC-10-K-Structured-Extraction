@@ -1,0 +1,9 @@
+{
+  "base_url": "https://openrouter.ai/api/v1",
+  "created_at": 1780684256,
+  "image_sha256": "97b0426d210bf630c2ea7b974ff6e11c5c40a49d9bc85d2c096ebde5589fe915",
+  "model": "google/gemma-4-31b-it",
+  "prompt": "You are shown one page from a SEC 10-K filing rendered as an image.\nItem \"1. Business\" ENDS on this page; the next section is \"Item 1A. Risk Factors\".\nFirst locate the bottom edge of Item 1's text:\n- If the \"Item 1A\" heading is visible on this page, Item 1 ends on the line directly ABOVE that heading.\n- Otherwise Item 1 runs all the way to the very bottom of the page.\nThen transcribe VERBATIM the LAST 5 lines of Item 1 at that bottom edge — the FINAL lines right before the section ends, NOT lines from the top or middle of the page. Ignore running headers, page numbers, footers.\nOutput ONLY the transcribed text, no commentary, no quotes, no formatting.",
+  "source_path": "tier2/dataset/TSLA_2023/pages/page_015.png",
+  "text": "We have previously experimented and may in the future experience latency and production ramping delays for new products and features. For example, a vendor experienced unexpected supplier issues that led to delays during the initial ramp of our initial Model S and experienced challenges with a supplier and with ramping full automation for certain of our initial Model 3 manufacturing processes. In addition, we may introduce in the future new or unique manufacturing processes and design features for our products. As we expand our vehicle offerings and global footprint, there is no guarantee that we will be able to successfully and timely introduce and scale such processes or features."
+}

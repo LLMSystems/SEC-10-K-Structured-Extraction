@@ -1,0 +1,9 @@
+{
+  "base_url": "https://openrouter.ai/api/v1",
+  "created_at": 1780697612,
+  "image_sha256": "a0156eca8502925de9afea9216d1872bfc219ef9fbb36e00855f7072b3af9e27",
+  "model": "google/gemini-2.5-pro",
+  "prompt": "You are shown one page from a SEC 10-K filing rendered as an image.\nThis page contains the BEGINNING of \"Item 1A. Risk Factors\".\nFind the \"Item 1A\" heading, then transcribe VERBATIM the first 5 lines of text that come immediately after it. Include any report title, addressee, or sub-heading exactly as printed — do NOT skip them; only ignore page running-headers, page numbers, and footers.\nOutput ONLY the transcribed text, no commentary, no quotes, no formatting.",
+  "source_path": "tier2\\dataset\\WMT_2026\\pages\\page_013.png",
+  "text": "The risks described below could, in ways we may or may not be able to accurately predict, materially and adversely affect our business, results of\noperations, financial position and liquidity. Our business operations could also be affected by additional factors that apply to all companies operating\nin the U.S. and globally. The following risk factors do not identify all risks that we may face. The disclosures below reflect our beliefs and opinions\nas to risk factors that could materially and adversely affect our business operations and our securities in the future. References to past events are\nprovided by way of example only and are not intended to be a complete listing or a representation as to whether or not such risk factors have occurred"
+}

@@ -1,0 +1,109 @@
+{
+  "label": "HURC_2025",
+  "ticker": "HURC",
+  "year": "2025",
+  "cik": "0000315374",
+  "accession_number": "0001104659-26-002512",
+  "company_name": "HURCO COMPANIES INC",
+  "pdf": "tier2/out/0000315374_2025-10-31_000110465926002512/0000315374_2025-10-31_000110465926002512.pdf",
+  "pdf_pages": 92,
+  "n_extracted": 13,
+  "n_exact": 13,
+  "n_fuzzy": 0,
+  "n_miss": 0,
+  "out_of_order": 0,
+  "items": [
+    {
+      "item": "1",
+      "page": 3,
+      "match": "exact",
+      "flag": null,
+      "snippet": "hurco companies, inc. is an international, industr"
+    },
+    {
+      "item": "1A",
+      "page": 19,
+      "match": "exact",
+      "flag": null,
+      "snippet": "in this section, we describe what we believe to be"
+    },
+    {
+      "item": "1C",
+      "page": 29,
+      "match": "exact",
+      "flag": null,
+      "snippet": "risk management and strategy"
+    },
+    {
+      "item": "2",
+      "page": 31,
+      "match": "exact",
+      "flag": null,
+      "snippet": "the following table sets forth the principal use, "
+    },
+    {
+      "item": "3",
+      "page": 32,
+      "match": "exact",
+      "flag": null,
+      "snippet": "from time to time, we are involved in various clai"
+    },
+    {
+      "item": "4",
+      "page": 32,
+      "match": "exact",
+      "flag": null,
+      "snippet": "information about our executive officers"
+    },
+    {
+      "item": "5",
+      "page": 33,
+      "match": "exact",
+      "flag": null,
+      "snippet": "our common stock is traded on the nasdaq global se"
+    },
+    {
+      "item": "7",
+      "page": 34,
+      "match": "exact",
+      "flag": null,
+      "snippet": "the following management’s discussion and analysis"
+    },
+    {
+      "item": "7A",
+      "page": 44,
+      "match": "exact",
+      "flag": null,
+      "snippet": "interest on borrowings under our bank credit agree"
+    },
+    {
+      "item": "8",
+      "page": 47,
+      "match": "exact",
+      "flag": null,
+      "snippet": "report of independent registered public accounting"
+    },
+    {
+      "item": "9A",
+      "page": 81,
+      "match": "exact",
+      "flag": null,
+      "snippet": "there have been no changes in our internal control"
+    },
+    {
+      "item": "9B",
+      "page": 83,
+      "match": "exact",
+      "flag": null,
+      "snippet": "during the three months ended october 31, 2025,"
+    },
+    {
+      "item": "15",
+      "page": 87,
+      "match": "exact",
+      "flag": null,
+      "snippet": "exhibits and financial statement schedules"
+    }
+  ],
+  "category": "clean"
+}

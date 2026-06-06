@@ -1,0 +1,9 @@
+{
+  "base_url": "https://openrouter.ai/api/v1",
+  "created_at": 1780685853,
+  "image_sha256": "96784352f6dc36cee613b409658aef5ee0bf5176a8572f3e38d5e218258fa87d",
+  "model": "qwen/qwen3.5-27b",
+  "prompt": "You are shown one page from a SEC 10-K filing rendered as an image.\nItem \"7A. Quantitative and Qualitative Disclosures About Market Risk\" ENDS on this page; the next section is \"Item 8. Financial Statements and Supplementary Data\".\nFirst locate the bottom edge of Item 7A's text:\n- If the \"Item 8\" heading is visible on this page, Item 7A ends on the line directly ABOVE that heading.\n- Otherwise Item 7A runs all the way to the very bottom of the page.\nThen transcribe VERBATIM the LAST 5 lines of Item 7A at that bottom edge — the FINAL lines right before the section ends, NOT lines from the top or middle of the page. Ignore running headers, page numbers, footers.\nOutput ONLY the transcribed text, no commentary, no quotes, no formatting.",
+  "source_path": "tier2/dataset/WMT_2026/pages/page_047.png",
+  "text": "Investment Risk\nWe are exposed to investment risk primarily related to changes in the fair value of certain equity investments, including certain immaterial equity\nmethod investments where we have elected the fair value option, measured on a recurring basis. As of January 31, 2026, the fair value of these\ninvestments was $4.5 billion. Refer to Note 7 for details. As of January 31, 2026, a hypothetical 10% change in the stock price of such investments\nwould have changed the fair value of such investments by approximately $0.4 billion."
+}

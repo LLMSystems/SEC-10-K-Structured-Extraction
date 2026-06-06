@@ -1,0 +1,6666 @@
+[
+  {
+    "meta": {
+      "source": "AAPL/2021",
+      "rule": "rule_4_content_floor",
+      "operator": "gut",
+      "target": "-",
+      "target_size": 0,
+      "expected_flag": true,
+      "actually_flagged": true
+    },
+    "items": [
+      {
+        "item_number": "1",
+        "status": "extracted",
+        "char_range": [
+          32197,
+          48639
+        ],
+        "content_len": 0
+      },
+      {
+        "item_number": "1A",
+        "status": "extracted",
+        "char_range": [
+          48639,
+          114905
+        ],
+        "content_len": 0
+      },
+      {
+        "item_number": "1B",
+        "status": "not_applicable",
+        "char_range": null,
+        "content_len": null
+      },
+      {
+        "item_number": "2",
+        "status": "extracted",
+        "char_range": [
+          114949,
+          115437
+        ],
+        "content_len": 0
+      },
+      {
+        "item_number": "3",
+        "status": "extracted",
+        "char_range": [
+          115437,
+          117284
+        ],
+        "content_len": 0
+      },
+      {
+        "item_number": "4",
+        "status": "not_applicable",
+        "char_range": null,
+        "content_len": null
+      },
+      {
+        "item_number": "5",
+        "status": "extracted",
+        "char_range": [
+          117335,
+          126843
+        ],
+        "content_len": 0
+      },
+      {
+        "item_number": "6",
+        "status": "reserved",
+        "char_range": null,
+        "content_len": null
+      },
+      {
+        "item_number": "7",
+        "status": "extracted",
+        "char_range": [
+          126867,
+          160614
+        ],
+        "content_len": 0
+      },
+      {
+        "item_number": "7A",
+        "status": "extracted",
+        "char_range": [
+          160614,
+          167307
+        ],
+        "content_len": 0
+      },
+      {
+        "item_number": "8",
+        "status": "extracted",
+        "char_range": [
+          167307,
+          347795
+        ],
+        "content_len": 0
+      },
+      {
+        "item_number": "9",
+        "status": "not_applicable",
+        "char_range": null,
+        "content_len": null
+      },
+      {
+        "item_number": "9A",
+        "status": "extracted",
+        "char_range": [
+          347897,
+          352417
+        ],
+        "content_len": 0
+      },
+      {
+        "item_number": "9B",
+        "status": "extracted",
+        "char_range": [
+          352417,
+          354044
+        ],
+        "content_len": 0
+      },
+      {
+        "item_number": "9C",
+        "status": "not_applicable",
+        "char_range": null,
+        "content_len": null
+      },
+      {
+        "item_number": "10",
+        "status": "incorporated_by_reference",
+        "char_range": [
+          354140,
+          354513
+        ],
+        "content_len": 372
+      },
+      {
+        "item_number": "11",
+        "status": "incorporated_by_reference",
+        "char_range": [
+          354513,
+          354744
+        ],
+        "content_len": 230
+      },
+      {
+        "item_number": "12",
+        "status": "incorporated_by_reference",
+        "char_range": [
+          354744,
+          355047
+        ],
+        "content_len": 302
+      },
+      {
+        "item_number": "13",
+        "status": "incorporated_by_reference",
+        "char_range": [
+          355047,
+          355329
+        ],
+        "content_len": 281
+      },
+      {
+        "item_number": "14",
+        "status": "incorporated_by_reference",
+        "char_range": [
+          355329,
+          355576
+        ],
+        "content_len": 246
+      },
+      {
+        "item_number": "15",
+        "status": "extracted",
+        "char_range": [
+          355576,
+          377273
+        ],
+        "content_len": 0
+      },
+      {
+        "item_number": "16",
+        "status": "not_applicable",
+        "char_range": null,
+        "content_len": null
+      }
+    ]
+  },
+  {
+    "meta": {
+      "source": "AAPL/2023",
+      "rule": "rule_4_content_floor",
+      "operator": "gut",
+      "target": "-",
+      "target_size": 0,
+      "expected_flag": true,
+      "actually_flagged": true
+    },
+    "items": [
+      {
+        "item_number": "1",
+        "status": "extracted",
+        "char_range": [
+          31387,
+          46421
+        ],
+        "content_len": 0
+      },
+      {
+        "item_number": "1A",
+        "status": "extracted",
+        "char_range": [
+          46421,
+          113942
+        ],
+        "content_len": 0
+      },
+      {
+        "item_number": "1B",
+        "status": "not_applicable",
+        "char_range": null,
+        "content_len": null
+      },
+      {
+        "item_number": "1C",
+        "status": "not_applicable",
+        "char_range": null,
+        "content_len": null
+      },
+      {
+        "item_number": "2",
+        "status": "extracted",
+        "char_range": [
+          114028,
+          114515
+        ],
+        "content_len": 0
+      },
+      {
+        "item_number": "3",
+        "status": "extracted",
+        "char_range": [
+          114515,
+          117581
+        ],
+        "content_len": 0
+      },
+      {
+        "item_number": "4",
+        "status": "not_applicable",
+        "char_range": null,
+        "content_len": null
+      },
+      {
+        "item_number": "5",
+        "status": "extracted",
+        "char_range": [
+          117632,
+          126349
+        ],
+        "content_len": 0
+      },
+      {
+        "item_number": "6",
+        "status": "reserved",
+        "char_range": null,
+        "content_len": null
+      },
+      {
+        "item_number": "7",
+        "status": "extracted",
+        "char_range": [
+          126373,
+          154704
+        ],
+        "content_len": 0
+      },
+      {
+        "item_number": "7A",
+        "status": "extracted",
+        "char_range": [
+          154704,
+          159076
+        ],
+        "content_len": 0
+      },
+      {
+        "item_number": "8",
+        "status": "extracted",
+        "char_range": [
+          159076,
+          320835
+        ],
+        "content_len": 0
+      },
+      {
+        "item_number": "9",
+        "status": "not_applicable",
+        "char_range": null,
+        "content_len": null
+      },
+      {
+        "item_number": "9A",
+        "status": "extracted",
+        "char_range": [
+          320937,
+          325407
+        ],
+        "content_len": 0
+      },
+      {
+        "item_number": "9B",
+        "status": "extracted",
+        "char_range": [
+          325407,
+          326213
+        ],
+        "content_len": 0
+      },
+      {
+        "item_number": "9C",
+        "status": "not_applicable",
+        "char_range": null,
+        "content_len": null
+      },
+      {
+        "item_number": "10",
+        "status": "incorporated_by_reference",
+        "char_range": [
+          326309,
+          326723
+        ],
+        "content_len": 413
+      },
+      {
+        "item_number": "11",
+        "status": "incorporated_by_reference",
+        "char_range": [
+          326723,
+          326883
+        ],
+        "content_len": 159
+      },
+      {
+        "item_number": "12",
+        "status": "incorporated_by_reference",
+        "char_range": [
+          326883,
+          327115
+        ],
+        "content_len": 231
+      },
+      {
+        "item_number": "13",
+        "status": "incorporated_by_reference",
+        "char_range": [
+          327115,
+          327326
+        ],
+        "content_len": 210
+      },
+      {
+        "item_number": "14",
+        "status": "incorporated_by_reference",
+        "char_range": [
+          327326,
+          327502
+        ],
+        "content_len": 175
+      },
+      {
+        "item_number": "15",
+        "status": "extracted",
+        "char_range": [
+          327502,
+          351620
+        ],
+        "content_len": 0
+      },
+      {
+        "item_number": "16",
+        "status": "not_applicable",
+        "char_range": null,
+        "content_len": null
+      }
+    ]
+  },
+  {
+    "meta": {
+      "source": "AAPL/2025",
+      "rule": "rule_4_content_floor",
+      "operator": "gut",
+      "target": "-",
+      "target_size": 0,
+      "expected_flag": true,
+      "actually_flagged": true
+    },
+    "items": [
+      {
+        "item_number": "1",
+        "status": "extracted",
+        "char_range": [
+          29156,
+          45089
+        ],
+        "content_len": 0
+      },
+      {
+        "item_number": "1A",
+        "status": "extracted",
+        "char_range": [
+          45089,
+          112747
+        ],
+        "content_len": 0
+      },
+      {
+        "item_number": "1B",
+        "status": "not_applicable",
+        "char_range": null,
+        "content_len": null
+      },
+      {
+        "item_number": "1C",
+        "status": "extracted",
+        "char_range": [
+          112791,
+          115500
+        ],
+        "content_len": 0
+      },
+      {
+        "item_number": "2",
+        "status": "extracted",
+        "char_range": [
+          115500,
+          115987
+        ],
+        "content_len": 0
+      },
+      {
+        "item_number": "3",
+        "status": "extracted",
+        "char_range": [
+          115987,
+          121389
+        ],
+        "content_len": 0
+      },
+      {
+        "item_number": "4",
+        "status": "not_applicable",
+        "char_range": null,
+        "content_len": null
+      },
+      {
+        "item_number": "5",
+        "status": "extracted",
+        "char_range": [
+          121440,
+          129284
+        ],
+        "content_len": 0
+      },
+      {
+        "item_number": "6",
+        "status": "reserved",
+        "char_range": null,
+        "content_len": null
+      },
+      {
+        "item_number": "7",
+        "status": "extracted",
+        "char_range": [
+          129308,
+          159594
+        ],
+        "content_len": 0
+      },
+      {
+        "item_number": "7A",
+        "status": "extracted",
+        "char_range": [
+          159594,
+          163922
+        ],
+        "content_len": 0
+      },
+      {
+        "item_number": "8",
+        "status": "extracted",
+        "char_range": [
+          163922,
+          323044
+        ],
+        "content_len": 0
+      },
+      {
+        "item_number": "9",
+        "status": "not_applicable",
+        "char_range": null,
+        "content_len": null
+      },
+      {
+        "item_number": "9A",
+        "status": "extracted",
+        "char_range": [
+          323146,
+          327616
+        ],
+        "content_len": 0
+      },
+      {
+        "item_number": "9B",
+        "status": "extracted",
+        "char_range": [
+          327616,
+          328189
+        ],
+        "content_len": 0
+      },
+      {
+        "item_number": "9C",
+        "status": "not_applicable",
+        "char_range": null,
+        "content_len": null
+      },
+      {
+        "item_number": "10",
+        "status": "incorporated_by_reference",
+        "char_range": [
+          328285,
+          328695
+        ],
+        "content_len": 409
+      },
+      {
+        "item_number": "11",
+        "status": "incorporated_by_reference",
+        "char_range": [
+          328695,
+          328855
+        ],
+        "content_len": 159
+      },
+      {
+        "item_number": "12",
+        "status": "incorporated_by_reference",
+        "char_range": [
+          328855,
+          329087
+        ],
+        "content_len": 231
+      },
+      {
+        "item_number": "13",
+        "status": "incorporated_by_reference",
+        "char_range": [
+          329087,
+          329298
+        ],
+        "content_len": 210
+      },
+      {
+        "item_number": "14",
+        "status": "incorporated_by_reference",
+        "char_range": [
+          329298,
+          329474
+        ],
+        "content_len": 175
+      },
+      {
+        "item_number": "15",
+        "status": "extracted",
+        "char_range": [
+          329474,
+          360001
+        ],
+        "content_len": 0
+      },
+      {
+        "item_number": "16",
+        "status": "not_applicable",
+        "char_range": null,
+        "content_len": null
+      }
+    ]
+  },
+  {
+    "meta": {
+      "source": "CISO/2021",
+      "rule": "rule_4_content_floor",
+      "operator": "gut",
+      "target": "-",
+      "target_size": 0,
+      "expected_flag": true,
+      "actually_flagged": true
+    },
+    "items": [
+      {
+        "item_number": "1",
+        "status": "extracted",
+        "char_range": [
+          45898,
+          146207
+        ],
+        "content_len": 0
+      },
+      {
+        "item_number": "1A",
+        "status": "extracted",
+        "char_range": [
+          146207,
+          311199
+        ],
+        "content_len": 0
+      },
+      {
+        "item_number": "1B",
+        "status": "not_applicable",
+        "char_range": null,
+        "content_len": null
+      },
+      {
+        "item_number": "2",
+        "status": "extracted",
+        "char_range": [
+          311254,
+          311675
+        ],
+        "content_len": 0
+      },
+      {
+        "item_number": "3",
+        "status": "extracted",
+        "char_range": [
+          311675,
+          313141
+        ],
+        "content_len": 0
+      },
+      {
+        "item_number": "4",
+        "status": "not_applicable",
+        "char_range": null,
+        "content_len": null
+      },
+      {
+        "item_number": "5",
+        "status": "extracted",
+        "char_range": [
+          313205,
+          320735
+        ],
+        "content_len": 0
+      },
+      {
+        "item_number": "6",
+        "status": "reserved",
+        "char_range": null,
+        "content_len": null
+      },
+      {
+        "item_number": "7",
+        "status": "extracted",
+        "char_range": [
+          320756,
+          363570
+        ],
+        "content_len": 0
+      },
+      {
+        "item_number": "7A",
+        "status": "not_applicable",
+        "char_range": null,
+        "content_len": null
+      },
+      {
+        "item_number": "8",
+        "status": "extracted",
+        "char_range": [
+          363658,
+          500273
+        ],
+        "content_len": 0
+      },
+      {
+        "item_number": "9",
+        "status": "not_applicable",
+        "char_range": null,
+        "content_len": null
+      },
+      {
+        "item_number": "9A",
+        "status": "extracted",
+        "char_range": [
+          500388,
+          506443
+        ],
+        "content_len": 0
+      },
+      {
+        "item_number": "9B",
+        "status": "not_applicable",
+        "char_range": null,
+        "content_len": null
+      },
+      {
+        "item_number": "9C",
+        "status": "not_applicable",
+        "char_range": null,
+        "content_len": null
+      },
+      {
+        "item_number": "10",
+        "status": "extracted",
+        "char_range": [
+          506590,
+          507303
+        ],
+        "content_len": 0
+      },
+      {
+        "item_number": "11",
+        "status": "incorporated_by_reference",
+        "char_range": [
+          507303,
+          507710
+        ],
+        "content_len": 404
+      },
+      {
+        "item_number": "12",
+        "status": "incorporated_by_reference",
+        "char_range": [
+          507710,
+          508090
+        ],
+        "content_len": 377
+      },
+      {
+        "item_number": "13",
+        "status": "incorporated_by_reference",
+        "char_range": [
+          508090,
+          508421
+        ],
+        "content_len": 328
+      },
+      {
+        "item_number": "14",
+        "status": "incorporated_by_reference",
+        "char_range": [
+          508421,
+          508681
+        ],
+        "content_len": 257
+      },
+      {
+        "item_number": "15",
+        "status": "extracted",
+        "char_range": [
+          508681,
+          509707
+        ],
+        "content_len": 0
+      },
+      {
+        "item_number": "16",
+        "status": "not_applicable",
+        "char_range": null,
+        "content_len": null
+      }
+    ]
+  },
+  {
+    "meta": {
+      "source": "CISO/2025",
+      "rule": "rule_4_content_floor",
+      "operator": "gut",
+      "target": "-",
+      "target_size": 0,
+      "expected_flag": true,
+      "actually_flagged": true
+    },
+    "items": [
+      {
+        "item_number": "1",
+        "status": "extracted",
+        "char_range": [
+          41295,
+          163908
+        ],
+        "content_len": 0
+      },
+      {
+        "item_number": "1A",
+        "status": "extracted",
+        "char_range": [
+          163908,
+          330439
+        ],
+        "content_len": 0
+      },
+      {
+        "item_number": "1B",
+        "status": "not_applicable",
+        "char_range": null,
+        "content_len": null
+      },
+      {
+        "item_number": "1C",
+        "status": "extracted",
+        "char_range": [
+          330482,
+          335574
+        ],
+        "content_len": 0
+      },
+      {
+        "item_number": "2",
+        "status": "extracted",
+        "char_range": [
+          335574,
+          336294
+        ],
+        "content_len": 0
+      },
+      {
+        "item_number": "3",
+        "status": "not_applicable",
+        "char_range": null,
+        "content_len": null
+      },
+      {
+        "item_number": "4",
+        "status": "not_applicable",
+        "char_range": null,
+        "content_len": null
+      },
+      {
+        "item_number": "5",
+        "status": "extracted",
+        "char_range": [
+          336408,
+          341893
+        ],
+        "content_len": 0
+      },
+      {
+        "item_number": "6",
+        "status": "reserved",
+        "char_range": null,
+        "content_len": null
+      },
+      {
+        "item_number": "7",
+        "status": "extracted",
+        "char_range": [
+          341935,
+          426499
+        ],
+        "content_len": 0
+      },
+      {
+        "item_number": "7A",
+        "status": "not_applicable",
+        "char_range": null,
+        "content_len": null
+      },
+      {
+        "item_number": "8",
+        "status": "extracted",
+        "char_range": [
+          426607,
+          695435
+        ],
+        "content_len": 0
+      },
+      {
+        "item_number": "9",
+        "status": "not_applicable",
+        "char_range": null,
+        "content_len": null
+      },
+      {
+        "item_number": "9A",
+        "status": "extracted",
+        "char_range": [
+          695537,
+          700335
+        ],
+        "content_len": 0
+      },
+      {
+        "item_number": "9B",
+        "status": "extracted",
+        "char_range": [
+          700335,
+          700840
+        ],
+        "content_len": 0
+      },
+      {
+        "item_number": "9C",
+        "status": "not_applicable",
+        "char_range": null,
+        "content_len": null
+      },
+      {
+        "item_number": "10",
+        "status": "incorporated_by_reference",
+        "char_range": [
+          700942,
+          701832
+        ],
+        "content_len": 889
+      },
+      {
+        "item_number": "11",
+        "status": "incorporated_by_reference",
+        "char_range": [
+          701832,
+          702228
+        ],
+        "content_len": 394
+      },
+      {
+        "item_number": "12",
+        "status": "incorporated_by_reference",
+        "char_range": [
+          702228,
+          702606
+        ],
+        "content_len": 377
+      },
+      {
+        "item_number": "13",
+        "status": "incorporated_by_reference",
+        "char_range": [
+          702606,
+          702883
+        ],
+        "content_len": 275
+      },
+      {
+        "item_number": "14",
+        "status": "incorporated_by_reference",
+        "char_range": [
+          702883,
+          703121
+        ],
+        "content_len": 236
+      },
+      {
+        "item_number": "15",
+        "status": "extracted",
+        "char_range": [
+          703121,
+          703977
+        ],
+        "content_len": 0
+      },
+      {
+        "item_number": "16",
+        "status": "not_applicable",
+        "char_range": null,
+        "content_len": null
+      }
+    ]
+  },
+  {
+    "meta": {
+      "source": "DENN/2019",
+      "rule": "rule_4_content_floor",
+      "operator": "gut",
+      "target": "-",
+      "target_size": 0,
+      "expected_flag": true,
+      "actually_flagged": true
+    },
+    "items": [
+      {
+        "item_number": "1",
+        "status": "extracted",
+        "char_range": [
+          31158,
+          79329
+        ],
+        "content_len": 0
+      },
+      {
+        "item_number": "1A",
+        "status": "extracted",
+        "char_range": [
+          79329,
+          116892
+        ],
+        "content_len": 0
+      },
+      {
+        "item_number": "1B",
+        "status": "not_applicable",
+        "char_range": null,
+        "content_len": null
+      },
+      {
+        "item_number": "2",
+        "status": "extracted",
+        "char_range": [
+          116935,
+          146600
+        ],
+        "content_len": 0
+      },
+      {
+        "item_number": "3",
+        "status": "extracted",
+        "char_range": [
+          146600,
+          147156
+        ],
+        "content_len": 0
+      },
+      {
+        "item_number": "4",
+        "status": "not_applicable",
+        "char_range": null,
+        "content_len": null
+      },
+      {
+        "item_number": "5",
+        "status": "extracted",
+        "char_range": [
+          147215,
+          159555
+        ],
+        "content_len": 0
+      },
+      {
+        "item_number": "6",
+        "status": "extracted",
+        "char_range": [
+          159555,
+          174870
+        ],
+        "content_len": 0
+      },
+      {
+        "item_number": "7",
+        "status": "extracted",
+        "char_range": [
+          174870,
+          282037
+        ],
+        "content_len": 0
+      },
+      {
+        "item_number": "7A",
+        "status": "extracted",
+        "char_range": [
+          282037,
+          289050
+        ],
+        "content_len": 0
+      },
+      {
+        "item_number": "8",
+        "status": "incorporated_by_reference",
+        "char_range": [
+          289050,
+          289181
+        ],
+        "content_len": 130
+      },
+      {
+        "item_number": "9",
+        "status": "not_applicable",
+        "char_range": null,
+        "content_len": null
+      },
+      {
+        "item_number": "9A",
+        "status": "extracted",
+        "char_range": [
+          289283,
+          296987
+        ],
+        "content_len": 0
+      },
+      {
+        "item_number": "9B",
+        "status": "not_applicable",
+        "char_range": null,
+        "content_len": null
+      },
+      {
+        "item_number": "9C",
+        "status": "missing",
+        "char_range": null,
+        "content_len": null
+      },
+      {
+        "item_number": "10",
+        "status": "incorporated_by_reference",
+        "char_range": [
+          297032,
+          298109
+        ],
+        "content_len": 1075
+      },
+      {
+        "item_number": "11",
+        "status": "incorporated_by_reference",
+        "char_range": [
+          298109,
+          298437
+        ],
+        "content_len": 326
+      },
+      {
+        "item_number": "12",
+        "status": "incorporated_by_reference",
+        "char_range": [
+          298437,
+          303338
+        ],
+        "content_len": 4899
+      },
+      {
+        "item_number": "13",
+        "status": "incorporated_by_reference",
+        "char_range": [
+          303338,
+          303714
+        ],
+        "content_len": 372
+      },
+      {
+        "item_number": "14",
+        "status": "incorporated_by_reference",
+        "char_range": [
+          303714,
+          304075
+        ],
+        "content_len": 359
+      },
+      {
+        "item_number": "15",
+        "status": "extracted",
+        "char_range": [
+          304075,
+          321536
+        ],
+        "content_len": 0
+      },
+      {
+        "item_number": "16",
+        "status": "not_applicable",
+        "char_range": null,
+        "content_len": null
+      }
+    ]
+  },
+  {
+    "meta": {
+      "source": "DENN/2021",
+      "rule": "rule_4_content_floor",
+      "operator": "gut",
+      "target": "-",
+      "target_size": 0,
+      "expected_flag": true,
+      "actually_flagged": true
+    },
+    "items": [
+      {
+        "item_number": "1",
+        "status": "extracted",
+        "char_range": [
+          28520,
+          81842
+        ],
+        "content_len": 0
+      },
+      {
+        "item_number": "1A",
+        "status": "extracted",
+        "char_range": [
+          81842,
+          115589
+        ],
+        "content_len": 0
+      },
+      {
+        "item_number": "1B",
+        "status": "not_applicable",
+        "char_range": null,
+        "content_len": null
+      },
+      {
+        "item_number": "2",
+        "status": "extracted",
+        "char_range": [
+          115632,
+          136775
+        ],
+        "content_len": 0
+      },
+      {
+        "item_number": "3",
+        "status": "extracted",
+        "char_range": [
+          136775,
+          137200
+        ],
+        "content_len": 0
+      },
+      {
+        "item_number": "4",
+        "status": "not_applicable",
+        "char_range": null,
+        "content_len": null
+      },
+      {
+        "item_number": "5",
+        "status": "extracted",
+        "char_range": [
+          137259,
+          148160
+        ],
+        "content_len": 0
+      },
+      {
+        "item_number": "6",
+        "status": "reserved",
+        "char_range": null,
+        "content_len": null
+      },
+      {
+        "item_number": "7",
+        "status": "extracted",
+        "char_range": [
+          148177,
+          241424
+        ],
+        "content_len": 0
+      },
+      {
+        "item_number": "7A",
+        "status": "extracted",
+        "char_range": [
+          241424,
+          248113
+        ],
+        "content_len": 0
+      },
+      {
+        "item_number": "8",
+        "status": "incorporated_by_reference",
+        "char_range": [
+          248113,
+          248244
+        ],
+        "content_len": 130
+      },
+      {
+        "item_number": "9",
+        "status": "not_applicable",
+        "char_range": null,
+        "content_len": null
+      },
+      {
+        "item_number": "9A",
+        "status": "extracted",
+        "char_range": [
+          248346,
+          255515
+        ],
+        "content_len": 0
+      },
+      {
+        "item_number": "9B",
+        "status": "not_applicable",
+        "char_range": null,
+        "content_len": null
+      },
+      {
+        "item_number": "9C",
+        "status": "not_applicable",
+        "char_range": null,
+        "content_len": null
+      },
+      {
+        "item_number": "10",
+        "status": "incorporated_by_reference",
+        "char_range": [
+          255643,
+          256689
+        ],
+        "content_len": 1044
+      },
+      {
+        "item_number": "11",
+        "status": "incorporated_by_reference",
+        "char_range": [
+          256689,
+          257017
+        ],
+        "content_len": 326
+      },
+      {
+        "item_number": "12",
+        "status": "incorporated_by_reference",
+        "char_range": [
+          257017,
+          260535
+        ],
+        "content_len": 3516
+      },
+      {
+        "item_number": "13",
+        "status": "incorporated_by_reference",
+        "char_range": [
+          260535,
+          260909
+        ],
+        "content_len": 372
+      },
+      {
+        "item_number": "14",
+        "status": "incorporated_by_reference",
+        "char_range": [
+          260909,
+          261270
+        ],
+        "content_len": 359
+      },
+      {
+        "item_number": "15",
+        "status": "extracted",
+        "char_range": [
+          261270,
+          277898
+        ],
+        "content_len": 0
+      },
+      {
+        "item_number": "16",
+        "status": "not_applicable",
+        "char_range": null,
+        "content_len": null
+      }
+    ]
+  },
+  {
+    "meta": {
+      "source": "DENN/2023",
+      "rule": "rule_4_content_floor",
+      "operator": "gut",
+      "target": "-",
+      "target_size": 0,
+      "expected_flag": true,
+      "actually_flagged": true
+    },
+    "items": [
+      {
+        "item_number": "1",
+        "status": "extracted",
+        "char_range": [
+          29709,
+          71317
+        ],
+        "content_len": 0
+      },
+      {
+        "item_number": "1A",
+        "status": "extracted",
+        "char_range": [
+          71317,
+          104233
+        ],
+        "content_len": 0
+      },
+      {
+        "item_number": "1B",
+        "status": "not_applicable",
+        "char_range": null,
+        "content_len": null
+      },
+      {
+        "item_number": "1C",
+        "status": "extracted",
+        "char_range": [
+          104276,
+          106894
+        ],
+        "content_len": 0
+      },
+      {
+        "item_number": "2",
+        "status": "extracted",
+        "char_range": [
+          106894,
+          130346
+        ],
+        "content_len": 0
+      },
+      {
+        "item_number": "3",
+        "status": "extracted",
+        "char_range": [
+          130346,
+          130771
+        ],
+        "content_len": 0
+      },
+      {
+        "item_number": "4",
+        "status": "not_applicable",
+        "char_range": null,
+        "content_len": null
+      },
+      {
+        "item_number": "5",
+        "status": "extracted",
+        "char_range": [
+          130830,
+          140264
+        ],
+        "content_len": 0
+      },
+      {
+        "item_number": "6",
+        "status": "reserved",
+        "char_range": null,
+        "content_len": null
+      },
+      {
+        "item_number": "7",
+        "status": "extracted",
+        "char_range": [
+          140281,
+          229571
+        ],
+        "content_len": 0
+      },
+      {
+        "item_number": "7A",
+        "status": "extracted",
+        "char_range": [
+          229571,
+          236815
+        ],
+        "content_len": 0
+      },
+      {
+        "item_number": "8",
+        "status": "incorporated_by_reference",
+        "char_range": [
+          236815,
+          236946
+        ],
+        "content_len": 130
+      },
+      {
+        "item_number": "9",
+        "status": "not_applicable",
+        "char_range": null,
+        "content_len": null
+      },
+      {
+        "item_number": "9A",
+        "status": "extracted",
+        "char_range": [
+          237048,
+          244358
+        ],
+        "content_len": 0
+      },
+      {
+        "item_number": "9B",
+        "status": "extracted",
+        "char_range": [
+          244358,
+          244663
+        ],
+        "content_len": 0
+      },
+      {
+        "item_number": "9C",
+        "status": "not_applicable",
+        "char_range": null,
+        "content_len": null
+      },
+      {
+        "item_number": "10",
+        "status": "incorporated_by_reference",
+        "char_range": [
+          244756,
+          245802
+        ],
+        "content_len": 1044
+      },
+      {
+        "item_number": "11",
+        "status": "incorporated_by_reference",
+        "char_range": [
+          245802,
+          246130
+        ],
+        "content_len": 326
+      },
+      {
+        "item_number": "12",
+        "status": "incorporated_by_reference",
+        "char_range": [
+          246130,
+          249653
+        ],
+        "content_len": 3521
+      },
+      {
+        "item_number": "13",
+        "status": "incorporated_by_reference",
+        "char_range": [
+          249653,
+          250027
+        ],
+        "content_len": 372
+      },
+      {
+        "item_number": "14",
+        "status": "incorporated_by_reference",
+        "char_range": [
+          250027,
+          250388
+        ],
+        "content_len": 359
+      },
+      {
+        "item_number": "15",
+        "status": "extracted",
+        "char_range": [
+          250388,
+          263250
+        ],
+        "content_len": 0
+      },
+      {
+        "item_number": "16",
+        "status": "not_applicable",
+        "char_range": null,
+        "content_len": null
+      }
+    ]
+  },
+  {
+    "meta": {
+      "source": "GDC/2021",
+      "rule": "rule_4_content_floor",
+      "operator": "gut",
+      "target": "-",
+      "target_size": 0,
+      "expected_flag": true,
+      "actually_flagged": true
+    },
+    "items": [
+      {
+        "item_number": "1",
+        "status": "extracted",
+        "char_range": [
+          16356,
+          95172
+        ],
+        "content_len": 0
+      },
+      {
+        "item_number": "1A",
+        "status": "extracted",
+        "char_range": [
+          95172,
+          203454
+        ],
+        "content_len": 0
+      },
+      {
+        "item_number": "1B",
+        "status": "not_applicable",
+        "char_range": null,
+        "content_len": null
+      },
+      {
+        "item_number": "2",
+        "status": "extracted",
+        "char_range": [
+          203499,
+          203757
+        ],
+        "content_len": 0
+      },
+      {
+        "item_number": "3",
+        "status": "extracted",
+        "char_range": [
+          203757,
+          203983
+        ],
+        "content_len": 0
+      },
+      {
+        "item_number": "4",
+        "status": "not_applicable",
+        "char_range": null,
+        "content_len": null
+      },
+      {
+        "item_number": "5",
+        "status": "extracted",
+        "char_range": [
+          204046,
+          224628
+        ],
+        "content_len": 0
+      },
+      {
+        "item_number": "6",
+        "status": "reserved",
+        "char_range": null,
+        "content_len": null
+      },
+      {
+        "item_number": "7",
+        "status": "extracted",
+        "char_range": [
+          224649,
+          269521
+        ],
+        "content_len": 0
+      },
+      {
+        "item_number": "7A",
+        "status": "extracted",
+        "char_range": [
+          269521,
+          269680
+        ],
+        "content_len": 0
+      },
+      {
+        "item_number": "8",
+        "status": "incorporated_by_reference",
+        "char_range": [
+          269680,
+          269828
+        ],
+        "content_len": 145
+      },
+      {
+        "item_number": "9",
+        "status": "not_applicable",
+        "char_range": null,
+        "content_len": null
+      },
+      {
+        "item_number": "9A",
+        "status": "extracted",
+        "char_range": [
+          269932,
+          276792
+        ],
+        "content_len": 0
+      },
+      {
+        "item_number": "9B",
+        "status": "not_applicable",
+        "char_range": null,
+        "content_len": null
+      },
+      {
+        "item_number": "9C",
+        "status": "not_applicable",
+        "char_range": null,
+        "content_len": null
+      },
+      {
+        "item_number": "10",
+        "status": "extracted",
+        "char_range": [
+          276939,
+          300065
+        ],
+        "content_len": 0
+      },
+      {
+        "item_number": "11",
+        "status": "extracted",
+        "char_range": [
+          300065,
+          316347
+        ],
+        "content_len": 0
+      },
+      {
+        "item_number": "12",
+        "status": "extracted",
+        "char_range": [
+          316347,
+          321323
+        ],
+        "content_len": 0
+      },
+      {
+        "item_number": "13",
+        "status": "extracted",
+        "char_range": [
+          321323,
+          326237
+        ],
+        "content_len": 0
+      },
+      {
+        "item_number": "14",
+        "status": "extracted",
+        "char_range": [
+          326237,
+          328616
+        ],
+        "content_len": 0
+      },
+      {
+        "item_number": "15",
+        "status": "extracted",
+        "char_range": [
+          328616,
+          330093
+        ],
+        "content_len": 0
+      },
+      {
+        "item_number": "16",
+        "status": "not_applicable",
+        "char_range": null,
+        "content_len": null
+      }
+    ]
+  },
+  {
+    "meta": {
+      "source": "GDC/2023",
+      "rule": "rule_4_content_floor",
+      "operator": "gut",
+      "target": "-",
+      "target_size": 0,
+      "expected_flag": true,
+      "actually_flagged": true
+    },
+    "items": [
+      {
+        "item_number": "1",
+        "status": "extracted",
+        "char_range": [
+          18334,
+          98464
+        ],
+        "content_len": 0
+      },
+      {
+        "item_number": "1A",
+        "status": "extracted",
+        "char_range": [
+          98464,
+          195888
+        ],
+        "content_len": 0
+      },
+      {
+        "item_number": "1B",
+        "status": "not_applicable",
+        "char_range": null,
+        "content_len": null
+      },
+      {
+        "item_number": "1C",
+        "status": "extracted",
+        "char_range": [
+          195933,
+          197547
+        ],
+        "content_len": 0
+      },
+      {
+        "item_number": "2",
+        "status": "extracted",
+        "char_range": [
+          197547,
+          198529
+        ],
+        "content_len": 0
+      },
+      {
+        "item_number": "3",
+        "status": "extracted",
+        "char_range": [
+          198529,
+          198755
+        ],
+        "content_len": 0
+      },
+      {
+        "item_number": "4",
+        "status": "not_applicable",
+        "char_range": null,
+        "content_len": null
+      },
+      {
+        "item_number": "5",
+        "status": "extracted",
+        "char_range": [
+          198819,
+          209664
+        ],
+        "content_len": 0
+      },
+      {
+        "item_number": "6",
+        "status": "reserved",
+        "char_range": null,
+        "content_len": null
+      },
+      {
+        "item_number": "7",
+        "status": "extracted",
+        "char_range": [
+          209685,
+          245111
+        ],
+        "content_len": 0
+      },
+      {
+        "item_number": "7A",
+        "status": "extracted",
+        "char_range": [
+          245111,
+          245270
+        ],
+        "content_len": 0
+      },
+      {
+        "item_number": "8",
+        "status": "incorporated_by_reference",
+        "char_range": [
+          245270,
+          245411
+        ],
+        "content_len": 138
+      },
+      {
+        "item_number": "9",
+        "status": "extracted",
+        "char_range": [
+          245411,
+          248444
+        ],
+        "content_len": 0
+      },
+      {
+        "item_number": "9A",
+        "status": "extracted",
+        "char_range": [
+          248444,
+          255518
+        ],
+        "content_len": 0
+      },
+      {
+        "item_number": "9B",
+        "status": "not_applicable",
+        "char_range": null,
+        "content_len": null
+      },
+      {
+        "item_number": "9C",
+        "status": "not_applicable",
+        "char_range": null,
+        "content_len": null
+      },
+      {
+        "item_number": "10",
+        "status": "extracted",
+        "char_range": [
+          255666,
+          276912
+        ],
+        "content_len": 0
+      },
+      {
+        "item_number": "11",
+        "status": "extracted",
+        "char_range": [
+          276912,
+          300794
+        ],
+        "content_len": 0
+      },
+      {
+        "item_number": "12",
+        "status": "extracted",
+        "char_range": [
+          300794,
+          304605
+        ],
+        "content_len": 0
+      },
+      {
+        "item_number": "13",
+        "status": "extracted",
+        "char_range": [
+          304605,
+          307673
+        ],
+        "content_len": 0
+      },
+      {
+        "item_number": "14",
+        "status": "extracted",
+        "char_range": [
+          307673,
+          311018
+        ],
+        "content_len": 0
+      },
+      {
+        "item_number": "15",
+        "status": "extracted",
+        "char_range": [
+          311018,
+          334238
+        ],
+        "content_len": 0
+      },
+      {
+        "item_number": "16",
+        "status": "not_applicable",
+        "char_range": null,
+        "content_len": null
+      }
+    ]
+  },
+  {
+    "meta": {
+      "source": "GDC/2025",
+      "rule": "rule_4_content_floor",
+      "operator": "gut",
+      "target": "-",
+      "target_size": 0,
+      "expected_flag": true,
+      "actually_flagged": true
+    },
+    "items": [
+      {
+        "item_number": "1",
+        "status": "extracted",
+        "char_range": [
+          21649,
+          160033
+        ],
+        "content_len": 0
+      },
+      {
+        "item_number": "1A",
+        "status": "extracted",
+        "char_range": [
+          160033,
+          295906
+        ],
+        "content_len": 0
+      },
+      {
+        "item_number": "1B",
+        "status": "not_applicable",
+        "char_range": null,
+        "content_len": null
+      },
+      {
+        "item_number": "1C",
+        "status": "extracted",
+        "char_range": [
+          295951,
+          297662
+        ],
+        "content_len": 0
+      },
+      {
+        "item_number": "2",
+        "status": "extracted",
+        "char_range": [
+          297662,
+          299478
+        ],
+        "content_len": 0
+      },
+      {
+        "item_number": "3",
+        "status": "extracted",
+        "char_range": [
+          299478,
+          299704
+        ],
+        "content_len": 0
+      },
+      {
+        "item_number": "4",
+        "status": "not_applicable",
+        "char_range": null,
+        "content_len": null
+      },
+      {
+        "item_number": "5",
+        "status": "extracted",
+        "char_range": [
+          299866,
+          321189
+        ],
+        "content_len": 0
+      },
+      {
+        "item_number": "6",
+        "status": "reserved",
+        "char_range": null,
+        "content_len": null
+      },
+      {
+        "item_number": "7",
+        "status": "extracted",
+        "char_range": [
+          321210,
+          356778
+        ],
+        "content_len": 0
+      },
+      {
+        "item_number": "7A",
+        "status": "extracted",
+        "char_range": [
+          356778,
+          356935
+        ],
+        "content_len": 0
+      },
+      {
+        "item_number": "8",
+        "status": "incorporated_by_reference",
+        "char_range": [
+          356935,
+          357175
+        ],
+        "content_len": 237
+      },
+      {
+        "item_number": "9",
+        "status": "extracted",
+        "char_range": [
+          357175,
+          359222
+        ],
+        "content_len": 0
+      },
+      {
+        "item_number": "9A",
+        "status": "extracted",
+        "char_range": [
+          359222,
+          366431
+        ],
+        "content_len": 0
+      },
+      {
+        "item_number": "9B",
+        "status": "not_applicable",
+        "char_range": null,
+        "content_len": null
+      },
+      {
+        "item_number": "9C",
+        "status": "not_applicable",
+        "char_range": null,
+        "content_len": null
+      },
+      {
+        "item_number": "10",
+        "status": "extracted",
+        "char_range": [
+          366677,
+          389301
+        ],
+        "content_len": 0
+      },
+      {
+        "item_number": "11",
+        "status": "extracted",
+        "char_range": [
+          389301,
+          396169
+        ],
+        "content_len": 0
+      },
+      {
+        "item_number": "12",
+        "status": "extracted",
+        "char_range": [
+          396169,
+          400031
+        ],
+        "content_len": 0
+      },
+      {
+        "item_number": "13",
+        "status": "extracted",
+        "char_range": [
+          400031,
+          408683
+        ],
+        "content_len": 0
+      },
+      {
+        "item_number": "14",
+        "status": "missing",
+        "char_range": null,
+        "content_len": null
+      },
+      {
+        "item_number": "15",
+        "status": "extracted",
+        "char_range": [
+          408683,
+          430446
+        ],
+        "content_len": 0
+      },
+      {
+        "item_number": "16",
+        "status": "not_applicable",
+        "char_range": null,
+        "content_len": null
+      }
+    ]
+  },
+  {
+    "meta": {
+      "source": "HURC/2021",
+      "rule": "rule_4_content_floor",
+      "operator": "gut",
+      "target": "-",
+      "target_size": 0,
+      "expected_flag": true,
+      "actually_flagged": true
+    },
+    "items": [
+      {
+        "item_number": "1",
+        "status": "extracted",
+        "char_range": [
+          25729,
+          87702
+        ],
+        "content_len": 0
+      },
+      {
+        "item_number": "1A",
+        "status": "extracted",
+        "char_range": [
+          87702,
+          132479
+        ],
+        "content_len": 0
+      },
+      {
+        "item_number": "1B",
+        "status": "not_applicable",
+        "char_range": null,
+        "content_len": null
+      },
+      {
+        "item_number": "2",
+        "status": "extracted",
+        "char_range": [
+          132526,
+          137625
+        ],
+        "content_len": 0
+      },
+      {
+        "item_number": "3",
+        "status": "extracted",
+        "char_range": [
+          137625,
+          138398
+        ],
+        "content_len": 0
+      },
+      {
+        "item_number": "4",
+        "status": "extracted",
+        "char_range": [
+          138398,
+          143465
+        ],
+        "content_len": 0
+      },
+      {
+        "item_number": "5",
+        "status": "extracted",
+        "char_range": [
+          143465,
+          145101
+        ],
+        "content_len": 0
+      },
+      {
+        "item_number": "6",
+        "status": "extracted",
+        "char_range": [
+          145101,
+          159545
+        ],
+        "content_len": 0
+      },
+      {
+        "item_number": "7",
+        "status": "extracted",
+        "char_range": [
+          159545,
+          242646
+        ],
+        "content_len": 0
+      },
+      {
+        "item_number": "7A",
+        "status": "extracted",
+        "char_range": [
+          242646,
+          261699
+        ],
+        "content_len": 0
+      },
+      {
+        "item_number": "8",
+        "status": "extracted",
+        "char_range": [
+          261699,
+          533572
+        ],
+        "content_len": 0
+      },
+      {
+        "item_number": "9",
+        "status": "not_applicable",
+        "char_range": null,
+        "content_len": null
+      },
+      {
+        "item_number": "9A",
+        "status": "extracted",
+        "char_range": [
+          533673,
+          534901
+        ],
+        "content_len": 0
+      },
+      {
+        "item_number": "9B",
+        "status": "extracted",
+        "char_range": [
+          534901,
+          540804
+        ],
+        "content_len": 0
+      },
+      {
+        "item_number": "9C",
+        "status": "missing",
+        "char_range": null,
+        "content_len": null
+      },
+      {
+        "item_number": "10",
+        "status": "incorporated_by_reference",
+        "char_range": [
+          540804,
+          541205
+        ],
+        "content_len": 400
+      },
+      {
+        "item_number": "11",
+        "status": "incorporated_by_reference",
+        "char_range": [
+          541205,
+          541392
+        ],
+        "content_len": 186
+      },
+      {
+        "item_number": "12",
+        "status": "incorporated_by_reference",
+        "char_range": [
+          541392,
+          541655
+        ],
+        "content_len": 262
+      },
+      {
+        "item_number": "13",
+        "status": "incorporated_by_reference",
+        "char_range": [
+          541655,
+          541893
+        ],
+        "content_len": 237
+      },
+      {
+        "item_number": "14",
+        "status": "incorporated_by_reference",
+        "char_range": [
+          541893,
+          542110
+        ],
+        "content_len": 216
+      },
+      {
+        "item_number": "15",
+        "status": "extracted",
+        "char_range": [
+          542110,
+          562090
+        ],
+        "content_len": 0
+      },
+      {
+        "item_number": "16",
+        "status": "not_applicable",
+        "char_range": null,
+        "content_len": null
+      }
+    ]
+  },
+  {
+    "meta": {
+      "source": "HURC/2023",
+      "rule": "rule_4_content_floor",
+      "operator": "gut",
+      "target": "-",
+      "target_size": 0,
+      "expected_flag": true,
+      "actually_flagged": true
+    },
+    "items": [
+      {
+        "item_number": "1",
+        "status": "extracted",
+        "char_range": [
+          26012,
+          85949
+        ],
+        "content_len": 0
+      },
+      {
+        "item_number": "1A",
+        "status": "extracted",
+        "char_range": [
+          85949,
+          119587
+        ],
+        "content_len": 0
+      },
+      {
+        "item_number": "1B",
+        "status": "not_applicable",
+        "char_range": null,
+        "content_len": null
+      },
+      {
+        "item_number": "2",
+        "status": "extracted",
+        "char_range": [
+          119634,
+          124566
+        ],
+        "content_len": 0
+      },
+      {
+        "item_number": "3",
+        "status": "extracted",
+        "char_range": [
+          124566,
+          125339
+        ],
+        "content_len": 0
+      },
+      {
+        "item_number": "4",
+        "status": "extracted",
+        "char_range": [
+          125339,
+          130401
+        ],
+        "content_len": 0
+      },
+      {
+        "item_number": "5",
+        "status": "extracted",
+        "char_range": [
+          130401,
+          132046
+        ],
+        "content_len": 0
+      },
+      {
+        "item_number": "6",
+        "status": "reserved",
+        "char_range": null,
+        "content_len": null
+      },
+      {
+        "item_number": "7",
+        "status": "extracted",
+        "char_range": [
+          132068,
+          185529
+        ],
+        "content_len": 0
+      },
+      {
+        "item_number": "7A",
+        "status": "extracted",
+        "char_range": [
+          185529,
+          204658
+        ],
+        "content_len": 0
+      },
+      {
+        "item_number": "8",
+        "status": "extracted",
+        "char_range": [
+          204658,
+          455316
+        ],
+        "content_len": 0
+      },
+      {
+        "item_number": "9",
+        "status": "not_applicable",
+        "char_range": null,
+        "content_len": null
+      },
+      {
+        "item_number": "9A",
+        "status": "extracted",
+        "char_range": [
+          455417,
+          456646
+        ],
+        "content_len": 0
+      },
+      {
+        "item_number": "9B",
+        "status": "extracted",
+        "char_range": [
+          456646,
+          459856
+        ],
+        "content_len": 0
+      },
+      {
+        "item_number": "9C",
+        "status": "not_applicable",
+        "char_range": null,
+        "content_len": null
+      },
+      {
+        "item_number": "10",
+        "status": "incorporated_by_reference",
+        "char_range": [
+          459955,
+          460365
+        ],
+        "content_len": 409
+      },
+      {
+        "item_number": "11",
+        "status": "incorporated_by_reference",
+        "char_range": [
+          460365,
+          460552
+        ],
+        "content_len": 186
+      },
+      {
+        "item_number": "12",
+        "status": "incorporated_by_reference",
+        "char_range": [
+          460552,
+          460811
+        ],
+        "content_len": 258
+      },
+      {
+        "item_number": "13",
+        "status": "incorporated_by_reference",
+        "char_range": [
+          460811,
+          461049
+        ],
+        "content_len": 237
+      },
+      {
+        "item_number": "14",
+        "status": "incorporated_by_reference",
+        "char_range": [
+          461049,
+          461258
+        ],
+        "content_len": 208
+      },
+      {
+        "item_number": "15",
+        "status": "extracted",
+        "char_range": [
+          461258,
+          480820
+        ],
+        "content_len": 0
+      },
+      {
+        "item_number": "16",
+        "status": "not_applicable",
+        "char_range": null,
+        "content_len": null
+      }
+    ]
+  },
+  {
+    "meta": {
+      "source": "HURC/2025",
+      "rule": "rule_4_content_floor",
+      "operator": "gut",
+      "target": "-",
+      "target_size": 0,
+      "expected_flag": true,
+      "actually_flagged": true
+    },
+    "items": [
+      {
+        "item_number": "1",
+        "status": "extracted",
+        "char_range": [
+          25389,
+          88210
+        ],
+        "content_len": 0
+      },
+      {
+        "item_number": "1A",
+        "status": "extracted",
+        "char_range": [
+          88210,
+          125113
+        ],
+        "content_len": 0
+      },
+      {
+        "item_number": "1B",
+        "status": "not_applicable",
+        "char_range": null,
+        "content_len": null
+      },
+      {
+        "item_number": "1C",
+        "status": "extracted",
+        "char_range": [
+          125156,
+          130735
+        ],
+        "content_len": 0
+      },
+      {
+        "item_number": "2",
+        "status": "extracted",
+        "char_range": [
+          130735,
+          135356
+        ],
+        "content_len": 0
+      },
+      {
+        "item_number": "3",
+        "status": "extracted",
+        "char_range": [
+          135356,
+          136124
+        ],
+        "content_len": 0
+      },
+      {
+        "item_number": "4",
+        "status": "extracted",
+        "char_range": [
+          136124,
+          141361
+        ],
+        "content_len": 0
+      },
+      {
+        "item_number": "5",
+        "status": "extracted",
+        "char_range": [
+          141361,
+          143554
+        ],
+        "content_len": 0
+      },
+      {
+        "item_number": "6",
+        "status": "reserved",
+        "char_range": null,
+        "content_len": null
+      },
+      {
+        "item_number": "7",
+        "status": "extracted",
+        "char_range": [
+          143576,
+          199076
+        ],
+        "content_len": 0
+      },
+      {
+        "item_number": "7A",
+        "status": "extracted",
+        "char_range": [
+          199076,
+          215225
+        ],
+        "content_len": 0
+      },
+      {
+        "item_number": "8",
+        "status": "extracted",
+        "char_range": [
+          215225,
+          460307
+        ],
+        "content_len": 0
+      },
+      {
+        "item_number": "9",
+        "status": "not_applicable",
+        "char_range": null,
+        "content_len": null
+      },
+      {
+        "item_number": "9A",
+        "status": "extracted",
+        "char_range": [
+          460408,
+          464228
+        ],
+        "content_len": 0
+      },
+      {
+        "item_number": "9B",
+        "status": "extracted",
+        "char_range": [
+          464228,
+          472574
+        ],
+        "content_len": 0
+      },
+      {
+        "item_number": "9C",
+        "status": "not_applicable",
+        "char_range": null,
+        "content_len": null
+      },
+      {
+        "item_number": "10",
+        "status": "incorporated_by_reference",
+        "char_range": [
+          472671,
+          473082
+        ],
+        "content_len": 410
+      },
+      {
+        "item_number": "11",
+        "status": "incorporated_by_reference",
+        "char_range": [
+          473082,
+          473269
+        ],
+        "content_len": 186
+      },
+      {
+        "item_number": "12",
+        "status": "incorporated_by_reference",
+        "char_range": [
+          473269,
+          473528
+        ],
+        "content_len": 258
+      },
+      {
+        "item_number": "13",
+        "status": "incorporated_by_reference",
+        "char_range": [
+          473528,
+          473766
+        ],
+        "content_len": 237
+      },
+      {
+        "item_number": "14",
+        "status": "incorporated_by_reference",
+        "char_range": [
+          473766,
+          473975
+        ],
+        "content_len": 208
+      },
+      {
+        "item_number": "15",
+        "status": "extracted",
+        "char_range": [
+          473975,
+          494369
+        ],
+        "content_len": 0
+      },
+      {
+        "item_number": "16",
+        "status": "not_applicable",
+        "char_range": null,
+        "content_len": null
+      }
+    ]
+  },
+  {
+    "meta": {
+      "source": "JPM/2025",
+      "rule": "rule_4_content_floor",
+      "operator": "gut",
+      "target": "-",
+      "target_size": 0,
+      "expected_flag": true,
+      "actually_flagged": true
+    },
+    "items": [
+      {
+        "item_number": "1",
+        "status": "extracted",
+        "char_range": [
+          224039,
+          273471
+        ],
+        "content_len": 0
+      },
+      {
+        "item_number": "1A",
+        "status": "extracted",
+        "char_range": [
+          273471,
+          393305
+        ],
+        "content_len": 0
+      },
+      {
+        "item_number": "1B",
+        "status": "not_applicable",
+        "char_range": null,
+        "content_len": null
+      },
+      {
+        "item_number": "1C",
+        "status": "extracted",
+        "char_range": [
+          393347,
+          393517
+        ],
+        "content_len": 0
+      },
+      {
+        "item_number": "2",
+        "status": "extracted",
+        "char_range": [
+          393517,
+          398565
+        ],
+        "content_len": 0
+      },
+      {
+        "item_number": "3",
+        "status": "extracted",
+        "char_range": [
+          398565,
+          398669
+        ],
+        "content_len": 0
+      },
+      {
+        "item_number": "4",
+        "status": "not_applicable",
+        "char_range": null,
+        "content_len": null
+      },
+      {
+        "item_number": "5",
+        "status": "extracted",
+        "char_range": [
+          399037,
+          405279
+        ],
+        "content_len": 0
+      },
+      {
+        "item_number": "6",
+        "status": "reserved",
+        "char_range": null,
+        "content_len": null
+      },
+      {
+        "item_number": "7",
+        "status": "extracted",
+        "char_range": [
+          405296,
+          405692
+        ],
+        "content_len": 0
+      },
+      {
+        "item_number": "7A",
+        "status": "extracted",
+        "char_range": [
+          405692,
+          406280
+        ],
+        "content_len": 0
+      },
+      {
+        "item_number": "8",
+        "status": "incorporated_by_reference",
+        "char_range": [
+          406280,
+          406646
+        ],
+        "content_len": 365
+      },
+      {
+        "item_number": "9",
+        "status": "not_applicable",
+        "char_range": null,
+        "content_len": null
+      },
+      {
+        "item_number": "9A",
+        "status": "extracted",
+        "char_range": [
+          406746,
+          409290
+        ],
+        "content_len": 0
+      },
+      {
+        "item_number": "9B",
+        "status": "extracted",
+        "char_range": [
+          409290,
+          417290
+        ],
+        "content_len": 0
+      },
+      {
+        "item_number": "9C",
+        "status": "not_applicable",
+        "char_range": null,
+        "content_len": null
+      },
+      {
+        "item_number": "10",
+        "status": "incorporated_by_reference",
+        "char_range": [
+          417703,
+          423709
+        ],
+        "content_len": 6003
+      },
+      {
+        "item_number": "11",
+        "status": "extracted",
+        "char_range": [
+          423709,
+          423760
+        ],
+        "content_len": 0
+      },
+      {
+        "item_number": "12",
+        "status": "extracted",
+        "char_range": [
+          423760,
+          426588
+        ],
+        "content_len": 0
+      },
+      {
+        "item_number": "13",
+        "status": "extracted",
+        "char_range": [
+          426588,
+          426690
+        ],
+        "content_len": 0
+      },
+      {
+        "item_number": "14",
+        "status": "extracted",
+        "char_range": [
+          426690,
+          427077
+        ],
+        "content_len": 0
+      },
+      {
+        "item_number": "15",
+        "status": "extracted",
+        "char_range": [
+          427077,
+          427129
+        ],
+        "content_len": 0
+      },
+      {
+        "item_number": "16",
+        "status": "not_applicable",
+        "char_range": null,
+        "content_len": null
+      }
+    ]
+  },
+  {
+    "meta": {
+      "source": "NFLX/2023",
+      "rule": "rule_4_content_floor",
+      "operator": "gut",
+      "target": "-",
+      "target_size": 0,
+      "expected_flag": true,
+      "actually_flagged": true
+    },
+    "items": [
+      {
+        "item_number": "1",
+        "status": "extracted",
+        "char_range": [
+          31435,
+          42475
+        ],
+        "content_len": 0
+      },
+      {
+        "item_number": "1A",
+        "status": "extracted",
+        "char_range": [
+          42475,
+          112886
+        ],
+        "content_len": 0
+      },
+      {
+        "item_number": "1B",
+        "status": "not_applicable",
+        "char_range": null,
+        "content_len": null
+      },
+      {
+        "item_number": "1C",
+        "status": "extracted",
+        "char_range": [
+          112927,
+          117571
+        ],
+        "content_len": 0
+      },
+      {
+        "item_number": "2",
+        "status": "extracted",
+        "char_range": [
+          117571,
+          118075
+        ],
+        "content_len": 0
+      },
+      {
+        "item_number": "3",
+        "status": "extracted",
+        "char_range": [
+          118075,
+          118463
+        ],
+        "content_len": 0
+      },
+      {
+        "item_number": "4",
+        "status": "not_applicable",
+        "char_range": null,
+        "content_len": null
+      },
+      {
+        "item_number": "5",
+        "status": "extracted",
+        "char_range": [
+          118538,
+          123982
+        ],
+        "content_len": 0
+      },
+      {
+        "item_number": "6",
+        "status": "reserved",
+        "char_range": null,
+        "content_len": null
+      },
+      {
+        "item_number": "7",
+        "status": "extracted",
+        "char_range": [
+          124019,
+          198418
+        ],
+        "content_len": 0
+      },
+      {
+        "item_number": "7A",
+        "status": "extracted",
+        "char_range": [
+          198418,
+          203559
+        ],
+        "content_len": 0
+      },
+      {
+        "item_number": "8",
+        "status": "incorporated_by_reference",
+        "char_range": [
+          203559,
+          203828
+        ],
+        "content_len": 268
+      },
+      {
+        "item_number": "9",
+        "status": "not_applicable",
+        "char_range": null,
+        "content_len": null
+      },
+      {
+        "item_number": "9A",
+        "status": "extracted",
+        "char_range": [
+          203945,
+          211705
+        ],
+        "content_len": 0
+      },
+      {
+        "item_number": "9B",
+        "status": "extracted",
+        "char_range": [
+          211705,
+          214174
+        ],
+        "content_len": 0
+      },
+      {
+        "item_number": "9C",
+        "status": "not_applicable",
+        "char_range": null,
+        "content_len": null
+      },
+      {
+        "item_number": "10",
+        "status": "incorporated_by_reference",
+        "char_range": [
+          214294,
+          214620
+        ],
+        "content_len": 324
+      },
+      {
+        "item_number": "11",
+        "status": "incorporated_by_reference",
+        "char_range": [
+          214620,
+          214929
+        ],
+        "content_len": 307
+      },
+      {
+        "item_number": "12",
+        "status": "incorporated_by_reference",
+        "char_range": [
+          214929,
+          215314
+        ],
+        "content_len": 383
+      },
+      {
+        "item_number": "13",
+        "status": "incorporated_by_reference",
+        "char_range": [
+          215314,
+          215646
+        ],
+        "content_len": 330
+      },
+      {
+        "item_number": "14",
+        "status": "incorporated_by_reference",
+        "char_range": [
+          215646,
+          216039
+        ],
+        "content_len": 391
+      },
+      {
+        "item_number": "15",
+        "status": "extracted",
+        "char_range": [
+          216039,
+          216717
+        ],
+        "content_len": 0
+      },
+      {
+        "item_number": "16",
+        "status": "not_applicable",
+        "char_range": null,
+        "content_len": null
+      }
+    ]
+  },
+  {
+    "meta": {
+      "source": "NFLX/2024",
+      "rule": "rule_4_content_floor",
+      "operator": "gut",
+      "target": "-",
+      "target_size": 0,
+      "expected_flag": true,
+      "actually_flagged": true
+    },
+    "items": [
+      {
+        "item_number": "1",
+        "status": "extracted",
+        "char_range": [
+          38746,
+          49453
+        ],
+        "content_len": 0
+      },
+      {
+        "item_number": "1A",
+        "status": "extracted",
+        "char_range": [
+          49453,
+          119815
+        ],
+        "content_len": 0
+      },
+      {
+        "item_number": "1B",
+        "status": "not_applicable",
+        "char_range": null,
+        "content_len": null
+      },
+      {
+        "item_number": "1C",
+        "status": "extracted",
+        "char_range": [
+          119856,
+          124655
+        ],
+        "content_len": 0
+      },
+      {
+        "item_number": "2",
+        "status": "extracted",
+        "char_range": [
+          124655,
+          125167
+        ],
+        "content_len": 0
+      },
+      {
+        "item_number": "3",
+        "status": "extracted",
+        "char_range": [
+          125167,
+          125555
+        ],
+        "content_len": 0
+      },
+      {
+        "item_number": "4",
+        "status": "not_applicable",
+        "char_range": null,
+        "content_len": null
+      },
+      {
+        "item_number": "5",
+        "status": "extracted",
+        "char_range": [
+          125630,
+          131148
+        ],
+        "content_len": 0
+      },
+      {
+        "item_number": "6",
+        "status": "reserved",
+        "char_range": null,
+        "content_len": null
+      },
+      {
+        "item_number": "7",
+        "status": "extracted",
+        "char_range": [
+          131185,
+          202987
+        ],
+        "content_len": 0
+      },
+      {
+        "item_number": "7A",
+        "status": "extracted",
+        "char_range": [
+          202987,
+          210795
+        ],
+        "content_len": 0
+      },
+      {
+        "item_number": "8",
+        "status": "incorporated_by_reference",
+        "char_range": [
+          210795,
+          211064
+        ],
+        "content_len": 268
+      },
+      {
+        "item_number": "9",
+        "status": "not_applicable",
+        "char_range": null,
+        "content_len": null
+      },
+      {
+        "item_number": "9A",
+        "status": "extracted",
+        "char_range": [
+          211181,
+          218942
+        ],
+        "content_len": 0
+      },
+      {
+        "item_number": "9B",
+        "status": "extracted",
+        "char_range": [
+          218942,
+          228224
+        ],
+        "content_len": 0
+      },
+      {
+        "item_number": "9C",
+        "status": "not_applicable",
+        "char_range": null,
+        "content_len": null
+      },
+      {
+        "item_number": "10",
+        "status": "incorporated_by_reference",
+        "char_range": [
+          228344,
+          229063
+        ],
+        "content_len": 717
+      },
+      {
+        "item_number": "11",
+        "status": "incorporated_by_reference",
+        "char_range": [
+          229063,
+          229372
+        ],
+        "content_len": 307
+      },
+      {
+        "item_number": "12",
+        "status": "incorporated_by_reference",
+        "char_range": [
+          229372,
+          229757
+        ],
+        "content_len": 383
+      },
+      {
+        "item_number": "13",
+        "status": "incorporated_by_reference",
+        "char_range": [
+          229757,
+          230089
+        ],
+        "content_len": 330
+      },
+      {
+        "item_number": "14",
+        "status": "incorporated_by_reference",
+        "char_range": [
+          230089,
+          230482
+        ],
+        "content_len": 391
+      },
+      {
+        "item_number": "15",
+        "status": "extracted",
+        "char_range": [
+          230482,
+          231160
+        ],
+        "content_len": 0
+      },
+      {
+        "item_number": "16",
+        "status": "not_applicable",
+        "char_range": null,
+        "content_len": null
+      }
+    ]
+  },
+  {
+    "meta": {
+      "source": "NFLX/2025",
+      "rule": "rule_4_content_floor",
+      "operator": "gut",
+      "target": "-",
+      "target_size": 0,
+      "expected_flag": true,
+      "actually_flagged": true
+    },
+    "items": [
+      {
+        "item_number": "1",
+        "status": "extracted",
+        "char_range": [
+          47634,
+          56839
+        ],
+        "content_len": 0
+      },
+      {
+        "item_number": "1A",
+        "status": "extracted",
+        "char_range": [
+          56839,
+          132108
+        ],
+        "content_len": 0
+      },
+      {
+        "item_number": "1B",
+        "status": "not_applicable",
+        "char_range": null,
+        "content_len": null
+      },
+      {
+        "item_number": "1C",
+        "status": "extracted",
+        "char_range": [
+          132149,
+          137030
+        ],
+        "content_len": 0
+      },
+      {
+        "item_number": "2",
+        "status": "extracted",
+        "char_range": [
+          137030,
+          137542
+        ],
+        "content_len": 0
+      },
+      {
+        "item_number": "3",
+        "status": "extracted",
+        "char_range": [
+          137542,
+          137930
+        ],
+        "content_len": 0
+      },
+      {
+        "item_number": "4",
+        "status": "not_applicable",
+        "char_range": null,
+        "content_len": null
+      },
+      {
+        "item_number": "5",
+        "status": "extracted",
+        "char_range": [
+          138005,
+          144182
+        ],
+        "content_len": 0
+      },
+      {
+        "item_number": "6",
+        "status": "reserved",
+        "char_range": null,
+        "content_len": null
+      },
+      {
+        "item_number": "7",
+        "status": "extracted",
+        "char_range": [
+          144219,
+          212734
+        ],
+        "content_len": 0
+      },
+      {
+        "item_number": "7A",
+        "status": "extracted",
+        "char_range": [
+          212734,
+          219477
+        ],
+        "content_len": 0
+      },
+      {
+        "item_number": "8",
+        "status": "incorporated_by_reference",
+        "char_range": [
+          219477,
+          219746
+        ],
+        "content_len": 268
+      },
+      {
+        "item_number": "9",
+        "status": "not_applicable",
+        "char_range": null,
+        "content_len": null
+      },
+      {
+        "item_number": "9A",
+        "status": "extracted",
+        "char_range": [
+          219863,
+          227625
+        ],
+        "content_len": 0
+      },
+      {
+        "item_number": "9B",
+        "status": "extracted",
+        "char_range": [
+          227625,
+          233648
+        ],
+        "content_len": 0
+      },
+      {
+        "item_number": "9C",
+        "status": "not_applicable",
+        "char_range": null,
+        "content_len": null
+      },
+      {
+        "item_number": "10",
+        "status": "incorporated_by_reference",
+        "char_range": [
+          233768,
+          234588
+        ],
+        "content_len": 818
+      },
+      {
+        "item_number": "11",
+        "status": "incorporated_by_reference",
+        "char_range": [
+          234588,
+          234897
+        ],
+        "content_len": 307
+      },
+      {
+        "item_number": "12",
+        "status": "incorporated_by_reference",
+        "char_range": [
+          234897,
+          235282
+        ],
+        "content_len": 383
+      },
+      {
+        "item_number": "13",
+        "status": "incorporated_by_reference",
+        "char_range": [
+          235282,
+          235614
+        ],
+        "content_len": 330
+      },
+      {
+        "item_number": "14",
+        "status": "incorporated_by_reference",
+        "char_range": [
+          235614,
+          236007
+        ],
+        "content_len": 391
+      },
+      {
+        "item_number": "15",
+        "status": "extracted",
+        "char_range": [
+          236007,
+          236685
+        ],
+        "content_len": 0
+      },
+      {
+        "item_number": "16",
+        "status": "not_applicable",
+        "char_range": null,
+        "content_len": null
+      }
+    ]
+  },
+  {
+    "meta": {
+      "source": "RELL/2021",
+      "rule": "rule_4_content_floor",
+      "operator": "gut",
+      "target": "-",
+      "target_size": 0,
+      "expected_flag": true,
+      "actually_flagged": true
+    },
+    "items": [
+      {
+        "item_number": "1",
+        "status": "extracted",
+        "char_range": [
+          25914,
+          42797
+        ],
+        "content_len": 0
+      },
+      {
+        "item_number": "1A",
+        "status": "extracted",
+        "char_range": [
+          42797,
+          83989
+        ],
+        "content_len": 0
+      },
+      {
+        "item_number": "1B",
+        "status": "not_applicable",
+        "char_range": null,
+        "content_len": null
+      },
+      {
+        "item_number": "2",
+        "status": "extracted",
+        "char_range": [
+          84034,
+          90630
+        ],
+        "content_len": 0
+      },
+      {
+        "item_number": "3",
+        "status": "extracted",
+        "char_range": [
+          90630,
+          91866
+        ],
+        "content_len": 0
+      },
+      {
+        "item_number": "4",
+        "status": "missing",
+        "char_range": null,
+        "content_len": null
+      },
+      {
+        "item_number": "5",
+        "status": "extracted",
+        "char_range": [
+          91866,
+          93836
+        ],
+        "content_len": 0
+      },
+      {
+        "item_number": "6",
+        "status": "extracted",
+        "char_range": [
+          93836,
+          110241
+        ],
+        "content_len": 0
+      },
+      {
+        "item_number": "7",
+        "status": "extracted",
+        "char_range": [
+          110241,
+          167424
+        ],
+        "content_len": 0
+      },
+      {
+        "item_number": "7A",
+        "status": "extracted",
+        "char_range": [
+          167424,
+          169773
+        ],
+        "content_len": 0
+      },
+      {
+        "item_number": "8",
+        "status": "extracted",
+        "char_range": [
+          169773,
+          377875
+        ],
+        "content_len": 0
+      },
+      {
+        "item_number": "9",
+        "status": "missing",
+        "char_range": null,
+        "content_len": null
+      },
+      {
+        "item_number": "9A",
+        "status": "extracted",
+        "char_range": [
+          377875,
+          381578
+        ],
+        "content_len": 0
+      },
+      {
+        "item_number": "9B",
+        "status": "not_applicable",
+        "char_range": null,
+        "content_len": null
+      },
+      {
+        "item_number": "9C",
+        "status": "missing",
+        "char_range": null,
+        "content_len": null
+      },
+      {
+        "item_number": "10",
+        "status": "incorporated_by_reference",
+        "char_range": [
+          381627,
+          381958
+        ],
+        "content_len": 328
+      },
+      {
+        "item_number": "11",
+        "status": "incorporated_by_reference",
+        "char_range": [
+          381958,
+          382229
+        ],
+        "content_len": 268
+      },
+      {
+        "item_number": "12",
+        "status": "incorporated_by_reference",
+        "char_range": [
+          382229,
+          385110
+        ],
+        "content_len": 2878
+      },
+      {
+        "item_number": "13",
+        "status": "incorporated_by_reference",
+        "char_range": [
+          385110,
+          385457
+        ],
+        "content_len": 342
+      },
+      {
+        "item_number": "14",
+        "status": "incorporated_by_reference",
+        "char_range": [
+          385457,
+          385762
+        ],
+        "content_len": 302
+      },
+      {
+        "item_number": "15",
+        "status": "extracted",
+        "char_range": [
+          385762,
+          388173
+        ],
+        "content_len": 0
+      },
+      {
+        "item_number": "16",
+        "status": "not_applicable",
+        "char_range": null,
+        "content_len": null
+      }
+    ]
+  },
+  {
+    "meta": {
+      "source": "RELL/2023",
+      "rule": "rule_4_content_floor",
+      "operator": "gut",
+      "target": "-",
+      "target_size": 0,
+      "expected_flag": true,
+      "actually_flagged": true
+    },
+    "items": [
+      {
+        "item_number": "1",
+        "status": "extracted",
+        "char_range": [
+          26203,
+          48158
+        ],
+        "content_len": 0
+      },
+      {
+        "item_number": "1A",
+        "status": "extracted",
+        "char_range": [
+          48158,
+          88927
+        ],
+        "content_len": 0
+      },
+      {
+        "item_number": "1B",
+        "status": "not_applicable",
+        "char_range": null,
+        "content_len": null
+      },
+      {
+        "item_number": "1C",
+        "status": "missing",
+        "char_range": null,
+        "content_len": null
+      },
+      {
+        "item_number": "2",
+        "status": "extracted",
+        "char_range": [
+          88973,
+          97224
+        ],
+        "content_len": 0
+      },
+      {
+        "item_number": "3",
+        "status": "not_applicable",
+        "char_range": null,
+        "content_len": null
+      },
+      {
+        "item_number": "4",
+        "status": "missing",
+        "char_range": null,
+        "content_len": null
+      },
+      {
+        "item_number": "5",
+        "status": "extracted",
+        "char_range": [
+          97271,
+          100111
+        ],
+        "content_len": 0
+      },
+      {
+        "item_number": "6",
+        "status": "reserved",
+        "char_range": null,
+        "content_len": null
+      },
+      {
+        "item_number": "7",
+        "status": "extracted",
+        "char_range": [
+          100131,
+          167565
+        ],
+        "content_len": 0
+      },
+      {
+        "item_number": "7A",
+        "status": "extracted",
+        "char_range": [
+          167565,
+          169913
+        ],
+        "content_len": 0
+      },
+      {
+        "item_number": "8",
+        "status": "extracted",
+        "char_range": [
+          169913,
+          447057
+        ],
+        "content_len": 0
+      },
+      {
+        "item_number": "9",
+        "status": "missing",
+        "char_range": null,
+        "content_len": null
+      },
+      {
+        "item_number": "9A",
+        "status": "extracted",
+        "char_range": [
+          447057,
+          454198
+        ],
+        "content_len": 0
+      },
+      {
+        "item_number": "9B",
+        "status": "not_applicable",
+        "char_range": null,
+        "content_len": null
+      },
+      {
+        "item_number": "9C",
+        "status": "missing",
+        "char_range": null,
+        "content_len": null
+      },
+      {
+        "item_number": "10",
+        "status": "incorporated_by_reference",
+        "char_range": [
+          454249,
+          454582
+        ],
+        "content_len": 330
+      },
+      {
+        "item_number": "11",
+        "status": "incorporated_by_reference",
+        "char_range": [
+          454582,
+          454855
+        ],
+        "content_len": 270
+      },
+      {
+        "item_number": "12",
+        "status": "incorporated_by_reference",
+        "char_range": [
+          454855,
+          458330
+        ],
+        "content_len": 3472
+      },
+      {
+        "item_number": "13",
+        "status": "incorporated_by_reference",
+        "char_range": [
+          458330,
+          458679
+        ],
+        "content_len": 344
+      },
+      {
+        "item_number": "14",
+        "status": "incorporated_by_reference",
+        "char_range": [
+          458679,
+          458985
+        ],
+        "content_len": 303
+      },
+      {
+        "item_number": "15",
+        "status": "extracted",
+        "char_range": [
+          458985,
+          460362
+        ],
+        "content_len": 0
+      },
+      {
+        "item_number": "16",
+        "status": "not_applicable",
+        "char_range": null,
+        "content_len": null
+      }
+    ]
+  },
+  {
+    "meta": {
+      "source": "RELL/2025",
+      "rule": "rule_4_content_floor",
+      "operator": "gut",
+      "target": "-",
+      "target_size": 0,
+      "expected_flag": true,
+      "actually_flagged": true
+    },
+    "items": [
+      {
+        "item_number": "1",
+        "status": "extracted",
+        "char_range": [
+          27933,
+          47122
+        ],
+        "content_len": 0
+      },
+      {
+        "item_number": "1A",
+        "status": "extracted",
+        "char_range": [
+          47122,
+          86447
+        ],
+        "content_len": 0
+      },
+      {
+        "item_number": "1B",
+        "status": "not_applicable",
+        "char_range": null,
+        "content_len": null
+      },
+      {
+        "item_number": "1C",
+        "status": "extracted",
+        "char_range": [
+          86489,
+          91297
+        ],
+        "content_len": 0
+      },
+      {
+        "item_number": "2",
+        "status": "extracted",
+        "char_range": [
+          91297,
+          99210
+        ],
+        "content_len": 0
+      },
+      {
+        "item_number": "3",
+        "status": "not_applicable",
+        "char_range": null,
+        "content_len": null
+      },
+      {
+        "item_number": "4",
+        "status": "not_applicable",
+        "char_range": null,
+        "content_len": null
+      },
+      {
+        "item_number": "5",
+        "status": "extracted",
+        "char_range": [
+          99301,
+          101553
+        ],
+        "content_len": 0
+      },
+      {
+        "item_number": "6",
+        "status": "reserved",
+        "char_range": null,
+        "content_len": null
+      },
+      {
+        "item_number": "7",
+        "status": "extracted",
+        "char_range": [
+          101571,
+          159872
+        ],
+        "content_len": 0
+      },
+      {
+        "item_number": "7A",
+        "status": "extracted",
+        "char_range": [
+          159872,
+          162127
+        ],
+        "content_len": 0
+      },
+      {
+        "item_number": "8",
+        "status": "extracted",
+        "char_range": [
+          162127,
+          453031
+        ],
+        "content_len": 0
+      },
+      {
+        "item_number": "9",
+        "status": "not_applicable",
+        "char_range": null,
+        "content_len": null
+      },
+      {
+        "item_number": "9A",
+        "status": "extracted",
+        "char_range": [
+          453138,
+          460244
+        ],
+        "content_len": 0
+      },
+      {
+        "item_number": "9B",
+        "status": "extracted",
+        "char_range": [
+          460244,
+          461016
+        ],
+        "content_len": 0
+      },
+      {
+        "item_number": "9C",
+        "status": "not_applicable",
+        "char_range": null,
+        "content_len": null
+      },
+      {
+        "item_number": "10",
+        "status": "incorporated_by_reference",
+        "char_range": [
+          461113,
+          461441
+        ],
+        "content_len": 327
+      },
+      {
+        "item_number": "11",
+        "status": "incorporated_by_reference",
+        "char_range": [
+          461441,
+          461709
+        ],
+        "content_len": 267
+      },
+      {
+        "item_number": "12",
+        "status": "incorporated_by_reference",
+        "char_range": [
+          461709,
+          465608
+        ],
+        "content_len": 3898
+      },
+      {
+        "item_number": "13",
+        "status": "incorporated_by_reference",
+        "char_range": [
+          465608,
+          465950
+        ],
+        "content_len": 341
+      },
+      {
+        "item_number": "14",
+        "status": "incorporated_by_reference",
+        "char_range": [
+          465950,
+          466251
+        ],
+        "content_len": 300
+      },
+      {
+        "item_number": "15",
+        "status": "extracted",
+        "char_range": [
+          466251,
+          467665
+        ],
+        "content_len": 0
+      },
+      {
+        "item_number": "16",
+        "status": "not_applicable",
+        "char_range": null,
+        "content_len": null
+      }
+    ]
+  },
+  {
+    "meta": {
+      "source": "TSLA/2020",
+      "rule": "rule_4_content_floor",
+      "operator": "gut",
+      "target": "-",
+      "target_size": 0,
+      "expected_flag": true,
+      "actually_flagged": true
+    },
+    "items": [
+      {
+        "item_number": "1",
+        "status": "extracted",
+        "char_range": [
+          63426,
+          107160
+        ],
+        "content_len": 0
+      },
+      {
+        "item_number": "1A",
+        "status": "extracted",
+        "char_range": [
+          107160,
+          192510
+        ],
+        "content_len": 0
+      },
+      {
+        "item_number": "1B",
+        "status": "not_applicable",
+        "char_range": null,
+        "content_len": null
+      },
+      {
+        "item_number": "2",
+        "status": "extracted",
+        "char_range": [
+          192555,
+          194643
+        ],
+        "content_len": 0
+      },
+      {
+        "item_number": "3",
+        "status": "extracted",
+        "char_range": [
+          194643,
+          196917
+        ],
+        "content_len": 0
+      },
+      {
+        "item_number": "4",
+        "status": "not_applicable",
+        "char_range": null,
+        "content_len": null
+      },
+      {
+        "item_number": "5",
+        "status": "extracted",
+        "char_range": [
+          196973,
+          199646
+        ],
+        "content_len": 0
+      },
+      {
+        "item_number": "6",
+        "status": "extracted",
+        "char_range": [
+          199646,
+          210107
+        ],
+        "content_len": 0
+      },
+      {
+        "item_number": "7",
+        "status": "extracted",
+        "char_range": [
+          210107,
+          333270
+        ],
+        "content_len": 0
+      },
+      {
+        "item_number": "7A",
+        "status": "extracted",
+        "char_range": [
+          333270,
+          336086
+        ],
+        "content_len": 0
+      },
+      {
+        "item_number": "8",
+        "status": "extracted",
+        "char_range": [
+          336086,
+          758771
+        ],
+        "content_len": 0
+      },
+      {
+        "item_number": "9",
+        "status": "not_applicable",
+        "char_range": null,
+        "content_len": null
+      },
+      {
+        "item_number": "9A",
+        "status": "extracted",
+        "char_range": [
+          758878,
+          763241
+        ],
+        "content_len": 0
+      },
+      {
+        "item_number": "9B",
+        "status": "not_applicable",
+        "char_range": null,
+        "content_len": null
+      },
+      {
+        "item_number": "9C",
+        "status": "missing",
+        "char_range": null,
+        "content_len": null
+      },
+      {
+        "item_number": "10",
+        "status": "incorporated_by_reference",
+        "char_range": [
+          763282,
+          763808
+        ],
+        "content_len": 525
+      },
+      {
+        "item_number": "11",
+        "status": "incorporated_by_reference",
+        "char_range": [
+          763808,
+          763984
+        ],
+        "content_len": 173
+      },
+      {
+        "item_number": "12",
+        "status": "incorporated_by_reference",
+        "char_range": [
+          763984,
+          764232
+        ],
+        "content_len": 245
+      },
+      {
+        "item_number": "13",
+        "status": "incorporated_by_reference",
+        "char_range": [
+          764232,
+          764458
+        ],
+        "content_len": 223
+      },
+      {
+        "item_number": "14",
+        "status": "incorporated_by_reference",
+        "char_range": [
+          764458,
+          764652
+        ],
+        "content_len": 189
+      },
+      {
+        "item_number": "15",
+        "status": "extracted",
+        "char_range": [
+          764652,
+          909418
+        ],
+        "content_len": 0
+      },
+      {
+        "item_number": "16",
+        "status": "not_applicable",
+        "char_range": null,
+        "content_len": null
+      }
+    ]
+  },
+  {
+    "meta": {
+      "source": "TSLA/2021",
+      "rule": "rule_4_content_floor",
+      "operator": "gut",
+      "target": "-",
+      "target_size": 0,
+      "expected_flag": true,
+      "actually_flagged": true
+    },
+    "items": [
+      {
+        "item_number": "1",
+        "status": "extracted",
+        "char_range": [
+          52475,
+          99619
+        ],
+        "content_len": 0
+      },
+      {
+        "item_number": "1A",
+        "status": "extracted",
+        "char_range": [
+          99619,
+          187351
+        ],
+        "content_len": 0
+      },
+      {
+        "item_number": "1B",
+        "status": "not_applicable",
+        "char_range": null,
+        "content_len": null
+      },
+      {
+        "item_number": "2",
+        "status": "extracted",
+        "char_range": [
+          187398,
+          189814
+        ],
+        "content_len": 0
+      },
+      {
+        "item_number": "3",
+        "status": "extracted",
+        "char_range": [
+          189814,
+          192405
+        ],
+        "content_len": 0
+      },
+      {
+        "item_number": "4",
+        "status": "not_applicable",
+        "char_range": null,
+        "content_len": null
+      },
+      {
+        "item_number": "5",
+        "status": "extracted",
+        "char_range": [
+          192461,
+          195960
+        ],
+        "content_len": 0
+      },
+      {
+        "item_number": "6",
+        "status": "reserved",
+        "char_range": null,
+        "content_len": null
+      },
+      {
+        "item_number": "7",
+        "status": "extracted",
+        "char_range": [
+          195981,
+          307969
+        ],
+        "content_len": 0
+      },
+      {
+        "item_number": "7A",
+        "status": "extracted",
+        "char_range": [
+          307969,
+          310214
+        ],
+        "content_len": 0
+      },
+      {
+        "item_number": "8",
+        "status": "extracted",
+        "char_range": [
+          310214,
+          797528
+        ],
+        "content_len": 0
+      },
+      {
+        "item_number": "9",
+        "status": "not_applicable",
+        "char_range": null,
+        "content_len": null
+      },
+      {
+        "item_number": "9A",
+        "status": "extracted",
+        "char_range": [
+          797633,
+          801939
+        ],
+        "content_len": 0
+      },
+      {
+        "item_number": "9B",
+        "status": "not_applicable",
+        "char_range": null,
+        "content_len": null
+      },
+      {
+        "item_number": "9C",
+        "status": "not_applicable",
+        "char_range": null,
+        "content_len": null
+      },
+      {
+        "item_number": "10",
+        "status": "incorporated_by_reference",
+        "char_range": [
+          802077,
+          802603
+        ],
+        "content_len": 525
+      },
+      {
+        "item_number": "11",
+        "status": "incorporated_by_reference",
+        "char_range": [
+          802603,
+          802779
+        ],
+        "content_len": 173
+      },
+      {
+        "item_number": "12",
+        "status": "incorporated_by_reference",
+        "char_range": [
+          802779,
+          803027
+        ],
+        "content_len": 245
+      },
+      {
+        "item_number": "13",
+        "status": "incorporated_by_reference",
+        "char_range": [
+          803027,
+          803253
+        ],
+        "content_len": 223
+      },
+      {
+        "item_number": "14",
+        "status": "incorporated_by_reference",
+        "char_range": [
+          803253,
+          803449
+        ],
+        "content_len": 189
+      },
+      {
+        "item_number": "15",
+        "status": "extracted",
+        "char_range": [
+          803449,
+          1007669
+        ],
+        "content_len": 0
+      },
+      {
+        "item_number": "16",
+        "status": "not_applicable",
+        "char_range": null,
+        "content_len": null
+      }
+    ]
+  },
+  {
+    "meta": {
+      "source": "TSLA/2023",
+      "rule": "rule_4_content_floor",
+      "operator": "gut",
+      "target": "-",
+      "target_size": 0,
+      "expected_flag": true,
+      "actually_flagged": true
+    },
+    "items": [
+      {
+        "item_number": "1",
+        "status": "extracted",
+        "char_range": [
+          43083,
+          88725
+        ],
+        "content_len": 0
+      },
+      {
+        "item_number": "1A",
+        "status": "extracted",
+        "char_range": [
+          88725,
+          167896
+        ],
+        "content_len": 0
+      },
+      {
+        "item_number": "1B",
+        "status": "not_applicable",
+        "char_range": null,
+        "content_len": null
+      },
+      {
+        "item_number": "1C",
+        "status": "extracted",
+        "char_range": [
+          167937,
+          173664
+        ],
+        "content_len": 0
+      },
+      {
+        "item_number": "2",
+        "status": "extracted",
+        "char_range": [
+          173664,
+          176288
+        ],
+        "content_len": 0
+      },
+      {
+        "item_number": "3",
+        "status": "extracted",
+        "char_range": [
+          176288,
+          177452
+        ],
+        "content_len": 0
+      },
+      {
+        "item_number": "4",
+        "status": "not_applicable",
+        "char_range": null,
+        "content_len": null
+      },
+      {
+        "item_number": "5",
+        "status": "extracted",
+        "char_range": [
+          177508,
+          180206
+        ],
+        "content_len": 0
+      },
+      {
+        "item_number": "6",
+        "status": "reserved",
+        "char_range": null,
+        "content_len": null
+      },
+      {
+        "item_number": "7",
+        "status": "extracted",
+        "char_range": [
+          180225,
+          259458
+        ],
+        "content_len": 0
+      },
+      {
+        "item_number": "7A",
+        "status": "extracted",
+        "char_range": [
+          259458,
+          261080
+        ],
+        "content_len": 0
+      },
+      {
+        "item_number": "8",
+        "status": "extracted",
+        "char_range": [
+          261080,
+          560373
+        ],
+        "content_len": 0
+      },
+      {
+        "item_number": "9",
+        "status": "not_applicable",
+        "char_range": null,
+        "content_len": null
+      },
+      {
+        "item_number": "9A",
+        "status": "extracted",
+        "char_range": [
+          560472,
+          564754
+        ],
+        "content_len": 0
+      },
+      {
+        "item_number": "9B",
+        "status": "extracted",
+        "char_range": [
+          564754,
+          565701
+        ],
+        "content_len": 0
+      },
+      {
+        "item_number": "9C",
+        "status": "not_applicable",
+        "char_range": null,
+        "content_len": null
+      },
+      {
+        "item_number": "10",
+        "status": "incorporated_by_reference",
+        "char_range": [
+          565803,
+          566316
+        ],
+        "content_len": 512
+      },
+      {
+        "item_number": "11",
+        "status": "incorporated_by_reference",
+        "char_range": [
+          566316,
+          566488
+        ],
+        "content_len": 171
+      },
+      {
+        "item_number": "12",
+        "status": "incorporated_by_reference",
+        "char_range": [
+          566488,
+          566732
+        ],
+        "content_len": 243
+      },
+      {
+        "item_number": "13",
+        "status": "incorporated_by_reference",
+        "char_range": [
+          566732,
+          566954
+        ],
+        "content_len": 221
+      },
+      {
+        "item_number": "14",
+        "status": "incorporated_by_reference",
+        "char_range": [
+          566954,
+          567150
+        ],
+        "content_len": 195
+      },
+      {
+        "item_number": "15",
+        "status": "extracted",
+        "char_range": [
+          567150,
+          713949
+        ],
+        "content_len": 0
+      },
+      {
+        "item_number": "16",
+        "status": "not_applicable",
+        "char_range": null,
+        "content_len": null
+      }
+    ]
+  },
+  {
+    "meta": {
+      "source": "TSLA/2025",
+      "rule": "rule_4_content_floor",
+      "operator": "gut",
+      "target": "-",
+      "target_size": 0,
+      "expected_flag": true,
+      "actually_flagged": true
+    },
+    "items": [
+      {
+        "item_number": "1",
+        "status": "extracted",
+        "char_range": [
+          46661,
+          92103
+        ],
+        "content_len": 0
+      },
+      {
+        "item_number": "1A",
+        "status": "extracted",
+        "char_range": [
+          92103,
+          175800
+        ],
+        "content_len": 0
+      },
+      {
+        "item_number": "1B",
+        "status": "not_applicable",
+        "char_range": null,
+        "content_len": null
+      },
+      {
+        "item_number": "1C",
+        "status": "extracted",
+        "char_range": [
+          175841,
+          181569
+        ],
+        "content_len": 0
+      },
+      {
+        "item_number": "2",
+        "status": "extracted",
+        "char_range": [
+          181569,
+          184390
+        ],
+        "content_len": 0
+      },
+      {
+        "item_number": "3",
+        "status": "extracted",
+        "char_range": [
+          184390,
+          184618
+        ],
+        "content_len": 0
+      },
+      {
+        "item_number": "4",
+        "status": "not_applicable",
+        "char_range": null,
+        "content_len": null
+      },
+      {
+        "item_number": "5",
+        "status": "extracted",
+        "char_range": [
+          184666,
+          187322
+        ],
+        "content_len": 0
+      },
+      {
+        "item_number": "6",
+        "status": "reserved",
+        "char_range": null,
+        "content_len": null
+      },
+      {
+        "item_number": "7",
+        "status": "extracted",
+        "char_range": [
+          187341,
+          271004
+        ],
+        "content_len": 0
+      },
+      {
+        "item_number": "7A",
+        "status": "extracted",
+        "char_range": [
+          271004,
+          272627
+        ],
+        "content_len": 0
+      },
+      {
+        "item_number": "8",
+        "status": "extracted",
+        "char_range": [
+          272627,
+          592489
+        ],
+        "content_len": 0
+      },
+      {
+        "item_number": "9",
+        "status": "not_applicable",
+        "char_range": null,
+        "content_len": null
+      },
+      {
+        "item_number": "9A",
+        "status": "extracted",
+        "char_range": [
+          592588,
+          596818
+        ],
+        "content_len": 0
+      },
+      {
+        "item_number": "9B",
+        "status": "extracted",
+        "char_range": [
+          596818,
+          600232
+        ],
+        "content_len": 0
+      },
+      {
+        "item_number": "9C",
+        "status": "not_applicable",
+        "char_range": null,
+        "content_len": null
+      },
+      {
+        "item_number": "10",
+        "status": "incorporated_by_reference",
+        "char_range": [
+          600325,
+          600809
+        ],
+        "content_len": 483
+      },
+      {
+        "item_number": "11",
+        "status": "incorporated_by_reference",
+        "char_range": [
+          600809,
+          600981
+        ],
+        "content_len": 171
+      },
+      {
+        "item_number": "12",
+        "status": "incorporated_by_reference",
+        "char_range": [
+          600981,
+          601225
+        ],
+        "content_len": 243
+      },
+      {
+        "item_number": "13",
+        "status": "incorporated_by_reference",
+        "char_range": [
+          601225,
+          601447
+        ],
+        "content_len": 221
+      },
+      {
+        "item_number": "14",
+        "status": "incorporated_by_reference",
+        "char_range": [
+          601447,
+          601635
+        ],
+        "content_len": 187
+      },
+      {
+        "item_number": "15",
+        "status": "extracted",
+        "char_range": [
+          601635,
+          650557
+        ],
+        "content_len": 0
+      },
+      {
+        "item_number": "16",
+        "status": "not_applicable",
+        "char_range": null,
+        "content_len": null
+      }
+    ]
+  },
+  {
+    "meta": {
+      "source": "VRA/2021",
+      "rule": "rule_4_content_floor",
+      "operator": "gut",
+      "target": "-",
+      "target_size": 0,
+      "expected_flag": true,
+      "actually_flagged": true
+    },
+    "items": [
+      {
+        "item_number": "1",
+        "status": "extracted",
+        "char_range": [
+          40758,
+          106307
+        ],
+        "content_len": 0
+      },
+      {
+        "item_number": "1A",
+        "status": "extracted",
+        "char_range": [
+          106307,
+          169858
+        ],
+        "content_len": 0
+      },
+      {
+        "item_number": "1B",
+        "status": "not_applicable",
+        "char_range": null,
+        "content_len": null
+      },
+      {
+        "item_number": "2",
+        "status": "extracted",
+        "char_range": [
+          169902,
+          182062
+        ],
+        "content_len": 0
+      },
+      {
+        "item_number": "3",
+        "status": "extracted",
+        "char_range": [
+          182062,
+          185110
+        ],
+        "content_len": 0
+      },
+      {
+        "item_number": "4",
+        "status": "not_applicable",
+        "char_range": null,
+        "content_len": null
+      },
+      {
+        "item_number": "5",
+        "status": "extracted",
+        "char_range": [
+          185181,
+          192384
+        ],
+        "content_len": 0
+      },
+      {
+        "item_number": "6",
+        "status": "missing",
+        "char_range": null,
+        "content_len": null
+      },
+      {
+        "item_number": "7",
+        "status": "extracted",
+        "char_range": [
+          192384,
+          269865
+        ],
+        "content_len": 0
+      },
+      {
+        "item_number": "7A",
+        "status": "extracted",
+        "char_range": [
+          269865,
+          271911
+        ],
+        "content_len": 0
+      },
+      {
+        "item_number": "8",
+        "status": "extracted",
+        "char_range": [
+          271911,
+          513269
+        ],
+        "content_len": 0
+      },
+      {
+        "item_number": "9",
+        "status": "not_applicable",
+        "char_range": null,
+        "content_len": null
+      },
+      {
+        "item_number": "9A",
+        "status": "extracted",
+        "char_range": [
+          513369,
+          515540
+        ],
+        "content_len": 0
+      },
+      {
+        "item_number": "9B",
+        "status": "not_applicable",
+        "char_range": null,
+        "content_len": null
+      },
+      {
+        "item_number": "9C",
+        "status": "missing",
+        "char_range": null,
+        "content_len": null
+      },
+      {
+        "item_number": "10",
+        "status": "incorporated_by_reference",
+        "char_range": [
+          515594,
+          516399
+        ],
+        "content_len": 804
+      },
+      {
+        "item_number": "11",
+        "status": "incorporated_by_reference",
+        "char_range": [
+          516399,
+          516947
+        ],
+        "content_len": 546
+      },
+      {
+        "item_number": "12",
+        "status": "incorporated_by_reference",
+        "char_range": [
+          516947,
+          520165
+        ],
+        "content_len": 3216
+      },
+      {
+        "item_number": "13",
+        "status": "incorporated_by_reference",
+        "char_range": [
+          520165,
+          520689
+        ],
+        "content_len": 523
+      },
+      {
+        "item_number": "14",
+        "status": "incorporated_by_reference",
+        "char_range": [
+          520689,
+          521130
+        ],
+        "content_len": 439
+      },
+      {
+        "item_number": "15",
+        "status": "extracted",
+        "char_range": [
+          521130,
+          523467
+        ],
+        "content_len": 0
+      },
+      {
+        "item_number": "16",
+        "status": "not_applicable",
+        "char_range": null,
+        "content_len": null
+      }
+    ]
+  },
+  {
+    "meta": {
+      "source": "VRA/2023",
+      "rule": "rule_4_content_floor",
+      "operator": "gut",
+      "target": "-",
+      "target_size": 0,
+      "expected_flag": true,
+      "actually_flagged": true
+    },
+    "items": [
+      {
+        "item_number": "1",
+        "status": "extracted",
+        "char_range": [
+          33175,
+          92846
+        ],
+        "content_len": 0
+      },
+      {
+        "item_number": "1A",
+        "status": "extracted",
+        "char_range": [
+          92846,
+          154204
+        ],
+        "content_len": 0
+      },
+      {
+        "item_number": "1B",
+        "status": "not_applicable",
+        "char_range": null,
+        "content_len": null
+      },
+      {
+        "item_number": "2",
+        "status": "extracted",
+        "char_range": [
+          154248,
+          166502
+        ],
+        "content_len": 0
+      },
+      {
+        "item_number": "3",
+        "status": "extracted",
+        "char_range": [
+          166502,
+          168785
+        ],
+        "content_len": 0
+      },
+      {
+        "item_number": "4",
+        "status": "not_applicable",
+        "char_range": null,
+        "content_len": null
+      },
+      {
+        "item_number": "5",
+        "status": "extracted",
+        "char_range": [
+          168838,
+          176128
+        ],
+        "content_len": 0
+      },
+      {
+        "item_number": "6",
+        "status": "reserved",
+        "char_range": null,
+        "content_len": null
+      },
+      {
+        "item_number": "7",
+        "status": "extracted",
+        "char_range": [
+          176128,
+          246686
+        ],
+        "content_len": 0
+      },
+      {
+        "item_number": "7A",
+        "status": "extracted",
+        "char_range": [
+          246686,
+          249437
+        ],
+        "content_len": 0
+      },
+      {
+        "item_number": "8",
+        "status": "extracted",
+        "char_range": [
+          249437,
+          459835
+        ],
+        "content_len": 0
+      },
+      {
+        "item_number": "9",
+        "status": "not_applicable",
+        "char_range": null,
+        "content_len": null
+      },
+      {
+        "item_number": "9A",
+        "status": "extracted",
+        "char_range": [
+          459936,
+          462970
+        ],
+        "content_len": 0
+      },
+      {
+        "item_number": "9B",
+        "status": "not_applicable",
+        "char_range": null,
+        "content_len": null
+      },
+      {
+        "item_number": "9C",
+        "status": "not_applicable",
+        "char_range": null,
+        "content_len": null
+      },
+      {
+        "item_number": "10",
+        "status": "incorporated_by_reference",
+        "char_range": [
+          463102,
+          463941
+        ],
+        "content_len": 838
+      },
+      {
+        "item_number": "11",
+        "status": "incorporated_by_reference",
+        "char_range": [
+          463941,
+          464513
+        ],
+        "content_len": 570
+      },
+      {
+        "item_number": "12",
+        "status": "incorporated_by_reference",
+        "char_range": [
+          464513,
+          467749
+        ],
+        "content_len": 3234
+      },
+      {
+        "item_number": "13",
+        "status": "incorporated_by_reference",
+        "char_range": [
+          467749,
+          468304
+        ],
+        "content_len": 554
+      },
+      {
+        "item_number": "14",
+        "status": "incorporated_by_reference",
+        "char_range": [
+          468304,
+          468727
+        ],
+        "content_len": 421
+      },
+      {
+        "item_number": "15",
+        "status": "extracted",
+        "char_range": [
+          468727,
+          489416
+        ],
+        "content_len": 0
+      },
+      {
+        "item_number": "16",
+        "status": "not_applicable",
+        "char_range": null,
+        "content_len": null
+      }
+    ]
+  },
+  {
+    "meta": {
+      "source": "VRA/2025",
+      "rule": "rule_4_content_floor",
+      "operator": "gut",
+      "target": "-",
+      "target_size": 0,
+      "expected_flag": true,
+      "actually_flagged": true
+    },
+    "items": [
+      {
+        "item_number": "1",
+        "status": "extracted",
+        "char_range": [
+          35116,
+          91639
+        ],
+        "content_len": 0
+      },
+      {
+        "item_number": "1A",
+        "status": "extracted",
+        "char_range": [
+          91639,
+          152768
+        ],
+        "content_len": 0
+      },
+      {
+        "item_number": "1B",
+        "status": "not_applicable",
+        "char_range": null,
+        "content_len": null
+      },
+      {
+        "item_number": "1C",
+        "status": "extracted",
+        "char_range": [
+          152812,
+          155709
+        ],
+        "content_len": 0
+      },
+      {
+        "item_number": "2",
+        "status": "extracted",
+        "char_range": [
+          155709,
+          167203
+        ],
+        "content_len": 0
+      },
+      {
+        "item_number": "3",
+        "status": "extracted",
+        "char_range": [
+          167203,
+          168200
+        ],
+        "content_len": 0
+      },
+      {
+        "item_number": "4",
+        "status": "not_applicable",
+        "char_range": null,
+        "content_len": null
+      },
+      {
+        "item_number": "5",
+        "status": "extracted",
+        "char_range": [
+          168271,
+          175643
+        ],
+        "content_len": 0
+      },
+      {
+        "item_number": "6",
+        "status": "reserved",
+        "char_range": null,
+        "content_len": null
+      },
+      {
+        "item_number": "7",
+        "status": "extracted",
+        "char_range": [
+          175643,
+          231439
+        ],
+        "content_len": 0
+      },
+      {
+        "item_number": "7A",
+        "status": "extracted",
+        "char_range": [
+          231439,
+          233476
+        ],
+        "content_len": 0
+      },
+      {
+        "item_number": "8",
+        "status": "extracted",
+        "char_range": [
+          233476,
+          454566
+        ],
+        "content_len": 0
+      },
+      {
+        "item_number": "9",
+        "status": "not_applicable",
+        "char_range": null,
+        "content_len": null
+      },
+      {
+        "item_number": "9A",
+        "status": "extracted",
+        "char_range": [
+          454666,
+          457700
+        ],
+        "content_len": 0
+      },
+      {
+        "item_number": "9B",
+        "status": "not_applicable",
+        "char_range": null,
+        "content_len": null
+      },
+      {
+        "item_number": "9C",
+        "status": "not_applicable",
+        "char_range": null,
+        "content_len": null
+      },
+      {
+        "item_number": "10",
+        "status": "incorporated_by_reference",
+        "char_range": [
+          457850,
+          458689
+        ],
+        "content_len": 838
+      },
+      {
+        "item_number": "11",
+        "status": "incorporated_by_reference",
+        "char_range": [
+          458689,
+          459261
+        ],
+        "content_len": 570
+      },
+      {
+        "item_number": "12",
+        "status": "incorporated_by_reference",
+        "char_range": [
+          459261,
+          462442
+        ],
+        "content_len": 3179
+      },
+      {
+        "item_number": "13",
+        "status": "incorporated_by_reference",
+        "char_range": [
+          462442,
+          462997
+        ],
+        "content_len": 554
+      },
+      {
+        "item_number": "14",
+        "status": "incorporated_by_reference",
+        "char_range": [
+          462997,
+          463438
+        ],
+        "content_len": 439
+      },
+      {
+        "item_number": "15",
+        "status": "extracted",
+        "char_range": [
+          463438,
+          481247
+        ],
+        "content_len": 0
+      },
+      {
+        "item_number": "16",
+        "status": "not_applicable",
+        "char_range": null,
+        "content_len": null
+      }
+    ]
+  },
+  {
+    "meta": {
+      "source": "WMT/2023",
+      "rule": "rule_4_content_floor",
+      "operator": "gut",
+      "target": "-",
+      "target_size": 0,
+      "expected_flag": true,
+      "actually_flagged": true
+    },
+    "items": [
+      {
+        "item_number": "1",
+        "status": "extracted",
+        "char_range": [
+          47798,
+          100440
+        ],
+        "content_len": 0
+      },
+      {
+        "item_number": "1A",
+        "status": "extracted",
+        "char_range": [
+          100440,
+          178591
+        ],
+        "content_len": 0
+      },
+      {
+        "item_number": "1B",
+        "status": "not_applicable",
+        "char_range": null,
+        "content_len": null
+      },
+      {
+        "item_number": "1C",
+        "status": "missing",
+        "char_range": null,
+        "content_len": null
+      },
+      {
+        "item_number": "2",
+        "status": "extracted",
+        "char_range": [
+          178634,
+          215806
+        ],
+        "content_len": 0
+      },
+      {
+        "item_number": "3",
+        "status": "extracted",
+        "char_range": [
+          215806,
+          226218
+        ],
+        "content_len": 0
+      },
+      {
+        "item_number": "4",
+        "status": "not_applicable",
+        "char_range": null,
+        "content_len": null
+      },
+      {
+        "item_number": "5",
+        "status": "extracted",
+        "char_range": [
+          226276,
+          233350
+        ],
+        "content_len": 0
+      },
+      {
+        "item_number": "6",
+        "status": "reserved",
+        "char_range": null,
+        "content_len": null
+      },
+      {
+        "item_number": "7",
+        "status": "extracted",
+        "char_range": [
+          233368,
+          334281
+        ],
+        "content_len": 0
+      },
+      {
+        "item_number": "7A",
+        "status": "extracted",
+        "char_range": [
+          334281,
+          346879
+        ],
+        "content_len": 0
+      },
+      {
+        "item_number": "8",
+        "status": "extracted",
+        "char_range": [
+          346879,
+          600711
+        ],
+        "content_len": 0
+      },
+      {
+        "item_number": "9",
+        "status": "not_applicable",
+        "char_range": null,
+        "content_len": null
+      },
+      {
+        "item_number": "9A",
+        "status": "extracted",
+        "char_range": [
+          600814,
+          605381
+        ],
+        "content_len": 0
+      },
+      {
+        "item_number": "9B",
+        "status": "not_applicable",
+        "char_range": null,
+        "content_len": null
+      },
+      {
+        "item_number": "9C",
+        "status": "not_applicable",
+        "char_range": null,
+        "content_len": null
+      },
+      {
+        "item_number": "10",
+        "status": "incorporated_by_reference",
+        "char_range": [
+          605520,
+          607321
+        ],
+        "content_len": 1799
+      },
+      {
+        "item_number": "11",
+        "status": "incorporated_by_reference",
+        "char_range": [
+          607321,
+          607579
+        ],
+        "content_len": 256
+      },
+      {
+        "item_number": "12",
+        "status": "incorporated_by_reference",
+        "char_range": [
+          607579,
+          607863
+        ],
+        "content_len": 282
+      },
+      {
+        "item_number": "13",
+        "status": "incorporated_by_reference",
+        "char_range": [
+          607863,
+          608150
+        ],
+        "content_len": 285
+      },
+      {
+        "item_number": "14",
+        "status": "incorporated_by_reference",
+        "char_range": [
+          608150,
+          608414
+        ],
+        "content_len": 262
+      },
+      {
+        "item_number": "15",
+        "status": "extracted",
+        "char_range": [
+          608414,
+          627231
+        ],
+        "content_len": 0
+      },
+      {
+        "item_number": "16",
+        "status": "not_applicable",
+        "char_range": null,
+        "content_len": null
+      }
+    ]
+  },
+  {
+    "meta": {
+      "source": "WMT/2026",
+      "rule": "rule_4_content_floor",
+      "operator": "gut",
+      "target": "-",
+      "target_size": 0,
+      "expected_flag": true,
+      "actually_flagged": true
+    },
+    "items": [
+      {
+        "item_number": "1",
+        "status": "extracted",
+        "char_range": [
+          45491,
+          87778
+        ],
+        "content_len": 0
+      },
+      {
+        "item_number": "1A",
+        "status": "extracted",
+        "char_range": [
+          87778,
+          180926
+        ],
+        "content_len": 0
+      },
+      {
+        "item_number": "1B",
+        "status": "not_applicable",
+        "char_range": null,
+        "content_len": null
+      },
+      {
+        "item_number": "1C",
+        "status": "extracted",
+        "char_range": [
+          180969,
+          188621
+        ],
+        "content_len": 0
+      },
+      {
+        "item_number": "2",
+        "status": "extracted",
+        "char_range": [
+          188621,
+          200877
+        ],
+        "content_len": 0
+      },
+      {
+        "item_number": "3",
+        "status": "extracted",
+        "char_range": [
+          200877,
+          206306
+        ],
+        "content_len": 0
+      },
+      {
+        "item_number": "4",
+        "status": "not_applicable",
+        "char_range": null,
+        "content_len": null
+      },
+      {
+        "item_number": "5",
+        "status": "extracted",
+        "char_range": [
+          206364,
+          213420
+        ],
+        "content_len": 0
+      },
+      {
+        "item_number": "6",
+        "status": "reserved",
+        "char_range": null,
+        "content_len": null
+      },
+      {
+        "item_number": "7",
+        "status": "extracted",
+        "char_range": [
+          213438,
+          313803
+        ],
+        "content_len": 0
+      },
+      {
+        "item_number": "7A",
+        "status": "extracted",
+        "char_range": [
+          313803,
+          326729
+        ],
+        "content_len": 0
+      },
+      {
+        "item_number": "8",
+        "status": "extracted",
+        "char_range": [
+          326729,
+          584315
+        ],
+        "content_len": 0
+      },
+      {
+        "item_number": "9",
+        "status": "not_applicable",
+        "char_range": null,
+        "content_len": null
+      },
+      {
+        "item_number": "9A",
+        "status": "extracted",
+        "char_range": [
+          584418,
+          588520
+        ],
+        "content_len": 0
+      },
+      {
+        "item_number": "9B",
+        "status": "extracted",
+        "char_range": [
+          588520,
+          589679
+        ],
+        "content_len": 0
+      },
+      {
+        "item_number": "9C",
+        "status": "not_applicable",
+        "char_range": null,
+        "content_len": null
+      },
+      {
+        "item_number": "10",
+        "status": "incorporated_by_reference",
+        "char_range": [
+          589783,
+          592602
+        ],
+        "content_len": 2817
+      },
+      {
+        "item_number": "11",
+        "status": "incorporated_by_reference",
+        "char_range": [
+          592602,
+          592860
+        ],
+        "content_len": 256
+      },
+      {
+        "item_number": "12",
+        "status": "incorporated_by_reference",
+        "char_range": [
+          592860,
+          593144
+        ],
+        "content_len": 282
+      },
+      {
+        "item_number": "13",
+        "status": "incorporated_by_reference",
+        "char_range": [
+          593144,
+          593431
+        ],
+        "content_len": 285
+      },
+      {
+        "item_number": "14",
+        "status": "incorporated_by_reference",
+        "char_range": [
+          593431,
+          593695
+        ],
+        "content_len": 262
+      },
+      {
+        "item_number": "15",
+        "status": "extracted",
+        "char_range": [
+          593695,
+          614974
+        ],
+        "content_len": 0
+      },
+      {
+        "item_number": "16",
+        "status": "not_applicable",
+        "char_range": null,
+        "content_len": null
+      }
+    ]
+  },
+  {
+    "meta": {
+      "source": "WSTL/2016",
+      "rule": "rule_4_content_floor",
+      "operator": "gut",
+      "target": "-",
+      "target_size": 0,
+      "expected_flag": true,
+      "actually_flagged": true
+    },
+    "items": [
+      {
+        "item_number": "1",
+        "status": "extracted",
+        "char_range": [
+          14997,
+          38853
+        ],
+        "content_len": 0
+      },
+      {
+        "item_number": "1A",
+        "status": "extracted",
+        "char_range": [
+          38853,
+          69767
+        ],
+        "content_len": 0
+      },
+      {
+        "item_number": "1B",
+        "status": "not_applicable",
+        "char_range": null,
+        "content_len": null
+      },
+      {
+        "item_number": "2",
+        "status": "extracted",
+        "char_range": [
+          69832,
+          72740
+        ],
+        "content_len": 0
+      },
+      {
+        "item_number": "3",
+        "status": "extracted",
+        "char_range": [
+          72740,
+          73320
+        ],
+        "content_len": 0
+      },
+      {
+        "item_number": "4",
+        "status": "not_applicable",
+        "char_range": null,
+        "content_len": null
+      },
+      {
+        "item_number": "5",
+        "status": "extracted",
+        "char_range": [
+          73400,
+          85282
+        ],
+        "content_len": 0
+      },
+      {
+        "item_number": "6",
+        "status": "extracted",
+        "char_range": [
+          85282,
+          108933
+        ],
+        "content_len": 0
+      },
+      {
+        "item_number": "7",
+        "status": "extracted",
+        "char_range": [
+          108933,
+          171833
+        ],
+        "content_len": 0
+      },
+      {
+        "item_number": "7A",
+        "status": "extracted",
+        "char_range": [
+          171833,
+          174118
+        ],
+        "content_len": 0
+      },
+      {
+        "item_number": "8",
+        "status": "incorporated_by_reference",
+        "char_range": [
+          174118,
+          174640
+        ],
+        "content_len": 521
+      },
+      {
+        "item_number": "9",
+        "status": "not_applicable",
+        "char_range": null,
+        "content_len": null
+      },
+      {
+        "item_number": "9A",
+        "status": "extracted",
+        "char_range": [
+          174739,
+          178061
+        ],
+        "content_len": 0
+      },
+      {
+        "item_number": "9B",
+        "status": "not_applicable",
+        "char_range": null,
+        "content_len": null
+      },
+      {
+        "item_number": "9C",
+        "status": "missing",
+        "char_range": null,
+        "content_len": null
+      },
+      {
+        "item_number": "10",
+        "status": "incorporated_by_reference",
+        "char_range": [
+          178127,
+          179876
+        ],
+        "content_len": 1747
+      },
+      {
+        "item_number": "11",
+        "status": "incorporated_by_reference",
+        "char_range": [
+          179876,
+          180528
+        ],
+        "content_len": 650
+      },
+      {
+        "item_number": "12",
+        "status": "incorporated_by_reference",
+        "char_range": [
+          180528,
+          180948
+        ],
+        "content_len": 418
+      },
+      {
+        "item_number": "13",
+        "status": "incorporated_by_reference",
+        "char_range": [
+          180948,
+          181361
+        ],
+        "content_len": 411
+      },
+      {
+        "item_number": "14",
+        "status": "incorporated_by_reference",
+        "char_range": [
+          181361,
+          181756
+        ],
+        "content_len": 393
+      },
+      {
+        "item_number": "15",
+        "status": "extracted",
+        "char_range": [
+          181756,
+          208977
+        ],
+        "content_len": 0
+      },
+      {
+        "item_number": "16",
+        "status": "not_applicable",
+        "char_range": null,
+        "content_len": null
+      }
+    ]
+  },
+  {
+    "meta": {
+      "source": "WSTL/2018",
+      "rule": "rule_4_content_floor",
+      "operator": "gut",
+      "target": "-",
+      "target_size": 0,
+      "expected_flag": true,
+      "actually_flagged": true
+    },
+    "items": [
+      {
+        "item_number": "1",
+        "status": "extracted",
+        "char_range": [
+          13977,
+          33923
+        ],
+        "content_len": 0
+      },
+      {
+        "item_number": "1A",
+        "status": "extracted",
+        "char_range": [
+          33923,
+          72633
+        ],
+        "content_len": 0
+      },
+      {
+        "item_number": "1B",
+        "status": "not_applicable",
+        "char_range": null,
+        "content_len": null
+      },
+      {
+        "item_number": "2",
+        "status": "extracted",
+        "char_range": [
+          72698,
+          76154
+        ],
+        "content_len": 0
+      },
+      {
+        "item_number": "3",
+        "status": "extracted",
+        "char_range": [
+          76154,
+          78100
+        ],
+        "content_len": 0
+      },
+      {
+        "item_number": "4",
+        "status": "not_applicable",
+        "char_range": null,
+        "content_len": null
+      },
+      {
+        "item_number": "5",
+        "status": "extracted",
+        "char_range": [
+          78180,
+          85717
+        ],
+        "content_len": 0
+      },
+      {
+        "item_number": "6",
+        "status": "not_applicable",
+        "char_range": null,
+        "content_len": null
+      },
+      {
+        "item_number": "7",
+        "status": "extracted",
+        "char_range": [
+          85798,
+          137865
+        ],
+        "content_len": 0
+      },
+      {
+        "item_number": "7A",
+        "status": "not_applicable",
+        "char_range": null,
+        "content_len": null
+      },
+      {
+        "item_number": "8",
+        "status": "incorporated_by_reference",
+        "char_range": [
+          137981,
+          138504
+        ],
+        "content_len": 522
+      },
+      {
+        "item_number": "9",
+        "status": "not_applicable",
+        "char_range": null,
+        "content_len": null
+      },
+      {
+        "item_number": "9A",
+        "status": "extracted",
+        "char_range": [
+          138603,
+          141700
+        ],
+        "content_len": 0
+      },
+      {
+        "item_number": "9B",
+        "status": "not_applicable",
+        "char_range": null,
+        "content_len": null
+      },
+      {
+        "item_number": "9C",
+        "status": "missing",
+        "char_range": null,
+        "content_len": null
+      },
+      {
+        "item_number": "10",
+        "status": "incorporated_by_reference",
+        "char_range": [
+          141766,
+          143515
+        ],
+        "content_len": 1747
+      },
+      {
+        "item_number": "11",
+        "status": "incorporated_by_reference",
+        "char_range": [
+          143515,
+          144167
+        ],
+        "content_len": 650
+      },
+      {
+        "item_number": "12",
+        "status": "incorporated_by_reference",
+        "char_range": [
+          144167,
+          144587
+        ],
+        "content_len": 418
+      },
+      {
+        "item_number": "13",
+        "status": "incorporated_by_reference",
+        "char_range": [
+          144587,
+          145000
+        ],
+        "content_len": 411
+      },
+      {
+        "item_number": "14",
+        "status": "incorporated_by_reference",
+        "char_range": [
+          145000,
+          145395
+        ],
+        "content_len": 393
+      },
+      {
+        "item_number": "15",
+        "status": "extracted",
+        "char_range": [
+          145395,
+          171704
+        ],
+        "content_len": 0
+      },
+      {
+        "item_number": "16",
+        "status": "not_applicable",
+        "char_range": null,
+        "content_len": null
+      }
+    ]
+  },
+  {
+    "meta": {
+      "source": "WSTL/2020",
+      "rule": "rule_4_content_floor",
+      "operator": "gut",
+      "target": "-",
+      "target_size": 0,
+      "expected_flag": true,
+      "actually_flagged": true
+    },
+    "items": [
+      {
+        "item_number": "1",
+        "status": "extracted",
+        "char_range": [
+          13637,
+          34816
+        ],
+        "content_len": 0
+      },
+      {
+        "item_number": "1A",
+        "status": "extracted",
+        "char_range": [
+          34816,
+          77222
+        ],
+        "content_len": 0
+      },
+      {
+        "item_number": "1B",
+        "status": "not_applicable",
+        "char_range": null,
+        "content_len": null
+      },
+      {
+        "item_number": "2",
+        "status": "extracted",
+        "char_range": [
+          77265,
+          80127
+        ],
+        "content_len": 0
+      },
+      {
+        "item_number": "3",
+        "status": "extracted",
+        "char_range": [
+          80127,
+          80707
+        ],
+        "content_len": 0
+      },
+      {
+        "item_number": "4",
+        "status": "not_applicable",
+        "char_range": null,
+        "content_len": null
+      },
+      {
+        "item_number": "5",
+        "status": "extracted",
+        "char_range": [
+          80787,
+          85634
+        ],
+        "content_len": 0
+      },
+      {
+        "item_number": "6",
+        "status": "not_applicable",
+        "char_range": null,
+        "content_len": null
+      },
+      {
+        "item_number": "7",
+        "status": "extracted",
+        "char_range": [
+          85739,
+          144843
+        ],
+        "content_len": 0
+      },
+      {
+        "item_number": "7A",
+        "status": "not_applicable",
+        "char_range": null,
+        "content_len": null
+      },
+      {
+        "item_number": "8",
+        "status": "incorporated_by_reference",
+        "char_range": [
+          144959,
+          145482
+        ],
+        "content_len": 522
+      },
+      {
+        "item_number": "9",
+        "status": "not_applicable",
+        "char_range": null,
+        "content_len": null
+      },
+      {
+        "item_number": "9A",
+        "status": "extracted",
+        "char_range": [
+          145581,
+          148684
+        ],
+        "content_len": 0
+      },
+      {
+        "item_number": "9B",
+        "status": "not_applicable",
+        "char_range": null,
+        "content_len": null
+      },
+      {
+        "item_number": "9C",
+        "status": "missing",
+        "char_range": null,
+        "content_len": null
+      },
+      {
+        "item_number": "10",
+        "status": "incorporated_by_reference",
+        "char_range": [
+          148750,
+          150475
+        ],
+        "content_len": 1723
+      },
+      {
+        "item_number": "11",
+        "status": "incorporated_by_reference",
+        "char_range": [
+          150475,
+          151127
+        ],
+        "content_len": 650
+      },
+      {
+        "item_number": "12",
+        "status": "incorporated_by_reference",
+        "char_range": [
+          151127,
+          151547
+        ],
+        "content_len": 418
+      },
+      {
+        "item_number": "13",
+        "status": "incorporated_by_reference",
+        "char_range": [
+          151547,
+          151960
+        ],
+        "content_len": 411
+      },
+      {
+        "item_number": "14",
+        "status": "incorporated_by_reference",
+        "char_range": [
+          151960,
+          152355
+        ],
+        "content_len": 393
+      },
+      {
+        "item_number": "15",
+        "status": "extracted",
+        "char_range": [
+          152355,
+          174813
+        ],
+        "content_len": 0
+      },
+      {
+        "item_number": "16",
+        "status": "not_applicable",
+        "char_range": null,
+        "content_len": null
+      }
+    ]
+  },
+  {
+    "meta": {
+      "source": "WSTL/2021",
+      "rule": "rule_4_content_floor",
+      "operator": "gut",
+      "target": "-",
+      "target_size": 0,
+      "expected_flag": true,
+      "actually_flagged": true
+    },
+    "items": [
+      {
+        "item_number": "1",
+        "status": "extracted",
+        "char_range": [
+          25529,
+          50322
+        ],
+        "content_len": 0
+      },
+      {
+        "item_number": "1A",
+        "status": "extracted",
+        "char_range": [
+          50322,
+          94119
+        ],
+        "content_len": 0
+      },
+      {
+        "item_number": "1B",
+        "status": "not_applicable",
+        "char_range": null,
+        "content_len": null
+      },
+      {
+        "item_number": "2",
+        "status": "extracted",
+        "char_range": [
+          94162,
+          96911
+        ],
+        "content_len": 0
+      },
+      {
+        "item_number": "3",
+        "status": "extracted",
+        "char_range": [
+          96911,
+          99173
+        ],
+        "content_len": 0
+      },
+      {
+        "item_number": "4",
+        "status": "not_applicable",
+        "char_range": null,
+        "content_len": null
+      },
+      {
+        "item_number": "5",
+        "status": "extracted",
+        "char_range": [
+          99250,
+          102583
+        ],
+        "content_len": 0
+      },
+      {
+        "item_number": "6",
+        "status": "not_applicable",
+        "char_range": null,
+        "content_len": null
+      },
+      {
+        "item_number": "7",
+        "status": "extracted",
+        "char_range": [
+          102682,
+          165230
+        ],
+        "content_len": 0
+      },
+      {
+        "item_number": "7A",
+        "status": "not_applicable",
+        "char_range": null,
+        "content_len": null
+      },
+      {
+        "item_number": "8",
+        "status": "incorporated_by_reference",
+        "char_range": [
+          165345,
+          165875
+        ],
+        "content_len": 529
+      },
+      {
+        "item_number": "9",
+        "status": "not_applicable",
+        "char_range": null,
+        "content_len": null
+      },
+      {
+        "item_number": "9A",
+        "status": "extracted",
+        "char_range": [
+          165974,
+          169071
+        ],
+        "content_len": 0
+      },
+      {
+        "item_number": "9B",
+        "status": "not_applicable",
+        "char_range": null,
+        "content_len": null
+      },
+      {
+        "item_number": "9C",
+        "status": "missing",
+        "char_range": null,
+        "content_len": null
+      },
+      {
+        "item_number": "10",
+        "status": "extracted",
+        "char_range": [
+          169134,
+          195964
+        ],
+        "content_len": 0
+      },
+      {
+        "item_number": "11",
+        "status": "extracted",
+        "char_range": [
+          195964,
+          226151
+        ],
+        "content_len": 0
+      },
+      {
+        "item_number": "12",
+        "status": "extracted",
+        "char_range": [
+          226151,
+          238630
+        ],
+        "content_len": 0
+      },
+      {
+        "item_number": "13",
+        "status": "extracted",
+        "char_range": [
+          238630,
+          240765
+        ],
+        "content_len": 0
+      },
+      {
+        "item_number": "14",
+        "status": "extracted",
+        "char_range": [
+          240765,
+          243540
+        ],
+        "content_len": 0
+      },
+      {
+        "item_number": "15",
+        "status": "extracted",
+        "char_range": [
+          243540,
+          259538
+        ],
+        "content_len": 0
+      },
+      {
+        "item_number": "16",
+        "status": "not_applicable",
+        "char_range": null,
+        "content_len": null
+      }
+    ]
+  }
+]

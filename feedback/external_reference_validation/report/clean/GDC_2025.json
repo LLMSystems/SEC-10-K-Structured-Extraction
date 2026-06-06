@@ -1,0 +1,123 @@
+{
+  "label": "GDC_2025",
+  "ticker": "GDC",
+  "year": "2025",
+  "cik": "0001641398",
+  "accession_number": "0001213900-26-035630",
+  "company_name": "GD Culture Group Ltd",
+  "pdf": "tier2/out/0001641398_2025-12-31_000121390026035630/0001641398_2025-12-31_000121390026035630.pdf",
+  "pdf_pages": 113,
+  "n_extracted": 15,
+  "n_exact": 15,
+  "n_fuzzy": 0,
+  "n_miss": 0,
+  "out_of_order": 0,
+  "items": [
+    {
+      "item": "1",
+      "page": 4,
+      "match": "exact",
+      "flag": null,
+      "snippet": "gd culture group limited (formerly known as"
+    },
+    {
+      "item": "1A",
+      "page": 32,
+      "match": "exact",
+      "flag": null,
+      "snippet": "with the other information contained in this repor"
+    },
+    {
+      "item": "1C",
+      "page": 57,
+      "match": "exact",
+      "flag": null,
+      "snippet": "meet our business objectives, we rely on both inte"
+    },
+    {
+      "item": "2",
+      "page": 58,
+      "match": "exact",
+      "flag": null,
+      "snippet": "current executive office is located at 111 town sq"
+    },
+    {
+      "item": "3",
+      "page": 58,
+      "match": "exact",
+      "flag": null,
+      "snippet": "the knowledge of our management, there is no litig"
+    },
+    {
+      "item": "5",
+      "page": 59,
+      "match": "exact",
+      "flag": null,
+      "snippet": "5. market for registrant’s common equity, related "
+    },
+    {
+      "item": "7",
+      "page": 63,
+      "match": "exact",
+      "flag": null,
+      "snippet": "7. management’s discussion and analysis of financi"
+    },
+    {
+      "item": "7A",
+      "page": 69,
+      "match": "exact",
+      "flag": null,
+      "snippet": "in response to this item is not required for a sma"
+    },
+    {
+      "item": "9",
+      "page": 70,
+      "match": "exact",
+      "flag": null,
+      "snippet": "january 29, 2026, with the approval of the board o"
+    },
+    {
+      "item": "9A",
+      "page": 70,
+      "match": "exact",
+      "flag": null,
+      "snippet": "the supervision and with the participation of our "
+    },
+    {
+      "item": "10",
+      "page": 72,
+      "match": "exact",
+      "flag": null,
+      "snippet": "following table sets forth the name, age and posit"
+    },
+    {
+      "item": "11",
+      "page": 75,
+      "match": "exact",
+      "flag": null,
+      "snippet": "following table provides disclosure concerning all"
+    },
+    {
+      "item": "12",
+      "page": 76,
+      "match": "exact",
+      "flag": null,
+      "snippet": "following table sets forth information regarding t"
+    },
+    {
+      "item": "13",
+      "page": 77,
+      "match": "exact",
+      "flag": null,
+      "snippet": "balances due to related parties as of december 31,"
+    },
+    {
+      "item": "15",
+      "page": 79,
+      "match": "exact",
+      "flag": null,
+      "snippet": "the following documents are filed as part of this "
+    }
+  ],
+  "category": "clean"
+}

@@ -1,0 +1,88 @@
+{
+  "label": "WSTL_2016",
+  "ticker": "WSTL",
+  "year": "2016",
+  "cik": "0001002135",
+  "accession_number": "0001002135-16-000069",
+  "company_name": "WESTELL TECHNOLOGIES INC",
+  "pdf": "tier2/out/0001002135_2016-03-31_000100213516000069/0001002135_2016-03-31_000100213516000069.pdf",
+  "pdf_pages": 69,
+  "n_extracted": 10,
+  "n_exact": 10,
+  "n_fuzzy": 0,
+  "n_miss": 0,
+  "out_of_order": 0,
+  "items": [
+    {
+      "item": "1",
+      "page": 4,
+      "match": "exact",
+      "flag": null,
+      "snippet": "westell technologies, inc., (the company) is a lea"
+    },
+    {
+      "item": "1A",
+      "page": 9,
+      "match": "exact",
+      "flag": null,
+      "snippet": "you should carefully consider the risks described "
+    },
+    {
+      "item": "2",
+      "page": 15,
+      "match": "exact",
+      "flag": null,
+      "snippet": "the company leases the following real property:"
+    },
+    {
+      "item": "3",
+      "page": 15,
+      "match": "exact",
+      "flag": null,
+      "snippet": "item 3. legal proceedings the company is involved "
+    },
+    {
+      "item": "5",
+      "page": 16,
+      "match": "exact",
+      "flag": null,
+      "snippet": "market for registrant’s common equity, related sto"
+    },
+    {
+      "item": "6",
+      "page": 17,
+      "match": "exact",
+      "flag": null,
+      "snippet": "the following selected consolidated financial data"
+    },
+    {
+      "item": "7",
+      "page": 19,
+      "match": "exact",
+      "flag": null,
+      "snippet": "the following discussion should be read together w"
+    },
+    {
+      "item": "7A",
+      "page": 27,
+      "match": "exact",
+      "flag": null,
+      "snippet": "the company is subject to certain market risks, in"
+    },
+    {
+      "item": "9A",
+      "page": 28,
+      "match": "exact",
+      "flag": null,
+      "snippet": "management’s report on internal control over finan"
+    },
+    {
+      "item": "15",
+      "page": 30,
+      "match": "exact",
+      "flag": null,
+      "snippet": "exhibits and financial statement schedules"
+    }
+  ],
+  "category": "clean"
+}

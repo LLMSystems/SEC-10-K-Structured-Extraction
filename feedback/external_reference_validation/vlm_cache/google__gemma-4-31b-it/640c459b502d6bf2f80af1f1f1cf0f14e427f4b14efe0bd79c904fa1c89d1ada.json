@@ -1,0 +1,9 @@
+{
+  "base_url": "https://openrouter.ai/api/v1",
+  "created_at": 1780684657,
+  "image_sha256": "0774076e35f5474176b8cc6323fe931c7d488fa447ac63fdcf75834393c9bdb8",
+  "model": "google/gemma-4-31b-it",
+  "prompt": "You are shown one page from a SEC 10-K filing rendered as an image.\nThe text of Item \"1C. Cybersecurity\" ENDS somewhere on this page; the next section is \"Item 2. Properties\".\nFind where Item 1C ends: right before the \"Item 2\" heading if that heading appears on this page, otherwise at the very bottom of the page.\nTranscribe VERBATIM the 5 lines of Item 1C that come immediately BEFORE that ending point (its final lines). Give the running prose closest to the end — do NOT transcribe lines from the top or middle of the page, and do NOT transcribe a data table or figure; if the very end is a table, give the prose just before it. Ignore running headers, page numbers, footers.\nOutput ONLY the transcribed text, no commentary, no quotes, no formatting.",
+  "source_path": "tier2/dataset/TSLA_2023/pages/page_030.png",
+  "text": "We describe here and how risks from identified Cybersecurity threats, including as a result of any previous cybersecurity incidents, have\nmaterially affected or are reasonably likely to materially affect us, including our business strategy, results of operations, or financial condition, under the\nheading \"Our information technology systems or data, or those of our service providers or customers or users could be subject to cyber-attacks or\nother security incidents, which could result in data breaches, intellectual property theft, claims, litigation, regulatory investigations, significant\nliability, reputational damage and other adverse consequences\" included as part of our risk factor disclosures at Item 1A of this Annual Report on\nForm 10-K."
+}

@@ -1,0 +1,9 @@
+{
+  "base_url": "https://openrouter.ai/api/v1",
+  "created_at": 1780696671,
+  "image_sha256": "5c67f00d53d6ee94da9751d2df02dd890cf072819c5af496f2600a269ce3b07d",
+  "model": "google/gemma-4-26b-a4b-it",
+  "prompt": "You are shown one page from a SEC 10-K filing rendered as an image.\nThis page contains the BEGINNING of \"Item 7. Management's Discussion and Analysis of Financial Condition and Results of Operations\".\nFind the \"Item 7\" heading, then transcribe VERBATIM the first 5 lines of text that come immediately after it. Include any report title, addressee, or sub-heading exactly as printed — do NOT skip them; only ignore page running-headers, page numbers, and footers.\nOutput ONLY the transcribed text, no commentary, no quotes, no formatting.",
+  "source_path": "tier2\\dataset\\RELL_2025\\pages\\page_023.png",
+  "text": "Management's Discussion and Analysis of Financial Condition and Results of Operations (\"MD&A\") is intended to assist the reader in\nbetter understanding our business, results of operations, financial condition, critical accounting estimates and\nsignificant developments. MD&A is provided as a supplement to, and not a substitute for, our consolidated financial statements and\nthe accompanying notes appearing elsewhere in this filing. This section is organized as follows:"
+}

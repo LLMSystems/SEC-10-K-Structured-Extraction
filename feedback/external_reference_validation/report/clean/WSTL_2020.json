@@ -1,0 +1,74 @@
+{
+  "label": "WSTL_2020",
+  "ticker": "WSTL",
+  "year": "2020",
+  "cik": "0001002135",
+  "accession_number": "0001002135-20-000020",
+  "company_name": "WESTELL TECHNOLOGIES INC",
+  "pdf": "tier2/out/0001002135_2020-03-31_000100213520000020/0001002135_2020-03-31_000100213520000020.pdf",
+  "pdf_pages": 61,
+  "n_extracted": 8,
+  "n_exact": 8,
+  "n_fuzzy": 0,
+  "n_miss": 0,
+  "out_of_order": 0,
+  "items": [
+    {
+      "item": "1",
+      "page": 3,
+      "match": "exact",
+      "flag": null,
+      "snippet": "westell technologies, inc., (the “company”) was in"
+    },
+    {
+      "item": "1A",
+      "page": 8,
+      "match": "exact",
+      "flag": null,
+      "snippet": "you should carefully consider the risks described "
+    },
+    {
+      "item": "2",
+      "page": 15,
+      "match": "exact",
+      "flag": null,
+      "snippet": "the company leases the following real property:"
+    },
+    {
+      "item": "3",
+      "page": 15,
+      "match": "exact",
+      "flag": null,
+      "snippet": "item 3. legal proceedings the company is involved "
+    },
+    {
+      "item": "5",
+      "page": 16,
+      "match": "exact",
+      "flag": null,
+      "snippet": "market for registrant’s common equity, related sto"
+    },
+    {
+      "item": "7",
+      "page": 17,
+      "match": "exact",
+      "flag": null,
+      "snippet": "the following discussion should be read together w"
+    },
+    {
+      "item": "9A",
+      "page": 25,
+      "match": "exact",
+      "flag": null,
+      "snippet": "management’s report on internal control over finan"
+    },
+    {
+      "item": "15",
+      "page": 28,
+      "match": "exact",
+      "flag": null,
+      "snippet": "exhibits and financial statement schedules"
+    }
+  ],
+  "category": "clean"
+}

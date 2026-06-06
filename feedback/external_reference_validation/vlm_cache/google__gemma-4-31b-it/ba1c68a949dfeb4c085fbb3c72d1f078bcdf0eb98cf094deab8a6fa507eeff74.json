@@ -1,0 +1,9 @@
+{
+  "base_url": "https://openrouter.ai/api/v1",
+  "created_at": 1780684570,
+  "image_sha256": "45598188051d5d44bb0f8d69d194d8401f8a9c0e62767105c75dfb1558ec9680",
+  "model": "google/gemma-4-31b-it",
+  "prompt": "You are shown one page from a SEC 10-K filing rendered as an image.\nThe text of Item \"9B. Other Information\" ENDS somewhere on this page; the next section is \"Item 9C. Disclosure Regarding Foreign Jurisdictions that Prevent Inspections\".\nFind where Item 9B ends: right before the \"Item 9C\" heading if that heading appears on this page, otherwise at the very bottom of the page.\nTranscribe VERBATIM the 5 lines of Item 9B that come immediately BEFORE that ending point (its final lines). Give the running prose closest to the end — do NOT transcribe lines from the top or middle of the page, and do NOT transcribe a data table or figure; if the very end is a table, give the prose just before it. Ignore running headers, page numbers, footers.\nOutput ONLY the transcribed text, no commentary, no quotes, no formatting.",
+  "source_path": "tier2/dataset/RELL_2025/pages/page_068.png",
+  "text": "Insider Trading Policies\nThe Company has adopted insider trading policies and procedures governing the purchase, sale and other disposition of its securities by\ndirectors, officers and employees that management believes are reasonably designed to promote compliance with insider trading laws, rules, and\nregulations, and any listing standards applicable to the company. A copy of the Company's insider trading policy is attached as Exhibit 19.1 here to."
+}

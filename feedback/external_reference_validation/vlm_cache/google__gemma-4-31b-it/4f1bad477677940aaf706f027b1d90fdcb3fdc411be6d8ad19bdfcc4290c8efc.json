@@ -1,0 +1,9 @@
+{
+  "base_url": "https://openrouter.ai/api/v1",
+  "created_at": 1780682085,
+  "image_sha256": "c1883507c0100b336504dcfe1acb083cc39393eef93f6ca2f327eb8d2d9261a7",
+  "model": "google/gemma-4-31b-it",
+  "prompt": "You are shown one page from a SEC 10-K filing rendered as an image.\nThis page contains the END of \"Item 1C. Cybersecurity\". The next section is \"Item 2. Properties\".\nTranscribe VERBATIM the last 5 lines of \"Item 1C\" body text before the next item begins:\nif the \"Item 2\" heading appears on this page, take the 5 lines just before it; otherwise Item 1C continues to the bottom, so take the last 5 lines of the page. Ignore running headers, page numbers, footers.\nOutput ONLY the transcribed text, no commentary, no quotes, no formatting.",
+  "source_path": "tier2/dataset/RELL_2025/pages/page_019.png",
+  "text": "• Recent cyber risks and cybersecurity developments\n• Cyber security threats\n• Assessments by third-party experts\n• Key cyber risk metrics\n• Projects and initiatives"
+}

@@ -1,0 +1,9 @@
+{
+  "base_url": "https://openrouter.ai/api/v1",
+  "created_at": 1780695233,
+  "image_sha256": "8d4f7f8e786db1a79ea33bf41e49cc034371913f1fbc951102247e29f4a71ca2",
+  "model": "google/gemini-3-flash-preview",
+  "prompt": "You are shown one page from a SEC 10-K filing rendered as an image.\nThis page contains the BEGINNING of \"Item 7. Management's Discussion and Analysis of Financial Condition and Results of Operations\".\nFind the \"Item 7\" heading, then transcribe VERBATIM the first 5 lines of text that come immediately after it. Include any report title, addressee, or sub-heading exactly as printed — do NOT skip them; only ignore page running-headers, page numbers, and footers.\nOutput ONLY the transcribed text, no commentary, no quotes, no formatting.",
+  "source_path": "tier2\\dataset\\GDC_2023\\pages\\page_049.png",
+  "text": "The following discussion and analysis of the results of our operations and financial condition should be read in conjunction with our financial\nstatements, and the notes to those financial statements that are included elsewhere in this Report. All monetary figures are presented in U.S. dollars,\nunless otherwise indicated.\nOur Management’s Discussion and Analysis contains not only statements that are historical facts, but also statements that are forward-looking.\nForward-looking statements are, by their very nature, uncertain and risky. These risks and uncertainties include international, national, and local"
+}

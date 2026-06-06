@@ -1,0 +1,9 @@
+{
+  "base_url": "https://openrouter.ai/api/v1",
+  "created_at": 1780695885,
+  "image_sha256": "62148fefd4f08c7409eaa53c9d09ece898ce58108805d74049fa9d50efdc2316",
+  "model": "qwen/qwen3.6-plus",
+  "prompt": "You are shown one page from a SEC 10-K filing rendered as an image.\nItem \"3. Legal Proceedings\" ENDS on this page; the next section is \"Item 4. Mine Safety Disclosures\".\nFirst locate the bottom edge of Item 3's text:\n- If the \"Item 4\" heading is visible on this page, Item 3 ends on the line directly ABOVE that heading.\n- Otherwise Item 3 runs all the way to the very bottom of the page.\nThen transcribe VERBATIM the LAST 5 lines of Item 3 at that bottom edge — the FINAL lines right before the section ends, NOT lines from the top or middle of the page. Ignore running headers, page numbers, footers.\nOutput ONLY the transcribed text, no commentary, no quotes, no formatting.",
+  "source_path": "tier2\\dataset\\WMT_2026\\pages\\page_030.png",
+  "text": "the Company can provide no assurance that its business, financial position, results of operations or cash flows will not be materially adversely\naffected.\n\nITEM 4. MINE SAFETY DISCLOSURES"
+}

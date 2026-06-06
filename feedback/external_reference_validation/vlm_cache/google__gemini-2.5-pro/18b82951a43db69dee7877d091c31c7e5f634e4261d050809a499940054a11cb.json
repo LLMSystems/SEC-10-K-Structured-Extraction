@@ -1,0 +1,9 @@
+{
+  "base_url": "https://openrouter.ai/api/v1",
+  "created_at": 1780697115,
+  "image_sha256": "5d14bdf7c0ec8dd6d6fa772fcc167a336ca5bdb381ccee9242b697699b49cfb9",
+  "model": "google/gemini-2.5-pro",
+  "prompt": "You are shown one page from a SEC 10-K filing rendered as an image.\nThis page contains the BEGINNING of \"Item 10. Directors, Executive Officers and Corporate Governance\".\nFind the \"Item 10\" heading, then transcribe VERBATIM the first 5 lines of text that come immediately after it. Include any report title, addressee, or sub-heading exactly as printed — do NOT skip them; only ignore page running-headers, page numbers, and footers.\nOutput ONLY the transcribed text, no commentary, no quotes, no formatting.",
+  "source_path": "tier2\\dataset\\GDC_2023\\pages\\page_061.png",
+  "text": "The following table sets forth the name, age and position of each of our executive officers and directors as of the date of this report:\nName Age Position\nXiao Jian Wang 35 Chief Executive Officer, President, Chairman of the Board, and Director\nZihao Zhao 29 Chief Financial Officer\nLu Cai 33 Chief Operating Officer"
+}

@@ -1,0 +1,9 @@
+{
+  "base_url": "https://openrouter.ai/api/v1",
+  "created_at": 1780684685,
+  "image_sha256": "fe2fbf61c0b1e163049eb0c81baa85b0deedec8b4fc95b58f6cf9ce6f97b7b85",
+  "model": "google/gemma-4-31b-it",
+  "prompt": "You are shown one page from a SEC 10-K filing rendered as an image.\nThe text of Item \"15. Exhibits, Financial Statement Schedules\" ENDS somewhere on this page; the next section is \"Item 16. Form 10-K Summary\".\nFind where Item 15 ends: right before the \"Item 16\" heading if that heading appears on this page, otherwise at the very bottom of the page.\nTranscribe VERBATIM the 5 lines of Item 15 that come immediately BEFORE that ending point (its final lines). Give the running prose closest to the end — do NOT transcribe lines from the top or middle of the page, and do NOT transcribe a data table or figure; if the very end is a table, give the prose just before it. Ignore running headers, page numbers, footers.\nOutput ONLY the transcribed text, no commentary, no quotes, no formatting.",
+  "source_path": "tier2/dataset/WMT_2026/pages/page_085.png",
+  "text": "(C) This Exhibit is a management contract or compensatory plan or arrangement\n(P) This Exhibit was originally filed in paper form. Accordingly, a hyperlink has not been provided.\n(I) Certain instruments defining the rights of holders of long-term debt securities of the Registrant are omitted pursuant to Item 601(b)(4)(iii) of Regulation S-K. The Company\nhereby undertakes to furnish to the SEC, upon request, copies of any such instruments.\n\n(c) Financial Statement Schedules: None."
+}

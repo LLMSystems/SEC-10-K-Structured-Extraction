@@ -1,0 +1,217 @@
+{
+  "label": "TSLA_2023",
+  "model": "moonshotai/kimi-k2.6:free",
+  "threshold": 75,
+  "items": [
+    {
+      "item": "1",
+      "title": "Business",
+      "bucket": "prose",
+      "start_page": 5,
+      "end_page": 15,
+      "head": {
+        "ratio": 45.0,
+        "pass": false,
+        "pred": "Overview\n\nGD Culture Group Limited (formerly known as JM Global Holding Company, TMSR Holding Company Limited, and Code Chain New Continent Limited), focuses its business on three segments mainly through the Company and two subsidiaries, AI Catalysis and Shanghai Xianzhui: 1) AI-driven digital human creation and customization; 2) Live streaming and e-commerce and 3) Live streaming interactive game",
+        "gt": "overview we design, develop, manufacture, sell and lease high-performance fully electric vehicles and energy generation and storage systems, and offer services related to our products. we generally sell our products directly to customers, and continue to grow our customer-facing infrastructure throu"
+      },
+      "tail": {
+        "ratio": 90.3,
+        "pass": true,
+        "pred": "relations website at ir.tesla.com as soon as reasonably practicable after we electronically file or furnish such information with the SEC. The information posted on our website is not incorporated by reference into this Annual Report on Form 10-K.\n\nITEM 1A. RISK FACTORS\n\nYou should carefully consider the risks described below together with the other information set forth in this report, which coul",
+        "gt": "also made available, free of charge, on our investor relations website at ir.tesla.com as soon as reasonably practicable after we electronically file or furnish such information with the sec. the information posted on our website is not incorporated by reference into this annual report on form 10-k."
+      }
+    },
+    {
+      "item": "1A",
+      "title": "Risk Factors",
+      "bucket": "prose",
+      "start_page": 15,
+      "end_page": 29,
+      "head": {
+        "ratio": 100.0,
+        "pass": true,
+        "pred": "You should carefully consider the risks described below together with the other information set forth in this report, which could materially affect our business, financial condition and future results. The risks described below are not the only risks facing our company. Risks and uncertainties not currently known to us or that we currently deem to be immaterial also may materially adversely affect",
+        "gt": "you should carefully consider the risks described below together with the other information set forth in this report, which could materially affect our business, financial condition and future results. the risks described below are not the only risks facing our company. risks and uncertainties not c"
+      },
+      "tail": {
+        "ratio": 100.0,
+        "pass": true,
+        "pred": "convertible senior notes may require us to repurchase such notes in the event of a fundamental change, including a takeover of our company. Any of\nthe foregoing provisions and terms that has the effect of delaying or deterring a change in control could limit the opportunity for our stockholders to\nreceive a premium for their shares of our common stock, and could also affect the price that some inv",
+        "gt": "the foregoing provisions and terms that has the effect of delaying or deterring a change in control could limit the opportunity for our stockholders to receive a premium for their shares of our common stock, and could also affect the price that some investors are willing to pay for our common stock."
+      }
+    },
+    {
+      "item": "1C",
+      "title": "Cybersecurity",
+      "bucket": "prose",
+      "start_page": 30,
+      "end_page": 31,
+      "head": {
+        "error": "RateLimitError: Error code: 429 - {'error': {'message': 'Rate limit exceeded: free-models-per-min. ', 'code': 429, 'metadata': {'headers': {'X-RateLimit-Limit': '16', 'X-RateLimit-Remaining': '0', 'X-RateLimit-Reset': '1780694940000'}, 'provider_name': None}}, 'user_id': 'user_3A7J2w1UXdqapKzJfjlQk81aMC2'}"
+      },
+      "tail": {
+        "error": "RateLimitError: Error code: 429 - {'error': {'message': 'Rate limit exceeded: free-models-per-min. ', 'code': 429, 'metadata': {'headers': {'X-RateLimit-Limit': '16', 'X-RateLimit-Remaining': '0', 'X-RateLimit-Reset': '1780694940000'}, 'provider_name': None}}, 'user_id': 'user_3A7J2w1UXdqapKzJfjlQk81aMC2'}"
+      }
+    },
+    {
+      "item": "2",
+      "title": "Properties",
+      "bucket": "prose",
+      "start_page": 31,
+      "end_page": 31,
+      "head": {
+        "ratio": 100.0,
+        "pass": true,
+        "pred": "ITEM 2. PROPERTIES\n\nWe are headquartered in Austin, Texas. Our principal facilities include a large number of properties in North America, Europe and Asia utilized for manufacturing and assembly, warehousing, engineering, retail and service locations, Supercharger sites and administrative and sales offices. Our facilities are used to support both of our reporting segments, and are suitable and ade",
+        "gt": "we are headquartered in austin, texas. our principal facilities include a large number of properties in north america, europe and asia utilized for manufacturing and assembly, warehousing, engineering, retail and service locations, supercharger sites and administrative and sales offices. our facilit"
+      },
+      "tail": {
+        "ratio": 44.7,
+        "pass": false,
+        "pred": "We have leased principal properties in both Los Gatos, California, which is the location of our corporate headquarters, and in Los Angeles, California. In addition, we own and lease various office and production space throughout the world.\nWe believe that our existing facilities are adequate to meet current requirements, and that suitable additional or substitute space will be available as needed ",
+        "gt": "grunheide, germany owned gigafactory shanghai shanghai, china * gigafactory new york buffalo, new york leased megafactory lathrop, california leased * we own the building and the land use rights with an initial term of 50 years. the land use rights are treated as operating lease right-of-use assets."
+      }
+    },
+    {
+      "item": "3",
+      "title": "Legal Proceedings",
+      "bucket": "prose",
+      "start_page": 31,
+      "end_page": 31,
+      "head": {
+        "ratio": 99.7,
+        "pass": true,
+        "pred": "ITEM 3. LEGAL PROCEEDINGS\n\nFor a description of our material pending legal proceedings, please see Note 15, Commitments and Contingencies, to the consolidated financial statements included elsewhere in this Annual Report on Form 10-K.\n\nIn addition, each of the matters below is being disclosed pursuant to Item 103 of Regulation S-K because it relates to environmental regulations and aggregate civil",
+        "gt": "for a description of our material pending legal proceedings, please see note 15, commitments and contingencies , to the consolidated financial statements included elsewhere in this annual report on form 10-k. in addition, each of the matters below is being disclosed pursuant to item 103 of regulatio"
+      },
+      "tail": {
+        "ratio": 100.0,
+        "pass": true,
+        "pred": "determined at this time, it is not currently expected to have a material adverse impact on our business.",
+        "gt": "dial measures, including conducting training and audits, and enhancements to its site waste management programs, and settlement discussions are ongoing. while the outcome of this matter cannot be determined at this time, it is not currently expected to have a material adverse impact on our business."
+      }
+    },
+    {
+      "item": "5",
+      "title": "Market for Registrant's Common Equity, Related Stockholder Matters and Issuer Purchases of Equity Securities",
+      "bucket": "prose",
+      "start_page": 32,
+      "end_page": 33,
+      "head": {
+        "ratio": 74.9,
+        "pass": false,
+        "pred": "Market Information\n\nOur common stock has traded on The NASDAQ Global Select Market under the symbol \"TSLA\" since it began trading on June 29, 2010. Our initial public offering was priced at approximately $1.13 per share on June 28, 2010 as adjusted to give effect to the three-for-one stock split effected in the form of a stock dividend in August 2022 (the \"2022 Stock Split\") and the five-for-one s",
+        "gt": "item 5. market for registrant’s common equity, related stockholder matters and issuer purchases of equity securities market information our common stock has traded on the nasdaq global select market under the symbol “tsla” since it began trading on june 29, 2010. our initial public offering was pric"
+      },
+      "tail": {
+        "ratio": 88.9,
+        "pass": true,
+        "pred": "Purchases of Equity Securities by the Issuer and Affiliated Purchasers\nNone.\nITEM 6. [RESERVED]",
+        "gt": "f dividends. we have never declared or paid cash dividends on our common stock nor do we anticipate paying any such cash dividends in the foreseeable future. unregistered sales of equity securities and use of proceeds none. purchases of equity securities by the issuer and affiliated purchasers none."
+      }
+    },
+    {
+      "item": "7",
+      "title": "Management's Discussion and Analysis of Financial Condition and Results of Operations",
+      "bucket": "prose",
+      "start_page": 34,
+      "end_page": 45,
+      "head": {
+        "ratio": 100.0,
+        "pass": true,
+        "pred": "ITEM 7. MANAGEMENT’S DISCUSSION AND ANALYSIS OF FINANCIAL CONDITION AND RESULTS OF OPERATIONS\n\nThe following discussion and analysis should be read in conjunction with the consolidated financial statements and the related notes included elsewhere in this Annual Report on Form 10-K. For further discussion of our products and services, technology and competitive strengths, refer to Item 1- Business.",
+        "gt": "item 7. management’s discussion and analysis of financial condition and results of operations the following discussion and analysis should be read in conjunction with the consolidated financial statements and the related notes included elsewhere in this annual report on form 10-k. for further discus"
+      },
+      "tail": {
+        "error": "RateLimitError: Error code: 429 - {'error': {'message': 'Provider returned error', 'code': 429, 'metadata': {'raw': 'moonshotai/kimi-k2.6:free is temporarily rate-limited upstream. Please retry shortly, or add your own key to accumulate your rate limits: https://openrouter.ai/settings/integrations', 'provider_name': 'Crucible', 'is_byok': False}}, 'user_id': 'user_3A7J2w1UXdqapKzJfjlQk81aMC2'}"
+      }
+    },
+    {
+      "item": "7A",
+      "title": "Quantitative and Qualitative Disclosures About Market Risk",
+      "bucket": "prose",
+      "start_page": 46,
+      "end_page": 46,
+      "head": {
+        "error": "RateLimitError: Error code: 429 - {'error': {'message': 'Rate limit exceeded: free-models-per-min. ', 'code': 429, 'metadata': {'headers': {'X-RateLimit-Limit': '16', 'X-RateLimit-Remaining': '0', 'X-RateLimit-Reset': '1780695060000'}, 'provider_name': None}}, 'user_id': 'user_3A7J2w1UXdqapKzJfjlQk81aMC2'}"
+      },
+      "tail": {
+        "ratio": 100.0,
+        "pass": true,
+        "pred": "We considered the historical trends in foreign currency exchange rates and determined that it is reasonably possible that adverse changes in foreign currency exchange rates of 10% for all currencies could be experienced in the near-term. These changes were applied to our total monetary assets and liabilities denominated in currencies other than our local currencies at the balance sheet date to com",
+        "gt": " local currencies at the balance sheet date to compute the impact these changes would have had on our net income before income taxes. these changes would have resulted in a gain or loss of $1.01 billion at december 31, 2023 and $473 million at december 31, 2022, assuming no foreign currency hedging."
+      }
+    },
+    {
+      "item": "8",
+      "title": "Financial Statements and Supplementary Data",
+      "bucket": "prose",
+      "start_page": 47,
+      "end_page": 93,
+      "head": {
+        "error": "RateLimitError: Error code: 429 - {'error': {'message': 'Rate limit exceeded: free-models-per-min. ', 'code': 429, 'metadata': {'headers': {'X-RateLimit-Limit': '16', 'X-RateLimit-Remaining': '0', 'X-RateLimit-Reset': '1780695060000'}, 'provider_name': None}}, 'user_id': 'user_3A7J2w1UXdqapKzJfjlQk81aMC2'}"
+      },
+      "tail": {
+        "ratio": 97.7,
+        "pass": true,
+        "pred": "During the years ended December 31, 2022 and 2021, we recorded $204 million and $101 million, respectively, of impairment losses on\ndigital assets. During the years ended December 31, 2022 and 2021 we also realized gains of $64 million and $128 million, respectively, in\nconnection with converting our holdings of digital assets into fiat currency. We also recorded other expenses of $36 million duri",
+        "gt": "022 and 2021 we also realized gains of $ million and $ million, respectively, in connection with converting our holdings of digital assets into fiat currency. we also recorded other expenses of $ million during the second quarter of the year ended december 31, 2022, related to employee terminations."
+      }
+    },
+    {
+      "item": "9A",
+      "title": "Controls and Procedures",
+      "bucket": "prose",
+      "start_page": 95,
+      "end_page": 95,
+      "head": {
+        "ratio": 100.0,
+        "pass": true,
+        "pred": "ITEM 9A. CONTROLS AND PROCEDURES\n\nEvaluation of Disclosure Controls and Procedures\n\nOur management, with the participation of our Chief Executive Officer and our Chief Financial Officer, evaluated the effectiveness of our disclosure controls and procedures pursuant to Rule 13a-15 under the Securities Exchange Act of 1934, as amended (the \"Exchange Act\"). In designing and evaluating the disclosure ",
+        "gt": "evaluation of disclosure controls and procedures our management, with the participation of our chief executive officer and our chief financial officer, evaluated the effectiveness of our disclosure controls and procedures pursuant to rule 13a-15 under the securities exchange act of 1934, as amended "
+      },
+      "tail": {
+        "ratio": 90.9,
+        "pass": true,
+        "pred": "There was no change in our internal control over financial reporting that occurred during the quarter ended December 31, 2023, which has\nmaterially affected, or is reasonably likely to materially affect, our internal control over financial reporting.\nChanges in Internal Control over Financial Reporting\n\nBecause of inherent limitations, internal control over financial reporting may not prevent or d",
+        "gt": "nges in internal control over financial reporting there was no change in our internal control over financial reporting that occurred during the quarter ended december 31, 2023, which has materially affected, or is reasonably likely to materially affect, our internal control over financial reporting."
+      }
+    },
+    {
+      "item": "9B",
+      "title": "Other Information",
+      "bucket": "prose",
+      "start_page": 96,
+      "end_page": 96,
+      "head": {
+        "error": "RateLimitError: Error code: 429 - {'error': {'message': 'Rate limit exceeded: free-models-per-min. ', 'code': 429, 'metadata': {'headers': {'X-RateLimit-Limit': '16', 'X-RateLimit-Remaining': '0', 'X-RateLimit-Reset': '1780695120000'}, 'provider_name': None}}, 'user_id': 'user_3A7J2w1UXdqapKzJfjlQk81aMC2'}"
+      },
+      "tail": {
+        "ratio": 99.0,
+        "pass": true,
+        "pred": "On November 13, 2023, Andrew Baglino, Senior Vice President, Powertrain and Energy Engineering, adopted a Rule 10b5-1 trading\narrangement for the potential sale of up to 115,500 shares of our common stock, subject to certain conditions. The arrangement's expiration date is\nDecember 31, 2024.",
+        "gt": "024. on november 13, 2023 , andrew baglino , senior vice president , powertrain and energy engineering, adopted a rule 10b5-1 trading arrangement for the potential sale of up to 115,500 shares of our common stock, subject to certain conditions. the arrangement's expiration date is december 31, 2024."
+      }
+    },
+    {
+      "item": "15",
+      "title": "Exhibits, Financial Statement Schedules",
+      "bucket": "prose",
+      "start_page": 98,
+      "end_page": 113,
+      "head": {
+        "ratio": 90.5,
+        "pass": true,
+        "pred": "1. Financial statements (see Index to Consolidated Financial Statements in Part II, Item 8 of this report)\n2. All financial statement schedules have been omitted since the required information was not applicable or was not present in amounts sufficient to require submission of the schedules, or because the information required is included in the consolidated financial statements or the accompanyin",
+        "gt": "item 15. exhibits and financial statement schedules 1. financial statements (see index to consolidated financial statements in part ii, item 8 of this report) 2. all financial statement schedules have been omitted since the required information was not applicable or was not present in amounts suffic"
+      },
+      "tail": {
+        "ratio": 43.0,
+        "pass": false,
+        "pred": "(1) Index to Consolidated Financial Statements:\n\nReport of BDO USA, P.C., Independent Registered Public Accounting Firm.",
+        "gt": "ract or compensatory plan or arrangement † confidential treatment has been requested for portions of this exhibit †† portions of this exhibit have been redacted in compliance with regulation s-k item 601(b)(10). (1) indicates a filing of solarcity (2) indicates a filing of maxwell technologies, inc."
+      }
+    }
+  ]
+}

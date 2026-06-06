@@ -1,0 +1,95 @@
+{
+  "label": "DENN_2023",
+  "ticker": "DENN",
+  "year": "2023",
+  "cik": "0000852772",
+  "accession_number": "0000852772-24-000026",
+  "company_name": "DENNY'S Corp",
+  "pdf": "tier2/out/0000852772_2023-12-27_000085277224000026/0000852772_2023-12-27_000085277224000026.pdf",
+  "pdf_pages": 84,
+  "n_extracted": 11,
+  "n_exact": 11,
+  "n_fuzzy": 0,
+  "n_miss": 0,
+  "out_of_order": 0,
+  "items": [
+    {
+      "item": "1",
+      "page": 4,
+      "match": "exact",
+      "flag": null,
+      "snippet": "denny’s corporation, or the “company”, a delaware "
+    },
+    {
+      "item": "1A",
+      "page": 13,
+      "match": "exact",
+      "flag": null,
+      "snippet": "risks related to macroeconomic conditions"
+    },
+    {
+      "item": "1C",
+      "page": 20,
+      "match": "exact",
+      "flag": null,
+      "snippet": "risk management and strategy"
+    },
+    {
+      "item": "2",
+      "page": 20,
+      "match": "exact",
+      "flag": null,
+      "snippet": "most denny’s restaurants are free-standing facilit"
+    },
+    {
+      "item": "3",
+      "page": 22,
+      "match": "exact",
+      "flag": null,
+      "snippet": "there are various claims and pending legal actions"
+    },
+    {
+      "item": "5",
+      "page": 23,
+      "match": "exact",
+      "flag": null,
+      "snippet": "market for registrant’s common equity, related sto"
+    },
+    {
+      "item": "7",
+      "page": 25,
+      "match": "exact",
+      "flag": null,
+      "snippet": "management’s discussion and analysis of financial "
+    },
+    {
+      "item": "7A",
+      "page": 37,
+      "match": "exact",
+      "flag": null,
+      "snippet": "we have exposure to interest rate risk related to "
+    },
+    {
+      "item": "9A",
+      "page": 39,
+      "match": "exact",
+      "flag": null,
+      "snippet": "changes in internal control over financial reporti"
+    },
+    {
+      "item": "9B",
+      "page": 42,
+      "match": "exact",
+      "flag": null,
+      "snippet": "during the quarter ended december 27, 2023, none o"
+    },
+    {
+      "item": "15",
+      "page": 43,
+      "match": "exact",
+      "flag": null,
+      "snippet": "exhibits and financial statement schedules"
+    }
+  ],
+  "category": "clean"
+}

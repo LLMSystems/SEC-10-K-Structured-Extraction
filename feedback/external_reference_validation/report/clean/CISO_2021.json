@@ -1,0 +1,88 @@
+{
+  "label": "CISO_2021",
+  "ticker": "CISO",
+  "year": "2021",
+  "cik": "0001095981",
+  "accession_number": "0001564590-22-006708",
+  "company_name": "PLUS THERAPEUTICS, INC.",
+  "pdf": "tier2/out/0001095981_2021-12-31_000156459022006708/0001095981_2021-12-31_000156459022006708.pdf",
+  "pdf_pages": 85,
+  "n_extracted": 10,
+  "n_exact": 10,
+  "n_fuzzy": 0,
+  "n_miss": 0,
+  "out_of_order": 0,
+  "items": [
+    {
+      "item": "1",
+      "page": 6,
+      "match": "exact",
+      "flag": null,
+      "snippet": "references to “plus,” the “company,” “we,” “us” an"
+    },
+    {
+      "item": "1A",
+      "page": 22,
+      "match": "exact",
+      "flag": null,
+      "snippet": "risks related to our financial position and capita"
+    },
+    {
+      "item": "2",
+      "page": 45,
+      "match": "exact",
+      "flag": null,
+      "snippet": "item 2. properties we have two lease agreements fo"
+    },
+    {
+      "item": "3",
+      "page": 45,
+      "match": "exact",
+      "flag": null,
+      "snippet": "on june 22, 2021, the company was named as a defen"
+    },
+    {
+      "item": "5",
+      "page": 46,
+      "match": "exact",
+      "flag": null,
+      "snippet": "our common stock is traded on the nasdaq capital m"
+    },
+    {
+      "item": "7",
+      "page": 48,
+      "match": "exact",
+      "flag": null,
+      "snippet": "our management’s discussion and analysis of financ"
+    },
+    {
+      "item": "8",
+      "page": 56,
+      "match": "exact",
+      "flag": null,
+      "snippet": "report of bdo usa, llp, independent registered pub"
+    },
+    {
+      "item": "9A",
+      "page": 78,
+      "match": "exact",
+      "flag": null,
+      "snippet": "management’s report on internal control over finan"
+    },
+    {
+      "item": "10",
+      "page": 80,
+      "match": "exact",
+      "flag": null,
+      "snippet": "the information required by this item will be set "
+    },
+    {
+      "item": "15",
+      "page": 81,
+      "match": "exact",
+      "flag": null,
+      "snippet": "the responses to this portion of item 15 are set f"
+    }
+  ],
+  "category": "clean"
+}

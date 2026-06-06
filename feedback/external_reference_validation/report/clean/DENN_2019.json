@@ -1,0 +1,88 @@
+{
+  "label": "DENN_2019",
+  "ticker": "DENN",
+  "year": "2019",
+  "cik": "0000852772",
+  "accession_number": "0000852772-20-000033",
+  "company_name": "DENNY'S Corp",
+  "pdf": "tier2/out/0000852772_2019-12-25_000085277220000033/0000852772_2019-12-25_000085277220000033.pdf",
+  "pdf_pages": 86,
+  "n_extracted": 10,
+  "n_exact": 10,
+  "n_fuzzy": 0,
+  "n_miss": 0,
+  "out_of_order": 0,
+  "items": [
+    {
+      "item": "1",
+      "page": 3,
+      "match": "exact",
+      "flag": null,
+      "snippet": "denny’s corporation (denny’s), a delaware corporat"
+    },
+    {
+      "item": "1A",
+      "page": 10,
+      "match": "exact",
+      "flag": null,
+      "snippet": "a decline in general economic conditions could adv"
+    },
+    {
+      "item": "2",
+      "page": 16,
+      "match": "exact",
+      "flag": null,
+      "snippet": "most denny’s restaurants are free-standing facilit"
+    },
+    {
+      "item": "3",
+      "page": 19,
+      "match": "exact",
+      "flag": null,
+      "snippet": "there are various claims and pending legal actions"
+    },
+    {
+      "item": "5",
+      "page": 20,
+      "match": "exact",
+      "flag": null,
+      "snippet": "market for registrant’s common equity, related sto"
+    },
+    {
+      "item": "6",
+      "page": 22,
+      "match": "exact",
+      "flag": null,
+      "snippet": "the following table provides selected financial da"
+    },
+    {
+      "item": "7",
+      "page": 22,
+      "match": "exact",
+      "flag": null,
+      "snippet": "management’s discussion and analysis of financial "
+    },
+    {
+      "item": "7A",
+      "page": 35,
+      "match": "exact",
+      "flag": null,
+      "snippet": "we have exposure to interest rate risk related to "
+    },
+    {
+      "item": "9A",
+      "page": 36,
+      "match": "exact",
+      "flag": null,
+      "snippet": "based on their assessment as of"
+    },
+    {
+      "item": "15",
+      "page": 40,
+      "match": "exact",
+      "flag": null,
+      "snippet": "exhibits and financial statement schedules"
+    }
+  ],
+  "category": "clean"
+}

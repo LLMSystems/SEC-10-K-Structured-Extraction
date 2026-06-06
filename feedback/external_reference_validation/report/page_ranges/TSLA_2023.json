@@ -1,0 +1,91 @@
+{
+  "label": "TSLA_2023",
+  "pdf_pages": 114,
+  "items": [
+    {
+      "item": "1",
+      "start_page": 5,
+      "end_page": 15,
+      "start_unique": true,
+      "end_unique": true
+    },
+    {
+      "item": "1A",
+      "start_page": 15,
+      "end_page": 29,
+      "start_unique": true,
+      "end_unique": true
+    },
+    {
+      "item": "1C",
+      "start_page": 30,
+      "end_page": 31,
+      "start_unique": true,
+      "end_unique": true
+    },
+    {
+      "item": "2",
+      "start_page": 31,
+      "end_page": 31,
+      "start_unique": true,
+      "end_unique": true
+    },
+    {
+      "item": "3",
+      "start_page": 31,
+      "end_page": 31,
+      "start_unique": true,
+      "end_unique": true
+    },
+    {
+      "item": "5",
+      "start_page": 32,
+      "end_page": 33,
+      "start_unique": true,
+      "end_unique": true
+    },
+    {
+      "item": "7",
+      "start_page": 34,
+      "end_page": 45,
+      "start_unique": true,
+      "end_unique": true
+    },
+    {
+      "item": "7A",
+      "start_page": 46,
+      "end_page": 46,
+      "start_unique": true,
+      "end_unique": true
+    },
+    {
+      "item": "8",
+      "start_page": 47,
+      "end_page": 93,
+      "start_unique": true,
+      "end_unique": true
+    },
+    {
+      "item": "9A",
+      "start_page": 95,
+      "end_page": 95,
+      "start_unique": true,
+      "end_unique": true
+    },
+    {
+      "item": "9B",
+      "start_page": 96,
+      "end_page": 96,
+      "start_unique": true,
+      "end_unique": true
+    },
+    {
+      "item": "15",
+      "start_page": 98,
+      "end_page": 113,
+      "start_unique": true,
+      "end_unique": true
+    }
+  ],
+  "warnings": []
+}

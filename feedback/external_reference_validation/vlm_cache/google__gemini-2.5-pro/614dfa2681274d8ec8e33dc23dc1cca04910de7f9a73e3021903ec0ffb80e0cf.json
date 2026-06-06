@@ -1,0 +1,9 @@
+{
+  "base_url": "https://openrouter.ai/api/v1",
+  "created_at": 1780697111,
+  "image_sha256": "c1185fabb528313ba006a5d064590d34591e23e922f4c0d3f54401c9839e0ace",
+  "model": "google/gemini-2.5-pro",
+  "prompt": "You are shown one page from a SEC 10-K filing rendered as an image.\nThis page contains the BEGINNING of \"Item 11. Executive Compensation\".\nFind the \"Item 11\" heading, then transcribe VERBATIM the first 5 lines of text that come immediately after it. Include any report title, addressee, or sub-heading exactly as printed — do NOT skip them; only ignore page running-headers, page numbers, and footers.\nOutput ONLY the transcribed text, no commentary, no quotes, no formatting.",
+  "source_path": "tier2\\dataset\\GDC_2023\\pages\\page_067.png",
+  "text": "The following table provides disclosure concerning all compensation paid for services to GDC in all capacities for our fiscal years ended December\n31, 2023 and 2022 provided by (i) each person serving as our principal executive officer (“PEO”), (ii) each person serving as our principal financial\nofficer (“PFO”) and (iii) our two most highly compensated executive officers other than our PEO and PFO whose total compensation exceeded\n$100,000 (collectively with the PEO, referred to as the “named executive officers” in this Executive Compensation section).\n\nSummary Compensation Table"
+}

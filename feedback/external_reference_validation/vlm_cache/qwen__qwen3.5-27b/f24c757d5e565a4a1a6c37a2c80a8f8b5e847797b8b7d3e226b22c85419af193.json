@@ -1,0 +1,9 @@
+{
+  "base_url": "https://openrouter.ai/api/v1",
+  "created_at": 1780684921,
+  "image_sha256": "5c8cf6c8744eeb08e5c2cb28294a52b6be407c8e057276a1b690cebd90e92d08",
+  "model": "qwen/qwen3.5-27b",
+  "prompt": "You are shown one page from a SEC 10-K filing rendered as an image.\nThis page contains the BEGINNING of \"Item 15. Exhibits, Financial Statement Schedules\".\nFind the \"Item 15\" heading, then transcribe VERBATIM the first 5 lines of text that come immediately after it. Include any report title, addressee, or sub-heading exactly as printed — do NOT skip them; only ignore page running-headers, page numbers, and footers.\nOutput ONLY the transcribed text, no commentary, no quotes, no formatting.",
+  "source_path": "tier2/dataset/RELL_2025/pages/page_071.png",
+  "text": "(a) List of Documents Filed as a Part of This Report:\n(1) Index to Consolidated Financial Statements:\nReport of BDO USA, P.C., Independent Registered Public Accounting Firm.\nConsolidated Balance Sheets as of May 31, 2025 and June 1, 2024.\nConsolidated Statements of Comprehensive Income for each of the three years ended May 31, 2025, June 1, 2024 and May 27, 2023."
+}

@@ -1,0 +1,9 @@
+{
+  "base_url": "https://openrouter.ai/api/v1",
+  "created_at": 1780694128,
+  "image_sha256": "62148fefd4f08c7409eaa53c9d09ece898ce58108805d74049fa9d50efdc2316",
+  "model": "qwen/qwen3.5-122b-a10b",
+  "prompt": "You are shown one page from a SEC 10-K filing rendered as an image.\nThis page contains the BEGINNING of \"Item 3. Legal Proceedings\".\nFind the \"Item 3\" heading, then transcribe VERBATIM the first 5 lines of text that come immediately after it. Include any report title, addressee, or sub-heading exactly as printed — do NOT skip them; only ignore page running-headers, page numbers, and footers.\nOutput ONLY the transcribed text, no commentary, no quotes, no formatting.",
+  "source_path": "tier2\\dataset\\WMT_2026\\pages\\page_030.png",
+  "text": "I. SUPPLEMENTAL INFORMATION: The Company is involved in legal proceedings arising in the normal course of its business, including litigation, arbitration and other claims, and investigations, inspections, subpoenas, audits, claims, inquiries and similar actions by governmental authorities. We discuss certain legal proceedings in Note 9 to our Consolidated Financial Statements included in \"Item 8. Financial Statements and Supplementary Data,\" which is captioned \"Contingencies,\" under the sub-caption \"Legal Proceedings.\" We refer you to that discussion for important information concerning those legal proceedings, including the basis for such actions and, where known, the relief sought. We provide the following additional information concerning those legal proceedings, including the name of the lawsuit, the court in which the lawsuit is pending, and the date on which the petition commencing the lawsuit or appeal was filed, in addition to disclosure of certain other legal matters."
+}

@@ -1,0 +1,9 @@
+{
+  "base_url": "https://openrouter.ai/api/v1",
+  "created_at": 1780698288,
+  "image_sha256": "4e5b6056fb2b1e0be09565a90f448271773d2e8ae6b46787c1e1e6efdbb375d1",
+  "model": "qwen/qwen3.5-35b-a3b",
+  "prompt": "You are shown one page from a SEC 10-K filing rendered as an image.\nItem \"7. Management's Discussion and Analysis of Financial Condition and Results of Operations\" ENDS on this page; the next section is \"Item 7A. Quantitative and Qualitative Disclosures About Market Risk\".\nFirst locate the bottom edge of Item 7's text:\n- If the \"Item 7A\" heading is visible on this page, Item 7 ends on the line directly ABOVE that heading.\n- Otherwise Item 7 runs all the way to the very bottom of the page.\nThen transcribe VERBATIM the LAST 5 lines of Item 7 at that bottom edge — the FINAL lines right before the section ends, NOT lines from the top or middle of the page. Ignore running headers, page numbers, footers.\nOutput ONLY the transcribed text, no commentary, no quotes, no formatting.",
+  "source_path": "tier2\\dataset\\GDC_2023\\pages\\page_057.png",
+  "text": "Exchange Trading System market."
+}

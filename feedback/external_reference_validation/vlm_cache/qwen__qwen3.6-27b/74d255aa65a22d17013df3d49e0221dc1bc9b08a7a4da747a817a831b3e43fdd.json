@@ -1,0 +1,9 @@
+{
+  "base_url": "https://openrouter.ai/api/v1",
+  "created_at": 1780687366,
+  "image_sha256": "eadab10e0847b2fe6ac56f2d7366465b8dd2363b08751f4a417b7ce499ecf0a6",
+  "model": "qwen/qwen3.6-27b",
+  "prompt": "You are shown one page from a SEC 10-K filing rendered as an image.\nThis page contains the BEGINNING of \"Item 9A. Controls and Procedures\".\nFind the \"Item 9A\" heading, then transcribe VERBATIM the first 5 lines of text that come immediately after it. Include any report title, addressee, or sub-heading exactly as printed — do NOT skip them; only ignore page running-headers, page numbers, and footers.\nOutput ONLY the transcribed text, no commentary, no quotes, no formatting.",
+  "source_path": "tier2/dataset/WMT_2026/pages/page_080.png",
+  "text": "Evaluation of Disclosure Controls and Procedures\nWe maintain disclosure controls and procedures that are designed to provide reasonable assurance that information, which is required to be timely\ndisclosed, is accumulated and communicated to management in a timely fashion. In designing and evaluating such controls and procedures, we\nrecognize that any controls and procedures, no matter how well designed and operated, can provide only reasonable assurance of achieving the\ndesired control objectives. Our management is necessarily required to use judgment in evaluating controls and procedures. Also, we have investments"
+}

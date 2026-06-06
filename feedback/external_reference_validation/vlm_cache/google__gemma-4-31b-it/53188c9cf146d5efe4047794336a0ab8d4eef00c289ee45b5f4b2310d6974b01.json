@@ -1,0 +1,9 @@
+{
+  "base_url": "https://openrouter.ai/api/v1",
+  "created_at": 1780684580,
+  "image_sha256": "ecaa869107be07a556f7278af73322275316d639af9cb577528e9145eb2e52a7",
+  "model": "google/gemma-4-31b-it",
+  "prompt": "You are shown one page from a SEC 10-K filing rendered as an image.\nThe text of Item \"7. Management's Discussion and Analysis of Financial Condition and Results of Operations\" ENDS somewhere on this page; the next section is \"Item 7A. Quantitative and Qualitative Disclosures About Market Risk\".\nFind where Item 7 ends: right before the \"Item 7A\" heading if that heading appears on this page, otherwise at the very bottom of the page.\nTranscribe VERBATIM the 5 lines of Item 7 that come immediately BEFORE that ending point (its final lines). Give the running prose closest to the end — do NOT transcribe lines from the top or middle of the page, and do NOT transcribe a data table or figure; if the very end is a table, give the prose just before it. Ignore running headers, page numbers, footers.\nOutput ONLY the transcribed text, no commentary, no quotes, no formatting.",
+  "source_path": "tier2/dataset/RELL_2025/pages/page_033.png",
+  "text": "circumstances where we, or any of our affiliates, have incurred three years of cumulative losses which constitute significant negative evidence,\npositive evidence of equal or greater significance is needed to overcome the negative evidence before a tax benefit is recognized for deductible\ntemporary differences and loss carryforwards.\n\nNew Accounting Pronouncements\nA summary of the New Accounting Pronouncements is provided in Note 4, Significant Accounting Policies and Disclosures, of the notes to the"
+}

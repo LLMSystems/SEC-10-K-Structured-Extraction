@@ -1,0 +1,9 @@
+{
+  "base_url": "https://openrouter.ai/api/v1",
+  "created_at": 1780698265,
+  "image_sha256": "d09b887617860cf1c5ef666f8d4b43f1042da1acdc897b7e58ed13a30ef930d4",
+  "model": "qwen/qwen3.5-35b-a3b",
+  "prompt": "You are shown one page from a SEC 10-K filing rendered as an image.\nThis page contains the BEGINNING of \"Item 1. Business\".\nFind the \"Item 1\" heading, then transcribe VERBATIM the first 5 lines of text that come immediately after it. Include any report title, addressee, or sub-heading exactly as printed — do NOT skip them; only ignore page running-headers, page numbers, and footers.\nOutput ONLY the transcribed text, no commentary, no quotes, no formatting.",
+  "source_path": "tier2\\dataset\\RELL_2025\\pages\\page_004.png",
+  "text": "ITEM 1. Business\nGeneral\nRichardson Electronics, Ltd. (the \"Company,\" \"we,\" \"our\") is a leading global manufacturer of engineered solutions, green energy products,\npower grid and microwave tubes, and related consumables; power conversion and RF and microwave components including green energy solutions;\ntubes for diagnostic imaging equipment; and customized display solutions. More than 55% of our products are manufactured in LaFox, Illinois,"
+}

@@ -1,0 +1,9 @@
+{
+  "base_url": "https://openrouter.ai/api/v1",
+  "created_at": 1780684603,
+  "image_sha256": "4e5b6056fb2b1e0be09565a90f448271773d2e8ae6b46787c1e1e6efdbb375d1",
+  "model": "google/gemma-4-31b-it",
+  "prompt": "You are shown one page from a SEC 10-K filing rendered as an image.\nThe text of Item \"7. Management's Discussion and Analysis of Financial Condition and Results of Operations\" ENDS somewhere on this page; the next section is \"Item 7A. Quantitative and Qualitative Disclosures About Market Risk\".\nFind where Item 7 ends: right before the \"Item 7A\" heading if that heading appears on this page, otherwise at the very bottom of the page.\nTranscribe VERBATIM the 5 lines of Item 7 that come immediately BEFORE that ending point (its final lines). Give the running prose closest to the end — do NOT transcribe lines from the top or middle of the page, and do NOT transcribe a data table or figure; if the very end is a table, give the prose just before it. Ignore running headers, page numbers, footers.\nOutput ONLY the transcribed text, no commentary, no quotes, no formatting.",
+  "source_path": "tier2/dataset/GDC_2023/pages/page_057.png",
+  "text": "A majority of the Company's operating activities and a significant portion of the Company's assets and liabilities are denominated in RMB, which is\nnot freely convertible into foreign currencies. All foreign exchange transactions take place either through the Peoples' Bank of China (\"PBOC\") or\nother authorized financial institutions at exchange rates quoted by PBOC. Approval of foreign currency payments by the PBOC or other regulatory\ninstitutions requires submitting a payment application form together with suppliers' invoices and signed contracts. The value of RMB is subject to\nchanges in central government policies and to international economic and political developments affecting supply and demand in the China Foreign\nExchange Trading System market."
+}

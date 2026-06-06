@@ -1,0 +1,226 @@
+{
+  "label": "WMT_2026",
+  "model": "google/gemma-4-31b-it",
+  "threshold": 75,
+  "items": [
+    {
+      "item": "1",
+      "title": "Business",
+      "bucket": "table_tail_covered",
+      "start_page": 6,
+      "end_page": 11,
+      "tail": {
+        "skipped": "table 結尾，邊界由下一個 item 1A 的 head 覆蓋"
+      },
+      "head": {
+        "ratio": 97.2,
+        "pass": true,
+        "pred": "General\nWalmart Inc. (“Walmart,” the “Company” or “we”) is a people-led, technology-powered omnichannel retailer dedicated to helping people around the\nworld save money and live better by providing the opportunity to shop in both net stores and through eCommerce, and to access our other service\nofferings. Through innovation, we strive to continuously improve a customer-centric experience that seam",
+        "gt": "general walmart inc. (\"walmart,\" the \"company\" or \"we\") is a people-led, technology-powered omnichannel retailer dedicated to helping people around the world save money and live better by providing the opportunity to shop in both retail stores and through ecommerce, and to access our other service o"
+      }
+    },
+    {
+      "item": "1A",
+      "title": "Risk Factors",
+      "bucket": "prose",
+      "start_page": 13,
+      "end_page": 27,
+      "head": {
+        "ratio": 98.2,
+        "pass": true,
+        "pred": "The risks described below, in ways that we may or may not be able to accurately predict, materially and adversely affect our business, results of\noperations, financial position and liquidity. Our business operations could also be affected by additional factors that apply to all companies operating\nin the U.S. and globally. The following risk factors do not identify all risks that we may face. The ",
+        "gt": "the risks described below could, in ways we may or may not be able to accurately predict, materially and adversely affect our business, results of operations, financial position and liquidity. our business operations could also be affected by additional factors that apply to all companies operating "
+      },
+      "tail": {
+        "ratio": 100.0,
+        "pass": true,
+        "pred": "meet evolving and diverse stakeholder expectations could adversely affect public perception of our business, associate morale or customer or\nshareholder support.",
+        "gt": "nistrative proceedings or litigation, including as class or mass actions. a failure or perceived failure to meet our goals or to otherwise meet evolving and diverse stakeholder expectations could adversely affect public perception of our business, associate morale or customer or shareholder support."
+      }
+    },
+    {
+      "item": "1C",
+      "title": "Cybersecurity",
+      "bucket": "prose",
+      "start_page": 27,
+      "end_page": 28,
+      "head": {
+        "ratio": 98.7,
+        "pass": true,
+        "pred": "CYBERSECURITY\nWalmart seeks to build and maintain the trust of customers, associates, shareholders and other stakeholders with respect to our use of technology and\ndata. Our digital trust commitments, in line with the Company’s values of service, excellence, integrity and respect for the individual, provide a\nfoundation for our approach to cybersecurity.\nThe Board of Directors, committees of the B",
+        "gt": "walmart seeks to build and maintain the trust of customers, associates, shareholders and other stakeholders with respect to our use of technology and data. our digital trust commitments, in line with our company's values of service, excellence, integrity and respect for the individual, provide a fou"
+      },
+      "tail": {
+        "ratio": 99.7,
+        "pass": true,
+        "pred": "Our security measures, however, there can be no assurance that we, or the third parties with which we interact, will not experience a cybersecurity incident in the future that will materially affect us. Additional information about cybersecurity risks we face is discussed in \"Item 1A. Risk Factors,\" which should be read in conjunction with the information above.",
+        "gt": " or the third parties with which we interact, will not experience a cybersecurity incident in the future that will materially affect us. additional information about cybersecurity risks we face is discussed in \" item 1a. risk factors ,\" which should be read in conjunction with the information above."
+      }
+    },
+    {
+      "item": "2",
+      "title": "Properties",
+      "bucket": "prose",
+      "start_page": 29,
+      "end_page": 29,
+      "head": {
+        "ratio": 90.3,
+        "pass": true,
+        "pred": "ITEM 2. PROPERTIES\nAs of January 31, 2026(1), information on our retail units for Walmart U.S., Sam’s Club U.S. and Walmart International is summarized as follows:\nTotal Retail Square Feet\nUnit Count Total(2) Minimum Maximum Average\nWalmart U.S.",
+        "gt": "as of january 31, 2026 (1) , information on our retail units for walmart u.s., sam's club u.s. and walmart international is summarized as follows: total retail unit count square feet total (2) minimum maximum average walmart u.s. supercenters 3,566 633,724 69,000 260,000 178,000 discount stores 351 "
+      },
+      "tail": {
+        "ratio": 98.3,
+        "pass": true,
+        "pred": "We own office facilities in Bentonville, Arkansas, that serve as our principal office and own and lease office facilities throughout the U.S. and\ninternationally for operations as well as for field and market management. The land on which our stores are located is either owned or leased by the\nCompany. Owned retail units on leased land are reflected as leased locations in the table above. We use i",
+        "gt": "al lease or provide for additional rent based on sales volume. substantially all of the company's store and club leases have renewal options, some of which include rent escalation clauses. for further information on our distribution network, see the caption \"distribution\" under \" item 1. business .\""
+      }
+    },
+    {
+      "item": "3",
+      "title": "Legal Proceedings",
+      "bucket": "prose",
+      "start_page": 30,
+      "end_page": 30,
+      "head": {
+        "ratio": 90.3,
+        "pass": true,
+        "pred": "ITEM 3. LEGAL PROCEEDINGS\n\nI. SUPPLEMENTAL INFORMATION: The Company is involved in legal proceedings arising in the normal course of its business, including\nlitigation, arbitration and other claims, investigations, subpoenas, audits, summons, audits, claims and inquiries initiated by governmental\nauthorities. We discuss certain legal proceedings in Note 9 to our Consolidated Financial Statements i",
+        "gt": "i. supplemental information: the company is involved in legal proceedings arising in the normal course of its business, including litigation, arbitration and other claims, and investigations, inspections, subpoenas, audits, claims, inquiries and similar actions by governmental authorities. we discus"
+      },
+      "tail": {
+        "ratio": 59.0,
+        "pass": false,
+        "pred": "The Company is a party to various other legal proceedings, none of which are expected to have a material adverse effect on the Company's business, financial condition or results of operations.\nThe Company is not a party to any other material legal proceedings.\nThe Company is not a party to any other material legal proceedings.\nThe Company is not a party to any other material legal proceedings.\nThe",
+        "gt": "mpany does not believe this matter will have a material adverse effect on its business, financial position, results of operations, or cash flows, the company can provide no assurance that its business, financial position, results of operations or cash flows will not be materially adversely affected."
+      }
+    },
+    {
+      "item": "5",
+      "title": "Market for Registrant's Common Equity, Related Stockholder Matters and Issuer Purchases of Equity Securities",
+      "bucket": "table_tail_covered",
+      "start_page": 31,
+      "end_page": 32,
+      "tail": {
+        "skipped": "table 結尾，邊界由下一個 item 7 的 head 覆蓋"
+      },
+      "head": {
+        "ratio": 73.8,
+        "pass": false,
+        "pred": "ITEM 5. MARKET FOR REGISTRANT'S COMMON EQUITY, RELATED STOCKHOLDER MATTERS AND ISSUER\nPURCHASES OF EQUITY SECURITIES\n\nMarket for Common Stock\nEffective December 9, 2025, the principal market on which Walmart's common stock is listed has been the Nasdaq Global Select Market. Prior to",
+        "gt": "market for common stock effective december 9, 2025, the principal market on which walmart's common stock is listed has been the nasdaq global select market. prior to december 9, 2025, walmart's common stock was listed on the new york stock exchange. the common stock trades under the symbol \"wmt.\" ho"
+      }
+    },
+    {
+      "item": "7",
+      "title": "Management's Discussion and Analysis of Financial Condition and Results of Operations",
+      "bucket": "prose",
+      "start_page": 33,
+      "end_page": 46,
+      "head": {
+        "ratio": 92.6,
+        "pass": true,
+        "pred": "Overview\nThis discussion, our results for the fiscal years ended January 31, 2024 (“Fiscal 2024”), January 31, 2023 (“Fiscal 2023”) and\nJanuary 31, 2022 (“Fiscal 2022”), should be read in conjunction with our Consolidated Financial Statements and the accompanying notes. We\nintend in this discussion to provide the reader with information that will assist in understanding our financial statements, t",
+        "gt": "overview this discussion, which presents our results for the fiscal years ended january 31, 2026 (\"fiscal 2026\"), january 31, 2025 (\"fiscal 2025\") and january 31, 2024 (\"fiscal 2024\"), should be read in conjunction with our consolidated financial statements and the accompanying notes. we intend for "
+      },
+      "tail": {
+        "ratio": 100.0,
+        "pass": true,
+        "pred": "statements. Accordingly, the determination of our uncertain tax positions requires judgment, the use of estimates in certain cases and the\ninterpretation and application of complex tax laws.",
+        "gt": "inimum recognition threshold that a tax position is required to meet before being recognized in the financial statements. accordingly, the determination of our uncertain tax positions requires judgment, the use of estimates in certain cases and the interpretation and application of complex tax laws."
+      }
+    },
+    {
+      "item": "7A",
+      "title": "Quantitative and Qualitative Disclosures About Market Risk",
+      "bucket": "prose",
+      "start_page": 46,
+      "end_page": 47,
+      "head": {
+        "ratio": 98.0,
+        "pass": true,
+        "pred": "Market Risk\n\nIn addition to the risks inherent in our operations, we are exposed to certain market risk basins, including changes in interest rates, currency exchange rates\nand the fair values of certain equity and equity method investments measured on a recurring basis.\n\nThe analysis presented below for each of our market risk sensitive instruments is based on a hypothetical scenario used to cali",
+        "gt": "market risk in addition to the risks inherent in our operations, we are exposed to certain market risks, including changes in interest rates, currency exchange rates and the fair values of certain equity and equity method investments measured on a recurring basis. the analysis presented below for ea"
+      },
+      "tail": {
+        "ratio": 100.0,
+        "pass": true,
+        "pred": "In certain countries, we also enter into immaterial foreign currency forward contracts to hedge the purchase and payment of purchase commitments denominated in non-functional currencies.\n\nInvestment Risk\n\nWe are exposed to investment risk primarily related to changes in the fair value of certain equity investments, including certain immaterial equity method investments where we have elected the fa",
+        "gt": " a recurring basis. as of january 31, 2026, the fair value of these investments was $4.5 billion. refer to note 7 for details. as of january 31, 2026, a hypothetical 10% change in the stock price of such investments would have changed the fair value of such investments by approximately $0.4 billion."
+      }
+    },
+    {
+      "item": "8",
+      "title": "Financial Statements and Supplementary Data",
+      "bucket": "table_tail_covered",
+      "start_page": 48,
+      "end_page": 79,
+      "tail": {
+        "skipped": "table 結尾，邊界由下一個 item 9A 的 head 覆蓋"
+      },
+      "head": {
+        "ratio": 84.7,
+        "pass": true,
+        "pred": "Reports of Independent Registered Public Accounting Firm (PCAOB ID: 42)\nConsolidated Statements of Income\nConsolidated Statements of Comprehensive Income\nConsolidated Balance Sheets\nConsolidated Statements of Shareholders' Equity",
+        "gt": "consolidated financial statements of walmart inc. for the fiscal year ended january 31, 2026 table of contents page reports of independent registered public accounting firm (pcaob id: 42) 49 consolidated statements of income 52 consolidated statements of comprehensive income 53 consolidated balance "
+      }
+    },
+    {
+      "item": "9A",
+      "title": "Controls and Procedures",
+      "bucket": "prose",
+      "start_page": 80,
+      "end_page": 80,
+      "head": {
+        "ratio": 100.0,
+        "pass": true,
+        "pred": "Evaluation of Disclosure Controls and Procedures\nWe maintain disclosure controls and procedures that are designed to provide reasonable assurance that information, which is required to be timely\ndisclosed, is accumulated and communicated to management in a timely fashion. In designing and evaluating such controls and procedures, we\nrecognize that any controls and procedures, no matter how well des",
+        "gt": "evaluation of disclosure controls and procedures we maintain disclosure controls and procedures that are designed to provide reasonable assurance that information, which is required to be timely disclosed, is accumulated and communicated to management in a timely fashion. in designing and evaluating"
+      },
+      "tail": {
+        "ratio": 80.7,
+        "pass": true,
+        "pred": "Management concluded that based on its assessment, Walmart's internal control over financial reporting was effective as of January 31, 2026. The\nCompany's internal control over financial reporting as of January 31, 2026, has been audited by Ernst & Young LLP as stated in their report which\nappears herein.\n\nChanges in Internal Control Over Financial Reporting\n\nThere have been no changes in the Comp",
+        "gt": "n. changes in internal control over financial reporting there have been no changes in the company's internal control over financial reporting as of january 31, 2026, that have materially affected, or are reasonably likely to materially affect, the company's internal control over financial reporting."
+      }
+    },
+    {
+      "item": "9B",
+      "title": "Other Information",
+      "bucket": "prose",
+      "start_page": 81,
+      "end_page": 81,
+      "head": {
+        "ratio": 99.5,
+        "pass": true,
+        "pred": "Security Trading Plans of Directors and Executive Officers\nOn December 24, 2025, Chris Nicholas, Executive Vice President, President and Chief Executive Officer, Walmart International, entered into a stock\ntrading plan designed to comply with Rule 10b5-1 under the Securities Exchange Act of 1934. Under the terms of the plan, Mr. Nicholas will sell an\naggregate 34,800 shares of common stock in trad",
+        "gt": "security trading plans of directors and executive officers on december 24, 2025 , chris nicholas , executive vice president, president and chief executive officer , walmart international, entered into a stock trading plan designed to comply with rule 10b5-1 under the securities exchange act of 1934."
+      },
+      "tail": {
+        "ratio": 99.5,
+        "pass": true,
+        "pred": "engaged in certain activities, transactions or dealings with individuals or entities subject to specific U.S. economic sanctions during the reporting\nperiod.\nThe information provided pursuant to Section 13(r) of the Exchange Act in Part II, Item 5 Other Information of the Company’s Quarterly Reports on\nForm 10-Q for the quarters ended July 31, 2025 and October 31, 2025, is incorporated herein by r",
+        "gt": "economic sanctions during the reporting period. the information provided pursuant to section 13(r) of the exchange act in part ii, item 5 other information of the company's quarterly reports on form 10-q for the quarters ended july 31, 2025 and october 31, 2025 , is incorporated herein by reference."
+      }
+    },
+    {
+      "item": "15",
+      "title": "Exhibits, Financial Statement Schedules",
+      "bucket": "prose",
+      "start_page": 83,
+      "end_page": 85,
+      "head": {
+        "ratio": 98.7,
+        "pass": true,
+        "pred": "EXHIBITS, FINANCIAL STATEMENT SCHEDULES\n(a) Documents filed as part of this report are as follows:\n1. Financial Statements: See the Financial Statements in “Item 8. Financial Statements and Supplementary Data.”\n2. Financial Statement Schedules:\nCertain schedules have been omitted because the required information is not present or is not present in amounts sufficient to",
+        "gt": "(a) documents filed as part of this report are as follows: 1. financial statements: see the financial statements in \" item 8. financial statements and supplementary data .\" 2. financial statement schedules: certain schedules have been omitted because the required information is not present or is not"
+      },
+      "tail": {
+        "ratio": 100.0,
+        "pass": true,
+        "pred": "(C) This Exhibit is a management contract or compensatory plan or arrangement\n(P) This Exhibit was originally filed in paper form. Accordingly, a hyperlink has not been provided.\n(I) Certain instruments defining the rights of holders of long-term debt securities of the Registrant are omitted pursuant to Item 601(b)(4)(iii) of Regulation S-K. The Company hereby undertakes to furnish to the SEC, upo",
+        "gt": "certain instruments defining the rights of holders of long-term debt securities of the registrant are omitted pursuant to item 601(b)(4)(iii) of regulation s-k. the company hereby undertakes to furnish to the sec, upon request, copies of any such instruments. (c) financial statement schedules: none."
+      }
+    }
+  ]
+}

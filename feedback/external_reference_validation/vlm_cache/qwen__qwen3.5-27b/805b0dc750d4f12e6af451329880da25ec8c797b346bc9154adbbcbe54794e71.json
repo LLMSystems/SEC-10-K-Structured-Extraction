@@ -1,0 +1,9 @@
+{
+  "base_url": "https://openrouter.ai/api/v1",
+  "created_at": 1780685592,
+  "image_sha256": "97b0426d210bf630c2ea7b974ff6e11c5c40a49d9bc85d2c096ebde5589fe915",
+  "model": "qwen/qwen3.5-27b",
+  "prompt": "You are shown one page from a SEC 10-K filing rendered as an image.\nThis page contains the BEGINNING of \"Item 1A. Risk Factors\".\nFind the \"Item 1A\" heading, then transcribe VERBATIM the first 5 lines of text that come immediately after it. Include any report title, addressee, or sub-heading exactly as printed — do NOT skip them; only ignore page running-headers, page numbers, and footers.\nOutput ONLY the transcribed text, no commentary, no quotes, no formatting.",
+  "source_path": "tier2/dataset/TSLA_2023/pages/page_015.png",
+  "text": "You should carefully consider the risks described below together with the other information set forth in this report, which could materially\naffect our business, financial condition and future results. The risks described below are not the only risks facing our company. Risks and\nuncertainties not currently known to us or that we currently deem to be immaterial also may materially adversely affect our business, financial\ncondition and operating results."
+}

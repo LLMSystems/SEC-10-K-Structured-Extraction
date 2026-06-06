@@ -1,0 +1,123 @@
+{
+  "label": "JPM_2025",
+  "ticker": "JPM",
+  "year": "2025",
+  "cik": "0000019617",
+  "accession_number": "0001628280-26-008131",
+  "company_name": "JPMORGAN CHASE & CO",
+  "pdf": "tier2/out/0000019617_2025-12-31_000162828026008131/0000019617_2025-12-31_000162828026008131.pdf",
+  "pdf_pages": 331,
+  "n_extracted": 15,
+  "n_exact": 14,
+  "n_fuzzy": 1,
+  "n_miss": 0,
+  "out_of_order": 0,
+  "items": [
+    {
+      "item": "1",
+      "page": 3,
+      "match": "exact",
+      "flag": null,
+      "snippet": "jpmorganchase’s principal bank subsidiary is jpmor"
+    },
+    {
+      "item": "1A",
+      "page": 11,
+      "match": "exact",
+      "flag": null,
+      "snippet": "risks, including the impact of extensive supervisi"
+    },
+    {
+      "item": "1C",
+      "page": 34,
+      "match": "exact",
+      "flag": null,
+      "snippet": "item 1c. cybersecurity. refer to the operational r"
+    },
+    {
+      "item": "2",
+      "page": 34,
+      "match": "exact",
+      "flag": null,
+      "snippet": "jpmorganchase’s headquarters is located in new yor"
+    },
+    {
+      "item": "3",
+      "page": 34,
+      "match": "exact",
+      "flag": null,
+      "snippet": "item 3. legal proceedings. refer to note 30 for a "
+    },
+    {
+      "item": "5",
+      "page": 35,
+      "match": "exact",
+      "flag": null,
+      "snippet": "market for registrant’s common equity"
+    },
+    {
+      "item": "7",
+      "page": 35,
+      "match": "exact",
+      "flag": null,
+      "snippet": "management’s discussion and analysis of financial "
+    },
+    {
+      "item": "7A",
+      "page": 35,
+      "match": "exact",
+      "flag": null,
+      "snippet": "item 7a. quantitative and qualitative disclosures "
+    },
+    {
+      "item": "9A",
+      "page": 36,
+      "match": "exact",
+      "flag": null,
+      "snippet": "the internal control framework promulgated by the "
+    },
+    {
+      "item": "9B",
+      "page": 37,
+      "match": "exact",
+      "flag": null,
+      "snippet": "the following table provides information concernin"
+    },
+    {
+      "item": "11",
+      "page": 40,
+      "match": "exact",
+      "flag": null,
+      "snippet": "item 11. executive compensation. refer to item 10."
+    },
+    {
+      "item": "12",
+      "page": 40,
+      "match": "exact",
+      "flag": null,
+      "snippet": "refer to item 10 for security ownership of certain"
+    },
+    {
+      "item": "13",
+      "page": 40,
+      "match": "exact",
+      "flag": null,
+      "snippet": "item 13. certain relationships and related transac"
+    },
+    {
+      "item": "14",
+      "page": 40,
+      "match": "fuzzy(97)",
+      "flag": null,
+      "snippet": "item 14. principal accounting fees and services. r"
+    },
+    {
+      "item": "15",
+      "page": 41,
+      "match": "exact",
+      "flag": null,
+      "snippet": "item 15. exhibits, financial statement schedules."
+    }
+  ],
+  "category": "flawed"
+}

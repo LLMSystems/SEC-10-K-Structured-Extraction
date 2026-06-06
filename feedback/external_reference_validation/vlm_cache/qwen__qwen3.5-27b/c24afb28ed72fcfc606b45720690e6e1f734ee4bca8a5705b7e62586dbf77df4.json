@@ -1,0 +1,9 @@
+{
+  "base_url": "https://openrouter.ai/api/v1",
+  "created_at": 1780693407,
+  "image_sha256": "4fca19508edcf69e7fec1b68fb0975a9aa6428943b9db8e44a0c84f13daed49d",
+  "model": "qwen/qwen3.5-27b",
+  "prompt": "You are shown one page from a SEC 10-K filing rendered as an image.\nItem \"1. Business\" ENDS on this page; the next section is \"Item 1A. Risk Factors\".\nLocate the bottom edge of Item 1's text on the page.\n- If the \"Item 1A\" heading is visible on this page, then Item 1 ends on the line directly ABOVE that heading.\n- Otherwise, Item 1 continues to the bottom of the page.\nThen transcribe VERBATIM the LAST 5 lines of Item 1 immediately before it ends. These must be the FINAL lines right before the section ends, NOT lines from the top or middle of the page. Ignore running headers, page numbers, footers.\nOutput ONLY the transcribed text, no commentary, no quotes, no formatting.",
+  "source_path": "tier2\\dataset\\NFLX_2025\\pages\\page_006.png",
+  "text": "media and blogs could be deemed to be material information. Therefore, we encourage investors, the media, and others interested in our company to\nreview the information we post on the social media channels and blogs listed on our investor relations website."
+}

@@ -1,0 +1,9 @@
+{
+  "base_url": "https://openrouter.ai/api/v1",
+  "created_at": 1780693511,
+  "image_sha256": "75bd50cf8b472abe4ce01710d11964f169c2999614e1462aa4360ba33ff34656",
+  "model": "qwen/qwen3.6-27b",
+  "prompt": "You are shown one page from a SEC 10-K filing rendered as an image.\nItem \"1C. Cybersecurity\" ENDS on this page; the next section is \"Item 2. Properties\".\nLocate the bottom edge of Item 1C's text on the page.\n- If the \"Item 2\" heading is visible on this page, then Item 1C ends on the line directly ABOVE that heading.\n- Otherwise, Item 1C continues to the bottom of the page.\nThen transcribe VERBATIM the LAST 5 lines of Item 1C immediately before it ends. These must be the FINAL lines right before the section ends, NOT lines from the top or middle of the page. Ignore running headers, page numbers, footers.\nOutput ONLY the transcribed text, no commentary, no quotes, no formatting.",
+  "source_path": "tier2\\dataset\\TSLA_2023\\pages\\page_031.png",
+  "text": "management and strategy processes described above, including the operation of our incident response plan, and report to the Audit Committee on any\nappropriate items."
+}

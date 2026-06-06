@@ -1,0 +1,9 @@
+{
+  "base_url": "https://openrouter.ai/api/v1",
+  "created_at": 1780698282,
+  "image_sha256": "cb6ced89bda4d3b3409f35842f89dec284b7a3b845c1843afd3c9b39beeac32a",
+  "model": "qwen/qwen3.5-35b-a3b",
+  "prompt": "You are shown one page from a SEC 10-K filing rendered as an image.\nThis page contains the BEGINNING of \"Item 1. Business\".\nFind the \"Item 1\" heading, then transcribe VERBATIM the first 5 lines of text that come immediately after it. Include any report title, addressee, or sub-heading exactly as printed — do NOT skip them; only ignore page running-headers, page numbers, and footers.\nOutput ONLY the transcribed text, no commentary, no quotes, no formatting.",
+  "source_path": "tier2\\dataset\\GDC_2023\\pages\\page_006.png",
+  "text": "Item 1. Business\nOverview\nGD Culture Group Limited (formerly known as JM Global Holding Company, TMSR Holding Company Limited, and Code Chain New Continent\nLimited), focuses its business on three segments mainly through the Company and two subsidiaries, AI Catalysis and Shanghai Xianzhui: 1) AI-\ndriven digital human creation and customization; 2) Live streaming and e-commerce and 3) Live streaming interactive game. The company has"
+}

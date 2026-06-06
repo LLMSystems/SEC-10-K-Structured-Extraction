@@ -1,0 +1,9 @@
+{
+  "base_url": "https://openrouter.ai/api/v1",
+  "created_at": 1780685707,
+  "image_sha256": "c1cccac393b4460d1352e3f1e6be2acb061cdcf1d94ae8d879768c559f0d31d9",
+  "model": "qwen/qwen3.5-27b",
+  "prompt": "You are shown one page from a SEC 10-K filing rendered as an image.\nItem \"9A. Controls and Procedures\" ENDS on this page; the next section is \"Item 9B. Other Information\".\nFirst locate the bottom edge of Item 9A's text:\n- If the \"Item 9B\" heading is visible on this page, Item 9A ends on the line directly ABOVE that heading.\n- Otherwise Item 9A runs all the way to the very bottom of the page.\nThen transcribe VERBATIM the LAST 5 lines of Item 9A at that bottom edge — the FINAL lines right before the section ends, NOT lines from the top or middle of the page. Ignore running headers, page numbers, footers.\nOutput ONLY the transcribed text, no commentary, no quotes, no formatting.",
+  "source_path": "tier2/dataset/TSLA_2023/pages/page_095.png",
+  "text": "evaluation of effectiveness to future periods are subject to the risk that controls may become inadequate because of changes in conditions, or that the\ndegree of compliance with the policies or procedures may deteriorate.\nChanges in Internal Control over Financial Reporting\nThere was no change in our internal control over financial reporting that occurred during the quarter ended December 31, 2023, which has\nmaterially affected, or is reasonably likely to materially affect, our internal control over financial reporting."
+}

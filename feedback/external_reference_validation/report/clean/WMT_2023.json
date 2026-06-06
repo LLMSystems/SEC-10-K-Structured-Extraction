@@ -1,0 +1,88 @@
+{
+  "label": "WMT_2023",
+  "ticker": "WMT",
+  "year": "2023",
+  "cik": "0000104169",
+  "accession_number": "0000104169-23-000020",
+  "company_name": "Walmart Inc.",
+  "pdf": "tier2/out/0000104169_2023-01-31_000010416923000020/0000104169_2023-01-31_000010416923000020.pdf",
+  "pdf_pages": 88,
+  "n_extracted": 10,
+  "n_exact": 10,
+  "n_fuzzy": 0,
+  "n_miss": 0,
+  "out_of_order": 0,
+  "items": [
+    {
+      "item": "1",
+      "page": 6,
+      "match": "exact",
+      "flag": null,
+      "snippet": "walmart inc. (\"walmart,\" the \"company\" or \"we\") is"
+    },
+    {
+      "item": "1A",
+      "page": 15,
+      "match": "exact",
+      "flag": null,
+      "snippet": "failure to successfully execute our omni-channel s"
+    },
+    {
+      "item": "2",
+      "page": 28,
+      "match": "exact",
+      "flag": null,
+      "snippet": "the walmart u.s. and sam's club segments comprise "
+    },
+    {
+      "item": "3",
+      "page": 32,
+      "match": "exact",
+      "flag": null,
+      "snippet": "i. supplemental information:"
+    },
+    {
+      "item": "5",
+      "page": 34,
+      "match": "exact",
+      "flag": null,
+      "snippet": "the principal market on which walmart's common sto"
+    },
+    {
+      "item": "7",
+      "page": 36,
+      "match": "exact",
+      "flag": null,
+      "snippet": "this discussion, which presents our results for th"
+    },
+    {
+      "item": "7A",
+      "page": 49,
+      "match": "exact",
+      "flag": null,
+      "snippet": "in addition to the risks inherent in our operation"
+    },
+    {
+      "item": "8",
+      "page": 51,
+      "match": "exact",
+      "flag": null,
+      "snippet": "consolidated financial statements of walmart inc."
+    },
+    {
+      "item": "9A",
+      "page": 82,
+      "match": "exact",
+      "flag": null,
+      "snippet": "in the ordinary course of business, we review our "
+    },
+    {
+      "item": "15",
+      "page": 84,
+      "match": "exact",
+      "flag": null,
+      "snippet": "(a) documents filed as part of this report are as "
+    }
+  ],
+  "category": "clean"
+}

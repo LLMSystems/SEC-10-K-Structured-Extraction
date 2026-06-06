@@ -1,0 +1,198 @@
+{
+  "label": "NFLX_2025",
+  "model": "moonshotai/kimi-k2.6:free",
+  "threshold": 75,
+  "items": [
+    {
+      "item": "1",
+      "title": "Business",
+      "bucket": "prose",
+      "start_page": 4,
+      "end_page": 6,
+      "head": {
+        "error": "RateLimitError: Error code: 429 - {'error': {'message': 'Rate limit exceeded: free-models-per-min. ', 'code': 429, 'metadata': {'headers': {'X-RateLimit-Limit': '16', 'X-RateLimit-Remaining': '0', 'X-RateLimit-Reset': '1780694760000'}, 'provider_name': None}}, 'user_id': 'user_3A7J2w1UXdqapKzJfjlQk81aMC2'}"
+      },
+      "tail": {
+        "ratio": 45.3,
+        "pass": false,
+        "pred": "Legal Proceedings\n\nFrom time to time, we may be involved in various claims and legal proceedings arising in the ordinary course of business. None of our Company or our subsidiaries is currently a party to any such claims or proceedings which, if decided adversely to the Company, would either, individually or in the aggregate, have a material adverse effect on our business, financial condition, res",
+        "gt": "mation we post on social media and blogs could be deemed to be material information. therefore, we encourage investors, the media, and others interested in our company to review the information we post on the social media channels and blogs listed on our investor relations website. table of contents"
+      }
+    },
+    {
+      "item": "1A",
+      "title": "Risk Factors",
+      "bucket": "prose",
+      "start_page": 7,
+      "end_page": 19,
+      "head": {
+        "ratio": 100.0,
+        "pass": true,
+        "pred": "Item 1A. Risk Factors\n\nIf any of the following risks actually occur, our business, financial condition and results of operations could be harmed. In that case, the trading price of our common stock could decline, and you could lose all or part of your investment.\n\nRisks Related to Our Business\n\nIf our efforts to attract and retain members are not successful, our business will be adversely affected",
+        "gt": "if any of the following risks actually occur, our business, financial condition and results of operations could be harmed. in that case, the trading price of our common stock could decline, and you could lose all or part of your investment. risks related to our business if our efforts to attract and"
+      },
+      "tail": {
+        "error": "RateLimitError: Error code: 429 - {'error': {'message': 'Rate limit exceeded: free-models-per-min. ', 'code': 429, 'metadata': {'headers': {'X-RateLimit-Limit': '16', 'X-RateLimit-Remaining': '0', 'X-RateLimit-Reset': '1780694760000'}, 'provider_name': None}}, 'user_id': 'user_3A7J2w1UXdqapKzJfjlQk81aMC2'}"
+      }
+    },
+    {
+      "item": "1C",
+      "title": "Cybersecurity",
+      "bucket": "prose",
+      "start_page": 19,
+      "end_page": 20,
+      "head": {
+        "ratio": 100.0,
+        "pass": true,
+        "pred": "Item 1C. Cybersecurity\n\nWe have an enterprise-wide information security program designed to identify, protect, detect and respond to and manage reasonably foreseeable cybersecurity risks and threats. To protect our information systems from cybersecurity threats, we use various security tools that help prevent, identify, escalate, investigate, resolve and recover from identified vulnerabilities and",
+        "gt": "we have an enterprise-wide information security program designed to identify, protect, detect and respond to and manage reasonably foreseeable cybersecurity risks and threats. to protect our information systems from cybersecurity threats, we use various security tools that help prevent, identify, es"
+      },
+      "tail": {
+        "error": "RateLimitError: Error code: 429 - {'error': {'message': 'Rate limit exceeded: free-models-per-min. ', 'code': 429, 'metadata': {'headers': {'X-RateLimit-Limit': '16', 'X-RateLimit-Remaining': '0', 'X-RateLimit-Reset': '1780694820000'}, 'provider_name': None}}, 'user_id': 'user_3A7J2w1UXdqapKzJfjlQk81aMC2'}"
+      }
+    },
+    {
+      "item": "2",
+      "title": "Properties",
+      "bucket": "prose",
+      "start_page": 21,
+      "end_page": 21,
+      "head": {
+        "error": "RateLimitError: Error code: 429 - {'error': {'message': 'Rate limit exceeded: free-models-per-min. ', 'code': 429, 'metadata': {'headers': {'X-RateLimit-Limit': '16', 'X-RateLimit-Remaining': '0', 'X-RateLimit-Reset': '1780694820000'}, 'provider_name': None}}, 'user_id': 'user_3A7J2w1UXdqapKzJfjlQk81aMC2'}"
+      },
+      "tail": {
+        "ratio": 100.0,
+        "pass": true,
+        "pred": "We believe that our existing facilities are adequate to meet current requirements, and that suitable additional or substitute space will be available as needed to accommodate any further physical expansion of operations and for any additional offices.",
+        "gt": "ffice and production space throughout the world. we believe that our existing facilities are adequate to meet current requirements, and that suitable additional or substitute space will be available as needed to accommodate any further physical expansion of operations and for any additional offices."
+      }
+    },
+    {
+      "item": "3",
+      "title": "Legal Proceedings",
+      "bucket": "prose",
+      "start_page": 21,
+      "end_page": 21,
+      "head": {
+        "error": "RateLimitError: Error code: 429 - {'error': {'message': 'Rate limit exceeded: free-models-per-min. ', 'code': 429, 'metadata': {'headers': {'X-RateLimit-Limit': '16', 'X-RateLimit-Remaining': '0', 'X-RateLimit-Reset': '1780694820000'}, 'provider_name': None}}, 'user_id': 'user_3A7J2w1UXdqapKzJfjlQk81aMC2'}"
+      },
+      "tail": {
+        "error": "RateLimitError: Error code: 429 - {'error': {'message': 'Rate limit exceeded: free-models-per-min. ', 'code': 429, 'metadata': {'headers': {'X-RateLimit-Limit': '16', 'X-RateLimit-Remaining': '0', 'X-RateLimit-Reset': '1780694820000'}, 'provider_name': None}}, 'user_id': 'user_3A7J2w1UXdqapKzJfjlQk81aMC2'}"
+      }
+    },
+    {
+      "item": "5",
+      "title": "Market for Registrant's Common Equity, Related Stockholder Matters and Issuer Purchases of Equity Securities",
+      "bucket": "prose",
+      "start_page": 22,
+      "end_page": 23,
+      "head": {
+        "ratio": 74.9,
+        "pass": false,
+        "pred": "Market Information\n\nOur common stock is traded on the NASDAQ Global Select Market under the symbol \"NFLX\".\n\nStock Split\n\nOn November 14, 2025, the Company completed a ten-for-one forward stock split of the Company's issued common stock (the \"Stock Split\"). Each shareholder as of the record date of November 10, 2025 received nine additional shares of common stock for every share held. References ma",
+        "gt": "item 5. market for registrant’s common equity, related stockholder matters and issuer purchases of equity securities market information our common stock is traded on the nasdaq global select market under the symbol “nflx”. stock split on november 14, 2025, the company completed a ten-for-one forward"
+      },
+      "tail": {
+        "ratio": 100.0,
+        "pass": true,
+        "pred": "Index and the stocks represented in the RDG Internet Composite Index, respectively, and reinvestment of any dividends. Historical stock price\nperformance should not be relied upon as an indication of future stock price performance.",
+        "gt": "in the nasdaq composite index, the stocks represented in the s&p 500 index and the stocks represented in the rdg internet composite index, respectively, and reinvestment of any dividends. historical stock price performance should not be relied upon as an indication of future stock price performance."
+      }
+    },
+    {
+      "item": "7",
+      "title": "Management's Discussion and Analysis of Financial Condition and Results of Operations",
+      "bucket": "prose",
+      "start_page": 24,
+      "end_page": 34,
+      "head": {
+        "ratio": 99.7,
+        "pass": true,
+        "pred": "Item 7. Management's Discussion and Analysis of Financial Condition and Results of Operations\n\nThis section of this Form 10-K generally discusses 2025 and 2024 items and year-to-year comparisons between 2025 and 2024. Discussions of 2023 items and year-to-year comparisons between 2024 and 2023 that are not included in this Form 10-K can be found in \"Management's Discussion and Analysis of Financia",
+        "gt": "item 7. management’s discussion and analysis of financial condition and results of operations this section of this form 10-k generally discusses 2025 and 2024 items and year-to-year comparisons between 2025 and 2024. discussions of 2023 items and year-to-year comparisons between 2024 and 2023 that a"
+      },
+      "tail": {
+        "ratio": 99.0,
+        "pass": true,
+        "pred": "The information set forth under Note 1 to the consolidated financial statements under the caption \"Basis of Presentation and Summary of Significant Accounting Policies\" is incorporated herein by reference.",
+        "gt": "further information regarding income taxes. table of contents recent accounting pronouncements the information set forth under note 1 to the consolidated financial statements under the caption “basis of presentation and summary of significant accounting policies” is incorporated herein by reference."
+      }
+    },
+    {
+      "item": "7A",
+      "title": "Quantitative and Qualitative Disclosures About Market Risk",
+      "bucket": "prose",
+      "start_page": 34,
+      "end_page": 36,
+      "head": {
+        "ratio": 100.0,
+        "pass": true,
+        "pred": "Item 7A. Quantitative and Qualitative Disclosures About Market Risk\n\nWe are exposed to market risks related to interest rate changes, which affect the market values of our investments and debt, as well as foreign currency fluctuations.\n\nInterest Rate Risk\n\nAt December 31, 2025, our cash equivalents were generally invested in money market funds and time deposits. Interest paid on such funds fluctua",
+        "gt": "we are exposed to market risks related to interest rate changes, which affect the market values of our investments and debt, as well as foreign currency fluctuations. interest rate risk at december 31, 2025, our cash equivalents were generally invested in money market funds and time deposits. intere"
+      },
+      "tail": {
+        "ratio": 97.8,
+        "pass": true,
+        "pred": "functional currencies as of December 31, 2025 and December 31, 2024, income before income taxes would have been approximately $1 million\nand $38 million lower, respectively, after considering the offsetting impact of the foreign currency exchange contracts and our net investment hedges.\n\nItem 8. Financial Statements and Supplementary Data",
+        "gt": "her than the functional currencies as of december 31, 2025 and december 31, 2024, income before income taxes would have been approximately $1 million and $38 million lower, respectively, after considering the offsetting impact of the foreign currency exchange contracts and our net investment hedges."
+      }
+    },
+    {
+      "item": "9A",
+      "title": "Controls and Procedures",
+      "bucket": "prose",
+      "start_page": 37,
+      "end_page": 38,
+      "head": {
+        "ratio": 100.0,
+        "pass": true,
+        "pred": "Item 9A. Controls and Procedures\n\n(a) Evaluation of Disclosure Controls and Procedures\n\nOur management, with the participation of our co-Chief Executive Officers and Chief Financial Officer, evaluated the effectiveness of our disclosure controls and procedures (as defined in Rules 13a-15(e) and 15d-15(e) under the Exchange Act) as of the end of the period covered by this Annual Report on Form 10-K",
+        "gt": "(a) evaluation of disclosure controls and procedures our management, with the participation of our co-chief executive officers and chief financial officer, evaluated the effectiveness of our disclosure controls and procedures (as defined in rules 13a-15(e) and 15d-15(e) under the exchange act) as of"
+      },
+      "tail": {
+        "ratio": 96.2,
+        "pass": true,
+        "pred": "Because of its inherent limitations, internal control over financial reporting may not prevent or detect misstatements. Also, projections of any evaluation of effectiveness to future periods are subject to the risk that controls may become inadequate because of changes in conditions, or that the degree of compliance with the policies or procedures may deteriorate.\n\n/s/ Ernst & Young LLP\n\nSan Jose,",
+        "gt": "luation of effectiveness to future periods are subject to the risk that controls may become inadequate because of changes in conditions, or that the degree of compliance with the policies or procedures may deteriorate. /s/ ernst &amp; young llp san jose, california january 23, 2026 table of contents"
+      }
+    },
+    {
+      "item": "9B",
+      "title": "Other Information",
+      "bucket": "prose",
+      "start_page": 39,
+      "end_page": 39,
+      "head": {
+        "ratio": 100.0,
+        "pass": true,
+        "pred": "Item 9B. Other Information\n\nRule 10b5-1 Trading Plans\n\nThe adoption or termination of contracts, instructions or written plans for the purchase or sale of our securities by our Section 16 officers and directors for the three months ended December 31, 2025, each of which is intended to satisfy the affirmative defense conditions of Rule 10b5-1(c) under the Exchange Act (\"Rule 10b5-1 Plan\"), were as ",
+        "gt": "rule 10b5-1 trading plans the adoption or termination of contracts, instructions or written plans for the purchase or sale of our securities by our section 16 officers and directors for the three months ended december 31, 2025, each of which is intended to satisfy the affirmative defense conditions "
+      },
+      "tail": {
+        "ratio": 100.0,
+        "pass": true,
+        "pred": "Other than those disclosed above, none of our directors or officers adopted or terminated a “non-Rule 10b5-1 trading arrangement” as defined in Item 408 of Regulation S-K.",
+        "gt": "mmon stock. the plan expires on december 31, 2026, or upon the earlier completion of all authorized transactions under the plan. other than those disclosed above, none of our directors or officers adopted or terminated a “non-rule 10b5-1 trading arrangement” as defined in item 408 of regulation s-k."
+      }
+    },
+    {
+      "item": "15",
+      "title": "Exhibits, Financial Statement Schedules",
+      "bucket": "prose",
+      "start_page": 41,
+      "end_page": 41,
+      "head": {
+        "ratio": 96.0,
+        "pass": true,
+        "pred": "Item 15. Exhibits, Financial Statement Schedules\n\n(a) The following documents are filed as part of this Annual Report on Form 10-K:\n(1) Financial Statements:\nThe financial statements are filed as part of this Annual Report on Form 10-K under \"Item 8. Financial Statements and Supplementary Data.\"\n(2) Financial Statement Schedules:",
+        "gt": "(a) the following documents are filed as part of this annual report on form 10-k: (1) financial statements: the financial statements are filed as part of this annual report on form 10-k under “item 8. financial statements and supplementary data.” (2) financial statement schedules: the financial stat"
+      },
+      "tail": {
+        "ratio": 100.0,
+        "pass": true,
+        "pred": "(3) Exhibits:\n\nSee Exhibit Index immediately following the signature page of this Annual Report on Form 10-K.",
+        "gt": "e omitted as they are either not applicable or the information required is presented in the financial statements and notes thereto under “item 8. financial statements and supplementary data.” (3) exhibits: see exhibit index immediately following the signature page of this annual report on form 10-k."
+      }
+    }
+  ]
+}

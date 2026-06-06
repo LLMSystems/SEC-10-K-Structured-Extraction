@@ -1,0 +1,9 @@
+{
+  "base_url": "https://openrouter.ai/api/v1",
+  "created_at": 1780696088,
+  "image_sha256": "ce7941ba28ef19842f83678eb004df5b1b70552864438784c3a998b57630134a",
+  "model": "moonshotai/kimi-k2.6",
+  "prompt": "You are shown one page from a SEC 10-K filing rendered as an image.\nThis page contains the BEGINNING of \"Item 7A. Quantitative and Qualitative Disclosures About Market Risk\".\nFind the \"Item 7A\" heading, then transcribe VERBATIM the first 5 lines of text that come immediately after it. Include any report title, addressee, or sub-heading exactly as printed — do NOT skip them; only ignore page running-headers, page numbers, and footers.\nOutput ONLY the transcribed text, no commentary, no quotes, no formatting.",
+  "source_path": "tier2\\dataset\\WMT_2026\\pages\\page_046.png",
+  "text": "Market Risk\nIn addition to the risks inherent in our operations, we are exposed to certain market risks, including changes in interest rates, currency exchange rates and the fair values of certain equity and equity method investments measured on a recurring basis.\nThe analysis presented below for each of our market risk sensitive instruments is based on a hypothetical scenario used to calibrate potential risk and does not represent our view of future market changes. The effect of a change in a particular assumption is calculated without adjusting any other assumption. In reality, however, a change in one factor could cause a change in another, which may magnify or negate other sensitivities.\nInterest Rate Risk\nWe are exposed to changes in interest rates as a result of our short-term borrowings and long-term debt. We hedge a portion of our interest rate risk by managing the mix of fixed and variable rate debt and by entering into interest rate swaps. For fiscal 2026, the net fair value of our interest rate swaps increased $0.2 billion primarily due to fluctuations in market interest rates."
+}

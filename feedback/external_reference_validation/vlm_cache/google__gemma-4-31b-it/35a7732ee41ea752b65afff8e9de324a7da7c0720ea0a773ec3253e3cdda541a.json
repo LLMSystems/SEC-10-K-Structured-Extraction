@@ -1,0 +1,9 @@
+{
+  "base_url": "https://openrouter.ai/api/v1",
+  "created_at": 1780683677,
+  "image_sha256": "c1883507c0100b336504dcfe1acb083cc39393eef93f6ca2f327eb8d2d9261a7",
+  "model": "google/gemma-4-31b-it",
+  "prompt": "You are shown one page from a SEC 10-K filing rendered as an image.\nItem \"1C. Cybersecurity\" ENDS on this page; the next section is \"Item 2. Properties\".\nFirst find the bottom edge of Item 1C's text:\n- If the \"Item 2\" heading is visible on this page, the bottom edge is the line directly ABOVE it.\n- Otherwise the bottom edge is the very last line of text on the page.\nStarting from that bottom edge and reading UPWARD, transcribe VERBATIM the last 5 lines of Item 1C — the lines physically closest to the bottom edge. Do NOT return lines from the top or middle of the page, and ignore any bulleted summary list higher up. Ignore running headers, page numbers, footers.\nOutput ONLY the transcribed text, no commentary, no quotes, no formatting.",
+  "source_path": "tier2/dataset/RELL_2025/pages/page_019.png",
+  "text": "The Audit Committee delegates day-to-day management of cybersecurity risks to the Company’s senior management, which includes our\nCFO, who reports directly to the Chief Executive Officer. Our CFO leads a team of dedicated professionals who are responsible for a wide range of\nrisk assessment and management and leads specialized teams of internal and external experts focusing on distinct categories of threats.\nProjects and initiatives\nKey cyber risk metrics"
+}

@@ -1,0 +1,130 @@
+{
+  "label": "GDC_2023",
+  "ticker": "GDC",
+  "year": "2023",
+  "cik": "0001641398",
+  "accession_number": "0001213900-24-029042",
+  "company_name": "GD Culture Group Ltd",
+  "pdf": "tier2/out/0001641398_2023-12-31_000121390024029042/0001641398_2023-12-31_000121390024029042.pdf",
+  "pdf_pages": 121,
+  "n_extracted": 16,
+  "n_exact": 16,
+  "n_fuzzy": 0,
+  "n_miss": 0,
+  "out_of_order": 0,
+  "items": [
+    {
+      "item": "1",
+      "page": 4,
+      "match": "exact",
+      "flag": null,
+      "snippet": "gd culture group limited (formerly known as jm"
+    },
+    {
+      "item": "1A",
+      "page": 24,
+      "match": "exact",
+      "flag": null,
+      "snippet": "an investment in our shares of common stock"
+    },
+    {
+      "item": "1C",
+      "page": 45,
+      "match": "exact",
+      "flag": null,
+      "snippet": "to meet our business objectives, we rely on both"
+    },
+    {
+      "item": "2",
+      "page": 45,
+      "match": "exact",
+      "flag": null,
+      "snippet": "our current executive office is located at 810"
+    },
+    {
+      "item": "3",
+      "page": 45,
+      "match": "exact",
+      "flag": null,
+      "snippet": "to the knowledge of our management, there is no"
+    },
+    {
+      "item": "5",
+      "page": 46,
+      "match": "exact",
+      "flag": null,
+      "snippet": "for registrant’s common equity, related stockholde"
+    },
+    {
+      "item": "7",
+      "page": 49,
+      "match": "exact",
+      "flag": null,
+      "snippet": "the following discussion and analysis of the"
+    },
+    {
+      "item": "7A",
+      "page": 58,
+      "match": "exact",
+      "flag": null,
+      "snippet": "disclosure in response to this item is not require"
+    },
+    {
+      "item": "9",
+      "page": 58,
+      "match": "exact",
+      "flag": null,
+      "snippet": "and financial disclosure."
+    },
+    {
+      "item": "9A",
+      "page": 58,
+      "match": "exact",
+      "flag": null,
+      "snippet": "under the supervision and with the participation"
+    },
+    {
+      "item": "10",
+      "page": 61,
+      "match": "exact",
+      "flag": null,
+      "snippet": "the following table sets forth the name, age and"
+    },
+    {
+      "item": "11",
+      "page": 67,
+      "match": "exact",
+      "flag": null,
+      "snippet": "the following table provides disclosure concerning"
+    },
+    {
+      "item": "12",
+      "page": 70,
+      "match": "exact",
+      "flag": null,
+      "snippet": "the following table sets forth information regardi"
+    },
+    {
+      "item": "13",
+      "page": 72,
+      "match": "exact",
+      "flag": null,
+      "snippet": "except for the employment agreements previously"
+    },
+    {
+      "item": "14",
+      "page": 73,
+      "match": "exact",
+      "flag": null,
+      "snippet": "htl was appointed by the company to serve as its"
+    },
+    {
+      "item": "15",
+      "page": 74,
+      "match": "exact",
+      "flag": null,
+      "snippet": "the following documents are filed as part of this "
+    }
+  ],
+  "category": "clean"
+}

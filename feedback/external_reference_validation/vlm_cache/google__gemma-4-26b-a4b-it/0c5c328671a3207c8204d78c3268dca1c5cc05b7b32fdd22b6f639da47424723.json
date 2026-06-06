@@ -1,0 +1,9 @@
+{
+  "base_url": "https://openrouter.ai/api/v1",
+  "created_at": 1780696771,
+  "image_sha256": "75bd50cf8b472abe4ce01710d11964f169c2999614e1462aa4360ba33ff34656",
+  "model": "google/gemma-4-26b-a4b-it",
+  "prompt": "You are shown one page from a SEC 10-K filing rendered as an image.\nItem \"3. Legal Proceedings\" ENDS on this page; the next section is \"Item 4. Mine Safety Disclosures\".\nFirst locate the bottom edge of Item 3's text:\n- If the \"Item 4\" heading is visible on this page, Item 3 ends on the line directly ABOVE that heading.\n- Otherwise Item 3 runs all the way to the very bottom of the page.\nThen transcribe VERBATIM the LAST 5 lines of Item 3 at that bottom edge — the FINAL lines right before the section ends, NOT lines from the top or middle of the page. Ignore running headers, page numbers, footers.\nOutput ONLY the transcribed text, no commentary, no quotes, no formatting.",
+  "source_path": "tier2\\dataset\\TSLA_2023\\pages\\page_031.png",
+  "text": "District attorneys in certain California counties conducted an investigation into Tesla's waste segregation practices pursuant to Cal. Health &\nSaf. Code § 25100 et seq, and Cal. Civil Code § 1798.80. Tesla has implemented various remedial measures, including conducting training and\naudits, and enhancements to its site waste management programs, and settlement discussions are ongoing. While the outcome of this matter cannot be\ndetermined at this time, it is not currently expected to have a material adverse impact on our business."
+}

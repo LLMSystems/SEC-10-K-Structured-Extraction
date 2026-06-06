@@ -1,0 +1,84 @@
+{
+  "label": "NFLX_2025",
+  "pdf_pages": 83,
+  "items": [
+    {
+      "item": "1",
+      "start_page": 4,
+      "end_page": 6,
+      "start_unique": true,
+      "end_unique": true
+    },
+    {
+      "item": "1A",
+      "start_page": 7,
+      "end_page": 19,
+      "start_unique": true,
+      "end_unique": true
+    },
+    {
+      "item": "1C",
+      "start_page": 19,
+      "end_page": 20,
+      "start_unique": true,
+      "end_unique": true
+    },
+    {
+      "item": "2",
+      "start_page": 21,
+      "end_page": 21,
+      "start_unique": true,
+      "end_unique": true
+    },
+    {
+      "item": "3",
+      "start_page": 21,
+      "end_page": 21,
+      "start_unique": true,
+      "end_unique": true
+    },
+    {
+      "item": "5",
+      "start_page": 22,
+      "end_page": 23,
+      "start_unique": true,
+      "end_unique": true
+    },
+    {
+      "item": "7",
+      "start_page": 24,
+      "end_page": 34,
+      "start_unique": true,
+      "end_unique": true
+    },
+    {
+      "item": "7A",
+      "start_page": 34,
+      "end_page": 36,
+      "start_unique": true,
+      "end_unique": true
+    },
+    {
+      "item": "9A",
+      "start_page": 37,
+      "end_page": 38,
+      "start_unique": true,
+      "end_unique": true
+    },
+    {
+      "item": "9B",
+      "start_page": 39,
+      "end_page": 39,
+      "start_unique": true,
+      "end_unique": true
+    },
+    {
+      "item": "15",
+      "start_page": 41,
+      "end_page": 41,
+      "start_unique": true,
+      "end_unique": true
+    }
+  ],
+  "warnings": []
+}

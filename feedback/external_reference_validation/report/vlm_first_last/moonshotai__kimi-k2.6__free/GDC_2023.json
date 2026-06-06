@@ -1,0 +1,260 @@
+{
+  "label": "GDC_2023",
+  "model": "moonshotai/kimi-k2.6:free",
+  "threshold": 75,
+  "items": [
+    {
+      "item": "1",
+      "title": "Business",
+      "bucket": "prose",
+      "start_page": 6,
+      "end_page": 23,
+      "head": {
+        "ratio": 99.8,
+        "pass": true,
+        "pred": "Overview\n\nGD Culture Group Limited (formerly known as JM Global Holding Company, TMSR Holding Company Limited, and Code Chain New Continent Limited), focuses its business on three segments mainly through the Company and two subsidiaries, AI Catalysis and Shanghai Xianzhui: 1) AI-driven digital human creation and customization; 2) Live streaming and e-commerce and 3) Live streaming interactive game",
+        "gt": "overview gd culture group limited (formerly known as jm global holding company, tmsr holding company limited, and code chain new continent limited), focuses its business on three segments mainly through the company and two subsidiaries, ai catalysis and shanghai xianzhui : 1) ai-driven digital human"
+      },
+      "tail": {
+        "ratio": 100.0,
+        "pass": true,
+        "pred": "From time to time, we may be involved in various claims and legal proceedings arising in the ordinary course of business. None of our Company or our subsidiaries is currently a party to any such claims or proceedings which, if decided adversely to the Company, would either, individually or in the aggregate, have a material adverse effect on our business, financial condition, results of operations ",
+        "gt": "siness. none of our company or our subsidiaries is currently a party to any such claims or proceedings which, if decided adversely to the company, would either, individually or in the aggregate, have a material adverse effect on our business, financial condition, results of operations or cash flows."
+      }
+    },
+    {
+      "item": "1A",
+      "title": "Risk Factors",
+      "bucket": "prose",
+      "start_page": 24,
+      "end_page": 44,
+      "head": {
+        "ratio": 100.0,
+        "pass": true,
+        "pred": "Item 1A. Risk Factors\n\nAn investment in our shares of common stock involves a high degree of risk. You should carefully consider the following risk factors, together with the other information contained in this Report, before you decide to buy any of our securities. Any of the following risks could cause our business, results of operations and financial condition to suffer materially, causing the ",
+        "gt": "an investment in our shares of common stock involves a high degree of risk. you should carefully consider the following risk factors, together with the other information contained in this report, before you decide to buy any of our securities. any of the following risks could cause our business, res"
+      },
+      "tail": {
+        "error": "RateLimitError: Error code: 429 - {'error': {'message': 'Rate limit exceeded: free-models-per-min. ', 'code': 429, 'metadata': {'headers': {'X-RateLimit-Limit': '16', 'X-RateLimit-Remaining': '0', 'X-RateLimit-Reset': '1780694580000'}, 'provider_name': None}}, 'user_id': 'user_3A7J2w1UXdqapKzJfjlQk81aMC2'}"
+      }
+    },
+    {
+      "item": "1C",
+      "title": "Cybersecurity",
+      "bucket": "prose",
+      "start_page": 45,
+      "end_page": 45,
+      "head": {
+        "ratio": 100.0,
+        "pass": true,
+        "pred": "Item 1C. Cybersecurity\n\nTo meet our business objectives, we rely on both internal information technology (IT) systems and networks, and those of third parties and their vendors, to process and store sensitive data, including confidential research, business plans, financial information, intellectual property, and personal data of ours and our customers that may be subject to legal protection, and p",
+        "gt": "to meet our business objectives, we rely on both internal information technology (it) systems and networks, and those of third parties and their vendors, to process and store sensitive data, including confidential research, business plans, financial information, intellectual property, and personal d"
+      },
+      "tail": {
+        "ratio": 99.2,
+        "pass": true,
+        "pred": "financial condition. However, we face certain ongoing cybersecurity threats that, if realized, are reasonably likely to materially affect us. Additional information on cybersecurity risks we face is discussed in Part I, Item 1A, \"Risk Factors.\"",
+        "gt": "cluding our business strategy, results of operations or financial condition. however, we face certain ongoing cybersecurity threats that, if realized, are reasonably likely to materially affect us. additional information on cybersecurity risks we face is discussed in part i, item 1a, “risk factors.”"
+      }
+    },
+    {
+      "item": "2",
+      "title": "Properties",
+      "bucket": "prose",
+      "start_page": 45,
+      "end_page": 45,
+      "head": {
+        "ratio": 100.0,
+        "pass": true,
+        "pred": "Item 2. Properties\n\nFacilities\n\nOur current executive office is located at 810 Seventh Avenue, 22nd Floor, New York, NY 10019. The rent for this space is approximately $31,000 per month. The term of the lease is five years and five months, starting from September 22, 2023. We consider our current office space adequate for our current operations.\n\nIntellectual Properties",
+        "gt": "facilities our current executive office is located at 810 seventh avenue, 22nd floor, new york, ny 10019. the rent for this space is approximately $31,000 per month. the term of the lease is five years and five months, starting from september 22, 2023. we consider our current office space adequate f"
+      },
+      "tail": {
+        "ratio": 99.4,
+        "pass": true,
+        "pred": "viewers through interactive features embedded within the live streaming platform.\n\nWe have the right to use the two domains: gdculturegroup.com and aicanalysis.com.",
+        "gt": "tware to develop video games. we operate the game through interactive live stream, facilitating real-time engagement between players and viewers through interactive features embedded within the live streaming platform. we have the right to use the two domains: gdculturegroup.com and aicatalysis.com."
+      }
+    },
+    {
+      "item": "3",
+      "title": "Legal Proceedings",
+      "bucket": "table_tail_covered",
+      "start_page": 45,
+      "end_page": 45,
+      "tail": {
+        "skipped": "table 結尾，邊界由下一個 item 5 的 head 覆蓋"
+      },
+      "head": {
+        "ratio": 100.0,
+        "pass": true,
+        "pred": "Item 3. Legal Proceedings\n\nTo the knowledge of our management, there is no litigation currently pending or contemplated against us, any of our officers or directors in their capacity as such or against any of our property.\n\nItem 4. Mine Safety Disclosures\n\nNot applicable.",
+        "gt": "to the knowledge of our management, there is no litigation currently pending or contemplated against us, any of our officers or directors in their capacity as such or against any of our property."
+      }
+    },
+    {
+      "item": "5",
+      "title": "Market for Registrant's Common Equity, Related Stockholder Matters and Issuer Purchases of Equity Securities",
+      "bucket": "prose",
+      "start_page": 46,
+      "end_page": 48,
+      "head": {
+        "ratio": 64.3,
+        "pass": false,
+        "pred": "ITEM 5. Market for the Registrant's Common Equity, Related Stockholder Matters and Issuer Purchases of Equity Securities\n\nUnregistered Sales of Equity Securities\n\nThere were no sales of unregistered equity securities in fiscal 2025.\n\nShare Repurchases\n\nThere were no share repurchases in fiscal 2025.",
+        "gt": "item 5. market for registrant’s common equity, related stockholder matters, and issuer purchases of equity securities (a) market information our common stock is traded on the nasdaq capital market under the symbol “gdc”. (b) holders on april 1, 2024, there are approximately 336 holders of record of "
+      },
+      "tail": {
+        "error": "RateLimitError: Error code: 429 - {'error': {'message': 'Rate limit exceeded: free-models-per-min. ', 'code': 429, 'metadata': {'headers': {'X-RateLimit-Limit': '16', 'X-RateLimit-Remaining': '0', 'X-RateLimit-Reset': '1780694640000'}, 'provider_name': None}}, 'user_id': 'user_3A7J2w1UXdqapKzJfjlQk81aMC2'}"
+      }
+    },
+    {
+      "item": "7",
+      "title": "Management's Discussion and Analysis of Financial Condition and Results of Operations",
+      "bucket": "prose",
+      "start_page": 49,
+      "end_page": 57,
+      "head": {
+        "error": "RateLimitError: Error code: 429 - {'error': {'message': 'Rate limit exceeded: free-models-per-min. ', 'code': 429, 'metadata': {'headers': {'X-RateLimit-Limit': '16', 'X-RateLimit-Remaining': '0', 'X-RateLimit-Reset': '1780694640000'}, 'provider_name': None}}, 'user_id': 'user_3A7J2w1UXdqapKzJfjlQk81aMC2'}"
+      },
+      "tail": {
+        "error": "RateLimitError: Error code: 429 - {'error': {'message': 'Rate limit exceeded: free-models-per-min. ', 'code': 429, 'metadata': {'headers': {'X-RateLimit-Limit': '16', 'X-RateLimit-Remaining': '0', 'X-RateLimit-Reset': '1780694640000'}, 'provider_name': None}}, 'user_id': 'user_3A7J2w1UXdqapKzJfjlQk81aMC2'}"
+      }
+    },
+    {
+      "item": "7A",
+      "title": "Quantitative and Qualitative Disclosures About Market Risk",
+      "bucket": "table_tail_covered",
+      "start_page": 58,
+      "end_page": 58,
+      "tail": {
+        "skipped": "table 結尾，邊界由下一個 item 9 的 head 覆蓋"
+      },
+      "head": {
+        "ratio": 100.0,
+        "pass": true,
+        "pred": "Disclosure in response to this Item is not required for a smaller reporting company.\n\nItem 8. Financial Statements and Supplementary Data\n\nReference is made to Pages F-1 through F-37 comprising a portion of this Report on Form 10-K.",
+        "gt": "disclosure in response to this item is not required for a smaller reporting company."
+      }
+    },
+    {
+      "item": "9",
+      "title": "Changes in and Disagreements with Accountants on Accounting and Financial Disclosure",
+      "bucket": "table_tail_covered",
+      "start_page": 58,
+      "end_page": 58,
+      "tail": {
+        "skipped": "table 結尾，邊界由下一個 item 9A 的 head 覆蓋"
+      },
+      "head": {
+        "ratio": 99.7,
+        "pass": true,
+        "pred": "On October 9, 2023, the Company notified its independent registered public accounting firm, Enrome LLP, its decision to dismiss Enrome LLP as the Company’s auditor. The report of Enrome LLP on the financial statements of the Company for the fiscal year ended December 31, 2022 and the related statements of operations and comprehensive income (loss), changes in stockholders’ equity (deficit), and ca",
+        "gt": ". on october 9, 2023, the company notified its independent registered public accounting firm, enrome llp, its decision to dismiss enrome llp as the company’s auditor. the report of enrome llp on the financial statements of the company for the fiscal year ended december 31, 2022 and the related state"
+      }
+    },
+    {
+      "item": "9A",
+      "title": "Controls and Procedures",
+      "bucket": "prose",
+      "start_page": 58,
+      "end_page": 60,
+      "head": {
+        "error": "RateLimitError: Error code: 429 - {'error': {'message': 'Rate limit exceeded: free-models-per-min. ', 'code': 429, 'metadata': {'headers': {'X-RateLimit-Limit': '16', 'X-RateLimit-Remaining': '0', 'X-RateLimit-Reset': '1780694700000'}, 'provider_name': None}}, 'user_id': 'user_3A7J2w1UXdqapKzJfjlQk81aMC2'}"
+      },
+      "tail": {
+        "error": "RateLimitError: Error code: 429 - {'error': {'message': 'Provider returned error', 'code': 429, 'metadata': {'raw': 'moonshotai/kimi-k2.6:free is temporarily rate-limited upstream. Please retry shortly, or add your own key to accumulate your rate limits: https://openrouter.ai/settings/integrations', 'provider_name': 'Crucible', 'is_byok': False}}, 'user_id': 'user_3A7J2w1UXdqapKzJfjlQk81aMC2'}"
+      }
+    },
+    {
+      "item": "10",
+      "title": "Directors, Executive Officers and Corporate Governance",
+      "bucket": "prose",
+      "start_page": 61,
+      "end_page": 65,
+      "head": {
+        "ratio": 100.0,
+        "pass": true,
+        "pred": "Item 10. Directors, Executive Officers and Corporate Governance\n\nThe following table sets forth the name, age and position of each of our executive officers and directors as of the date of this report:\n\nName\nAge\nPosition\n\nXiao Jian Wang\n35\nChief Executive Officer, President, Chairman of the Board, and Director\n\nZihao Zhao\n29\nChief Financial Officer\n\nLu Cai\n33\nChief Operating Officer",
+        "gt": "the following table sets forth the name, age and position of each of our executive officers and directors as of the date of this report: name age position xiao jian wang 35 chief executive officer, president, chairman of the board, and director zihao zhao 29 chief financial officer lu cai 33 chief o"
+      },
+      "tail": {
+        "ratio": 100.0,
+        "pass": true,
+        "pred": "provisions of our Code of Ethics that apply to our principal executive officer, principal financial officer and principal accounting officer by posting\nthe required information on our website at the above address.",
+        "gt": " under item 5.05 of form 8-k regarding the disclosure of amendments to or waivers from provisions of our code of ethics that apply to our principal executive officer, principal financial officer and principal accounting officer by posting the required information on our website at the above address."
+      }
+    },
+    {
+      "item": "11",
+      "title": "Executive Compensation",
+      "bucket": "table_tail_covered",
+      "start_page": 67,
+      "end_page": 70,
+      "tail": {
+        "skipped": "table 結尾，邊界由下一個 item 12 的 head 覆蓋"
+      },
+      "head": {
+        "error": "RateLimitError: Error code: 429 - {'error': {'message': 'Rate limit exceeded: free-models-per-min. ', 'code': 429, 'metadata': {'headers': {'X-RateLimit-Limit': '16', 'X-RateLimit-Remaining': '0', 'X-RateLimit-Reset': '1780694700000'}, 'provider_name': None}}, 'user_id': 'user_3A7J2w1UXdqapKzJfjlQk81aMC2'}"
+      }
+    },
+    {
+      "item": "12",
+      "title": "Security Ownership of Certain Beneficial Owners and Management and Related Stockholder Matters",
+      "bucket": "table_tail_covered",
+      "start_page": 70,
+      "end_page": 71,
+      "tail": {
+        "skipped": "table 結尾，邊界由下一個 item 13 的 head 覆蓋"
+      },
+      "head": {
+        "error": "RateLimitError: Error code: 429 - {'error': {'message': 'Rate limit exceeded: free-models-per-min. ', 'code': 429, 'metadata': {'headers': {'X-RateLimit-Limit': '16', 'X-RateLimit-Remaining': '0', 'X-RateLimit-Reset': '1780694700000'}, 'provider_name': None}}, 'user_id': 'user_3A7J2w1UXdqapKzJfjlQk81aMC2'}"
+      }
+    },
+    {
+      "item": "13",
+      "title": "Certain Relationships and Related Transactions, and Director Independence",
+      "bucket": "prose",
+      "start_page": 72,
+      "end_page": 72,
+      "head": {
+        "ratio": 100.0,
+        "pass": true,
+        "pred": "Certain Relationships and Related Transactions\n\nExcept for the employment agreements previously entered into between us and certain of our named executive officers, and the related party transaction described below, none of our directors or named executive officers, nor any person who owned of record or was known to own beneficially more than 5% of the outstanding Shares of our common stock, nor a",
+        "gt": "certain relationships and related transactions except for the employment agreements previously entered into between us and certain of our named executive officers, and the related party transaction described below, none of our directors or named executive officers, nor any person who owned of record"
+      },
+      "tail": {
+        "ratio": 100.0,
+        "pass": true,
+        "pred": "Nasdaq listing standards and applicable SEC rules. Our independent directors have regularly scheduled meetings at which only independent directors are present.",
+        "gt": "r board of directors has determined that mr. shuaiheng zhang, mr. mingyue cai and mr. yi zhong are “independent directors” as defined in the nasdaq listing standards and applicable sec rules. our independent directors have regularly scheduled meetings at which only independent directors are present."
+      }
+    },
+    {
+      "item": "14",
+      "title": "Principal Accountant Fees and Services",
+      "bucket": "prose",
+      "start_page": 73,
+      "end_page": 73,
+      "head": {
+        "error": "RateLimitError: Error code: 429 - {'error': {'message': 'Rate limit exceeded: free-models-per-min. ', 'code': 429, 'metadata': {'headers': {'X-RateLimit-Limit': '16', 'X-RateLimit-Remaining': '0', 'X-RateLimit-Reset': '1780694700000'}, 'provider_name': None}}, 'user_id': 'user_3A7J2w1UXdqapKzJfjlQk81aMC2'}"
+      },
+      "tail": {
+        "error": "RateLimitError: Error code: 429 - {'error': {'message': 'Rate limit exceeded: free-models-per-min. ', 'code': 429, 'metadata': {'headers': {'X-RateLimit-Limit': '16', 'X-RateLimit-Remaining': '0', 'X-RateLimit-Reset': '1780694760000'}, 'provider_name': None}}, 'user_id': 'user_3A7J2w1UXdqapKzJfjlQk81aMC2'}"
+      }
+    },
+    {
+      "item": "15",
+      "title": "Exhibits, Financial Statement Schedules",
+      "bucket": "table_tail_last",
+      "start_page": 74,
+      "end_page": 78,
+      "tail": {
+        "skipped": "table 結尾且為最後一個 item → 未驗證"
+      },
+      "head": {
+        "error": "RateLimitError: Error code: 429 - {'error': {'message': 'Rate limit exceeded: free-models-per-min. ', 'code': 429, 'metadata': {'headers': {'X-RateLimit-Limit': '16', 'X-RateLimit-Remaining': '0', 'X-RateLimit-Reset': '1780694760000'}, 'provider_name': None}}, 'user_id': 'user_3A7J2w1UXdqapKzJfjlQk81aMC2'}"
+      }
+    }
+  ]
+}

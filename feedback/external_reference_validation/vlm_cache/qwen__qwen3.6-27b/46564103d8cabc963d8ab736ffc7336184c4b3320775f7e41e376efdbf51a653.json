@@ -1,0 +1,9 @@
+{
+  "base_url": "https://openrouter.ai/api/v1",
+  "created_at": 1780692897,
+  "image_sha256": "0542852d8b691144aac5a1cd27e799d8f141558e52aa9e94d353f8176d15d65e",
+  "model": "qwen/qwen3.6-27b",
+  "prompt": "You are shown one page from a SEC 10-K filing rendered as an image.\nItem \"9A. Controls and Procedures\" ENDS on this page; the next section is \"Item 9B. Other Information\".\nFind the FIRST later section heading visible on this page after Item 9A.\n- If the \"Item 9B\" heading is visible, Item 9A ends on the line directly ABOVE that heading.\n- The answer may be only a few lines if the next heading appears near the top of the page.\n- Do NOT transcribe any text from below that next heading.\n- If no later section heading is visible on this page, then Item 9A continues to the bottom of the page.\nThen transcribe VERBATIM the LAST 5 lines of Item 9A immediately before it ends. Use only text that belongs to Item 9A. Ignore running headers, page numbers, footers.\nOutput ONLY the transcribed text, no commentary, no quotes, no formatting.",
+  "source_path": "tier2\\dataset\\GDC_2023\\pages\\page_060.png",
+  "text": "reporting.\n\nItem 9B. Other Information\n\nNone.\n\nItem 9C. Disclosure Regarding Foreign Jurisdictions that Prevent Inspections"
+}

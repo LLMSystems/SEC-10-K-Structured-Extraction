@@ -1,0 +1,9 @@
+{
+  "base_url": "https://openrouter.ai/api/v1",
+  "created_at": 1780695607,
+  "image_sha256": "7639caa680d937e3b0c3370a256a64e216ca06a123ddf0e069a2ac8789213b75",
+  "model": "moonshotai/kimi-k2.6",
+  "prompt": "You are shown one page from a SEC 10-K filing rendered as an image.\nThis page contains the BEGINNING of \"Item 1A. Risk Factors\".\nFind the \"Item 1A\" heading, then transcribe VERBATIM the first 5 lines of text that come immediately after it. Include any report title, addressee, or sub-heading exactly as printed — do NOT skip them; only ignore page running-headers, page numbers, and footers.\nOutput ONLY the transcribed text, no commentary, no quotes, no formatting.",
+  "source_path": "tier2\\dataset\\GDC_2023\\pages\\page_024.png",
+  "text": "An investment in our shares of common stock involves a high degree of risk. You should carefully consider the following risk factors, together with the other information contained in this Report, before you decide to buy any of our securities. Any of the following risks could cause our business, results of operations and financial condition to suffer materially, causing the market price of our shares of common stock to decline, in which event you may lose part or all of your investment in our shares of common stock. Additional risks and uncertainties not currently known to us or that we currently do not deem material may also become important factors that may materially and adversely affect our business.\n\nRisks Related to Our Corporate Structure\n\nWe rely on dividends paid by our subsidiaries for our cash needs. Any limitation on the ability of our subsidiaries to make dividend payments to us, or any tax implications of making dividend payments to us, could limit our ability to pay our parent company expenses or pay dividends to holders of our common stock."
+}

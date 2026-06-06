@@ -1,0 +1,9 @@
+{
+  "base_url": "https://openrouter.ai/api/v1",
+  "created_at": 1780687340,
+  "image_sha256": "f5ec55897f0481450e8b2998c595c33060937140471ffe35aa42f6527c347bfd",
+  "model": "qwen/qwen3.6-27b",
+  "prompt": "You are shown one page from a SEC 10-K filing rendered as an image.\nThis page contains the BEGINNING of \"Item 15. Exhibits, Financial Statement Schedules\".\nFind the \"Item 15\" heading, then transcribe VERBATIM the first 5 lines of text that come immediately after it. Include any report title, addressee, or sub-heading exactly as printed — do NOT skip them; only ignore page running-headers, page numbers, and footers.\nOutput ONLY the transcribed text, no commentary, no quotes, no formatting.",
+  "source_path": "tier2/dataset/TSLA_2023/pages/page_098.png",
+  "text": "1. Financial statements (see Index to Consolidated Financial Statements in Part II, Item 8 of this report)\n2. All financial statement schedules have been omitted since the required information was not applicable or was not present in amounts sufficient to\nrequire submission of the schedules, or because the information required is included in the consolidated financial statements or the\naccompanying notes\n3. The exhibits listed in the following Index to Exhibits are filed or incorporated by reference as part of this report"
+}

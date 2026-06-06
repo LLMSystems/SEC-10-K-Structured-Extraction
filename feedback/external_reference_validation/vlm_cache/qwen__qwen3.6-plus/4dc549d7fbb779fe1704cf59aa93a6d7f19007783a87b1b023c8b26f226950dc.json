@@ -1,0 +1,9 @@
+{
+  "base_url": "https://openrouter.ai/api/v1",
+  "created_at": 1780695751,
+  "image_sha256": "45598188051d5d44bb0f8d69d194d8401f8a9c0e62767105c75dfb1558ec9680",
+  "model": "qwen/qwen3.6-plus",
+  "prompt": "You are shown one page from a SEC 10-K filing rendered as an image.\nThis page contains the BEGINNING of \"Item 9B. Other Information\".\nFind the \"Item 9B\" heading, then transcribe VERBATIM the first 5 lines of text that come immediately after it. Include any report title, addressee, or sub-heading exactly as printed — do NOT skip them; only ignore page running-headers, page numbers, and footers.\nOutput ONLY the transcribed text, no commentary, no quotes, no formatting.",
+  "source_path": "tier2\\dataset\\RELL_2025\\pages\\page_068.png",
+  "text": "10b5-1 Trading Arrangement\nDuring the most recently completed fiscal quarter, no director or officer of the Company adopted, modified or terminated a \"Rule 10b5-1\ntrading arrangement\" or a \"non-Rule 10b5-1 trading arrangement\" (in each case, as defined in Item 408 of Regulation S-K).\nInsider Trading Policies\nThe Company has adopted insider trading policies and procedures governing the purchase, sale and other disposition of its securities by"
+}

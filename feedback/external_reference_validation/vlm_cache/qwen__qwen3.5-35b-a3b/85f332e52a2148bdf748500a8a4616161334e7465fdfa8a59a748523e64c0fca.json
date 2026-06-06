@@ -1,0 +1,9 @@
+{
+  "base_url": "https://openrouter.ai/api/v1",
+  "created_at": 1780698337,
+  "image_sha256": "d6fc50fbe2b80467eb529bc1d13d4df97972c70bc8fad7a1d101874d147c7d2d",
+  "model": "qwen/qwen3.5-35b-a3b",
+  "prompt": "You are shown one page from a SEC 10-K filing rendered as an image.\nThis page contains the BEGINNING of \"Item 2. Properties\".\nFind the \"Item 2\" heading, then transcribe VERBATIM the first 5 lines of text that come immediately after it. Include any report title, addressee, or sub-heading exactly as printed — do NOT skip them; only ignore page running-headers, page numbers, and footers.\nOutput ONLY the transcribed text, no commentary, no quotes, no formatting.",
+  "source_path": "tier2\\dataset\\WMT_2026\\pages\\page_029.png",
+  "text": "ITEM 2. PROPERTIES\nAs of January 31, 2027, our retail units for Walmart U.S., Sam's Club U.S. and Walmart International are summarized as follows:"
+}

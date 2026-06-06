@@ -1,0 +1,9 @@
+{
+  "base_url": "https://openrouter.ai/api/v1",
+  "created_at": 1780693106,
+  "image_sha256": "d240bff2c41812393dcd33c1cf24d718a1888a64aa7544e0f52f9e4d044aafe4",
+  "model": "google/gemma-4-31b-it",
+  "prompt": "You are shown one page from a SEC 10-K filing rendered as an image.\nItem \"7. Management's Discussion and Analysis of Financial Condition and Results of Operations\" ENDS on this page; the next section is \"Item 7A. Quantitative and Qualitative Disclosures About Market Risk\".\nFind the FIRST later section heading visible on this page after Item 7. This first later heading is the boundary where Item 7 stops.\n- If the \"Item 7A\" heading is visible, use it as that boundary.\n- If multiple later headings appear, stop at the FIRST one, not a lower one.\n- The answer may be only a few lines if the boundary appears near the top of the page.\n- Never transcribe a later heading or any text below the first later heading.\n- Only if no later section heading is visible on this page should you use the bottom of the page.\nThen transcribe VERBATIM the LAST 5 lines of Item 7 immediately before that boundary. Use only text that still belongs to Item 7, even if most of the page belongs to a later section. Ignore running headers, page numbers, footers.\nOutput ONLY the transcribed text, no commentary, no quotes, no formatting.",
+  "source_path": "tier2\\dataset\\NFLX_2025\\pages\\page_034.png",
+  "text": "The information set forth under Note 1 to the consolidated financial statements under the caption “Basis of Presentation and Summary of\nSignificant Accounting Policies” is incorporated herein by reference."
+}

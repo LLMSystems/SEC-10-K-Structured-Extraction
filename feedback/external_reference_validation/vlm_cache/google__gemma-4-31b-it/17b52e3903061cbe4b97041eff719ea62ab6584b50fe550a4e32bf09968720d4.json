@@ -1,0 +1,9 @@
+{
+  "base_url": "https://openrouter.ai/api/v1",
+  "created_at": 1780684276,
+  "image_sha256": "20b5eea159d1f94dd863a742ac64a459de69cd2c909b30c8aaa993b4e2070a86",
+  "model": "google/gemma-4-31b-it",
+  "prompt": "You are shown one page from a SEC 10-K filing rendered as an image.\nItem \"7A. Quantitative and Qualitative Disclosures About Market Risk\" ENDS on this page; the next section is \"Item 8. Financial Statements and Supplementary Data\".\nFirst locate the bottom edge of Item 7A's text:\n- If the \"Item 8\" heading is visible on this page, Item 7A ends on the line directly ABOVE that heading.\n- Otherwise Item 7A runs all the way to the very bottom of the page.\nThen transcribe VERBATIM the LAST 5 lines of Item 7A at that bottom edge — the FINAL lines right before the section ends, NOT lines from the top or middle of the page. Ignore running headers, page numbers, footers.\nOutput ONLY the transcribed text, no commentary, no quotes, no formatting.",
+  "source_path": "tier2/dataset/TSLA_2023/pages/page_046.png",
+  "text": "We considered the historical trends in foreign currency exchange rates and determined that it is reasonably possible that adverse changes in\nforeign currency exchange rates of 10% for all currencies could be experienced in the near-term. These changes were applied to our total monetary\nassets and liabilities denominated in currencies other than our local currencies at the balance sheet date to compute the impact these changes would\nhave had on our net income before income taxes. These changes would have resulted in a gain or loss of $1.01 billion at December 31, 2023 and\n$473 million at December 31, 2022, assuming no foreign currency hedging."
+}

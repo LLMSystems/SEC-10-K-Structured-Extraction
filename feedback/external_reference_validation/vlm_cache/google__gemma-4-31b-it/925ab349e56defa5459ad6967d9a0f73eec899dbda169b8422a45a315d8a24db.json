@@ -1,0 +1,9 @@
+{
+  "base_url": "https://openrouter.ai/api/v1",
+  "created_at": 1780684314,
+  "image_sha256": "aa471e16987e80b1eadf4ecd37afa9af02e9e7228f65bf3ad236e2f0743a3c69",
+  "model": "google/gemma-4-31b-it",
+  "prompt": "You are shown one page from a SEC 10-K filing rendered as an image.\nThis page contains the BEGINNING of \"Item 7. Management's Discussion and Analysis of Financial Condition and Results of Operations\".\nFind the \"Item 7\" heading, then transcribe VERBATIM the first 5 lines of text that come immediately after it. Include any report title, addressee, or sub-heading exactly as printed — do NOT skip them; only ignore page running-headers, page numbers, and footers.\nOutput ONLY the transcribed text, no commentary, no quotes, no formatting.",
+  "source_path": "tier2/dataset/WMT_2026/pages/page_033.png",
+  "text": "Overview\nThis discussion, our results for the fiscal years ended January 31, 2024 (“Fiscal 2024”), January 31, 2023 (“Fiscal 2023”) and\nJanuary 31, 2022 (“Fiscal 2022”), should be read in conjunction with our Consolidated Financial Statements and the accompanying notes. We\nintend in this discussion to provide the reader with information that will assist in understanding our financial statements, the changes in certain key items in\nthose financial statements from period to period and the primary factors that accounted for those changes. We also discuss certain performance metrics"
+}

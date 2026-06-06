@@ -1,0 +1,9 @@
+{
+  "base_url": "https://openrouter.ai/api/v1",
+  "created_at": 1780694109,
+  "image_sha256": "59050c9e77b7b9b2b79d449e5c673a518d22822a1f1cb789831a212d2c9790fe",
+  "model": "qwen/qwen3.5-122b-a10b",
+  "prompt": "You are shown one page from a SEC 10-K filing rendered as an image.\nThis page contains the BEGINNING of \"Item 7. Management's Discussion and Analysis of Financial Condition and Results of Operations\".\nFind the \"Item 7\" heading, then transcribe VERBATIM the first 5 lines of text that come immediately after it. Include any report title, addressee, or sub-heading exactly as printed — do NOT skip them; only ignore page running-headers, page numbers, and footers.\nOutput ONLY the transcribed text, no commentary, no quotes, no formatting.",
+  "source_path": "tier2\\dataset\\TSLA_2023\\pages\\page_034.png",
+  "text": "The following discussion and analysis should be read in conjunction with the consolidated financial statements and the related notes included elsewhere in this Annual Report on Form 10-K. For further discussion of our products and services, technology and competitive strengths, refer to Item 1- Business. For discussion related to changes in financial condition and the results of operations for fiscal year 2022-related items, refer to Part II, Item 7. Management's Discussion and Analysis of Financial Condition and Results of Operations in our Annual Report on Form 10-K for fiscal year 2022, which was filed with the Securities and Exchange Commission on January 31, 2023."
+}

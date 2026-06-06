@@ -1,0 +1,81 @@
+{
+  "label": "DENN_2021",
+  "ticker": "DENN",
+  "year": "2021",
+  "cik": "0000852772",
+  "accession_number": "0000852772-22-000042",
+  "company_name": "DENNY'S Corp",
+  "pdf": "tier2/out/0000852772_2021-12-29_000085277222000042/0000852772_2021-12-29_000085277222000042.pdf",
+  "pdf_pages": 86,
+  "n_extracted": 9,
+  "n_exact": 9,
+  "n_fuzzy": 0,
+  "n_miss": 0,
+  "out_of_order": 0,
+  "items": [
+    {
+      "item": "1",
+      "page": 3,
+      "match": "exact",
+      "flag": null,
+      "snippet": "denny’s corporation (denny’s), a delaware corporat"
+    },
+    {
+      "item": "1A",
+      "page": 14,
+      "match": "exact",
+      "flag": null,
+      "snippet": "risks related to the covid-19 pandemic"
+    },
+    {
+      "item": "2",
+      "page": 21,
+      "match": "exact",
+      "flag": null,
+      "snippet": "most denny’s restaurants are free-standing facilit"
+    },
+    {
+      "item": "3",
+      "page": 24,
+      "match": "exact",
+      "flag": null,
+      "snippet": "there are various claims and pending legal actions"
+    },
+    {
+      "item": "5",
+      "page": 25,
+      "match": "exact",
+      "flag": null,
+      "snippet": "market for registrant’s common equity, related sto"
+    },
+    {
+      "item": "7",
+      "page": 27,
+      "match": "exact",
+      "flag": null,
+      "snippet": "management’s discussion and analysis of financial "
+    },
+    {
+      "item": "7A",
+      "page": 40,
+      "match": "exact",
+      "flag": null,
+      "snippet": "we have exposure to interest rate risk related to "
+    },
+    {
+      "item": "9A",
+      "page": 41,
+      "match": "exact",
+      "flag": null,
+      "snippet": "changes in internal control over financial reporti"
+    },
+    {
+      "item": "15",
+      "page": 45,
+      "match": "exact",
+      "flag": null,
+      "snippet": "exhibits and financial statement schedules"
+    }
+  ],
+  "category": "clean"
+}

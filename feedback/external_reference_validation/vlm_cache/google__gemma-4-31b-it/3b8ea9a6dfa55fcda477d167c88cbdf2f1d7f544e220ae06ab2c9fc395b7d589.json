@@ -1,0 +1,9 @@
+{
+  "base_url": "https://openrouter.ai/api/v1",
+  "created_at": 1780681544,
+  "image_sha256": "9872246bf4efe468de8301a70150daa99d2b280ad9963b11ed50befc82b73936",
+  "model": "google/gemma-4-31b-it",
+  "prompt": "You are shown one page from a SEC 10-K filing rendered as an image.\nThis page contains the END of \"Item 7A. Quantitative and Qualitative Disclosures About Market Risk\". The next section is \"Item 8. Financial Statements and Supplementary Data\".\nTranscribe VERBATIM the last 5 lines of \"Item 7A\" body text before the next item begins:\nif the \"Item 8\" heading appears on this page, take the 5 lines just before it; otherwise Item 7A continues to the bottom, so take the last 5 lines of the page (ignore running headers, page numbers, footers).\nRespond with ONLY a JSON object: {\"lines\": [\"line 1\", \"line 2\", ...]}",
+  "source_path": "tier2/dataset/RELL_2025/pages/page_035.png",
+  "text": "```json\n{\"lines\": [\"critical audit matter does not alter in any way our opinion on the consolidated financial statements, taken as a whole, and we are not, by communicating the\", \"critical audit matter below, providing a separate opinion on the critical audit matter or on the accounts or disclosures to which it relates.\"]}\n```"
+}

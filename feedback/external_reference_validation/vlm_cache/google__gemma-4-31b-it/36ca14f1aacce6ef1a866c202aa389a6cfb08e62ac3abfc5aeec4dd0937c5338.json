@@ -1,0 +1,9 @@
+{
+  "base_url": "https://openrouter.ai/api/v1",
+  "created_at": 1780682200,
+  "image_sha256": "9872246bf4efe468de8301a70150daa99d2b280ad9963b11ed50befc82b73936",
+  "model": "google/gemma-4-31b-it",
+  "prompt": "You are shown one page from a SEC 10-K filing rendered as an image.\nThis page contains the BEGINNING of \"Item 8. Financial Statements and Supplementary Data\".\nFind that section's heading on the page, then transcribe VERBATIM the first 5 lines of its body text that follow the heading. Ignore running headers, page numbers, footers.\nOutput ONLY the transcribed text, no commentary, no quotes, no formatting.",
+  "source_path": "tier2/dataset/RELL_2025/pages/page_035.png",
+  "text": "We have audited the accompanying consolidated balance sheets of Richardson Electronics, Ltd. (the “Company”) as of May 31, 2025 and June 1,\n2024, the related consolidated statements of comprehensive income, stockholders’ equity, and cash flows for each of the three fiscal years in the\n2024, the related consolidated statements of comprehensive income, stockholders’ equity, and cash flows for each of the three fiscal years in the\nperiod ended May 31, 2025, and the related notes (collectively referred to as the “consolidated financial statements”). In our opinion, the consolidated\nfinancial statements present fairly, in all material respects, the financial position of the Company at May 31, 2025 and June 1, 2024, and the results of"
+}

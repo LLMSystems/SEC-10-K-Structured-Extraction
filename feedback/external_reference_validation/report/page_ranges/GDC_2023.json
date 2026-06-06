@@ -1,0 +1,119 @@
+{
+  "label": "GDC_2023",
+  "pdf_pages": 121,
+  "items": [
+    {
+      "item": "1",
+      "start_page": 6,
+      "end_page": 23,
+      "start_unique": true,
+      "end_unique": true
+    },
+    {
+      "item": "1A",
+      "start_page": 24,
+      "end_page": 44,
+      "start_unique": true,
+      "end_unique": true
+    },
+    {
+      "item": "1C",
+      "start_page": 45,
+      "end_page": 45,
+      "start_unique": true,
+      "end_unique": true
+    },
+    {
+      "item": "2",
+      "start_page": 45,
+      "end_page": 45,
+      "start_unique": true,
+      "end_unique": true
+    },
+    {
+      "item": "3",
+      "start_page": 45,
+      "end_page": 45,
+      "start_unique": true,
+      "end_unique": true
+    },
+    {
+      "item": "5",
+      "start_page": 46,
+      "end_page": 48,
+      "start_unique": true,
+      "end_unique": true
+    },
+    {
+      "item": "7",
+      "start_page": 49,
+      "end_page": 57,
+      "start_unique": true,
+      "end_unique": true
+    },
+    {
+      "item": "7A",
+      "start_page": 58,
+      "end_page": 58,
+      "start_unique": true,
+      "end_unique": true
+    },
+    {
+      "item": "9",
+      "start_page": 58,
+      "end_page": 58,
+      "start_unique": true,
+      "end_unique": true
+    },
+    {
+      "item": "9A",
+      "start_page": 58,
+      "end_page": 60,
+      "start_unique": true,
+      "end_unique": true
+    },
+    {
+      "item": "10",
+      "start_page": 61,
+      "end_page": 65,
+      "start_unique": true,
+      "end_unique": true
+    },
+    {
+      "item": "11",
+      "start_page": 67,
+      "end_page": 70,
+      "start_unique": true,
+      "end_unique": true
+    },
+    {
+      "item": "12",
+      "start_page": 70,
+      "end_page": 71,
+      "start_unique": true,
+      "end_unique": true
+    },
+    {
+      "item": "13",
+      "start_page": 72,
+      "end_page": 72,
+      "start_unique": true,
+      "end_unique": true
+    },
+    {
+      "item": "14",
+      "start_page": 73,
+      "end_page": 73,
+      "start_unique": true,
+      "end_unique": true
+    },
+    {
+      "item": "15",
+      "start_page": 74,
+      "end_page": 78,
+      "start_unique": true,
+      "end_unique": true
+    }
+  ],
+  "warnings": []
+}

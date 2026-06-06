@@ -1,0 +1,88 @@
+{
+  "label": "TSLA_2021",
+  "ticker": "TSLA",
+  "year": "2021",
+  "cik": "0001318605",
+  "accession_number": "0000950170-22-000796",
+  "company_name": "Tesla, Inc.",
+  "pdf": "tier2/out/0001318605_2021-12-31_000095017022000796/0001318605_2021-12-31_000095017022000796.pdf",
+  "pdf_pages": 117,
+  "n_extracted": 10,
+  "n_exact": 10,
+  "n_fuzzy": 0,
+  "n_miss": 0,
+  "out_of_order": 0,
+  "items": [
+    {
+      "item": "1",
+      "page": 5,
+      "match": "exact",
+      "flag": null,
+      "snippet": "we operate as two reportable segments: (i) automot"
+    },
+    {
+      "item": "1A",
+      "page": 15,
+      "match": "exact",
+      "flag": null,
+      "snippet": "you should carefully consider the risks described "
+    },
+    {
+      "item": "2",
+      "page": 29,
+      "match": "exact",
+      "flag": null,
+      "snippet": "primary manufacturing facilities"
+    },
+    {
+      "item": "3",
+      "page": 29,
+      "match": "exact",
+      "flag": null,
+      "snippet": "note 15, commitments and contingencies"
+    },
+    {
+      "item": "5",
+      "page": 30,
+      "match": "exact",
+      "flag": null,
+      "snippet": "our common stock has traded on the nasdaq global s"
+    },
+    {
+      "item": "7",
+      "page": 32,
+      "match": "exact",
+      "flag": null,
+      "snippet": "overview and 2021 highlights"
+    },
+    {
+      "item": "7A",
+      "page": 44,
+      "match": "exact",
+      "flag": null,
+      "snippet": "we transact business globally in multiple currenci"
+    },
+    {
+      "item": "8",
+      "page": 46,
+      "match": "exact",
+      "flag": null,
+      "snippet": "index to consolidated financial statements"
+    },
+    {
+      "item": "9A",
+      "page": 47,
+      "match": "exact",
+      "flag": null,
+      "snippet": "management’s report on internal control over finan"
+    },
+    {
+      "item": "15",
+      "page": 99,
+      "match": "exact",
+      "flag": null,
+      "snippet": "1. financial statements (see"
+    }
+  ],
+  "category": "clean"
+}

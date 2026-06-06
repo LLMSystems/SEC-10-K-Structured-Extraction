@@ -1,0 +1,9 @@
+{
+  "base_url": "https://openrouter.ai/api/v1",
+  "created_at": 1780693302,
+  "image_sha256": "a5e1fcff2769b0ab7257a73b736df48462f8e83203f85d6bf077454aedd0dbff",
+  "model": "google/gemma-4-31b-it",
+  "prompt": "You are shown one page from a SEC 10-K filing rendered as an image.\nItem \"13. Certain Relationships and Related Transactions, and Director Independence\" ENDS on this page; the next section is \"Item 14. Principal Accountant Fees and Services\".\nLocate the bottom edge of Item 13's text on the page.\n- If the \"Item 14\" heading is visible on this page, then Item 13 ends on the line directly ABOVE that heading.\n- Otherwise, Item 13 continues to the bottom of the page.\nThen transcribe VERBATIM the LAST 5 lines of Item 13 immediately before it ends. These must be the FINAL lines right before the section ends, NOT lines from the top or middle of the page. Ignore running headers, page numbers, footers.\nOutput ONLY the transcribed text, no commentary, no quotes, no formatting.",
+  "source_path": "tier2\\dataset\\GDC_2023\\pages\\page_072.png",
+  "text": "Other payable – related parties:\n\nName of related party Relationship Nature December 31, 2023 December 31, 2022\nShanghai Highlights Asset A company in which the then shareholder hold shares Advances $ - $ 195,732\nManagement Co. LTD(1) Zihan Zhao Chief Finance Officer Accrued compensations - 20,833\nTotal $ 20,833 $ 195,732"
+}

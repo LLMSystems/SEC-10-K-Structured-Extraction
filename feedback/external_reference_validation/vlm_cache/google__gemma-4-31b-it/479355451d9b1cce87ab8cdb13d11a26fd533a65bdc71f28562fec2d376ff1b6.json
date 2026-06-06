@@ -1,0 +1,9 @@
+{
+  "base_url": "https://openrouter.ai/api/v1",
+  "created_at": 1780693347,
+  "image_sha256": "97b0426d210bf630c2ea7b974ff6e11c5c40a49d9bc85d2c096ebde5589fe915",
+  "model": "google/gemma-4-31b-it",
+  "prompt": "You are shown one page from a SEC 10-K filing rendered as an image.\nItem \"1. Business\" ENDS on this page; the next section is \"Item 1A. Risk Factors\".\nLocate the bottom edge of Item 1's text on the page.\n- If the \"Item 1A\" heading is visible on this page, then Item 1 ends on the line directly ABOVE that heading.\n- Otherwise, Item 1 continues to the bottom of the page.\nThen transcribe VERBATIM the LAST 5 lines of Item 1 immediately before it ends. These must be the FINAL lines right before the section ends, NOT lines from the top or middle of the page. Ignore running headers, page numbers, footers.\nOutput ONLY the transcribed text, no commentary, no quotes, no formatting.",
+  "source_path": "tier2\\dataset\\TSLA_2023\\pages\\page_015.png",
+  "text": "Employees are encouraged to speak up both in regard to misconduct and safety concerns and can do so by contacting the integrity line,\nsubmitting concerns through our Take Charge process, or notifying their Human Resource Partner or any member of management. Concerns are\nreviewed in accordance with established protocols by investigators with expertise, who also review for trends and outcomes for remediation and\nappropriate controls. Responding to questions timely is key So Human Resource Partners for each functional area are visible throughout facilities and\nare actively involved in driving culture and engagement alongside business leaders."
+}

@@ -1,0 +1,9 @@
+{
+  "base_url": "https://openrouter.ai/api/v1",
+  "created_at": 1780682544,
+  "image_sha256": "31bcc2e60af8a954b2d23b8d305cc967f216ed6f5c027dab9ce3f682f1816eb3",
+  "model": "google/gemma-4-31b-it",
+  "prompt": "You are shown one page from a SEC 10-K filing rendered as an image.\nItem \"9B. Other Information\" ENDS on this page; the next section is \"Item 15. Exhibits, Financial Statement Schedules\".\nFirst locate the bottom edge of Item 9B's text:\n- If the \"Item 15\" heading is visible on this page, Item 9B ends on the line directly ABOVE that heading.\n- Otherwise Item 9B runs all the way to the very bottom of the page.\nThen transcribe VERBATIM the LAST 5 lines of Item 9B at that bottom edge — the FINAL lines right before the section ends, NOT lines from the top or middle of the page. Ignore running headers, page numbers, footers.\nOutput ONLY the transcribed text, no commentary, no quotes, no formatting.",
+  "source_path": "tier2/dataset/RELL_2025/pages/page_070.png",
+  "text": "Delinquent Section 16 Reports\nSection 16(a) of the Securities Exchange Act of 1934 requires our directors, executive officers and 10 percent stockholders to file reports of\ninitial ownership and reports of changes in ownership in RELL common stock. To the best of our knowledge, RELL's directors, executive officers\nand 10 percent stockholders complied with the requirements of Section 16(a) in a timely manner during fiscal 2025.\nITEM 13. Certain Relationships and Related Transactions and Director Independence"
+}

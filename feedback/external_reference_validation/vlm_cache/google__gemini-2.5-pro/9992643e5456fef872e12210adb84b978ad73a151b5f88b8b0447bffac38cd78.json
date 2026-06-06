@@ -1,0 +1,9 @@
+{
+  "base_url": "https://openrouter.ai/api/v1",
+  "created_at": 1780697276,
+  "image_sha256": "97b0426d210bf630c2ea7b974ff6e11c5c40a49d9bc85d2c096ebde5589fe915",
+  "model": "google/gemini-2.5-pro",
+  "prompt": "You are shown one page from a SEC 10-K filing rendered as an image.\nItem \"1. Business\" ENDS on this page; the next section is \"Item 1A. Risk Factors\".\nFirst locate the bottom edge of Item 1's text:\n- If the \"Item 1A\" heading is visible on this page, Item 1 ends on the line directly ABOVE that heading.\n- Otherwise Item 1 runs all the way to the very bottom of the page.\nThen transcribe VERBATIM the LAST 5 lines of Item 1 at that bottom edge — the FINAL lines right before the section ends, NOT lines from the top or middle of the page. Ignore running headers, page numbers, footers.\nOutput ONLY the transcribed text, no commentary, no quotes, no formatting.",
+  "source_path": "tier2\\dataset\\TSLA_2023\\pages\\page_015.png",
+  "text": "and Current Reports on Form 8-K, proxy statements and other information with the SEC. In addition, the SEC maintains a website (www.sec.gov)\nthat contains reports, proxy and information statements, and other information regarding issuers that file electronically. Our website is located at\nwww.tesla.com, and our reports, amendments thereto, proxy statements and other information are also made available, free of charge, on our investor\nrelations website at ir.tesla.com as soon as reasonably practicable after we electronically file or furnish such information with the SEC. The\ninformation posted on our website is not incorporated by reference into this Annual Report on Form 10-K."
+}

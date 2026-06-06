@@ -1,0 +1,9 @@
+{
+  "base_url": "https://openrouter.ai/api/v1",
+  "created_at": 1780697227,
+  "image_sha256": "713fed6aabb29704676586978a63d144b81a5c6f6ebd3b87772a9c06c9c84f92",
+  "model": "google/gemini-2.5-pro",
+  "prompt": "You are shown one page from a SEC 10-K filing rendered as an image.\nItem \"7A. Quantitative and Qualitative Disclosures About Market Risk\" ENDS on this page; the next section is \"Item 8. Financial Statements and Supplementary Data\".\nFirst locate the bottom edge of Item 7A's text:\n- If the \"Item 8\" heading is visible on this page, Item 7A ends on the line directly ABOVE that heading.\n- Otherwise Item 7A runs all the way to the very bottom of the page.\nThen transcribe VERBATIM the LAST 5 lines of Item 7A at that bottom edge — the FINAL lines right before the section ends, NOT lines from the top or middle of the page. Ignore running headers, page numbers, footers.\nOutput ONLY the transcribed text, no commentary, no quotes, no formatting.",
+  "source_path": "tier2\\dataset\\NFLX_2025\\pages\\page_036.png",
+  "text": "remeasurement of our foreign-currency denominated debt. The gains or losses on these derivative instruments included in the assessment of hedge\neffectiveness are recorded in “Interest and other income (expense),” net with the offsetting foreign currency remeasurement gains and losses on the\nhedged items. If an adverse change in exchange rates of 10% was applied to our monetary assets and liabilities denominated in currencies other than\nthe functional currencies as of December 31, 2025 and December 31, 2024, income before income taxes would have been approximately $1 million\nand $38 million lower, respectively, after considering the offsetting impact of the foreign currency exchange contracts and our net investment hedges."
+}

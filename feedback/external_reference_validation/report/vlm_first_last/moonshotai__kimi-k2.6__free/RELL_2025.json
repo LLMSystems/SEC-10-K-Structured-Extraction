@@ -1,0 +1,174 @@
+{
+  "label": "RELL_2025",
+  "model": "moonshotai/kimi-k2.6:free",
+  "threshold": 75,
+  "items": [
+    {
+      "item": "1",
+      "title": "Business",
+      "bucket": "prose",
+      "start_page": 4,
+      "end_page": 8,
+      "head": {
+        "ratio": 99.3,
+        "pass": true,
+        "pred": "PART I\nITEM 1. Business\nGeneral\nRichardson Electronics, Ltd. (the \"Company,\" \"we,\" \"our\") is a leading global manufacturer of engineered solutions, green energy products, power grid and microwave tubes, and related consumables; power conversion and RF and microwave components including green energy solutions; tubes for diagnostic imaging equipment; and customized display solutions.",
+        "gt": "partiitem 1. b usiness general richardson electronics, ltd. (the \"company,\" \"we,\" \"our\") is a leading global manufacturer of engineered solutions, green energy products, power grid and microwave tubes, and related consumables; power conversion and rf and microwave components including green energy s"
+      },
+      "tail": {
+        "error": "RateLimitError: Error code: 429 - {'error': {'message': 'Rate limit exceeded: free-models-per-min. ', 'code': 429, 'metadata': {'headers': {'X-RateLimit-Limit': '16', 'X-RateLimit-Remaining': '0', 'X-RateLimit-Reset': '1780694400000'}, 'provider_name': None}}, 'user_id': 'user_3A7J2w1UXdqapKzJfjlQk81aMC2'}"
+      }
+    },
+    {
+      "item": "1A",
+      "title": "Risk Factors",
+      "bucket": "prose",
+      "start_page": 9,
+      "end_page": 17,
+      "head": {
+        "error": "RateLimitError: Error code: 429 - {'error': {'message': 'Rate limit exceeded: free-models-per-min. ', 'code': 429, 'metadata': {'headers': {'X-RateLimit-Limit': '16', 'X-RateLimit-Remaining': '0', 'X-RateLimit-Reset': '1780694400000'}, 'provider_name': None}}, 'user_id': 'user_3A7J2w1UXdqapKzJfjlQk81aMC2'}"
+      },
+      "tail": {
+        "error": "RateLimitError: Error code: 429 - {'error': {'message': 'Rate limit exceeded: free-models-per-min. ', 'code': 429, 'metadata': {'headers': {'X-RateLimit-Limit': '16', 'X-RateLimit-Remaining': '0', 'X-RateLimit-Reset': '1780694400000'}, 'provider_name': None}}, 'user_id': 'user_3A7J2w1UXdqapKzJfjlQk81aMC2'}"
+      }
+    },
+    {
+      "item": "1C",
+      "title": "Cybersecurity",
+      "bucket": "prose",
+      "start_page": 18,
+      "end_page": 19,
+      "head": {
+        "ratio": 99.7,
+        "pass": true,
+        "pred": "Risk Management and Strategy\n\nWe are focused on the growing threat of cybersecurity risks we face in today's global business environment and have identified cybersecurity as an important enterprise risk. Our cybersecurity risk management program is part of our overall enterprise risk management program, and focuses on identifying, assessing, managing, and remediating material risks from cybersecur",
+        "gt": "risk management and strategy we are focused on the growing threat of cybersecurity risks we face in today’s global business environment and have identified cybersecurity as an important enterprise risk. our cybersecurity risk management program is part of our overall enterprise risk management progr"
+      },
+      "tail": {
+        "error": "RateLimitError: Error code: 429 - {'error': {'message': 'Rate limit exceeded: free-models-per-min. ', 'code': 429, 'metadata': {'headers': {'X-RateLimit-Limit': '16', 'X-RateLimit-Remaining': '0', 'X-RateLimit-Reset': '1780694460000'}, 'provider_name': None}}, 'user_id': 'user_3A7J2w1UXdqapKzJfjlQk81aMC2'}"
+      }
+    },
+    {
+      "item": "2",
+      "title": "Properties",
+      "bucket": "table_tail_covered",
+      "start_page": 20,
+      "end_page": 20,
+      "tail": {
+        "skipped": "table 結尾，邊界由下一個 item 5 的 head 覆蓋"
+      },
+      "head": {
+        "ratio": 99.8,
+        "pass": true,
+        "pred": "ITEM 2. Properties\n\nThe Company owns one facility and leases 24 facilities. We own our corporate facility and largest distribution center, which is located on approximately 100 acres in LaFox, Illinois and consists of approximately 224,000 square feet of manufacturing, warehouse and office space. We maintain geographically diverse facilities because we believe this provides value to our customers ",
+        "gt": "item 2. p roperties the company owns one facility and leases 24 facilities. we own our corporate facility and largest distribution center, which is located on approximately 100 acres in lafox, illinois and consists of approximately 224,000 square feet of manufacturing, warehouse and office space. we"
+      }
+    },
+    {
+      "item": "5",
+      "title": "Market for Registrant's Common Equity, Related Stockholder Matters and Issuer Purchases of Equity Securities",
+      "bucket": "figure_tail_covered",
+      "start_page": 21,
+      "end_page": 22,
+      "tail": {
+        "skipped": "figure 結尾，邊界由下一個 item 7 的 head 覆蓋"
+      },
+      "head": {
+        "ratio": 97.7,
+        "pass": true,
+        "pred": "PART II\n\nITEM 5. Market for the Registrant's Common Equity, Related Stockholder Matters and Issuer Purchases of Equity Securities\n\nUnregistered Sales of Equity Securities\n\nThere were no sales of unregistered equity securities in fiscal 2025.",
+        "gt": "item 5. market for the registrant’s common equity, related s tockholder matters and issuer purchases of equity securities unregistered sales of equity securities there were no sales of unregistered equity securities in fiscal 2025. share repurchases there were no share repurchases in fiscal 2025. di"
+      }
+    },
+    {
+      "item": "7",
+      "title": "Management's Discussion and Analysis of Financial Condition and Results of Operations",
+      "bucket": "prose",
+      "start_page": 23,
+      "end_page": 33,
+      "head": {
+        "error": "RateLimitError: Error code: 429 - {'error': {'message': 'Rate limit exceeded: free-models-per-min. ', 'code': 429, 'metadata': {'headers': {'X-RateLimit-Limit': '16', 'X-RateLimit-Remaining': '0', 'X-RateLimit-Reset': '1780694460000'}, 'provider_name': None}}, 'user_id': 'user_3A7J2w1UXdqapKzJfjlQk81aMC2'}"
+      },
+      "tail": {
+        "error": "RateLimitError: Error code: 429 - {'error': {'message': 'Rate limit exceeded: free-models-per-min. ', 'code': 429, 'metadata': {'headers': {'X-RateLimit-Limit': '16', 'X-RateLimit-Remaining': '0', 'X-RateLimit-Reset': '1780694460000'}, 'provider_name': None}}, 'user_id': 'user_3A7J2w1UXdqapKzJfjlQk81aMC2'}"
+      }
+    },
+    {
+      "item": "7A",
+      "title": "Quantitative and Qualitative Disclosures About Market Risk",
+      "bucket": "prose",
+      "start_page": 34,
+      "end_page": 34,
+      "head": {
+        "error": "RateLimitError: Error code: 429 - {'error': {'message': 'Rate limit exceeded: free-models-per-min. ', 'code': 429, 'metadata': {'headers': {'X-RateLimit-Limit': '16', 'X-RateLimit-Remaining': '0', 'X-RateLimit-Reset': '1780694460000'}, 'provider_name': None}}, 'user_id': 'user_3A7J2w1UXdqapKzJfjlQk81aMC2'}"
+      },
+      "tail": {
+        "error": "RateLimitError: Error code: 429 - {'error': {'message': 'Rate limit exceeded: free-models-per-min. ', 'code': 429, 'metadata': {'headers': {'X-RateLimit-Limit': '16', 'X-RateLimit-Remaining': '0', 'X-RateLimit-Reset': '1780694520000'}, 'provider_name': None}}, 'user_id': 'user_3A7J2w1UXdqapKzJfjlQk81aMC2'}"
+      }
+    },
+    {
+      "item": "8",
+      "title": "Financial Statements and Supplementary Data",
+      "bucket": "table_tail_covered",
+      "start_page": 35,
+      "end_page": 64,
+      "tail": {
+        "skipped": "table 結尾，邊界由下一個 item 9A 的 head 覆蓋"
+      },
+      "head": {
+        "error": "RateLimitError: Error code: 429 - {'error': {'message': 'Rate limit exceeded: free-models-per-min. ', 'code': 429, 'metadata': {'headers': {'X-RateLimit-Limit': '16', 'X-RateLimit-Remaining': '0', 'X-RateLimit-Reset': '1780694520000'}, 'provider_name': None}}, 'user_id': 'user_3A7J2w1UXdqapKzJfjlQk81aMC2'}"
+      }
+    },
+    {
+      "item": "9A",
+      "title": "Controls and Procedures",
+      "bucket": "prose",
+      "start_page": 65,
+      "end_page": 67,
+      "head": {
+        "error": "RateLimitError: Error code: 429 - {'error': {'message': 'Rate limit exceeded: free-models-per-min. ', 'code': 429, 'metadata': {'headers': {'X-RateLimit-Limit': '16', 'X-RateLimit-Remaining': '0', 'X-RateLimit-Reset': '1780694520000'}, 'provider_name': None}}, 'user_id': 'user_3A7J2w1UXdqapKzJfjlQk81aMC2'}"
+      },
+      "tail": {
+        "ratio": 97.1,
+        "pass": true,
+        "pred": "/s/ BDO USA, P.C.\n\nChicago, Illinois\nAugust 4, 2025\n65",
+        "gt": "s. also, projections of any evaluation of effectiveness to future periods are subject to the risk that controls may become inadequate because of changes in conditions, or that the degree of compliance with the policies or procedures may deteriorate. /s/ bdo usa, p.c. chicago, illinois august 4, 2025"
+      }
+    },
+    {
+      "item": "9B",
+      "title": "Other Information",
+      "bucket": "prose",
+      "start_page": 68,
+      "end_page": 68,
+      "head": {
+        "ratio": 94.9,
+        "pass": true,
+        "pred": "10b5-1 Trading Arrangement\n\nDuring the most recently completed fiscal quarter, no director or officer of the Company adopted, modified or terminated a \"Rule 10b5-1 trading arrangement\" or a \"non-Rule 10b5-1 trading arrangement\" (in each case, as defined in Item 408 of Regulation S-K).\n\nInsider Trading Policies\n\nThe Company has adopted insider trading policies and procedures governing the purchase,",
+        "gt": "item 9b. o ther information 10b5-1 trading arrangement during the most recently completed fiscal quarter, no director or officer of the company adopted , modified or terminated a \"rule 10b5-1 trading arrangement\" or a \"non-rule 10b5-1 trading arrangement\" (in each case, as defined in item 408 of reg"
+      },
+      "tail": {
+        "error": "RateLimitError: Error code: 429 - {'error': {'message': 'Rate limit exceeded: free-models-per-min. ', 'code': 429, 'metadata': {'headers': {'X-RateLimit-Limit': '16', 'X-RateLimit-Remaining': '0', 'X-RateLimit-Reset': '1780694520000'}, 'provider_name': None}}, 'user_id': 'user_3A7J2w1UXdqapKzJfjlQk81aMC2'}"
+      }
+    },
+    {
+      "item": "15",
+      "title": "Exhibits, Financial Statement Schedules",
+      "bucket": "prose",
+      "start_page": 71,
+      "end_page": 71,
+      "head": {
+        "ratio": 90.3,
+        "pass": true,
+        "pred": "(a) List of Documents Filed as a Part of This Report:\n(1) Index to Consolidated Financial Statements:\nReport of BDO USA, P.C., Independent Registered Public Accounting Firm.\nConsolidated Balance Sheets as of May 31, 2025 and June 1, 2024.\nConsolidated Statements of Comprehensive Income for each of the three years ended May 31, 2025, June 1, 2024 and May 27, 2023.",
+        "gt": "item 15. exhibits and fina ncial statement schedules (a) list of documents filed as a part of this report: (1) index to consolidated financial statements: report of bdo usa, p.c., independent registered public accounting firm. consolidated balance sheets as of may 31, 2025 and june 1, 2024. consolid"
+      },
+      "tail": {
+        "ratio": 81.6,
+        "pass": true,
+        "pred": "(c) Financial Statements required by S-X (17 CFR 210).\n\nNone.\n\nITEM 16. Form 10-K Summary",
+        "gt": "m 10-k. all other schedules for which provision is made in the applicable accounting regulations of the securities and exchange commission are not required under the related instructions or are inapplicable and therefore have been omitted. (c) financial statements required by s-x (17 cfr 210). none."
+      }
+    }
+  ]
+}

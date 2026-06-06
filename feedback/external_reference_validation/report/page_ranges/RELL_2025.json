@@ -1,0 +1,84 @@
+{
+  "label": "RELL_2025",
+  "pdf_pages": 75,
+  "items": [
+    {
+      "item": "1",
+      "start_page": 4,
+      "end_page": 8,
+      "start_unique": true,
+      "end_unique": true
+    },
+    {
+      "item": "1A",
+      "start_page": 9,
+      "end_page": 17,
+      "start_unique": true,
+      "end_unique": true
+    },
+    {
+      "item": "1C",
+      "start_page": 18,
+      "end_page": 19,
+      "start_unique": true,
+      "end_unique": true
+    },
+    {
+      "item": "2",
+      "start_page": 20,
+      "end_page": 20,
+      "start_unique": true,
+      "end_unique": true
+    },
+    {
+      "item": "5",
+      "start_page": 21,
+      "end_page": 22,
+      "start_unique": true,
+      "end_unique": true
+    },
+    {
+      "item": "7",
+      "start_page": 23,
+      "end_page": 33,
+      "start_unique": true,
+      "end_unique": true
+    },
+    {
+      "item": "7A",
+      "start_page": 34,
+      "end_page": 34,
+      "start_unique": true,
+      "end_unique": true
+    },
+    {
+      "item": "8",
+      "start_page": 35,
+      "end_page": 64,
+      "start_unique": true,
+      "end_unique": true
+    },
+    {
+      "item": "9A",
+      "start_page": 65,
+      "end_page": 67,
+      "start_unique": true,
+      "end_unique": true
+    },
+    {
+      "item": "9B",
+      "start_page": 68,
+      "end_page": 68,
+      "start_unique": true,
+      "end_unique": true
+    },
+    {
+      "item": "15",
+      "start_page": 71,
+      "end_page": 71,
+      "start_unique": true,
+      "end_unique": true
+    }
+  ],
+  "warnings": []
+}

@@ -1,0 +1,235 @@
+{
+  "label": "TSLA_2023",
+  "model": "google/gemma-4-26b-a4b-it",
+  "threshold": 75,
+  "items": [
+    {
+      "item": "1",
+      "title": "Business",
+      "bucket": "prose",
+      "start_page": 5,
+      "end_page": 15,
+      "head": {
+        "ratio": 100.0,
+        "pass": true,
+        "pred": "Overview\nWe design, develop, manufacture, sell and lease high-performance fully electric vehicles and energy generation and storage systems, and offer\nservices related to our products. We generally sell our products directly to customers, and continue to grow our customer-facing infrastructure\nthrough a global network of vehicle showrooms and service centers, Mobile Service, body shops, Supercharg",
+        "gt": "overview we design, develop, manufacture, sell and lease high-performance fully electric vehicles and energy generation and storage systems, and offer services related to our products. we generally sell our products directly to customers, and continue to grow our customer-facing infrastructure throu"
+      },
+      "tail": {
+        "ratio": 78.8,
+        "pass": true,
+        "pred": "We file periodic reports and amendments thereto, including our Annual Reports on Form 10-K, our Quarterly Reports on Form 10-Q\nand Current Reports on Form 8-K, proxy statements and other information with the SEC. In the SEC, the maintains a website (www.sec.gov)\nthat contains reports, proxy and information statements, and other information regarding issuers that file electronically. Our website is",
+        "gt": "also made available, free of charge, on our investor relations website at ir.tesla.com as soon as reasonably practicable after we electronically file or furnish such information with the sec. the information posted on our website is not incorporated by reference into this annual report on form 10-k."
+      }
+    },
+    {
+      "item": "1A",
+      "title": "Risk Factors",
+      "bucket": "prose",
+      "start_page": 15,
+      "end_page": 29,
+      "head": {
+        "ratio": 61.7,
+        "pass": false,
+        "pred": "Item 1A. Risk Factors\n\nOur business, our financial condition and our results of operations could be adversely affected by the risks set forth in this item.",
+        "gt": "you should carefully consider the risks described below together with the other information set forth in this report, which could materially affect our business, financial condition and future results. the risks described below are not the only risks facing our company. risks and uncertainties not c"
+      },
+      "tail": {
+        "ratio": 100.0,
+        "pass": true,
+        "pred": "Anti-takeover provisions contained in our governing documents, applicable laws and our convertible senior notes could impair a takeover\nattempt.\nOur certificate of incorporation and bylaws afford certain rights and powers to our board of directors that may facilitate the delay or prevention\nof an acquisition that deems undesirable. We are also subject to Section 203 of the Delaware General Corpora",
+        "gt": "the foregoing provisions and terms that has the effect of delaying or deterring a change in control could limit the opportunity for our stockholders to receive a premium for their shares of our common stock, and could also affect the price that some investors are willing to pay for our common stock."
+      }
+    },
+    {
+      "item": "1C",
+      "title": "Cybersecurity",
+      "bucket": "prose",
+      "start_page": 30,
+      "end_page": 31,
+      "head": {
+        "ratio": 79.2,
+        "pass": true,
+        "pred": "Cybersecurity Risk Management and Strategy\nWe recognize the importance of assessing, identifying, and managing material risks associated with cybersecurity threats, as such them\nis to mitigate the impact of such threats. Our cybersecurity risk management program is designed to identify, assess, and respond to\ncybersecurity risks. We evaluate our cybersecurity risk management program on a regular b",
+        "gt": "cybersecurity risk management and strategy we recognize the importance of assessing, identifying, and managing material risks associated with cybersecurity threats, as such term is defined in item 106(a) of regulation s-k. these risks include, among other things: operational risks, intellectual prop"
+      },
+      "tail": {
+        "ratio": 46.8,
+        "pass": false,
+        "pred": "the cybersecurity risk management, strategy, and governance processes.\nWe also monitor and assess the potential impact of cybersecurity risks\non our business, financial condition, and results of operations.\nWe maintain a comprehensive cybersecurity program designed to\nprotect our information assets and systems.",
+        "gt": "gation, detection and remediation of cybersecurity incidents through their management of, and participation in, the cybersecurity risk management and strategy processes described above, including the operation of our incident response plan, and report to the audit committee on any appropriate items."
+      }
+    },
+    {
+      "item": "2",
+      "title": "Properties",
+      "bucket": "prose",
+      "start_page": 31,
+      "end_page": 31,
+      "head": {
+        "ratio": 100.0,
+        "pass": true,
+        "pred": "We are headquartered in Austin, Texas. Our principal facilities include a large number of properties in North America, Europe and Asia\nutilized for manufacturing and assembly, warehousing, engineering, retail and service locations, Supercharger sites and administrative and sales\noffices. Our facilities are used to support both of our reporting segments, and are suitable and adequate for the conduc",
+        "gt": "we are headquartered in austin, texas. our principal facilities include a large number of properties in north america, europe and asia utilized for manufacturing and assembly, warehousing, engineering, retail and service locations, supercharger sites and administrative and sales offices. our facilit"
+      },
+      "tail": {
+        "ratio": 48.9,
+        "pass": false,
+        "pred": "Gigafactory Texas Austin, Texas Owned\nFremont Factory Fremont, California Owned\nGigafactory Nevada Sparks, Nevada Owned\nGigafactory Berlin-Brandenburg Grunheide, Germany Owned\nGigafactory Shanghai Shanghai, China *",
+        "gt": "grunheide, germany owned gigafactory shanghai shanghai, china * gigafactory new york buffalo, new york leased megafactory lathrop, california leased * we own the building and the land use rights with an initial term of 50 years. the land use rights are treated as operating lease right-of-use assets."
+      }
+    },
+    {
+      "item": "3",
+      "title": "Legal Proceedings",
+      "bucket": "prose",
+      "start_page": 31,
+      "end_page": 31,
+      "head": {
+        "ratio": 98.5,
+        "pass": true,
+        "pred": "For a description of our material legal proceedings, please see Note 15, Commitments and Contingencies, to the consolidated financial\nstatements included elsewhere in this Annual Report on Form 10-K.\nIn addition, each of the matters below is being disclosed pursuant to Item 103 of Regulation S-K because it relates to environmental\nregulations and aggregate civil penalties that we currently believe",
+        "gt": "for a description of our material pending legal proceedings, please see note 15, commitments and contingencies , to the consolidated financial statements included elsewhere in this annual report on form 10-k. in addition, each of the matters below is being disclosed pursuant to item 103 of regulatio"
+      },
+      "tail": {
+        "ratio": 100.0,
+        "pass": true,
+        "pred": "District attorneys in certain California counties conducted an investigation into Tesla's waste segregation practices pursuant to Cal. Health &\nSaf. Code § 25100 et seq, and Cal. Civil Code § 1798.80. Tesla has implemented various remedial measures, including conducting training and\naudits, and enhancements to its site waste management programs, and settlement discussions are ongoing. While the ou",
+        "gt": "dial measures, including conducting training and audits, and enhancements to its site waste management programs, and settlement discussions are ongoing. while the outcome of this matter cannot be determined at this time, it is not currently expected to have a material adverse impact on our business."
+      }
+    },
+    {
+      "item": "5",
+      "title": "Market for Registrant's Common Equity, Related Stockholder Matters and Issuer Purchases of Equity Securities",
+      "bucket": "prose",
+      "start_page": 32,
+      "end_page": 33,
+      "head": {
+        "ratio": 74.9,
+        "pass": false,
+        "pred": "Market Information\nOur common stock has traded on The NASDAQ Global Select Market under the symbol \"TSLA\" since it began trading on June 29, 2010. Our\ninitial public offering was priced at approximately $1.3 per share on June 28, 2010 as adjusted to give effect to the three-for-one stock split effected\nin the form of a stock dividend in August 2022 (the \"2022 Stock Split\") and the five-for-one sto",
+        "gt": "item 5. market for registrant’s common equity, related stockholder matters and issuer purchases of equity securities market information our common stock has traded on the nasdaq global select market under the symbol “tsla” since it began trading on june 29, 2010. our initial public offering was pric"
+      },
+      "tail": {
+        "ratio": 100.0,
+        "pass": true,
+        "pred": "Unregistered Sales of Equity Securities and Use of Proceeds\nNone.\nPurchases of Equity Securities by the Issuer and Affiliated Purchasers\nNone.",
+        "gt": "f dividends. we have never declared or paid cash dividends on our common stock nor do we anticipate paying any such cash dividends in the foreseeable future. unregistered sales of equity securities and use of proceeds none. purchases of equity securities by the issuer and affiliated purchasers none."
+      }
+    },
+    {
+      "item": "7",
+      "title": "Management's Discussion and Analysis of Financial Condition and Results of Operations",
+      "bucket": "prose",
+      "start_page": 34,
+      "end_page": 45,
+      "head": {
+        "ratio": 81.4,
+        "pass": true,
+        "pred": "The following discussion and analysis should be read in conjunction with the consolidated financial statements and the related notes included\nelsewhere in this Annual Report on Form 10-K. For further discussion of our products and services, technology and competitive strengths, refer to\nItem 1— Business. For discussion related to changes in financial condition and the results of operations for fis",
+        "gt": "item 7. management’s discussion and analysis of financial condition and results of operations the following discussion and analysis should be read in conjunction with the consolidated financial statements and the related notes included elsewhere in this annual report on form 10-k. for further discus"
+      },
+      "tail": {
+        "ratio": 59.7,
+        "pass": false,
+        "pred": "December 31, 2023, from $3.53 billion net cash provided in financing activities during the year ended\nDecember 31, 2022. The change was primarily due to a $3.93 billion increase in proceeds from issuances of debt and a $2.01 billion decrease in repayments of debt. See Note 11, Debt, to the\nconsolidated financial statements included elsewhere in this Annual Report on Form 10-K for further details r",
+        "gt": "atements included elsewhere in this annual report on form 10-k for further details regarding our debt obligations. recent accounting pronouncements see note 2, summary of significant accounting policies , to the consolidated financial statements included elsewhere in this annual report on form 10-k."
+      }
+    },
+    {
+      "item": "7A",
+      "title": "Quantitative and Qualitative Disclosures About Market Risk",
+      "bucket": "prose",
+      "start_page": 46,
+      "end_page": 46,
+      "head": {
+        "ratio": 100.0,
+        "pass": true,
+        "pred": "Foreign Currency Risk\nWe transact business globally in multiple currencies and hence have foreign currency risks related to our revenue, costs of revenue and\noperating expenses denominated in currencies other than the U.S. dollar (primarily the Chinese yuan and euro in relation to our current year\noperations). In general, we are a net receiver of currencies other than the U.S. dollar for our forei",
+        "gt": "foreign currency risk we transact business globally in multiple currencies and hence have foreign currency risks related to our revenue, costs of revenue and operating expenses denominated in currencies other than the u.s. dollar (primarily the chinese yuan and euro in relation to our current year o"
+      },
+      "tail": {
+        "ratio": 98.5,
+        "pass": true,
+        "pred": "foreign currency exchange rates of 10% for all currencies could be experienced in the near-term. These changes were applied to our total monetary\nassets and liabilities denominated in currencies other than our local currencies at the balance sheet date to compute the impact these changes would\nhave had on our net income before income taxes. These changes would have resulted in a gain or loss of $1",
+        "gt": " local currencies at the balance sheet date to compute the impact these changes would have had on our net income before income taxes. these changes would have resulted in a gain or loss of $1.01 billion at december 31, 2023 and $473 million at december 31, 2022, assuming no foreign currency hedging."
+      }
+    },
+    {
+      "item": "8",
+      "title": "Financial Statements and Supplementary Data",
+      "bucket": "prose",
+      "start_page": 47,
+      "end_page": 93,
+      "head": {
+        "ratio": 100.0,
+        "pass": true,
+        "pred": "Index to Consolidated Financial Statements\nPage\nReport of Independent Registered Public Accounting Firm (PCAOB ID: 238) 47\nConsolidated Balance Sheets 49\nConsolidated Statements of Operations 50\nConsolidated Statements of Comprehensive Income 51",
+        "gt": "index to consolidated financial statements page report of independent registered public accounting firm (pcaob id: 238) 47 consolidated balance sheets 49 consolidated statements of operations 50 consolidated statements of comprehensive income 51 consolidated statements of redeemable noncontrolling i"
+      },
+      "tail": {
+        "ratio": 50.0,
+        "pass": false,
+        "pred": "Automotive",
+        "gt": "022 and 2021 we also realized gains of $ million and $ million, respectively, in connection with converting our holdings of digital assets into fiat currency. we also recorded other expenses of $ million during the second quarter of the year ended december 31, 2022, related to employee terminations."
+      }
+    },
+    {
+      "item": "9A",
+      "title": "Controls and Procedures",
+      "bucket": "prose",
+      "start_page": 95,
+      "end_page": 95,
+      "head": {
+        "ratio": 100.0,
+        "pass": true,
+        "pred": "Evaluation of Disclosure Controls and Procedures\nOur management, with the participation of our Chief Executive Officer and our Chief Financial Officer, evaluated the effectiveness of our\ndisclosure controls and procedures pursuant to Rule 13a-15 under the Securities Exchange Act of 1934, as amended (the “Exchange Act”). In\ndesigning and evaluating the disclosure controls and procedures, our manage",
+        "gt": "evaluation of disclosure controls and procedures our management, with the participation of our chief executive officer and our chief financial officer, evaluated the effectiveness of our disclosure controls and procedures pursuant to rule 13a-15 under the securities exchange act of 1934, as amended "
+      },
+      "tail": {
+        "ratio": 59.0,
+        "pass": false,
+        "pred": "conducted an evaluation of the effectiveness of our internal control over financial reporting based on criteria established in Internal Control –\nIntegrated Framework (2013) issued by the Committee of Sponsoring Organizations of the Treadway Commission (“COSO”). Our management\nconcluded that our internal control over financial reporting was effective as of December 31, 2023.",
+        "gt": "nges in internal control over financial reporting there was no change in our internal control over financial reporting that occurred during the quarter ended december 31, 2023, which has materially affected, or is reasonably likely to materially affect, our internal control over financial reporting."
+      }
+    },
+    {
+      "item": "9B",
+      "title": "Other Information",
+      "bucket": "prose",
+      "start_page": 96,
+      "end_page": 96,
+      "head": {
+        "ratio": 99.2,
+        "pass": true,
+        "pred": "None of the Company's directors or officers adopted, modified or terminated a Rule 10b5-1 trading arrangement or a non-Rule 10b5-1 trading\narrangement during the Company's fiscal quarter ended December 31, 2023, as such terms are defined under Item 408(a) of Regulation S-K, except\nas follows:\nOn October 23, 2023, Robyn Denholm, one of our directors, adopted a Rule 10b5-1 trading arrangement for th",
+        "gt": "none of the company’s directors or officers adopted , modified or terminated a rule 10b5-1 trading arrangement or a non-rule 10b5-1 trading arrangement during the company’s fiscal quarter ended december 31, 2023, as such terms are defined under item 408(a) of regulation s-k, except as follows: on oc"
+      },
+      "tail": {
+        "ratio": 99.5,
+        "pass": true,
+        "pred": "On October 23, 2023, Robyn Denholm, one of our directors, adopted a Rule 10b5-1 trading arrangement for the potential sale of up to 281,116\nshares of our common stock, subject to certain conditions. The trading arrangement covers stock options that expire in August 2024. The\narrangement's expiration date is August 16, 2024.\nOn November 13, 2023, Andrew Baglino, Senior Vice President, Powertrain an",
+        "gt": "024. on november 13, 2023 , andrew baglino , senior vice president , powertrain and energy engineering, adopted a rule 10b5-1 trading arrangement for the potential sale of up to 115,500 shares of our common stock, subject to certain conditions. the arrangement's expiration date is december 31, 2024."
+      }
+    },
+    {
+      "item": "15",
+      "title": "Exhibits, Financial Statement Schedules",
+      "bucket": "prose",
+      "start_page": 98,
+      "end_page": 113,
+      "head": {
+        "ratio": 90.5,
+        "pass": true,
+        "pred": "1. Financial statements (see Index to Consolidated Financial Statements in Part II, Item 8 of this report)\n2. All financial statement schedules have been omitted since the required information was not applicable or was not present in amounts sufficient to\nrequire submission of the schedules, or because the information required is included in the consolidated financial statements or the\naccompanyin",
+        "gt": "item 15. exhibits and financial statement schedules 1. financial statements (see index to consolidated financial statements in part ii, item 8 of this report) 2. all financial statement schedules have been omitted since the required information was not applicable or was not present in amounts suffic"
+      },
+      "tail": {
+        "ratio": 100.0,
+        "pass": true,
+        "pred": "(1) Indicates a filing of SolarCity\n(2) Indicates a filing of Maxwell Technologies, Inc.",
+        "gt": "ract or compensatory plan or arrangement † confidential treatment has been requested for portions of this exhibit †† portions of this exhibit have been redacted in compliance with regulation s-k item 601(b)(10). (1) indicates a filing of solarcity (2) indicates a filing of maxwell technologies, inc."
+      }
+    }
+  ]
+}

@@ -1,0 +1,102 @@
+{
+  "label": "AAPL_2025",
+  "ticker": "AAPL",
+  "year": "2025",
+  "cik": "0000320193",
+  "accession_number": "0000320193-25-000079",
+  "company_name": "Apple Inc.",
+  "pdf": "tier2/out/0000320193_2025-09-27_000032019325000079/0000320193_2025-09-27_000032019325000079.pdf",
+  "pdf_pages": 61,
+  "n_extracted": 12,
+  "n_exact": 12,
+  "n_fuzzy": 0,
+  "n_miss": 0,
+  "out_of_order": 0,
+  "items": [
+    {
+      "item": "1",
+      "page": 4,
+      "match": "exact",
+      "flag": null,
+      "snippet": "the company designs, manufactures and markets smar"
+    },
+    {
+      "item": "1A",
+      "page": 8,
+      "match": "exact",
+      "flag": null,
+      "snippet": "the following summarizes factors that could have a"
+    },
+    {
+      "item": "1C",
+      "page": 20,
+      "match": "exact",
+      "flag": null,
+      "snippet": "the company’s head of corporate information securi"
+    },
+    {
+      "item": "2",
+      "page": 20,
+      "match": "exact",
+      "flag": null,
+      "snippet": "the company’s headquarters is located in cupertino"
+    },
+    {
+      "item": "3",
+      "page": 21,
+      "match": "exact",
+      "flag": null,
+      "snippet": "digital markets act investigations"
+    },
+    {
+      "item": "5",
+      "page": 22,
+      "match": "exact",
+      "flag": null,
+      "snippet": "the company’s common stock is traded on the nasdaq"
+    },
+    {
+      "item": "7",
+      "page": 24,
+      "match": "exact",
+      "flag": null,
+      "snippet": "the following discussion should be read in conjunc"
+    },
+    {
+      "item": "7A",
+      "page": 30,
+      "match": "exact",
+      "flag": null,
+      "snippet": "the company is exposed to economic risk from inter"
+    },
+    {
+      "item": "8",
+      "page": 31,
+      "match": "exact",
+      "flag": null,
+      "snippet": "index to consolidated financial statements page co"
+    },
+    {
+      "item": "9A",
+      "page": 55,
+      "match": "exact",
+      "flag": null,
+      "snippet": "inherent limitations over internal controls"
+    },
+    {
+      "item": "9B",
+      "page": 56,
+      "match": "exact",
+      "flag": null,
+      "snippet": "on october 31, 2025, the company announced that ch"
+    },
+    {
+      "item": "15",
+      "page": 57,
+      "match": "exact",
+      "flag": null,
+      "snippet": "documents filed as part of this report"
+    }
+  ],
+  "category": "clean"
+}

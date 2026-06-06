@@ -1,0 +1,95 @@
+{
+  "label": "NFLX_2023",
+  "ticker": "NFLX",
+  "year": "2023",
+  "cik": "0001065280",
+  "accession_number": "0001065280-24-000030",
+  "company_name": "NETFLIX INC",
+  "pdf": "tier2/out/0001065280_2023-12-31_000106528024000030/0001065280_2023-12-31_000106528024000030.pdf",
+  "pdf_pages": 73,
+  "n_extracted": 11,
+  "n_exact": 11,
+  "n_fuzzy": 0,
+  "n_miss": 0,
+  "out_of_order": 0,
+  "items": [
+    {
+      "item": "1",
+      "page": 4,
+      "match": "exact",
+      "flag": null,
+      "snippet": "netflix, inc. (“netflix”, “the company”, “registra"
+    },
+    {
+      "item": "1A",
+      "page": 7,
+      "match": "exact",
+      "flag": null,
+      "snippet": "if any of the following risks actually occur, our "
+    },
+    {
+      "item": "1C",
+      "page": 19,
+      "match": "exact",
+      "flag": null,
+      "snippet": "item 1c. cybersecurity we have an enterprise-wide "
+    },
+    {
+      "item": "2",
+      "page": 21,
+      "match": "exact",
+      "flag": null,
+      "snippet": "we believe that our existing facilities are adequa"
+    },
+    {
+      "item": "3",
+      "page": 21,
+      "match": "exact",
+      "flag": null,
+      "snippet": "information with respect to this item may be found"
+    },
+    {
+      "item": "5",
+      "page": 22,
+      "match": "exact",
+      "flag": null,
+      "snippet": "market for registrant’s common equity, related sto"
+    },
+    {
+      "item": "7",
+      "page": 24,
+      "match": "exact",
+      "flag": null,
+      "snippet": "management’s discussion and analysis of financial "
+    },
+    {
+      "item": "7A",
+      "page": 32,
+      "match": "exact",
+      "flag": null,
+      "snippet": "we are exposed to market risks related to interest"
+    },
+    {
+      "item": "9A",
+      "page": 34,
+      "match": "exact",
+      "flag": null,
+      "snippet": "management’s annual report on internal control ove"
+    },
+    {
+      "item": "9B",
+      "page": 36,
+      "match": "exact",
+      "flag": null,
+      "snippet": "rule 10b5-1 trading plans"
+    },
+    {
+      "item": "15",
+      "page": 38,
+      "match": "exact",
+      "flag": null,
+      "snippet": "the following documents are filed as part of this "
+    }
+  ],
+  "category": "clean"
+}

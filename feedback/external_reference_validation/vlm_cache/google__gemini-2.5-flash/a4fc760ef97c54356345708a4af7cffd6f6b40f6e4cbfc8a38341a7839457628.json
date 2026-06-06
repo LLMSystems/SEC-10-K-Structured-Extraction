@@ -1,0 +1,9 @@
+{
+  "base_url": "https://openrouter.ai/api/v1",
+  "created_at": 1780695016,
+  "image_sha256": "f409d0847df0845dd31091608597bd049bf83598d0937f48643b9499cd3541c6",
+  "model": "google/gemini-2.5-flash",
+  "prompt": "You are shown one page from a SEC 10-K filing rendered as an image.\nThis page contains the BEGINNING of \"Item 1. Business\".\nFind the \"Item 1\" heading, then transcribe VERBATIM the first 5 lines of text that come immediately after it. Include any report title, addressee, or sub-heading exactly as printed — do NOT skip them; only ignore page running-headers, page numbers, and footers.\nOutput ONLY the transcribed text, no commentary, no quotes, no formatting.",
+  "source_path": "tier2\\dataset\\TSLA_2023\\pages\\page_005.png",
+  "text": "Overview\nWe design, develop, manufacture, sell and lease high-performance fully electric vehicles and energy generation and storage systems, and offer\nservices related to our products. We generally sell our products directly to customers, and continue to grow our customer-facing infrastructure\nthrough a global network of vehicle showrooms and service centers, Mobile Service, body shops, Supercharger stations and Destination Chargers to\naccelerate the widespread adoption of our products. We emphasize performance, attractive styling and the safety of our users and workforce in the\ndesign and manufacture of our products and are continuing to develop full self-driving technology for improved safety. We also strive to lower the\ncost of ownership for our customers through continuous efforts to reduce manufacturing costs and by offering financial and other services tailored to\nour products."
+}

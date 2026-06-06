@@ -1,0 +1,9 @@
+{
+  "base_url": "https://openrouter.ai/api/v1",
+  "created_at": 1780682006,
+  "image_sha256": "d09b887617860cf1c5ef666f8d4b43f1042da1acdc897b7e58ed13a30ef930d4",
+  "model": "google/gemma-4-31b-it",
+  "prompt": "You are shown one page from a SEC 10-K filing rendered as an image.\nThis page contains the BEGINNING of \"Item 1. Business\".\nFind that section's heading on the page, then transcribe VERBATIM the first 5 lines of its body text that follow the heading. Ignore running headers, page numbers, footers.\nOutput ONLY the transcribed text, no commentary, no quotes, no formatting.",
+  "source_path": "tier2/dataset/RELL_2025/pages/page_004.png",
+  "text": "Richardson Electronics, Ltd. (the “Company,” “we,” “we,” “our”) is a leading global manufacturer of engineered solutions, green energy products,\npower grid and microwave tubes, and related consumables; power conversion and RF and microwave components including green energy solutions;\ntubes for diagnostic imaging equipment; and customized display solutions. More than 55% of our products are manufactured in LaFox, Illinois,\nMarlborough, Massachusetts, or Donauschingen, Germany, or by one of our manufacturing partners throughout the world. All of our partners\nmanufacture to our strict specifications and per our supplier code of conduct. We serve customers in the alternative energy, healthcare, aviation,"
+}

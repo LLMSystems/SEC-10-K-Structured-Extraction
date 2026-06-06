@@ -1,0 +1,116 @@
+{
+  "label": "GDC_2021",
+  "ticker": "GDC",
+  "year": "2021",
+  "cik": "0001641398",
+  "accession_number": "0001213900-22-016836",
+  "company_name": "GD Culture Group Ltd",
+  "pdf": "tier2/out/0001641398_2021-12-31_000121390022016836/0001641398_2021-12-31_000121390022016836.pdf",
+  "pdf_pages": 118,
+  "n_extracted": 14,
+  "n_exact": 14,
+  "n_fuzzy": 0,
+  "n_miss": 0,
+  "out_of_order": 0,
+  "items": [
+    {
+      "item": "1",
+      "page": 1,
+      "match": "exact",
+      "flag": null,
+      "snippet": "code chain new continent limited"
+    },
+    {
+      "item": "1A",
+      "page": 23,
+      "match": "exact",
+      "flag": null,
+      "snippet": "an investment in our shares"
+    },
+    {
+      "item": "2",
+      "page": 44,
+      "match": "exact",
+      "flag": null,
+      "snippet": "office is located at 119 zhaojuesi south road, roo"
+    },
+    {
+      "item": "3",
+      "page": 44,
+      "match": "exact",
+      "flag": null,
+      "snippet": "the knowledge of our management, there is no litig"
+    },
+    {
+      "item": "5",
+      "page": 45,
+      "match": "exact",
+      "flag": null,
+      "snippet": "5. market for registrant’s common equity, related "
+    },
+    {
+      "item": "7",
+      "page": 50,
+      "match": "exact",
+      "flag": null,
+      "snippet": "7. management’s discussion and analysis of financi"
+    },
+    {
+      "item": "7A",
+      "page": 59,
+      "match": "exact",
+      "flag": null,
+      "snippet": "disclosure in response to"
+    },
+    {
+      "item": "9A",
+      "page": 59,
+      "match": "exact",
+      "flag": null,
+      "snippet": "under the supervision and"
+    },
+    {
+      "item": "10",
+      "page": 61,
+      "match": "exact",
+      "flag": null,
+      "snippet": "the following table sets forth"
+    },
+    {
+      "item": "11",
+      "page": 66,
+      "match": "exact",
+      "flag": null,
+      "snippet": "the following table provides"
+    },
+    {
+      "item": "12",
+      "page": 69,
+      "match": "exact",
+      "flag": null,
+      "snippet": "forth information regarding the beneficial ownersh"
+    },
+    {
+      "item": "13",
+      "page": 69,
+      "match": "exact",
+      "flag": null,
+      "snippet": "except for the employment"
+    },
+    {
+      "item": "14",
+      "page": 71,
+      "match": "exact",
+      "flag": null,
+      "snippet": "was appointed by the company to serve as its indep"
+    },
+    {
+      "item": "15",
+      "page": 73,
+      "match": "exact",
+      "flag": null,
+      "snippet": "the following documents are filed as part of this "
+    }
+  ],
+  "category": "clean"
+}

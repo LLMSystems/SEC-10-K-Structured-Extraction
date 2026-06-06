@@ -1,0 +1,9 @@
+{
+  "base_url": "https://openrouter.ai/api/v1",
+  "created_at": 1780680884,
+  "image_sha256": "5c67f00d53d6ee94da9751d2df02dd890cf072819c5af496f2600a269ce3b07d",
+  "model": "google/gemma-4-31b-it",
+  "prompt": "You are shown one page from a SEC 10-K filing rendered as an image.\nThis page contains the BEGINNING of \"Item 7. Management's Discussion and Analysis of Financial Condition and Results of Operations\".\nFind that section's heading on the page, then transcribe VERBATIM the first 5 lines of its body text that follow the heading (ignore running headers, page numbers, footers).\nRespond with ONLY a JSON object: {\"lines\": [\"line 1\", \"line 2\", ...]}",
+  "source_path": "tier2/dataset/RELL_2025/pages/page_023.png",
+  "text": "```json\n{\n  \"lines\": [\n    \"The following discussion and Analysis be read in conjunction with the consolidated financial statements and related notes.\",\n    \"\",\n    \"Management's Discussion and Analysis of Financial Condition and Results of Operations (\\\"MD&A\\\") is intended to assist the reader in\",\n    \"better understanding our business, results of operations, financial condition, changes in financial condition, critical accounting estimates and\",\n    \"significant developments. MD&A is provided as a supplement to, and should be read in conjunction with, our consolidated financial statements and\"\n  ]\n}\n```"
+}

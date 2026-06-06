@@ -1,0 +1,9 @@
+{
+  "base_url": "https://openrouter.ai/api/v1",
+  "created_at": 1780684683,
+  "image_sha256": "ec7199b41fd7a84757dc56d6a6863a91d954c1fc4e19f2cfc0b1e0dcc9e23630",
+  "model": "google/gemma-4-31b-it",
+  "prompt": "You are shown one page from a SEC 10-K filing rendered as an image.\nThe text of Item \"1A. Risk Factors\" ENDS somewhere on this page; the next section is \"Item 1B. Unresolved Staff Comments\".\nFind where Item 1A ends: right before the \"Item 1B\" heading if that heading appears on this page, otherwise at the very bottom of the page.\nTranscribe VERBATIM the 5 lines of Item 1A that come immediately BEFORE that ending point (its final lines). Give the running prose closest to the end — do NOT transcribe lines from the top or middle of the page, and do NOT transcribe a data table or figure; if the very end is a table, give the prose just before it. Ignore running headers, page numbers, footers.\nOutput ONLY the transcribed text, no commentary, no quotes, no formatting.",
+  "source_path": "tier2/dataset/WMT_2026/pages/page_027.png",
+  "text": "We strive to deliver shareholder value through our business, although shareholder expectations continue to evolve and are not uniform, and our diverse\nshareholders expect us to make significant progress in certain areas. We have established, and may continue to establish, various goals and initiatives\nto achieve our strategic objectives. However, we cannot assure you that we will achieve these goals or that our initiatives will be successful. We have\nshared about our shared values, priorities, strategies, progress and challenges through our online social and environmental reporting, which is not incorporated\nby reference into this annual report on Form 10-K. Achievement of these aspirations and goals is subject to risks and uncertainties that could affect"
+}

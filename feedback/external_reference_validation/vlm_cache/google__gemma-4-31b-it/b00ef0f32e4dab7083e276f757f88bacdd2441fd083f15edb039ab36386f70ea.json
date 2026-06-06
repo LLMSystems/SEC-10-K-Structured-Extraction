@@ -1,0 +1,9 @@
+{
+  "base_url": "https://openrouter.ai/api/v1",
+  "created_at": 1780690765,
+  "image_sha256": "a5e1fcff2769b0ab7257a73b736df48462f8e83203f85d6bf077454aedd0dbff",
+  "model": "google/gemma-4-31b-it",
+  "prompt": "You are shown one page from a SEC 10-K filing rendered as an image.\nThis page contains the BEGINNING of \"Item 13. Certain Relationships and Related Transactions, and Director Independence\".\nFind the \"Item 13\" heading, then transcribe VERBATIM the first 5 lines of text that come immediately after it. Include any report title, addressee, or sub-heading exactly as printed — do NOT skip them; only ignore page running-headers, page numbers, and footers.\nOutput ONLY the transcribed text, no commentary, no quotes, no formatting.",
+  "source_path": "tier2\\dataset\\GDC_2023\\pages\\page_072.png",
+  "text": "Certain Relationships and Related Transactions\n\nExcept for the employment agreements previously entered into between us and certain of our named executive officers, and the related party\ntransaction described below, none of our directors or named executive officers, nor any person who owned of record or was known to own a\ncertain beneficialy more than 5% of the outstanding Shares of our common stock, nor any associate or affiliate of such persons or companies, has any\nmaterial interest, direct or indirect, in any transaction, or in any proposed transaction, which has materially affected or will affect us."
+}

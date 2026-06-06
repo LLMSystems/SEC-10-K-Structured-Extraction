@@ -1,0 +1,9 @@
+{
+  "base_url": "https://openrouter.ai/api/v1",
+  "created_at": 1780694115,
+  "image_sha256": "c53b30d5910780762d8cc1f3487901376b5492564f359a04b383d96881ccd5e1",
+  "model": "qwen/qwen3.5-122b-a10b",
+  "prompt": "You are shown one page from a SEC 10-K filing rendered as an image.\nThis page contains the BEGINNING of \"Item 9B. Other Information\".\nFind the \"Item 9B\" heading, then transcribe VERBATIM the first 5 lines of text that come immediately after it. Include any report title, addressee, or sub-heading exactly as printed — do NOT skip them; only ignore page running-headers, page numbers, and footers.\nOutput ONLY the transcribed text, no commentary, no quotes, no formatting.",
+  "source_path": "tier2\\dataset\\TSLA_2023\\pages\\page_096.png",
+  "text": "ITEM 9B. OTHER INFORMATION\nNone of the Company’s directors or officers adopted, modified or terminated a Rule 10b5-1 trading arrangement or a non-Rule 10b5-1 trading\narrangement during the Company’s fiscal quarter ended December 31, 2023, as such terms are defined under Item 408(a) of Regulation S-K, except\nas follows:\nOn October 23, 2023, Robyn Denholm, one of our directors, adopted a Rule 10b5-1 trading arrangement for the potential sale of up to 281,116"
+}

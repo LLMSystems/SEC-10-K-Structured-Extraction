@@ -1,0 +1,102 @@
+{
+  "label": "TSLA_2025",
+  "ticker": "TSLA",
+  "year": "2025",
+  "cik": "0001318605",
+  "accession_number": "0001628280-26-003952",
+  "company_name": "Tesla, Inc.",
+  "pdf": "tier2/out/0001318605_2025-12-31_000162828026003952/0001318605_2025-12-31_000162828026003952.pdf",
+  "pdf_pages": 106,
+  "n_extracted": 12,
+  "n_exact": 12,
+  "n_fuzzy": 0,
+  "n_miss": 0,
+  "out_of_order": 0,
+  "items": [
+    {
+      "item": "1",
+      "page": 5,
+      "match": "exact",
+      "flag": null,
+      "snippet": "we are focused on bringing artificial intelligence"
+    },
+    {
+      "item": "1A",
+      "page": 15,
+      "match": "exact",
+      "flag": null,
+      "snippet": "you should carefully consider the risks described "
+    },
+    {
+      "item": "1C",
+      "page": 30,
+      "match": "exact",
+      "flag": null,
+      "snippet": "security events and data incidents are evaluated, "
+    },
+    {
+      "item": "2",
+      "page": 31,
+      "match": "exact",
+      "flag": null,
+      "snippet": "primary manufacturing facilities location owned or"
+    },
+    {
+      "item": "3",
+      "page": 31,
+      "match": "exact",
+      "flag": null,
+      "snippet": "commitments and contingencies"
+    },
+    {
+      "item": "5",
+      "page": 32,
+      "match": "exact",
+      "flag": null,
+      "snippet": "our common stock has traded on the nasdaq global s"
+    },
+    {
+      "item": "7",
+      "page": 34,
+      "match": "exact",
+      "flag": null,
+      "snippet": "the following discussion and analysis should be re"
+    },
+    {
+      "item": "7A",
+      "page": 47,
+      "match": "exact",
+      "flag": null,
+      "snippet": "we transact business globally in multiple currenci"
+    },
+    {
+      "item": "8",
+      "page": 48,
+      "match": "exact",
+      "flag": null,
+      "snippet": "index to consolidated financial statements"
+    },
+    {
+      "item": "9A",
+      "page": 49,
+      "match": "exact",
+      "flag": null,
+      "snippet": "management’s report on internal control over finan"
+    },
+    {
+      "item": "9B",
+      "page": 99,
+      "match": "exact",
+      "flag": null,
+      "snippet": "rule 10b5-1 trading arrangements"
+    },
+    {
+      "item": "15",
+      "page": 101,
+      "match": "exact",
+      "flag": null,
+      "snippet": "financial statements (see"
+    }
+  ],
+  "category": "clean"
+}

@@ -1,0 +1,9 @@
+{
+  "base_url": "https://openrouter.ai/api/v1",
+  "created_at": 1780696692,
+  "image_sha256": "91ba84d98ee6183d91052798aa1d3458830bcef7c58ac1a9b3847486404c706b",
+  "model": "google/gemini-3.1-flash-lite",
+  "prompt": "You are shown one page from a SEC 10-K filing rendered as an image.\nThis page contains the BEGINNING of \"Item 2. Properties\".\nFind the \"Item 2\" heading, then transcribe VERBATIM the first 5 lines of text that come immediately after it. Include any report title, addressee, or sub-heading exactly as printed — do NOT skip them; only ignore page running-headers, page numbers, and footers.\nOutput ONLY the transcribed text, no commentary, no quotes, no formatting.",
+  "source_path": "tier2\\dataset\\GDC_2023\\pages\\page_045.png",
+  "text": "Facilities\nOur current executive office is located at 810 Seventh Avenue, 22nd Floor, New York, NY 10019. The rent for this space is approximately $31,000\nper month. The term of the lease is five years and five months, starting from September 22, 2023. We consider our current office space adequate for\nour current operations.\nIntellectual Properties"
+}

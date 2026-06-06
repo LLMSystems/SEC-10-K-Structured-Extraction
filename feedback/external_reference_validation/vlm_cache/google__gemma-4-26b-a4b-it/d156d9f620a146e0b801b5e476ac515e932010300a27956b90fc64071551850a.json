@@ -1,0 +1,9 @@
+{
+  "base_url": "https://openrouter.ai/api/v1",
+  "created_at": 1780696697,
+  "image_sha256": "cb6ced89bda4d3b3409f35842f89dec284b7a3b845c1843afd3c9b39beeac32a",
+  "model": "google/gemma-4-26b-a4b-it",
+  "prompt": "You are shown one page from a SEC 10-K filing rendered as an image.\nThis page contains the BEGINNING of \"Item 1. Business\".\nFind the \"Item 1\" heading, then transcribe VERBATIM the first 5 lines of text that come immediately after it. Include any report title, addressee, or sub-heading exactly as printed — do NOT skip them; only ignore page running-headers, page numbers, and footers.\nOutput ONLY the transcribed text, no commentary, no quotes, no formatting.",
+  "source_path": "tier2\\dataset\\GDC_2023\\pages\\page_006.png",
+  "text": "Overview\nOur Company\nOverview\nGuided by the vision of becoming a global leader in the digital entertainment and e-commerce industry, the Company focuses on leveraging cutting-edge AI technology to create immersive and interactive experiences."
+}

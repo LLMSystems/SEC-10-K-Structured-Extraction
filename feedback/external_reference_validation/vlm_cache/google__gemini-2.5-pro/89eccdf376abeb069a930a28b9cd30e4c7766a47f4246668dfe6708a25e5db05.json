@@ -1,0 +1,9 @@
+{
+  "base_url": "https://openrouter.ai/api/v1",
+  "created_at": 1780697304,
+  "image_sha256": "75bd50cf8b472abe4ce01710d11964f169c2999614e1462aa4360ba33ff34656",
+  "model": "google/gemini-2.5-pro",
+  "prompt": "You are shown one page from a SEC 10-K filing rendered as an image.\nThis page contains the BEGINNING of \"Item 3. Legal Proceedings\".\nFind the \"Item 3\" heading, then transcribe VERBATIM the first 5 lines of text that come immediately after it. Include any report title, addressee, or sub-heading exactly as printed — do NOT skip them; only ignore page running-headers, page numbers, and footers.\nOutput ONLY the transcribed text, no commentary, no quotes, no formatting.",
+  "source_path": "tier2\\dataset\\TSLA_2023\\pages\\page_031.png",
+  "text": "For a description of our material pending legal proceedings, please see Note 15, Commitments and Contingencies, to the consolidated financial\nstatements included elsewhere in this Annual Report on Form 10-K.\n\nIn addition, each of the matters below is being disclosed pursuant to Item 103 of Regulation S-K because it relates to environmental\nregulations and aggregate civil penalties that we currently believe could potentially exceed $1 million. We believe that any proceeding that is material\nto our business or financial condition is likely to have potential penalties far in excess of such amount."
+}

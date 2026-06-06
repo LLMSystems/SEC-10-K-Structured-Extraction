@@ -1,0 +1,65 @@
+[
+  {
+    "rule": "rule_1_range_valid",
+    "operator": "reverse",
+    "count": 542,
+    "detected": 542,
+    "file": "rule_1_range_valid/reverse.json"
+  },
+  {
+    "rule": "rule_1_range_valid",
+    "operator": "zero",
+    "count": 542,
+    "detected": 542,
+    "file": "rule_1_range_valid/zero.json"
+  },
+  {
+    "rule": "rule_1_range_valid",
+    "operator": "neg_start",
+    "count": 542,
+    "detected": 542,
+    "file": "rule_1_range_valid/neg_start.json"
+  },
+  {
+    "rule": "rule_2_monotonic",
+    "operator": "swap",
+    "count": 508,
+    "detected": 508,
+    "file": "rule_2_monotonic/swap.json"
+  },
+  {
+    "rule": "rule_2_monotonic",
+    "operator": "overlap",
+    "count": 508,
+    "detected": 508,
+    "file": "rule_2_monotonic/overlap.json"
+  },
+  {
+    "rule": "rule_2_monotonic",
+    "operator": "displace",
+    "count": 508,
+    "detected": 508,
+    "file": "rule_2_monotonic/displace.json"
+  },
+  {
+    "rule": "rule_3_coverage",
+    "operator": "omit_item",
+    "count": 542,
+    "detected": 401,
+    "file": "rule_3_coverage/omit_item.json"
+  },
+  {
+    "rule": "rule_4_content_floor",
+    "operator": "gut",
+    "count": 34,
+    "detected": 34,
+    "file": "rule_4_content_floor/gut.json"
+  },
+  {
+    "rule": "rule_4_content_floor",
+    "operator": "keep_one",
+    "count": 34,
+    "detected": 34,
+    "file": "rule_4_content_floor/keep_one.json"
+  }
+]

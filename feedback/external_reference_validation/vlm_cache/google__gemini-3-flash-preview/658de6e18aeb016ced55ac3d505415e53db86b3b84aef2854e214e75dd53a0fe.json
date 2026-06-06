@@ -1,0 +1,9 @@
+{
+  "base_url": "https://openrouter.ai/api/v1",
+  "created_at": 1780695210,
+  "image_sha256": "9872246bf4efe468de8301a70150daa99d2b280ad9963b11ed50befc82b73936",
+  "model": "google/gemini-3-flash-preview",
+  "prompt": "You are shown one page from a SEC 10-K filing rendered as an image.\nThis page contains the BEGINNING of \"Item 8. Financial Statements and Supplementary Data\".\nFind the \"Item 8\" heading, then transcribe VERBATIM the first 5 lines of text that come immediately after it. Include any report title, addressee, or sub-heading exactly as printed — do NOT skip them; only ignore page running-headers, page numbers, and footers.\nOutput ONLY the transcribed text, no commentary, no quotes, no formatting.",
+  "source_path": "tier2\\dataset\\RELL_2025\\pages\\page_035.png",
+  "text": "Report of Independent Registered Public Accounting Firm\nBoard of Directors and Stockholders\nRichardson Electronics, Ltd.\nLaFox, Illinois\nOpinion on the Consolidated Financial Statements"
+}

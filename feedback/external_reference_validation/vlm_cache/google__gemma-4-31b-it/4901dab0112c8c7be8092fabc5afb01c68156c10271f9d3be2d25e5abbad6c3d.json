@@ -1,0 +1,9 @@
+{
+  "base_url": "https://openrouter.ai/api/v1",
+  "created_at": 1780684597,
+  "image_sha256": "91ba84d98ee6183d91052798aa1d3458830bcef7c58ac1a9b3847486404c706b",
+  "model": "google/gemma-4-31b-it",
+  "prompt": "You are shown one page from a SEC 10-K filing rendered as an image.\nThe text of Item \"2. Properties\" ENDS somewhere on this page; the next section is \"Item 3. Legal Proceedings\".\nFind where Item 2 ends: right before the \"Item 3\" heading if that heading appears on this page, otherwise at the very bottom of the page.\nTranscribe VERBATIM the 5 lines of Item 2 that come immediately BEFORE that ending point (its final lines). Give the running prose closest to the end — do NOT transcribe lines from the top or middle of the page, and do NOT transcribe a data table or figure; if the very end is a table, give the prose just before it. Ignore running headers, page numbers, footers.\nOutput ONLY the transcribed text, no commentary, no quotes, no formatting.",
+  "source_path": "tier2/dataset/GDC_2023/pages/page_045.png",
+  "text": "We entered into a software purchase agreement with Northeast Management LLC, a seller unaffiliated with us. Pursuant to the software purchase\nagreement, we purchased all of the seller’s right, title, and interest in and to the software, Tribal Light. We have used and plan to continue using the\nsoftware to develop video games. We operate the game through interactive live stream, facilitating real-time engagement between players and\nviewers through interactive features embedded within the live streaming platform.\nWe have the right to use the two domains: gdculturegroup.com and aicatalysis.com."
+}

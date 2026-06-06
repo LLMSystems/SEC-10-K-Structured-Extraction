@@ -1,0 +1,9 @@
+{
+  "base_url": "https://openrouter.ai/api/v1",
+  "created_at": 1780696810,
+  "image_sha256": "d6fc50fbe2b80467eb529bc1d13d4df97972c70bc8fad7a1d101874d147c7d2d",
+  "model": "google/gemma-4-26b-a4b-it",
+  "prompt": "You are shown one page from a SEC 10-K filing rendered as an image.\nItem \"2. Properties\" ENDS on this page; the next section is \"Item 3. Legal Proceedings\".\nFirst locate the bottom edge of Item 2's text:\n- If the \"Item 3\" heading is visible on this page, Item 2 ends on the line directly ABOVE that heading.\n- Otherwise Item 2 runs all the way to the very bottom of the page.\nThen transcribe VERBATIM the LAST 5 lines of Item 2 at that bottom edge — the FINAL lines right before the section ends, NOT lines from the top or middle of the page. Ignore running headers, page numbers, footers.\nOutput ONLY the transcribed text, no commentary, no quotes, no formatting.",
+  "source_path": "tier2\\dataset\\WMT_2026\\pages\\page_029.png",
+  "text": "Walmart International retail units\nSam's Club U.S. retail units\nWalmart International retail units\nTotal retail units\nTotal distribution facilities"
+}

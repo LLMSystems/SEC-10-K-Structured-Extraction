@@ -1,0 +1,9 @@
+{
+  "base_url": "https://openrouter.ai/api/v1",
+  "created_at": 1780693364,
+  "image_sha256": "c53b30d5910780762d8cc1f3487901376b5492564f359a04b383d96881ccd5e1",
+  "model": "google/gemma-4-31b-it",
+  "prompt": "You are shown one page from a SEC 10-K filing rendered as an image.\nItem \"9B. Other Information\" ENDS on this page; the next section is \"Item 9C. Disclosure Regarding Foreign Jurisdictions that Prevent Inspections\".\nLocate the bottom edge of Item 9B's text on the page.\n- If the \"Item 9C\" heading is visible on this page, then Item 9B ends on the line directly ABOVE that heading.\n- Otherwise, Item 9B continues to the bottom of the page.\nThen transcribe VERBATIM the LAST 5 lines of Item 9B immediately before it ends. These must be the FINAL lines right before the section ends, NOT lines from the top or middle of the page. Ignore running headers, page numbers, footers.\nOutput ONLY the transcribed text, no commentary, no quotes, no formatting.",
+  "source_path": "tier2\\dataset\\TSLA_2023\\pages\\page_096.png",
+  "text": "shares of our common stock, subject to certain conditions. The trading arrangement covers stock options that expire in August 2024. The\narrangement's expiration date is August 16, 2024.\n\nOn November 13, 2023, Andrew Baglino, Senior Vice President, Powertrain and Energy Engineering, adopted a Rule 10b5-1 trading\narrangement for the potential sale of up to 115,500 shares of our common stock, subject to certain conditions. The arrangement expiration date is\nDecember 31, 2024."
+}

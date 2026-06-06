@@ -1,0 +1,9 @@
+{
+  "base_url": "https://openrouter.ai/api/v1",
+  "created_at": 1780684241,
+  "image_sha256": "59a56cdd4773bd9658752280b6dfbd74359d8aa7a06a5306d84db6f55b5f5ee0",
+  "model": "google/gemma-4-31b-it",
+  "prompt": "You are shown one page from a SEC 10-K filing rendered as an image.\nItem \"9B. Other Information\" ENDS on this page; the next section is \"Item 15. Exhibits, Financial Statement Schedules\".\nFirst locate the bottom edge of Item 9B's text:\n- If the \"Item 15\" heading is visible on this page, Item 9B ends on the line directly ABOVE that heading.\n- Otherwise Item 9B runs all the way to the very bottom of the page.\nThen transcribe VERBATIM the LAST 5 lines of Item 9B at that bottom edge — the FINAL lines right before the section ends, NOT lines from the top or middle of the page. Ignore running headers, page numbers, footers.\nOutput ONLY the transcribed text, no commentary, no quotes, no formatting.",
+  "source_path": "tier2/dataset/NFLX_2025/pages/page_039.png",
+  "text": "(5) Ann Mather, a member of the Board of Directors, entered into a pre-arranged stocking track plan pursuant to Rule 10b5-1 on November 7, 2025. Ms. Mather's\nplan provides for the potential exercise of vested stock options and the associated sale of up to 23,430 shares of Netflix common stock. The plan expires on\nDecember 31, 2025, or upon the earlier completion or all authorized transactions under the plan.\n\nOther than those disclosed above, none of our directors or officers adopted or terminated a \"non-Rule 10b5-1 trading arrangement\" as defined in\nItem 408 of Regulation S-K."
+}

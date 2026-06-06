@@ -1,0 +1,9 @@
+{
+  "base_url": "https://openrouter.ai/api/v1",
+  "created_at": 1780681646,
+  "image_sha256": "45598188051d5d44bb0f8d69d194d8401f8a9c0e62767105c75dfb1558ec9680",
+  "model": "google/gemma-4-31b-it",
+  "prompt": "You are shown one page from a SEC 10-K filing rendered as an image.\nThis page contains the BEGINNING of \"Item 9B. Other Information\".\nFind that section's heading on the page, then transcribe VERBATIM the first 5 lines of its body text that follow the heading (ignore running headers, page numbers, footers).\nRespond with ONLY a JSON object: {\"lines\": [\"line 1\", \"line 2\", ...]}",
+  "source_path": "tier2/dataset/RELL_2025/pages/page_068.png",
+  "text": "```json\n{\"lines\": [\"10b5-1 Trading Arrangement\", \"During the most recently completed fiscal quarter, no director or officer of the Company adopted, modified or terminated a \\\"Rule 10b5-1\", \"trading arrangement\\\" or a \\\"non-Rule 10b5-1 trading arrangement\\\" (in each case, as defined in Item 408 of Regulation S-K).\", \"Insider Trading Policies\", \"The Company has adopted insider trading policies and procedures governing the purchase, sale and other disposition of its securities by\"]}\n```"
+}

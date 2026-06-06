@@ -1,0 +1,9 @@
+{
+  "base_url": "https://openrouter.ai/api/v1",
+  "created_at": 1780695743,
+  "image_sha256": "e277150d8d0f8d2e42733c9aa11a7543a88b4ad61bc693b1b89dc774dceedc36",
+  "model": "qwen/qwen3.6-plus",
+  "prompt": "You are shown one page from a SEC 10-K filing rendered as an image.\nThis page contains the BEGINNING of \"Item 2. Properties\".\nFind the \"Item 2\" heading, then transcribe VERBATIM the first 5 lines of text that come immediately after it. Include any report title, addressee, or sub-heading exactly as printed — do NOT skip them; only ignore page running-headers, page numbers, and footers.\nOutput ONLY the transcribed text, no commentary, no quotes, no formatting.",
+  "source_path": "tier2\\dataset\\RELL_2025\\pages\\page_020.png",
+  "text": "The Company owns one facility and leases 24 facilities. We own our corporate facility and largest distribution center, which is located on approximately 100 acres in LaFox, Illinois and consists of approximately 224,000 square feet of manufacturing, warehouse and office space. We maintain geographically diverse facilities because we believe this provides value to our customers and suppliers, and limits market risk and exchange rate exposure. We believe our properties are well maintained and adequate for our present needs. The extent of utilization varies from property to property and from time to time during the year.\n\nOur facility locations, their primary use and segments served are as follows:"
+}

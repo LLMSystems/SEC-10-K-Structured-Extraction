@@ -1,0 +1,9 @@
+{
+  "base_url": "https://openrouter.ai/api/v1",
+  "created_at": 1780684226,
+  "image_sha256": "bd16edcc7a0c414742742737b7b3822f54c09ee6198efa9a4fc0a1b4cf52e00d",
+  "model": "google/gemma-4-31b-it",
+  "prompt": "You are shown one page from a SEC 10-K filing rendered as an image.\nItem \"1C. Cybersecurity\" ENDS on this page; the next section is \"Item 2. Properties\".\nFirst locate the bottom edge of Item 1C's text:\n- If the \"Item 2\" heading is visible on this page, Item 1C ends on the line directly ABOVE that heading.\n- Otherwise Item 1C runs all the way to the very bottom of the page.\nThen transcribe VERBATIM the LAST 5 lines of Item 1C at that bottom edge — the FINAL lines right before the section ends, NOT lines from the top or middle of the page. Ignore running headers, page numbers, footers.\nOutput ONLY the transcribed text, no commentary, no quotes, no formatting.",
+  "source_path": "tier2/dataset/NFLX_2025/pages/page_020.png",
+  "text": "The Board oversees our annual enterprise risk assessment, where we assess key risks within the company, including security and technology\nrisks and cybersecurity threats. The Audit Committee of the Board oversees our cybersecurity risk and receives regular reports from our Senior\nDirector, Security, Privacy & Assurance on various cybersecurity matters, including risk assessments, mitigation strategies, areas of emerging risks,\nincidents and industry trends, and other areas of importance."
+}

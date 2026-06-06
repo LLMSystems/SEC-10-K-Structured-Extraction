@@ -1,0 +1,9 @@
+{
+  "base_url": "https://openrouter.ai/api/v1",
+  "created_at": 1780684635,
+  "image_sha256": "31dfb453caa9d28bfe251cf4a1fdb770bebb952b2e3eebc529ef854df2e54f90",
+  "model": "google/gemma-4-31b-it",
+  "prompt": "You are shown one page from a SEC 10-K filing rendered as an image.\nThe text of Item \"5. Market for Registrant's Common Equity, Related Stockholder Matters and Issuer Purchases of Equity Securities\" ENDS somewhere on this page; the next section is \"Item 6. Reserved\".\nFind where Item 5 ends: right before the \"Item 6\" heading if that heading appears on this page, otherwise at the very bottom of the page.\nTranscribe VERBATIM the 5 lines of Item 5 that come immediately BEFORE that ending point (its final lines). Give the running prose closest to the end — do NOT transcribe lines from the top or middle of the page, and do NOT transcribe a data table or figure; if the very end is a table, give the prose just before it. Ignore running headers, page numbers, footers.\nOutput ONLY the transcribed text, no commentary, no quotes, no formatting.",
+  "source_path": "tier2/dataset/NFLX_2025/pages/page_023.png",
+  "text": "The following graph compares, for the five year period ended December 31, 2025, the total cumulative stockholder return on the Company’s\ncommon stock, with the total cumulative return of the NASDAQ Composite Index, the S&P 500 Index and the RDG Internet Composite Index.\nMeasurement points are the last trading day of each of the Company’s fiscal years ended December 31, 2020, December 31, 2021, December 31,\n2022, December 31, 2023, December 31, 2024 and December 31, 2025. Total cumulative stockholder return assumes $100 invested at the beginning\nof the period in the Company’s common stock, the stocks represented in the NASDAQ Composite Index, the stocks represented in the S&P 500"
+}

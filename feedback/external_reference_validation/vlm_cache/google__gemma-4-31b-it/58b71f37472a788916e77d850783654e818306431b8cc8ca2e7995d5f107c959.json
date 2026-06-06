@@ -1,0 +1,9 @@
+{
+  "base_url": "https://openrouter.ai/api/v1",
+  "created_at": 1780682159,
+  "image_sha256": "f70784bab3802b643cfe68e8f33fdbf9b23ef5738b126396bd1494eb9d115295",
+  "model": "google/gemma-4-31b-it",
+  "prompt": "You are shown one page from a SEC 10-K filing rendered as an image.\nThis page contains the BEGINNING of \"Item 7A. Quantitative and Qualitative Disclosures About Market Risk\".\nFind that section's heading on the page, then transcribe VERBATIM the first 5 lines of its body text that follow the heading. Ignore running headers, page numbers, footers.\nOutput ONLY the transcribed text, no commentary, no quotes, no formatting.",
+  "source_path": "tier2/dataset/RELL_2025/pages/page_034.png",
+  "text": "Risk Management and Market Sensitive Financial Instruments\n\nWe are exposed to many different market risks with the various industries we serve. The primary financial risk we are exposed to is foreign\ncurrency exchange, as certain operations, assets and liabilities of ours are denominated in foreign currencies. We manage these risks through normal\noperating and financing activities.\n\nForeign Currency Exposure"
+}

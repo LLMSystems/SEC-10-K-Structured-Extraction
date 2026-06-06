@@ -1,0 +1,9 @@
+{
+  "base_url": "https://openrouter.ai/api/v1",
+  "created_at": 1780684296,
+  "image_sha256": "ec7199b41fd7a84757dc56d6a6863a91d954c1fc4e19f2cfc0b1e0dcc9e23630",
+  "model": "google/gemma-4-31b-it",
+  "prompt": "You are shown one page from a SEC 10-K filing rendered as an image.\nThis page contains the BEGINNING of \"Item 1C. Cybersecurity\".\nFind the \"Item 1C\" heading, then transcribe VERBATIM the first 5 lines of text that come immediately after it. Include any report title, addressee, or sub-heading exactly as printed — do NOT skip them; only ignore page running-headers, page numbers, and footers.\nOutput ONLY the transcribed text, no commentary, no quotes, no formatting.",
+  "source_path": "tier2/dataset/WMT_2026/pages/page_027.png",
+  "text": "CYBERSECURITY\nWalmart seeks to build and maintain the trust of customers, associates, shareholders and other stakeholders with respect to our use of technology and\ndata. Our digital trust commitments, in line with the Company’s values of service, excellence, integrity and respect for the individual, provide a\nfoundation for our approach to cybersecurity.\nThe Board of Directors, committees of the Board of Directors and Management coordinate risk oversight and risk management responsibilities, and"
+}

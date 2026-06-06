@@ -1,0 +1,102 @@
+{
+  "label": "WMT_2026",
+  "ticker": "WMT",
+  "year": "2026",
+  "cik": "0000104169",
+  "accession_number": "0000104169-26-000055",
+  "company_name": "Walmart Inc.",
+  "pdf": "tier2/out/0000104169_2026-01-31_000010416926000055/0000104169_2026-01-31_000010416926000055.pdf",
+  "pdf_pages": 87,
+  "n_extracted": 12,
+  "n_exact": 12,
+  "n_fuzzy": 0,
+  "n_miss": 0,
+  "out_of_order": 0,
+  "items": [
+    {
+      "item": "1",
+      "page": 6,
+      "match": "exact",
+      "flag": null,
+      "snippet": "walmart inc. (\"walmart,\" the \"company\" or \"we\") is"
+    },
+    {
+      "item": "1A",
+      "page": 13,
+      "match": "exact",
+      "flag": null,
+      "snippet": "failure to successfully execute our omnichannel st"
+    },
+    {
+      "item": "1C",
+      "page": 27,
+      "match": "exact",
+      "flag": null,
+      "snippet": "our board of directors, which has primary responsi"
+    },
+    {
+      "item": "2",
+      "page": 29,
+      "match": "exact",
+      "flag": null,
+      "snippet": ", information on our retail units for walmart u.s."
+    },
+    {
+      "item": "3",
+      "page": 30,
+      "match": "exact",
+      "flag": null,
+      "snippet": "i. supplemental information:"
+    },
+    {
+      "item": "5",
+      "page": 31,
+      "match": "exact",
+      "flag": null,
+      "snippet": "effective december 9, 2025, the principal market o"
+    },
+    {
+      "item": "7",
+      "page": 33,
+      "match": "exact",
+      "flag": null,
+      "snippet": "this discussion, which presents our results for th"
+    },
+    {
+      "item": "7A",
+      "page": 46,
+      "match": "exact",
+      "flag": null,
+      "snippet": "in addition to the risks inherent in our operation"
+    },
+    {
+      "item": "8",
+      "page": 48,
+      "match": "exact",
+      "flag": null,
+      "snippet": "consolidated financial statements of walmart inc."
+    },
+    {
+      "item": "9A",
+      "page": 80,
+      "match": "exact",
+      "flag": null,
+      "snippet": "in the ordinary course of business, we review our "
+    },
+    {
+      "item": "9B",
+      "page": 81,
+      "match": "exact",
+      "flag": null,
+      "snippet": "of directors and executive officers"
+    },
+    {
+      "item": "15",
+      "page": 83,
+      "match": "exact",
+      "flag": null,
+      "snippet": "(a) documents filed as part of this report are as "
+    }
+  ],
+  "category": "clean"
+}
