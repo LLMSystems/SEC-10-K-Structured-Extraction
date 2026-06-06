@@ -1,0 +1,9 @@
+{
+  "base_url": "https://openrouter.ai/api/v1",
+  "created_at": 1780766976,
+  "image_sha256": "3c7c1916764d4e2ee939830946bd6fea3ec94b4b19828022ef2776d7af3a1870+0ac6836ef1e49893eee40437acfb95fb885bdb67c34ea7ef0d047487b50ec801",
+  "model": "google/gemma-4-26b-a4b-it",
+  "prompt": "You are shown the last 1-2 rendered pages (in order) of the region for \"Item 9A. Controls and Procedures\". The next section is \"Item 9B. Other Information\".\nFind where Item 9A ends — right before the \"Item 9B\" heading if it appears, otherwise the very bottom of the last page — and transcribe VERBATIM the last 5 lines of Item 9A before that point. Ignore running headers, page numbers, footers.\nOutput ONLY the transcribed text, no commentary, no quotes, no formatting.",
+  "source_path": "feedback\\external_reference_validation\\dataset\\RELL_2025\\pages\\page_066.png;feedback\\external_reference_validation\\dataset\\RELL_2025\\pages\\page_067.png",
+  "text": "and plan and perform the audit to obtain reasonable assurance about whether effective internal control over financial reporting was maintained in all\nmaterial respects. Our audit included obtaining an understanding of internal control over financial reporting, assessing the risk that a material\nweakness exists, and testing and evaluating the design and operating effectiveness of internal control based on the assessed risk. Our audit also\nincluded performing such other procedures as we considered necessary in the circumstances. We believe that our audit provides a reasonable basis\nfor our opinion."
+}

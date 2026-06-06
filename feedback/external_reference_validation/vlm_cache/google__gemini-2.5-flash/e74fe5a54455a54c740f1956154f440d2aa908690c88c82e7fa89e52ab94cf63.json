@@ -1,0 +1,9 @@
+{
+  "base_url": "https://openrouter.ai/api/v1",
+  "created_at": 1780766630,
+  "image_sha256": "88346dac94aa7825f7e4214c07c38472d3fcc9b356d1d83def8a15145a774b94+ce7941ba28ef19842f83678eb004df5b1b70552864438784c3a998b57630134a",
+  "model": "google/gemini-2.5-flash",
+  "prompt": "You are shown the last 1-2 rendered pages (in order) of the region for \"Item 7. Management's Discussion and Analysis of Financial Condition and Results of Operations\". The next section is \"Item 7A. Quantitative and Qualitative Disclosures About Market Risk\".\nFind where Item 7 ends — right before the \"Item 7A\" heading if it appears, otherwise the very bottom of the last page — and transcribe VERBATIM the last 5 lines of Item 7 before that point. Ignore running headers, page numbers, footers.\nOutput ONLY the transcribed text, no commentary, no quotes, no formatting.",
+  "source_path": "feedback\\external_reference_validation\\dataset\\WMT_2026\\pages\\page_045.png;feedback\\external_reference_validation\\dataset\\WMT_2026\\pages\\page_046.png",
+  "text": "Interest Rate Risk"
+}

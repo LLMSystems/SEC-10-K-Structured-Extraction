@@ -1,0 +1,9 @@
+{
+  "base_url": "https://openrouter.ai/api/v1",
+  "created_at": 1780767420,
+  "image_sha256": "f409d0847df0845dd31091608597bd049bf83598d0937f48643b9499cd3541c6",
+  "model": "qwen/qwen3.6-27b",
+  "prompt": "You are shown one page from a SEC 10-K filing.\nIf this page is part of the Table of Contents (it lists Items with their page numbers), output one line per entry in exactly this form:\n  <item> | <page>\nwhere <item> is the Item identifier exactly as printed (e.g. 1, 1A, 7A) and <page> is its printed page number. Include every Item row visible on this page, in order. Output ONLY these lines.\nIf this page is NOT a table of contents, output exactly: NONE",
+  "source_path": "feedback\\external_reference_validation\\dataset\\TSLA_2023\\pages\\page_005.png",
+  "text": "NONE"
+}

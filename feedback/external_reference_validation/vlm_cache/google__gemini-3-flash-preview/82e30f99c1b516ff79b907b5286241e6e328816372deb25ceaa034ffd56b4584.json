@@ -1,0 +1,9 @@
+{
+  "base_url": "https://openrouter.ai/api/v1",
+  "created_at": 1780764731,
+  "image_sha256": "d6fc50fbe2b80467eb529bc1d13d4df97972c70bc8fad7a1d101874d147c7d2d",
+  "model": "google/gemini-3-flash-preview",
+  "prompt": "You are shown the last 1-2 rendered pages (in order) of the region for \"Item 2. Properties\". The next section is \"Item 3. Legal Proceedings\".\nFind where Item 2 ends — right before the \"Item 3\" heading if it appears, otherwise the very bottom of the last page — and transcribe VERBATIM the last 5 lines of Item 2 before that point. Ignore running headers, page numbers, footers.\nOutput ONLY the transcribed text, no commentary, no quotes, no formatting.",
+  "source_path": "tier2/dataset/WMT_2026/pages/page_029.png",
+  "text": "We own office facilities in Bentonville, Arkansas, that serve as our principal office and own and lease office facilities throughout the U.S. and\ninternationally for operations as well as for field and market management. The land on which our stores are located is either owned or leased by the\nCompany. Owned retail units on leased land are reflected as leased locations in the table above. We use independent contractors to construct our\nbuildings. All store leases provide for annual rentals, some of which escalate during the original lease or provide for additional rent based on sales\nvolume. Substantially all of the Company's store and club leases have renewal options, some of which include rent escalation clauses. For further\ninformation on our distribution network, see the caption \"Distribution\" under \"Item 1. Business.\""
+}

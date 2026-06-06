@@ -1,0 +1,9 @@
+{
+  "base_url": "https://openrouter.ai/api/v1",
+  "created_at": 1780767816,
+  "image_sha256": "20b5eea159d1f94dd863a742ac64a459de69cd2c909b30c8aaa993b4e2070a86",
+  "model": "qwen/qwen3.5-122b-a10b",
+  "prompt": "You are shown the last 1-2 rendered pages (in order) of the region for \"Item 7A. Quantitative and Qualitative Disclosures About Market Risk\". The next section is \"Item 8. Financial Statements and Supplementary Data\".\nFind where Item 7A ends — right before the \"Item 8\" heading if it appears, otherwise the very bottom of the last page — and transcribe VERBATIM the last 5 lines of Item 7A before that point. Ignore running headers, page numbers, footers.\nOutput ONLY the transcribed text, no commentary, no quotes, no formatting.",
+  "source_path": "feedback\\external_reference_validation\\dataset\\TSLA_2023\\pages\\page_046.png",
+  "text": "have had on our net income before income taxes. These changes would have resulted in a gain or loss of $1.01 billion at December 31, 2023 and\n$473 million at December 31, 2022, assuming no foreign currency hedging."
+}

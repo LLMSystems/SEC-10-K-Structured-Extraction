@@ -1,0 +1,9 @@
+{
+  "base_url": "https://openrouter.ai/api/v1",
+  "created_at": 1780767849,
+  "image_sha256": "eadab10e0847b2fe6ac56f2d7366465b8dd2363b08751f4a417b7ce499ecf0a6",
+  "model": "qwen/qwen3.5-122b-a10b",
+  "prompt": "You are shown the last 1-2 rendered pages (in order) of the region for \"Item 9A. Controls and Procedures\". The next section is \"Item 9B. Other Information\".\nFind where Item 9A ends — right before the \"Item 9B\" heading if it appears, otherwise the very bottom of the last page — and transcribe VERBATIM the last 5 lines of Item 9A before that point. Ignore running headers, page numbers, footers.\nOutput ONLY the transcribed text, no commentary, no quotes, no formatting.",
+  "source_path": "feedback\\external_reference_validation\\dataset\\WMT_2026\\pages\\page_080.png",
+  "text": "There have been no changes in the Company's internal control over financial reporting as of January 31, 2026, that have materially affected, or are reasonably likely to materially affect, the Company's internal control over financial reporting."
+}

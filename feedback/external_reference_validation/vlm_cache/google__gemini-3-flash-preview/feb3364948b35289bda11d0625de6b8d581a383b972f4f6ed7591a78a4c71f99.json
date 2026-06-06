@@ -1,0 +1,9 @@
+{
+  "base_url": "https://openrouter.ai/api/v1",
+  "created_at": 1780764633,
+  "image_sha256": "9d555fde8aea9db94ca8dce859128975ea66dcd2cfc39e9de5d16e8f2e1c95bf+f0785e5c8e4dd01647d1a1d20593b1ca09f46613c0852c222d8989934a717864",
+  "model": "google/gemini-3-flash-preview",
+  "prompt": "You are shown the last 1-2 rendered pages (in order) of the region for \"Item 9A. Controls and Procedures\". The next section is \"Item 9B. Other Information\".\nFind where Item 9A ends — right before the \"Item 9B\" heading if it appears, otherwise the very bottom of the last page — and transcribe VERBATIM the last 5 lines of Item 9A before that point. Ignore running headers, page numbers, footers.\nOutput ONLY the transcribed text, no commentary, no quotes, no formatting.",
+  "source_path": "tier2/dataset/NFLX_2025/pages/page_037.png;tier2/dataset/NFLX_2025/pages/page_038.png",
+  "text": "Because of its inherent limitations, internal control over financial reporting may not prevent or detect misstatements. Also, projections of any\nevaluation of effectiveness to future periods are subject to the risk that controls may become inadequate because of changes in conditions, or that the\ndegree of compliance with the policies or procedures may deteriorate.\n/s/ Ernst & Young LLP\nSan Jose, California\nJanuary 23, 2026"
+}

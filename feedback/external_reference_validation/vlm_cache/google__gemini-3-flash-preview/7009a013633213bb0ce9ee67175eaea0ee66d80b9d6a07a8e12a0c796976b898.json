@@ -1,0 +1,9 @@
+{
+  "base_url": "https://openrouter.ai/api/v1",
+  "created_at": 1780764698,
+  "image_sha256": "b1debd2ba78ad4ba2ab3ea082b833392581fb29860f033ee9fcb3420a6db41c8+6cff91f3d13a09d1d59bb8143b7db552bcc137324f53b99a36711ce10d40f76e",
+  "model": "google/gemini-3-flash-preview",
+  "prompt": "You are shown the last 1-2 rendered pages (in order) of the region for \"Item 7. Management's Discussion and Analysis of Financial Condition and Results of Operations\". The next section is \"Item 7A. Quantitative and Qualitative Disclosures About Market Risk\".\nFind where Item 7 ends — right before the \"Item 7A\" heading if it appears, otherwise the very bottom of the last page — and transcribe VERBATIM the last 5 lines of Item 7 before that point. Ignore running headers, page numbers, footers.\nOutput ONLY the transcribed text, no commentary, no quotes, no formatting.",
+  "source_path": "tier2/dataset/TSLA_2023/pages/page_044.png;tier2/dataset/TSLA_2023/pages/page_045.png",
+  "text": "Recent Accounting Pronouncements\nSee Note 2, Summary of Significant Accounting Policies, to the consolidated financial statements included elsewhere in this Annual Report on\nForm 10-K."
+}

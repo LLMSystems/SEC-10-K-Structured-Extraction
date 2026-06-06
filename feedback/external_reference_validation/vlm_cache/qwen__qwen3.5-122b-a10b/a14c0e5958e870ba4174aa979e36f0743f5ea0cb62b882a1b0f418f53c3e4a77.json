@@ -1,0 +1,9 @@
+{
+  "base_url": "https://openrouter.ai/api/v1",
+  "created_at": 1780767772,
+  "image_sha256": "55168374c4eec3d1f795cce5cc58fc8c3362c834fcad8a566c3d4a01ff5ae459+7e7c529cdd2c9b8bcf43117d6d7cf9f9b424aae6ece70748f3413123867f08c3",
+  "model": "qwen/qwen3.5-122b-a10b",
+  "prompt": "You are shown the last 1-2 rendered pages (in order) of the region for \"Item 1A. Risk Factors\". The next section is \"Item 1C. Cybersecurity\".\nFind where Item 1A ends — right before the \"Item 1C\" heading if it appears, otherwise the very bottom of the last page — and transcribe VERBATIM the last 5 lines of Item 1A before that point. Ignore running headers, page numbers, footers.\nOutput ONLY the transcribed text, no commentary, no quotes, no formatting.",
+  "source_path": "feedback\\external_reference_validation\\dataset\\RELL_2025\\pages\\page_016.png;feedback\\external_reference_validation\\dataset\\RELL_2025\\pages\\page_017.png",
+  "text": "political and social turmoil, civil unrest and other crises.\nITEM 1B. Unresolved Staff Comments\nNone."
+}

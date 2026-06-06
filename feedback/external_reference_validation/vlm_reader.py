@@ -154,6 +154,46 @@ class VLMImageReader:
 
         return message
 
+    def read_images(self, image_paths, prompt: str = None, use_cache: bool = True,
+                    force: bool = False, max_tokens: int | None = None) -> str:
+        """多圖版 read_image（同一訊息給多張圖，如 tail 的 [ep-1, ep] 跨頁窗口）。"""
+        paths = [Path(p) for p in image_paths]
+        for p in paths:
+            if not p.exists():
+                raise FileNotFoundError(f"Image not found: {p}")
+        joined_sha = "+".join(self.image_sha256(p) for p in paths)
+        cache_key = self.cache_key(image_sha=joined_sha, prompt=prompt)
+        if use_cache and not force:
+            cached = self._load_cache_entry(cache_key)
+            if cached:
+                print(f"Cache hit: {self._cache_entry_path(cache_key)}")
+                return str(cached["text"])
+        text = self._call_vlm_multi(paths, prompt, max_tokens)
+        if use_cache:
+            self._save_cache_entry(cache_key, {
+                "text": text, "image_sha256": joined_sha, "prompt": prompt,
+                "model": self.model, "base_url": self.base_url,
+                "source_path": ";".join(str(p) for p in paths), "created_at": int(time.time()),
+            })
+        return text
+
+    def _call_vlm_multi(self, image_paths, prompt: str, max_tokens: int | None = None) -> str:
+        kwargs: dict = {}
+        if "openrouter" in self.base_url and not self.requires_reasoning():
+            kwargs["extra_body"] = {"reasoning": {"enabled": False}}
+        content = [{"type": "text", "text": prompt}]
+        for p in image_paths:
+            content.append({"type": "image_url",
+                            "image_url": {"url": self._image_to_data_url(p)}})
+        response = self.client.chat.completions.create(
+            model=self.model, messages=[{"role": "user", "content": content}],
+            temperature=0, max_tokens=max_tokens, **kwargs,
+        )
+        message = response.choices[0].message.content
+        if not message:
+            raise RuntimeError("VLM returned an empty response")
+        return message
+
     def _image_to_data_url(self, image_path: Path) -> str:
         mime_type, _ = mimetypes.guess_type(image_path)
         if mime_type is None:

@@ -1,0 +1,9 @@
+{
+  "base_url": "https://openrouter.ai/api/v1",
+  "created_at": 1780766908,
+  "image_sha256": "27235517d5179d2afdbc00187b7c759b3002ba30ed9673646100df67a54c773a",
+  "model": "google/gemma-4-26b-a4b-it",
+  "prompt": "You are shown one page from a SEC 10-K filing.\nIf this page is part of the Table of Contents (it lists Items with their page numbers), output one line per entry in exactly this form:\n  <item> | <page>\nwhere <item> is the Item identifier exactly as printed (e.g. 1, 1A, 7A) and <page> is its printed page number. Include every Item row visible on this page, in order. Output ONLY these lines.\nIf this page is NOT a table of contents, output exactly: NONE",
+  "source_path": "feedback\\external_reference_validation\\dataset\\GDC_2023\\pages\\page_003.png",
+  "text": "Item 1. | 1\nItem 1A. | 18\nItem 1B. | 36\nItem 1C. | 37\nItem 2. | 37\nItem 3. | 37\nItem 4. | 37\nItem 5. | 38\nItem 6. | 41\nItem 7. | 41\nItem 7A. | 50\nItem 8. | 50\nItem 9. | 50\nItem 9A. | 50\nItem 9B. | 50\nItem 9C. | 52\nItem 10. | 53\nItem 11. | 58\nItem 12. | 60\nItem 13. | 61\nItem 14. | 62\nItem 15. | 63\nItem 16. | 67"
+}

@@ -1,0 +1,9 @@
+{
+  "base_url": "https://openrouter.ai/api/v1",
+  "created_at": 1780766167,
+  "image_sha256": "b620d8f189e4aaf58fded4b8f55966a41aa267f70acab5967016b49603299be1+31dfb453caa9d28bfe251cf4a1fdb770bebb952b2e3eebc529ef854df2e54f90",
+  "model": "google/gemini-2.5-pro",
+  "prompt": "You are shown the last 1-2 rendered pages (in order) of the region for \"Item 5. Market for Registrant's Common Equity, Related Stockholder Matters and Issuer Purchases of Equity Securities\". The next section is \"Item 7. Management's Discussion and Analysis of Financial Condition and Results of Operations\".\nFind where Item 5 ends — right before the \"Item 7\" heading if it appears, otherwise the very bottom of the last page — and transcribe VERBATIM the last 5 lines of Item 5 before that point. Ignore running headers, page numbers, footers.\nOutput ONLY the transcribed text, no commentary, no quotes, no formatting.",
+  "source_path": "feedback\\external_reference_validation\\dataset\\NFLX_2025\\pages\\page_022.png;feedback\\external_reference_validation\\dataset\\NFLX_2025\\pages\\page_023.png",
+  "text": "2022, December 31, 2023, December 31, 2024 and December 31, 2025. Total cumulative stockholder return assumes $100 invested at the beginning\nof the period in the Company's common stock, the stocks represented in the NASDAQ Composite Index, the stocks represented in"
+}

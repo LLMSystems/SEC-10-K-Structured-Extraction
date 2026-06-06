@@ -1,0 +1,9 @@
+{
+  "base_url": "https://openrouter.ai/api/v1",
+  "created_at": 1780764543,
+  "image_sha256": "c70498f87a6292b228bb91fca353861a3aadc2fe01b804e0d7bba4c0b78c9815+83f53e0a8c1412ad2181676b94f6642e9320104865c61dd6a2a927c14c4cce8e",
+  "model": "google/gemini-3-flash-preview",
+  "prompt": "You are shown the last 1-2 rendered pages (in order) of the region for \"Item 1A. Risk Factors\". The next section is \"Item 1C. Cybersecurity\".\nFind where Item 1A ends — right before the \"Item 1C\" heading if it appears, otherwise the very bottom of the last page — and transcribe VERBATIM the last 5 lines of Item 1A before that point. Ignore running headers, page numbers, footers.\nOutput ONLY the transcribed text, no commentary, no quotes, no formatting.",
+  "source_path": "tier2/dataset/GDC_2023/pages/page_043.png;tier2/dataset/GDC_2023/pages/page_044.png",
+  "text": "projections by inexperienced sales persons; (iv) excessive and undisclosed bid-ask differentials and markups by selling broker-dealers; and (v) the\nwholesale dumping of the same securities by promoters and broker-dealers after prices have been manipulated to a desired level, resulting in investor\nlosses. Our management is aware of the abuses that have occurred historically in the penny stock market. Although we do not expect to be in a\nposition to dictate the behavior of the market or of broker-dealers who participate in the market, management will strive within the confines of\npractical limitations to prevent the described patterns from being established with respect to our securities."
+}

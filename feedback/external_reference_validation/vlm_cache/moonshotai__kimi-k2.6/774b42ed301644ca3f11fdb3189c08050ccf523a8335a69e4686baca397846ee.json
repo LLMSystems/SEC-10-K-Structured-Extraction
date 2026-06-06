@@ -1,0 +1,9 @@
+{
+  "base_url": "https://openrouter.ai/api/v1",
+  "created_at": 1780768273,
+  "image_sha256": "a31cd7a3d44e172d1d5c8710e804d4ecb00ba00930adf87198d21f392868f04d+4fca19508edcf69e7fec1b68fb0975a9aa6428943b9db8e44a0c84f13daed49d",
+  "model": "moonshotai/kimi-k2.6",
+  "prompt": "You are shown the last 1-2 rendered pages (in order) of the region for \"Item 1. Business\". The next section is \"Item 1A. Risk Factors\".\nFind where Item 1 ends — right before the \"Item 1A\" heading if it appears, otherwise the very bottom of the last page — and transcribe VERBATIM the last 5 lines of Item 1 before that point. Ignore running headers, page numbers, footers.\nOutput ONLY the transcribed text, no commentary, no quotes, no formatting.",
+  "source_path": "feedback\\external_reference_validation\\dataset\\NFLX_2025\\pages\\page_005.png;feedback\\external_reference_validation\\dataset\\NFLX_2025\\pages\\page_006.png",
+  "text": "Investors and others should note that we announce material financial and other information to our investors using our investor relations website (ir.netflix.net), SEC filings, press releases, public conference calls and webcasts. We use these channels as well as social media and blogs to communicate with our members and the public about our company, our services and other issues. It is possible that the information we post on social media and blogs could be deemed to be material information. Therefore, we encourage investors, the media, and others interested in our company to review the information we post on the social media channels and blogs listed on our investor relations website."
+}

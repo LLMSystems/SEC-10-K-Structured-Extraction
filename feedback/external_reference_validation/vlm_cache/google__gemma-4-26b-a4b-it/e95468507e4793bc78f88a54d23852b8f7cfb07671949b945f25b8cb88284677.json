@@ -1,0 +1,9 @@
+{
+  "base_url": "https://openrouter.ai/api/v1",
+  "created_at": 1780767057,
+  "image_sha256": "eadab10e0847b2fe6ac56f2d7366465b8dd2363b08751f4a417b7ce499ecf0a6",
+  "model": "google/gemma-4-26b-a4b-it",
+  "prompt": "You are shown the last 1-2 rendered pages (in order) of the region for \"Item 9A. Controls and Procedures\". The next section is \"Item 9B. Other Information\".\nFind where Item 9A ends — right before the \"Item 9B\" heading if it appears, otherwise the very bottom of the last page — and transcribe VERBATIM the last 5 lines of Item 9A before that point. Ignore running headers, page numbers, footers.\nOutput ONLY the transcribed text, no commentary, no quotes, no formatting.",
+  "source_path": "feedback\\external_reference_validation\\dataset\\WMT_2026\\pages\\page_080.png",
+  "text": "Management concluded that based on its assessment, Walmart's internal control over financial reporting was effective as of January 31, 2026.\nThe Company's internal control over financial reporting as of January 31, 2026, has been audited by Ernst & Young LLP as stated in their report which\nappears herein."
+}

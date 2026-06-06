@@ -1,0 +1,9 @@
+{
+  "base_url": "https://openrouter.ai/api/v1",
+  "created_at": 1780768095,
+  "image_sha256": "cb021c384adc9102473c9ed64599f062ef451ea2645d57c564daf3c80e251523",
+  "model": "qwen/qwen3.5-9b",
+  "prompt": "You are shown one page from a SEC 10-K filing.\nIf this page is part of the Table of Contents (it lists Items with their page numbers), output one line per entry in exactly this form:\n  <item> | <page>\nwhere <item> is the Item identifier exactly as printed (e.g. 1, 1A, 7A) and <page> is its printed page number. Include every Item row visible on this page, in order. Output ONLY these lines.\nIf this page is NOT a table of contents, output exactly: NONE",
+  "source_path": "feedback\\external_reference_validation\\dataset\\RELL_2025\\pages\\page_002.png",
+  "text": "Part I | 4\nItem 1. | 4\nItem 1A. | 9\nItem 1B. | 17\nItem 1C. | 18\nItem 2. | 20\nItem 3. | 20\nItem 4. | 20\nPart II | 21\nItem 5. | 21\nItem 6. | 22\nItem 7. | 23\nItem 7A. | 34\nItem 8. | 34\nItem 9. | 63\nItem 9A. | 63\nItem 9B. | 66\nItem 9C. | 66\nPart III | 67\nItem 10. | 67\nItem 11. | 67\nItem 12. | 67\nItem 13. | 68\nItem 14. | 68\nPart IV | 69\nItem 15. | 69\nItem 16. | 69\nExhibit Index | 70\nSignatures | 73"
+}

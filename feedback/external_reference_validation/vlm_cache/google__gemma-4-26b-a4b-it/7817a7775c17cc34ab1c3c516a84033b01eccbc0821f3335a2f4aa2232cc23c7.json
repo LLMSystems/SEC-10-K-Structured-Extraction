@@ -1,0 +1,9 @@
+{
+  "base_url": "https://openrouter.ai/api/v1",
+  "created_at": 1780767069,
+  "image_sha256": "62148fefd4f08c7409eaa53c9d09ece898ce58108805d74049fa9d50efdc2316",
+  "model": "google/gemma-4-26b-a4b-it",
+  "prompt": "You are shown the last 1-2 rendered pages (in order) of the region for \"Item 3. Legal Proceedings\". The next section is \"Item 5. Market for Registrant's Common Equity, Related Stockholder Matters and Issuer Purchases of Equity Securities\".\nFind where Item 3 ends — right before the \"Item 5\" heading if it appears, otherwise the very bottom of the last page — and transcribe VERBATIM the last 5 lines of Item 3 before that point. Ignore running headers, page numbers, footers.\nOutput ONLY the transcribed text, no commentary, no quotes, no formatting.",
+  "source_path": "feedback\\external_reference_validation\\dataset\\WMT_2026\\pages\\page_030.png",
+  "text": "The Company is cooperating with the EPA in this investigation. The EPA may seek to impose monetary and non-monetary penalties for the alleged violations of the\nClean Air Act. The Company is unable to predict the final outcome of this matter, but the EPA could seek penalties in excess of $1 million. Although\nthe Company does not believe this matter will have a material adverse effect on its business, financial position, results of operations, or cash flows,\nthe Company can provide no assurance that its business, financial position, results of operations or cash flows will not be materially adversely\naffected."
+}

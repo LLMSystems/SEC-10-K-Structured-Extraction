@@ -1,0 +1,9 @@
+{
+  "base_url": "https://openrouter.ai/api/v1",
+  "created_at": 1780766629,
+  "image_sha256": "d3110da1972275287c64cfac26434743bae88a5f2479fd7d742c29318e01f059+ec7199b41fd7a84757dc56d6a6863a91d954c1fc4e19f2cfc0b1e0dcc9e23630",
+  "model": "google/gemini-2.5-flash",
+  "prompt": "You are shown the last 1-2 rendered pages (in order) of the region for \"Item 1A. Risk Factors\". The next section is \"Item 1C. Cybersecurity\".\nFind where Item 1A ends — right before the \"Item 1C\" heading if it appears, otherwise the very bottom of the last page — and transcribe VERBATIM the last 5 lines of Item 1A before that point. Ignore running headers, page numbers, footers.\nOutput ONLY the transcribed text, no commentary, no quotes, no formatting.",
+  "source_path": "feedback\\external_reference_validation\\dataset\\WMT_2026\\pages\\page_026.png;feedback\\external_reference_validation\\dataset\\WMT_2026\\pages\\page_027.png",
+  "text": "Our amended and restated bylaws designate the Court of Chancery of the State of Delaware as the sole and exclusive forum for certain types\nof actions and proceedings that may be initiated by our shareholders, which could limit the legal costs for our shareholders to bring claims,\ndiscourage our shareholders from bringing claims, or limit our shareholders’ ability to obtain a favorable judicial forum for disputes with us\nor our directors, officers, associates or shareholders in such capacity."
+}

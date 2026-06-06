@@ -1,0 +1,9 @@
+{
+  "base_url": "https://openrouter.ai/api/v1",
+  "created_at": 1780767632,
+  "image_sha256": "0774076e35f5474176b8cc6323fe931c7d488fa447ac63fdcf75834393c9bdb8+75bd50cf8b472abe4ce01710d11964f169c2999614e1462aa4360ba33ff34656",
+  "model": "qwen/qwen3.5-27b",
+  "prompt": "You are shown the last 1-2 rendered pages (in order) of the region for \"Item 1C. Cybersecurity\". The next section is \"Item 2. Properties\".\nFind where Item 1C ends — right before the \"Item 2\" heading if it appears, otherwise the very bottom of the last page — and transcribe VERBATIM the last 5 lines of Item 1C before that point. Ignore running headers, page numbers, footers.\nOutput ONLY the transcribed text, no commentary, no quotes, no formatting.",
+  "source_path": "feedback\\external_reference_validation\\dataset\\TSLA_2023\\pages\\page_030.png;feedback\\external_reference_validation\\dataset\\TSLA_2023\\pages\\page_031.png",
+  "text": "Our cybersecurity risk management and strategy processes are overseen by leaders from our Information Security, Product Security,\nCompliance and Legal teams. Such individuals have an average of over 15 years of prior work experience in various roles involving information\ntechnology, including security, auditing, compliance, systems and programming. These individuals are informed about, and monitor the prevention,\nmitigation, detection and remediation of cybersecurity incidents through their management of, and participation in, the cybersecurity risk\nmanagement and strategy processes described above, including the operation of our incident response plan, and report to the Audit Committee on any\nappropriate items."
+}

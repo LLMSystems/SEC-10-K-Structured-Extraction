@@ -1,0 +1,9 @@
+{
+  "base_url": "https://openrouter.ai/api/v1",
+  "created_at": 1780768031,
+  "image_sha256": "91ba84d98ee6183d91052798aa1d3458830bcef7c58ac1a9b3847486404c706b",
+  "model": "qwen/qwen3.5-9b",
+  "prompt": "You are shown the last 1-2 rendered pages (in order) of the region for \"Item 2. Properties\". The next section is \"Item 3. Legal Proceedings\".\nFind where Item 2 ends — right before the \"Item 3\" heading if it appears, otherwise the very bottom of the last page — and transcribe VERBATIM the last 5 lines of Item 2 before that point. Ignore running headers, page numbers, footers.\nOutput ONLY the transcribed text, no commentary, no quotes, no formatting.",
+  "source_path": "feedback\\external_reference_validation\\dataset\\GDC_2023\\pages\\page_045.png",
+  "text": "We have the right to use the two domains: gdculturegroup.com and aicatalysis.com.\n\nItem 3. Legal Proceedings\n\nTo the knowledge of our management, there is no litigation currently pending or contemplated against us, any of our officers or directors in their capacity as such or against any of our property."
+}

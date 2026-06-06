@@ -1,0 +1,9 @@
+{
+  "base_url": "https://openrouter.ai/api/v1",
+  "created_at": 1780764647,
+  "image_sha256": "55168374c4eec3d1f795cce5cc58fc8c3362c834fcad8a566c3d4a01ff5ae459+7e7c529cdd2c9b8bcf43117d6d7cf9f9b424aae6ece70748f3413123867f08c3",
+  "model": "google/gemini-3-flash-preview",
+  "prompt": "You are shown the last 1-2 rendered pages (in order) of the region for \"Item 1A. Risk Factors\". The next section is \"Item 1C. Cybersecurity\".\nFind where Item 1A ends — right before the \"Item 1C\" heading if it appears, otherwise the very bottom of the last page — and transcribe VERBATIM the last 5 lines of Item 1A before that point. Ignore running headers, page numbers, footers.\nOutput ONLY the transcribed text, no commentary, no quotes, no formatting.",
+  "source_path": "tier2/dataset/RELL_2025/pages/page_016.png;tier2/dataset/RELL_2025/pages/page_017.png",
+  "text": "Our stock price has fluctuated in the past and may experience declines in the future as a result of the volatile nature of the stock market, developments in our business and/or factors outside of our control including certain of the risk factors discussed in this report. Many factors may cause the market price for our common stock to change, including: (i) our operating results as compared to investors’ expectations in any period, (ii) market perceptions concerning our future earnings prospects, (iii) adverse changes in general market conditions or economic trends and (iv) changes or events in our industry or the world, such as market reactions to public health issues, natural disasters, changes in global, national, or regional economies, inflation, governmental policies, political unrest, military action and armed conflicts (in Europe and the Middle East), terrorist activities, political and social turmoil, civil unrest and other crises."
+}

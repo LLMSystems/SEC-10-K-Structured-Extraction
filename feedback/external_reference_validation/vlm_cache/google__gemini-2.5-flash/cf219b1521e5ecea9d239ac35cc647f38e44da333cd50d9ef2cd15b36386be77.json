@@ -1,0 +1,9 @@
+{
+  "base_url": "https://openrouter.ai/api/v1",
+  "created_at": 1780766606,
+  "image_sha256": "0774076e35f5474176b8cc6323fe931c7d488fa447ac63fdcf75834393c9bdb8+75bd50cf8b472abe4ce01710d11964f169c2999614e1462aa4360ba33ff34656",
+  "model": "google/gemini-2.5-flash",
+  "prompt": "You are shown the last 1-2 rendered pages (in order) of the region for \"Item 1C. Cybersecurity\". The next section is \"Item 2. Properties\".\nFind where Item 1C ends — right before the \"Item 2\" heading if it appears, otherwise the very bottom of the last page — and transcribe VERBATIM the last 5 lines of Item 1C before that point. Ignore running headers, page numbers, footers.\nOutput ONLY the transcribed text, no commentary, no quotes, no formatting.",
+  "source_path": "feedback\\external_reference_validation\\dataset\\TSLA_2023\\pages\\page_030.png;feedback\\external_reference_validation\\dataset\\TSLA_2023\\pages\\page_031.png",
+  "text": "Cybersecurity is an important part of our risk management processes and an area of focus for our Board and management. Our Board\ncommittee responsible for the oversight of risks from cybersecurity threats. Members of the Audit Committee receive updates on a quarterly basis\nfrom senior management, including leaders from our Information Security, Product Security, Compliance and Legal teams regarding matters of\ncybersecurity. This includes existing and new cybersecurity risks, status on how management is addressing and/or mitigating those risks,\ncybersecurity and data privacy incidents (if any) and status on key information security initiatives. Our Board members also engage in ad hoc\nconversations with management on cybersecurity-related news events and discuss any updates to our cybersecurity risk management and strategy\nprograms."
+}

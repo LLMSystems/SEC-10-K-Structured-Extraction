@@ -1,0 +1,9 @@
+{
+  "base_url": "https://openrouter.ai/api/v1",
+  "created_at": 1780767933,
+  "image_sha256": "00116a1dd769d8044c66c99cf34400a0163762547e01ee8eac570dde4edb1791+31bcc2e60af8a954b2d23b8d305cc967f216ed6f5c027dab9ce3f682f1816eb3",
+  "model": "qwen/qwen3.5-35b-a3b",
+  "prompt": "You are shown the last 1-2 rendered pages (in order) of the region for \"Item 9B. Other Information\". The next section is \"Item 15. Exhibits, Financial Statement Schedules\".\nFind where Item 9B ends — right before the \"Item 15\" heading if it appears, otherwise the very bottom of the last page — and transcribe VERBATIM the last 5 lines of Item 9B before that point. Ignore running headers, page numbers, footers.\nOutput ONLY the transcribed text, no commentary, no quotes, no formatting.",
+  "source_path": "feedback\\external_reference_validation\\dataset\\RELL_2025\\pages\\page_069.png;feedback\\external_reference_validation\\dataset\\RELL_2025\\pages\\page_070.png",
+  "text": "The following table sets forth information as of May 31, 2025, with respect to compensation plans under which equity securities were\nauthorized for issuance:"
+}

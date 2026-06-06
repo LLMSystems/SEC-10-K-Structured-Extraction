@@ -1,0 +1,9 @@
+{
+  "base_url": "https://openrouter.ai/api/v1",
+  "created_at": 1780767032,
+  "image_sha256": "c53b30d5910780762d8cc1f3487901376b5492564f359a04b383d96881ccd5e1+acc8010d9c8062e3f04b1db2a51975da5abad161e905525e7e73a445aa87f576",
+  "model": "google/gemma-4-26b-a4b-it",
+  "prompt": "You are shown the last 1-2 rendered pages (in order) of the region for \"Item 9B. Other Information\". The next section is \"Item 15. Exhibits, Financial Statement Schedules\".\nFind where Item 9B ends — right before the \"Item 15\" heading if it appears, otherwise the very bottom of the last page — and transcribe VERBATIM the last 5 lines of Item 9B before that point. Ignore running headers, page numbers, footers.\nOutput ONLY the transcribed text, no commentary, no quotes, no formatting.",
+  "source_path": "feedback\\external_reference_validation\\dataset\\TSLA_2023\\pages\\page_096.png;feedback\\external_reference_validation\\dataset\\TSLA_2023\\pages\\page_097.png",
+  "text": "arrangement for the potential sale of up to 281,116\nshares of our common stock, subject to certain conditions. The trading arrangement covers stock options that expire in August 2024. The\narrangement's expiration date is August 16, 2024.\nOn November 13, 2023, Andrew Baglino, Senior Vice President, Powertrain and Energy Engineering, adopted a Rule 10b5-1 trading\narrangement for the potential sale of up to 115,500 shares of our common stock, subject to certain conditions. The arrangement's expiration date is"
+}

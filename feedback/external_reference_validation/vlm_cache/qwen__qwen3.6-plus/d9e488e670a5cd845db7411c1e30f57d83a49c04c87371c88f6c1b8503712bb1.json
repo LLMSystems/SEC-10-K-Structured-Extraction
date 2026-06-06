@@ -1,0 +1,9 @@
+{
+  "base_url": "https://openrouter.ai/api/v1",
+  "created_at": 1780767104,
+  "image_sha256": "4a46343afaee8f35251bcc0423cbdcce8834432dbdbbad67df2f7eb2d82b0a0b+1e5a8c93f054eb4a8f6f76f5f2b096d68b808d95dfadd365185b9df9417c4007",
+  "model": "qwen/qwen3.6-plus",
+  "prompt": "You are shown the last 1-2 rendered pages (in order) of the region for \"Item 10. Directors, Executive Officers and Corporate Governance\". The next section is \"Item 11. Executive Compensation\".\nFind where Item 10 ends — right before the \"Item 11\" heading if it appears, otherwise the very bottom of the last page — and transcribe VERBATIM the last 5 lines of Item 10 before that point. Ignore running headers, page numbers, footers.\nOutput ONLY the transcribed text, no commentary, no quotes, no formatting.",
+  "source_path": "feedback\\external_reference_validation\\dataset\\GDC_2023\\pages\\page_065.png;feedback\\external_reference_validation\\dataset\\GDC_2023\\pages\\page_066.png",
+  "text": "Code of Ethics that apply to our principal executive officer, principal financial officer and principal accounting officer by posting\nthe required information on our website at the above address."
+}

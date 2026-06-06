@@ -1,0 +1,9 @@
+{
+  "base_url": "https://openrouter.ai/api/v1",
+  "created_at": 1780766453,
+  "image_sha256": "2ce3e27ac5d6660773b2ed1689955f934e4c86e095cc6655bd0f27cd2e4e7020",
+  "model": "google/gemini-2.5-pro",
+  "prompt": "You are shown one page from a SEC 10-K filing.\nIf this page is part of the Table of Contents (it lists Items with their page numbers), output one line per entry in exactly this form:\n  <item> | <page>\nwhere <item> is the Item identifier exactly as printed (e.g. 1, 1A, 7A) and <page> is its printed page number. Include every Item row visible on this page, in order. Output ONLY these lines.\nIf this page is NOT a table of contents, output exactly: NONE",
+  "source_path": "feedback\\external_reference_validation\\dataset\\WMT_2026\\pages\\page_003.png",
+  "text": "1 | 6\n1A | 13\n1B | 27\n1C | 27\n2 | 29\n3 | 30\n4 | 30\n5 | 31\n6 | 32\n7 | 33\n7A | 46\n8 | 48\n9 | 8"
+}

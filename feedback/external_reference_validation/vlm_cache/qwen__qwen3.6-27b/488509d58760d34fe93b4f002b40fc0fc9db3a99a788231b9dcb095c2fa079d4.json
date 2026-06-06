@@ -1,0 +1,9 @@
+{
+  "base_url": "https://openrouter.ai/api/v1",
+  "created_at": 1780767318,
+  "image_sha256": "4d55312dde89ce5c0826190dce650426d141bf084e9b83909b0caf75b5578a35",
+  "model": "qwen/qwen3.6-27b",
+  "prompt": "You are shown the last 1-2 rendered pages (in order) of the region for \"Item 14. Principal Accountant Fees and Services\". The next section is \"Item 15. Exhibits, Financial Statement Schedules\".\nFind where Item 14 ends — right before the \"Item 15\" heading if it appears, otherwise the very bottom of the last page — and transcribe VERBATIM the last 5 lines of Item 14 before that point. Ignore running headers, page numbers, footers.\nOutput ONLY the transcribed text, no commentary, no quotes, no formatting.",
+  "source_path": "feedback\\external_reference_validation\\dataset\\GDC_2023\\pages\\page_073.png",
+  "text": "Our audit committee was formed upon the consummation of our initial public offering. As a result, the audit committee did not pre-approve all of the\nforegoing services, although any services rendered prior to the formation of our audit committee were approved by our board of directors. Since the\nformation of our audit committee, and on a going-forward basis, the audit committee has and will pre-approve all auditing services and permitted\nnon-audit services to be performed for us by our auditors, including the fees and terms thereof (subject to the de minimis exceptions for non-audit\nservices described in the Exchange Act which are approved by the audit committee prior to the completion of the audit)."
+}

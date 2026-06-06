@@ -1,0 +1,9 @@
+{
+  "base_url": "https://openrouter.ai/api/v1",
+  "created_at": 1780768074,
+  "image_sha256": "c406dc82d76a31a089e570171ca8356a74b88b0d49bc2b4c061a5810a8c669a5+d240bff2c41812393dcd33c1cf24d718a1888a64aa7544e0f52f9e4d044aafe4",
+  "model": "qwen/qwen3.5-9b",
+  "prompt": "You are shown the last 1-2 rendered pages (in order) of the region for \"Item 7. Management's Discussion and Analysis of Financial Condition and Results of Operations\". The next section is \"Item 7A. Quantitative and Qualitative Disclosures About Market Risk\".\nFind where Item 7 ends — right before the \"Item 7A\" heading if it appears, otherwise the very bottom of the last page — and transcribe VERBATIM the last 5 lines of Item 7 before that point. Ignore running headers, page numbers, footers.\nOutput ONLY the transcribed text, no commentary, no quotes, no formatting.",
+  "source_path": "feedback\\external_reference_validation\\dataset\\NFLX_2025\\pages\\page_033.png;feedback\\external_reference_validation\\dataset\\NFLX_2025\\pages\\page_034.png",
+  "text": "We have also experienced and will continue to experience fluctuations in our net income as a result of gains (losses) on the settlement and the remeasurement of monetary assets and liabilities denominated in currencies that are not the functional currency. We enter into foreign exchange forward contracts to mitigate the foreign exchange risk on intercompany transactions and monetary assets and liabilities that are not denominated in the functional currencies of the Company and its subsidiaries. These contracts may reduce, but do not entirely eliminate, the effect of foreign currency exchange fluctuations, and we may choose not to hedge certain exposures. Certain contracts are not designated as hedging instruments and the gains or losses on these derivative instruments are recorded in “Interest and other income (expense)” in the"
+}

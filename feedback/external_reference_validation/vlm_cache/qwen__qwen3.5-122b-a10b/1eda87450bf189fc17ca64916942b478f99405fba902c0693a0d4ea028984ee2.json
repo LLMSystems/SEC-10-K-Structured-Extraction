@@ -1,0 +1,9 @@
+{
+  "base_url": "https://openrouter.ai/api/v1",
+  "created_at": 1780767848,
+  "image_sha256": "ce7941ba28ef19842f83678eb004df5b1b70552864438784c3a998b57630134a+96784352f6dc36cee613b409658aef5ee0bf5176a8572f3e38d5e218258fa87d",
+  "model": "qwen/qwen3.5-122b-a10b",
+  "prompt": "You are shown the last 1-2 rendered pages (in order) of the region for \"Item 7A. Quantitative and Qualitative Disclosures About Market Risk\". The next section is \"Item 8. Financial Statements and Supplementary Data\".\nFind where Item 7A ends — right before the \"Item 8\" heading if it appears, otherwise the very bottom of the last page — and transcribe VERBATIM the last 5 lines of Item 7A before that point. Ignore running headers, page numbers, footers.\nOutput ONLY the transcribed text, no commentary, no quotes, no formatting.",
+  "source_path": "feedback\\external_reference_validation\\dataset\\WMT_2026\\pages\\page_046.png;feedback\\external_reference_validation\\dataset\\WMT_2026\\pages\\page_047.png",
+  "text": "We are exposed to investment risk primarily related to changes in the fair value of certain equity investments, including certain immaterial equity method investments where we have elected the fair value option, measured on a recurring basis. As of January 31, 2026, the fair value of these investments was $4.5 billion. Refer to Note 7 for details. As of January 31, 2026, a hypothetical 10% change in the stock price of such investments would have changed the fair value of such investments by approximately $0.4 billion."
+}

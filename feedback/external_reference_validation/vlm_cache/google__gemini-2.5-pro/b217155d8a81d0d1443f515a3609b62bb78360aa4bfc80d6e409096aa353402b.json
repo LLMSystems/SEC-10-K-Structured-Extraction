@@ -1,0 +1,9 @@
+{
+  "base_url": "https://openrouter.ai/api/v1",
+  "created_at": 1780766399,
+  "image_sha256": "b1debd2ba78ad4ba2ab3ea082b833392581fb29860f033ee9fcb3420a6db41c8+6cff91f3d13a09d1d59bb8143b7db552bcc137324f53b99a36711ce10d40f76e",
+  "model": "google/gemini-2.5-pro",
+  "prompt": "You are shown the last 1-2 rendered pages (in order) of the region for \"Item 7. Management's Discussion and Analysis of Financial Condition and Results of Operations\". The next section is \"Item 7A. Quantitative and Qualitative Disclosures About Market Risk\".\nFind where Item 7 ends — right before the \"Item 7A\" heading if it appears, otherwise the very bottom of the last page — and transcribe VERBATIM the last 5 lines of Item 7 before that point. Ignore running headers, page numbers, footers.\nOutput ONLY the transcribed text, no commentary, no quotes, no formatting.",
+  "source_path": "feedback\\external_reference_validation\\dataset\\TSLA_2023\\pages\\page_044.png;feedback\\external_reference_validation\\dataset\\TSLA_2023\\pages\\page_045.png",
+  "text": "December 31, 2023 from $3.53 billion net cash used in financing activities during the year ended December 31, 2022. The change was primarily due\nto the $3.93 billion increase in proceeds from issuances of debt and a $2.01 billion decrease in repayments of debt. See Note 11, Debt,"
+}

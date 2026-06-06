@@ -1,0 +1,9 @@
+{
+  "base_url": "https://openrouter.ai/api/v1",
+  "created_at": 1780767845,
+  "image_sha256": "d6fc50fbe2b80467eb529bc1d13d4df97972c70bc8fad7a1d101874d147c7d2d",
+  "model": "qwen/qwen3.5-122b-a10b",
+  "prompt": "You are shown the last 1-2 rendered pages (in order) of the region for \"Item 2. Properties\". The next section is \"Item 3. Legal Proceedings\".\nFind where Item 2 ends — right before the \"Item 3\" heading if it appears, otherwise the very bottom of the last page — and transcribe VERBATIM the last 5 lines of Item 2 before that point. Ignore running headers, page numbers, footers.\nOutput ONLY the transcribed text, no commentary, no quotes, no formatting.",
+  "source_path": "feedback\\external_reference_validation\\dataset\\WMT_2026\\pages\\page_029.png",
+  "text": "volume. Substantially all of the Company's store and club leases have renewal options, some of which include rent escalation clauses. For further information on our distribution network, see the caption \"Distribution\" under \"Item 1. Business.\""
+}

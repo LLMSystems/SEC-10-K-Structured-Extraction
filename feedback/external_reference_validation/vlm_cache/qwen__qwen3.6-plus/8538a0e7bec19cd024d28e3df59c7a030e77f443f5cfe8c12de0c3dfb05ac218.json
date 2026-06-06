@@ -1,0 +1,9 @@
+{
+  "base_url": "https://openrouter.ai/api/v1",
+  "created_at": 1780767142,
+  "image_sha256": "7cd6533b48f95efb6a20a1925a2fd45e6af6c900acda679191c66b3032241274+713fed6aabb29704676586978a63d144b81a5c6f6ebd3b87772a9c06c9c84f92",
+  "model": "qwen/qwen3.6-plus",
+  "prompt": "You are shown the last 1-2 rendered pages (in order) of the region for \"Item 7A. Quantitative and Qualitative Disclosures About Market Risk\". The next section is \"Item 9A. Controls and Procedures\".\nFind where Item 7A ends — right before the \"Item 9A\" heading if it appears, otherwise the very bottom of the last page — and transcribe VERBATIM the last 5 lines of Item 7A before that point. Ignore running headers, page numbers, footers.\nOutput ONLY the transcribed text, no commentary, no quotes, no formatting.",
+  "source_path": "feedback\\external_reference_validation\\dataset\\NFLX_2025\\pages\\page_035.png;feedback\\external_reference_validation\\dataset\\NFLX_2025\\pages\\page_036.png",
+  "text": "the hedged items. If an adverse change in exchange rates of 10% was applied to our monetary assets and liabilities denominated in currencies other than\nthe functional currencies as of December 31, 2025 and December 31, 2024, income before income taxes would have been approximately $1 million\nand $38 million lower, respectively, after considering the offsetting impact of the foreign currency exchange contracts and our net investment hedges.\n\nItem 8. Financial Statements and Supplementary Data"
+}

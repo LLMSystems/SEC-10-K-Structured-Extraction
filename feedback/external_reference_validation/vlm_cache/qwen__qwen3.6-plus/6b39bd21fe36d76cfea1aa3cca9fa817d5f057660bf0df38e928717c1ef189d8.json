@@ -1,0 +1,9 @@
+{
+  "base_url": "https://openrouter.ai/api/v1",
+  "created_at": 1780767218,
+  "image_sha256": "61a81513d50c528fa4403033f49c70b239460db19e5531792e762674ab6d648f+8bffb0dcff67ecc2ff6d4c832ca5abf46269e106829d9de4283778dcc226c796",
+  "model": "qwen/qwen3.6-plus",
+  "prompt": "You are shown the last 1-2 rendered pages (in order) of the region for \"Item 8. Financial Statements and Supplementary Data\". The next section is \"Item 9A. Controls and Procedures\".\nFind where Item 8 ends — right before the \"Item 9A\" heading if it appears, otherwise the very bottom of the last page — and transcribe VERBATIM the last 5 lines of Item 8 before that point. Ignore running headers, page numbers, footers.\nOutput ONLY the transcribed text, no commentary, no quotes, no formatting.",
+  "source_path": "feedback\\external_reference_validation\\dataset\\TSLA_2023\\pages\\page_093.png;feedback\\external_reference_validation\\dataset\\TSLA_2023\\pages\\page_094.png",
+  "text": "digital assets. During the years ended December 31, 2022 and 2021 we also realized gains of $64 million and $128 million, respectively, in\nconnection with converting our holdings of digital assets into fiat currency. We also recorded other expenses of $36 million during the second quarter\nof the year ended December 31, 2022, related to employee terminations."
+}

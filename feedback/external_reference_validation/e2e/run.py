@@ -8,7 +8,7 @@ Tier 2 端到端：TOC 獨立導航 → gate → Source C 邊界檢查（不靠 
 
 產出：端到端良率(gate 通過率) + 用獨立頁時的 head/tail 精確度，並對照 dataset 頁是否一致。
 
-用法：python -m feedback.external_reference_validation.e2e.run --label GDC_2023 --nav-model google/gemini-3-flash-preview --detect-model google/gemini-3-flash-preview
+用法：python -m feedback.external_reference_validation.e2e.run --label GDC_2023 --model google/gemini-3-flash-preview --batch 4
 """
 
 from __future__ import annotations
@@ -16,17 +16,50 @@ from __future__ import annotations
 import argparse
 import json
 import re
+import time
+from rapidfuzz import fuzz
 from concurrent.futures import ThreadPoolExecutor
-from pathlib import Path
 
 from feedback.external_reference_validation.vlm_reader import VLMImageReader
 from feedback.external_reference_validation.map_offsets import load_page_texts, norm
 from feedback.external_reference_validation.vlm_first_last import (
-    HEAD_PROMPT, TAIL_PROMPT, body_text, strip_heading, tail_kind,
-    _score, _png, WIN, DEFAULT_TH, DATASET,
+    HEAD_PROMPT, body_text, strip_heading, tail_kind,
+    _score, _png, WIN, DEFAULT_TH, DATASET, clean_response, MAX_TOKENS
 )
 from feedback.external_reference_validation.toc_nav.coverage import navigate
 from feedback.external_reference_validation.toc_nav.toc_extract import extract_toc
+
+
+# tail 看「最後 1~2 頁」（邊界可能跨頁：item N 尾巴在結束頁或其前一頁底部）
+TAIL2_PROMPT = (
+    "You are shown the last 1-2 rendered pages (in order) of the region for "
+    '"Item {n}. {title}". The next section is "Item {nn}. {ntitle}".\n'
+    'Find where Item {n} ends — right before the "Item {nn}" heading if it appears, '
+    "otherwise the very bottom of the last page — and transcribe VERBATIM the last 5 lines "
+    "of Item {n} before that point. Ignore running headers, page numbers, footers.\n"
+    "Output ONLY the transcribed text, no commentary, no quotes, no formatting."
+)
+
+
+def _score_multi(reader, images: list, prompt: str, gt_window: str, th: int, force: bool) -> dict:
+    """多圖版 _score：送 images 給 VLM、partial_ratio 比 GT 窗口。空回應/429 退避重試。"""
+    last = "?"
+    for attempt in range(4):
+        try:
+            raw = reader.read_images(images, prompt=prompt, max_tokens=MAX_TOKENS,
+                                     force=(force or attempt > 0))
+            txt = clean_response(raw)
+            if txt:
+                r = round(fuzz.partial_ratio(gt_window, norm(txt)), 1)
+                return {"ratio": r, "pass": r >= th, "pred": txt[:400], "gt": gt_window}
+            last = "模型回空內容"
+        except Exception as e:
+            last = f"{type(e).__name__}: {e}"
+            if not ("429" in last or "empty" in last.lower()):
+                return {"error": last}
+        if attempt < 3:
+            time.sleep(4 * (attempt + 1))
+    return {"error": last}
 
 
 def _heading_top(page_text: str, n: str, within: int = 160) -> bool:
@@ -54,8 +87,7 @@ def find_heading_page(pt: list[str], num: str, title: str, center: int,
     return None
 
 
-def run(label: str, nav_model: str, detect_model: str, th: int, force: bool,
-        batch: int = 3) -> list[dict]:
+def run(label: str, model: str, th: int, force: bool, batch: int = 3) -> list[dict]:
     folder = DATASET / label
     pt = load_page_texts(folder / f"{label}.pdf")
     content = json.loads((folder / f"{label}_content.json").read_text("utf-8"))
@@ -64,10 +96,10 @@ def run(label: str, nav_model: str, detect_model: str, th: int, force: bool,
     known = {it["item"]: it["start_page"]
              for it in json.loads((folder / f"{label}_pages.json").read_text("utf-8"))["items"]}
 
-    nav = navigate(label, nav_model)["nav"]            # item → 渲染頁（TOC 獨立導航）
-    toc_pages = set(extract_toc(label, nav_model)["toc_pages"])   # 排除 TOC 頁，避免低編號 item 撞目錄
+    nav = navigate(label, model)["nav"]            # item → 渲染頁（TOC 獨立導航）
+    toc_pages = set(extract_toc(label, model)["toc_pages"])   # 排除 TOC 頁，避免低編號 item 撞目錄
     reader = VLMImageReader(
-        model=detect_model,
+        model=model,
         cache_dir="feedback/external_reference_validation/vlm_cache",
     )
     seq = [n for n in order if n in nav]
@@ -87,6 +119,7 @@ def run(label: str, nav_model: str, detect_model: str, th: int, force: bool,
         rec: dict = {"item": num, "bucket": kind, "nav_page": nav_pg, "start_page": sp,
                      "dataset_page": known.get(num), "gated": gated}
 
+        # head：用（重定位後的）起始頁
         head_gt = strip_heading(bt, num, title)[:WIN]
         head_job = {
             "image": _png(folder, sp),
@@ -94,6 +127,7 @@ def run(label: str, nav_model: str, detect_model: str, th: int, force: bool,
             "gt": head_gt,
         }
 
+        # tail：end page 由「下一個 nav item 起點（同樣重定位）」推（prose 桶才驗）
         if kind == "prose" and i + 1 < len(seq) and nav.get(seq[i + 1]):
             nxt = seq[i + 1]
             np_ = find_heading_page(pt, nxt, gt[nxt].get("item_title", ""), nav[nxt],
@@ -101,9 +135,11 @@ def run(label: str, nav_model: str, detect_model: str, th: int, force: bool,
             ep = (np_ - 1) if _heading_top(pt[np_ - 1], nxt) else np_
             ep = max(ep, sp)
             rec["end_page"] = ep
+            # 看最後 1~2 頁（邊界跨頁）：[ep-1, ep]，但不早於 item 起始頁
+            pages = [ep - 1, ep] if ep - 1 >= sp else [ep]
             tail_job = {
-                "image": _png(folder, ep),
-                "prompt": TAIL_PROMPT.format(
+                "images": [_png(folder, p) for p in pages],
+                "prompt": TAIL2_PROMPT.format(
                     n=num,
                     title=title,
                     nn=nxt,
@@ -116,7 +152,7 @@ def run(label: str, nav_model: str, detect_model: str, th: int, force: bool,
             rec["tail"] = {"skipped": f"{kind}/最後一個"}
         jobs.append({"record": rec, "head_job": head_job, "tail_job": tail_job})
 
-    print(f"  [{label}] {len(jobs)} 個 item，detect batch={batch}")
+    print(f"  [{label}] {len(jobs)} 個 item，batch={batch}")
 
     def work(job: dict) -> dict:
         rec = job["record"]
@@ -124,7 +160,7 @@ def run(label: str, nav_model: str, detect_model: str, th: int, force: bool,
         rec["head"] = _score(reader, head["image"], head["prompt"], head["gt"], th, force)
         if job["tail_job"] is not None:
             tail = job["tail_job"]
-            rec["tail"] = _score(reader, tail["image"], tail["prompt"], tail["gt"], th, force)
+            rec["tail"] = _score_multi(reader, tail["images"], tail["prompt"], tail["gt"], th, force)
         return rec
 
     with ThreadPoolExecutor(max_workers=max(1, batch)) as ex:
@@ -142,18 +178,14 @@ def _cell(side: dict) -> str:
 def main() -> int:
     ap = argparse.ArgumentParser()
     ap.add_argument("--label", default="GDC_2023")
-    ap.add_argument("--nav-model", default="google/gemini-3-flash-preview")
-    ap.add_argument("--detect-model", default="google/gemini-3-flash-preview")
+    ap.add_argument("--model", default="google/gemini-3-flash-preview")
     ap.add_argument("--th", type=int, default=DEFAULT_TH)
-    ap.add_argument("--batch", type=int, default=3, help="detect 階段併發數（預設 3）")
+    ap.add_argument("--batch", type=int, default=3, help="item-level 併發數（預設 3）")
     ap.add_argument("--force", action="store_true")
     args = ap.parse_args()
 
-    rows = run(args.label, args.nav_model, args.detect_model, args.th, args.force, args.batch)
-    print(
-        f"\n=== {args.label}  (nav={args.nav_model} | detect={args.detect_model})"
-        " 端到端（TOC 導航頁 → Source C）==="
-    )
+    rows = run(args.label, args.model, args.th, args.force, args.batch)
+    print(f"\n=== {args.label}  ({args.model}) 端到端（TOC 導航頁 → Source C）===")
     print(f"{'item':>5} | gate | nav→start/ds | {'head':>7} | {'tail':>7}")
     print("-" * 54)
     for r in rows:

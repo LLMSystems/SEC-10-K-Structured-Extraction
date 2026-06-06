@@ -1,0 +1,9 @@
+{
+  "base_url": "https://openrouter.ai/api/v1",
+  "created_at": 1780767706,
+  "image_sha256": "481b85952a17189ee922d3df6a4a9f4c19af4ba967dba7425000d4d1c7321ac6+0542852d8b691144aac5a1cd27e799d8f141558e52aa9e94d353f8176d15d65e",
+  "model": "qwen/qwen3.5-122b-a10b",
+  "prompt": "You are shown the last 1-2 rendered pages (in order) of the region for \"Item 9A. Controls and Procedures\". The next section is \"Item 10. Directors, Executive Officers and Corporate Governance\".\nFind where Item 9A ends — right before the \"Item 10\" heading if it appears, otherwise the very bottom of the last page — and transcribe VERBATIM the last 5 lines of Item 9A before that point. Ignore running headers, page numbers, footers.\nOutput ONLY the transcribed text, no commentary, no quotes, no formatting.",
+  "source_path": "feedback\\external_reference_validation\\dataset\\GDC_2023\\pages\\page_059.png;feedback\\external_reference_validation\\dataset\\GDC_2023\\pages\\page_060.png",
+  "text": "during the most recent fiscal quarter that have materially affected, or are reasonably likely to materially affect, our internal control over financial reporting.\nItem 9B. Other Information\nNone.\nItem 9C. Disclosure Regarding Foreign Jurisdictions that Prevent Inspections\nNot applicable."
+}

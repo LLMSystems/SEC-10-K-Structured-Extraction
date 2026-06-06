@@ -1,0 +1,9 @@
+{
+  "base_url": "https://openrouter.ai/api/v1",
+  "created_at": 1780767311,
+  "image_sha256": "96aa3055cafbfd420ef7cd2b562970d53560b1f498ebc2f8ce0b7ebd857cdeff+20b2d6f4522897c67e1af2ff2fdf89b1ee22439db0c483783d2c27975b1e5f1b",
+  "model": "qwen/qwen3.6-27b",
+  "prompt": "You are shown the last 1-2 rendered pages (in order) of the region for \"Item 5. Market for Registrant's Common Equity, Related Stockholder Matters and Issuer Purchases of Equity Securities\". The next section is \"Item 7. Management's Discussion and Analysis of Financial Condition and Results of Operations\".\nFind where Item 5 ends — right before the \"Item 7\" heading if it appears, otherwise the very bottom of the last page — and transcribe VERBATIM the last 5 lines of Item 5 before that point. Ignore running headers, page numbers, footers.\nOutput ONLY the transcribed text, no commentary, no quotes, no formatting.",
+  "source_path": "feedback\\external_reference_validation\\dataset\\GDC_2023\\pages\\page_047.png;feedback\\external_reference_validation\\dataset\\GDC_2023\\pages\\page_048.png",
+  "text": "The Company issued warrants to purchase up to 331,236 shares of common stock to the placement agent of a registered direct offering on November\n3, 2023. See “Part I – Item 1. Business – Recent Business Development – November 2023 Offering.”\nThe Company issued warrants to purchase up to 40,514 shares of common stock to the placement agent of a registered direct offering on March 26,\n2024. See “Part I – Item 1. Business – Recent Business Development – March 2024 Offering.”"
+}

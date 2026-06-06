@@ -1,0 +1,9 @@
+{
+  "base_url": "https://openrouter.ai/api/v1",
+  "created_at": 1780767629,
+  "image_sha256": "24f48ee1a39edba8025e0323e23587269ca2b75dcfdb68b28b0309fd2c3830ee+97b0426d210bf630c2ea7b974ff6e11c5c40a49d9bc85d2c096ebde5589fe915",
+  "model": "qwen/qwen3.5-27b",
+  "prompt": "You are shown the last 1-2 rendered pages (in order) of the region for \"Item 1. Business\". The next section is \"Item 1A. Risk Factors\".\nFind where Item 1 ends — right before the \"Item 1A\" heading if it appears, otherwise the very bottom of the last page — and transcribe VERBATIM the last 5 lines of Item 1 before that point. Ignore running headers, page numbers, footers.\nOutput ONLY the transcribed text, no commentary, no quotes, no formatting.",
+  "source_path": "feedback\\external_reference_validation\\dataset\\TSLA_2023\\pages\\page_014.png;feedback\\external_reference_validation\\dataset\\TSLA_2023\\pages\\page_015.png",
+  "text": "graduates through this program in 2023, and our goal in 2024 is grow this program to over 600 students annually across our Fremont\nFactory, Gigafactory Nevada, Gigafactory Texas and Gigafactory New York.\nEngineering Development Program – Launched in January 2024, this program targets recent college and university graduates for\nspecialized engineering fields. In collaboration with Austin Community College, the program educates early-career engineers in controls\nengineering, enhancing their knowledge of high-demand technologies for U.S. manufacturing.\nWe will continue to expand the opportunities for our employees to add skills and develop professionally with a new Employee Educational\nAssistance Program launching in the U.S. in the spring of 2024 to help employees pursue select certificates or degrees. With virtual, self-paced\neducation options available, employees can pursue a new path or expand their knowledge while continuing to grow their career."
+}

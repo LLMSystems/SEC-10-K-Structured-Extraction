@@ -1,0 +1,9 @@
+{
+  "base_url": "https://openrouter.ai/api/v1",
+  "created_at": 1780766924,
+  "image_sha256": "4a46343afaee8f35251bcc0423cbdcce8834432dbdbbad67df2f7eb2d82b0a0b+1e5a8c93f054eb4a8f6f76f5f2b096d68b808d95dfadd365185b9df9417c4007",
+  "model": "google/gemma-4-26b-a4b-it",
+  "prompt": "You are shown the last 1-2 rendered pages (in order) of the region for \"Item 10. Directors, Executive Officers and Corporate Governance\". The next section is \"Item 11. Executive Compensation\".\nFind where Item 10 ends — right before the \"Item 11\" heading if it appears, otherwise the very bottom of the last page — and transcribe VERBATIM the last 5 lines of Item 10 before that point. Ignore running headers, page numbers, footers.\nOutput ONLY the transcribed text, no commentary, no quotes, no formatting.",
+  "source_path": "feedback\\external_reference_validation\\dataset\\GDC_2023\\pages\\page_065.png;feedback\\external_reference_validation\\dataset\\GDC_2023\\pages\\page_066.png",
+  "text": "Our Corporate Governance and Nominating Committee currently consists of Mr. Shuaheng Zhang, Mr. Yi Zhong and Mr. Mingyue Cai, with Mr. Yi\nZhong serving as the chairman of the Corporate Governance and Nominating Committee. We anticipate that each of the members of our Corporate\nGovernance and Nominating Committee will be independent under the applicable Nasdaq listing standards. Our board of directors has adopted a\nwritten charter for the Corporate Governance and Nominating Committee, which is available on our corporate website at www.cccnctech.com."
+}

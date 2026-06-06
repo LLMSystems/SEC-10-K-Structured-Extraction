@@ -1,0 +1,9 @@
+{
+  "base_url": "https://openrouter.ai/api/v1",
+  "created_at": 1780767027,
+  "image_sha256": "20b5eea159d1f94dd863a742ac64a459de69cd2c909b30c8aaa993b4e2070a86",
+  "model": "google/gemma-4-26b-a4b-it",
+  "prompt": "You are shown the last 1-2 rendered pages (in order) of the region for \"Item 7A. Quantitative and Qualitative Disclosures About Market Risk\". The next section is \"Item 8. Financial Statements and Supplementary Data\".\nFind where Item 7A ends — right before the \"Item 8\" heading if it appears, otherwise the very bottom of the last page — and transcribe VERBATIM the last 5 lines of Item 7A before that point. Ignore running headers, page numbers, footers.\nOutput ONLY the transcribed text, no commentary, no quotes, no formatting.",
+  "source_path": "feedback\\external_reference_validation\\dataset\\TSLA_2023\\pages\\page_046.png",
+  "text": "We considered the historical trends in foreign currency exchange rates and determined that it is reasonably possible that adverse changes in\nforeign currency exchange rates of 10% for all currencies could be experienced in the near-term. These changes were applied to our total monetary\nassets and liabilities denominated in currencies other than our local currencies at the balance sheet date to compute the impact these changes would\nhave had on our net income before income taxes. These changes would have resulted in a gain or loss of $1.01 billion at December 31, 2023 and\n$473 million at December 31, 2022, assuming no foreign hedging."
+}

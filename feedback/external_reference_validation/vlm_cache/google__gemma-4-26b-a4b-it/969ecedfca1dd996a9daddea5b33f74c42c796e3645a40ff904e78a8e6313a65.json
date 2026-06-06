@@ -1,0 +1,9 @@
+{
+  "base_url": "https://openrouter.ai/api/v1",
+  "created_at": 1780766924,
+  "image_sha256": "59733ebe89de748eff9876fe95cb9987040c5e63809cd9e40127f3c629ea0544+4e5b6056fb2b1e0be09565a90f448271773d2e8ae6b46787c1e1e6efdbb375d1",
+  "model": "google/gemma-4-26b-a4b-it",
+  "prompt": "You are shown the last 1-2 rendered pages (in order) of the region for \"Item 7. Management's Discussion and Analysis of Financial Condition and Results of Operations\". The next section is \"Item 7A. Quantitative and Qualitative Disclosures About Market Risk\".\nFind where Item 7 ends — right before the \"Item 7A\" heading if it appears, otherwise the very bottom of the last page — and transcribe VERBATIM the last 5 lines of Item 7 before that point. Ignore running headers, page numbers, footers.\nOutput ONLY the transcribed text, no commentary, no quotes, no formatting.",
+  "source_path": "feedback\\external_reference_validation\\dataset\\GDC_2023\\pages\\page_056.png;feedback\\external_reference_validation\\dataset\\GDC_2023\\pages\\page_057.png",
+  "text": "Net cash used in investing activities was $5.2 million for the year ended December 31, 2023, as compared to approximately $12.5 million net cash\nused in investing activities for the year ended December 31, 2022. Net cash used in investing activities was decreased by approximately $7.3 million,\nmainly due to the decrease of the net cash impact from the disposal of discontinued operations or subsidiaries amounted to approximately $12.9\nmillion, partially offset by purchase of intangible assets with the amount of $2.9 million and investment in convertible notes of Liquid Marketplace\nCorp and DigTrax Entertainment Inc. with the amount of $2.5 million."
+}

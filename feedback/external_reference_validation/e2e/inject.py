@@ -8,25 +8,24 @@ Tier 2 端到端 §7.3：用 **TOC 獨立導航頁** + **只測 gate 放行 item
 
 只汙染 GT 側、重用 e2e 已快取的 VLM 讀 → 零 API。運算子/嚴重度同 vlm_inject_eval。
 
-用法：python -m feedback.external_reference_validation.e2e.inject --nav-model google/gemini-3-flash-preview --detect-model google/gemini-3-flash-preview
+用法：python -m feedback.external_reference_validation.e2e.inject --model google/gemini-3-flash-preview
 """
 
 from __future__ import annotations
 
 import argparse
 import json
-from concurrent.futures import ThreadPoolExecutor
 from pathlib import Path
 
 from feedback.external_reference_validation.vlm_reader import VLMImageReader
 from feedback.external_reference_validation.vlm_first_last import (
-    HEAD_PROMPT, TAIL_PROMPT, body_text, strip_heading, tail_kind,
+    HEAD_PROMPT, body_text, strip_heading, tail_kind,
     clean_response, _png, WIN, DEFAULT_TH, DATASET,
 )
 from feedback.external_reference_validation.map_offsets import load_page_texts
 from feedback.external_reference_validation.toc_nav.coverage import navigate
 from feedback.external_reference_validation.toc_nav.toc_extract import extract_toc
-from feedback.external_reference_validation.e2e.run import find_heading_page, _heading_top
+from feedback.external_reference_validation.e2e.run import find_heading_page, _heading_top, TAIL2_PROMPT
 from feedback.external_reference_validation.vlm_inject_eval import inj_head, inj_tail, SEVERITIES, HEAD_OPS, TAIL_OPS, _pr
 
 
@@ -40,7 +39,15 @@ def cached(reader: VLMImageReader, image: Path, prompt: str) -> str | None:
     return clean_response(e["text"]) if e else None
 
 
-def eval_filing(label: str, nav_model: str, detect_model: str, th: int) -> list[dict]:
+def cached_multi(reader: VLMImageReader, images: list, prompt: str) -> str | None:
+    """多圖版快取讀（tail 的 [ep-1, ep]）。"""
+    joined = "+".join(reader.image_sha256(Path(p)) for p in images)
+    key = reader.cache_key(image_sha=joined, prompt=prompt)
+    e = reader._load_cache_entry(key)
+    return clean_response(e["text"]) if e else None
+
+
+def eval_filing(label: str, model: str, th: int) -> list[dict]:
     folder = DATASET / label
     pt = load_page_texts(folder / f"{label}.pdf")
     content = json.loads((folder / f"{label}_content.json").read_text("utf-8"))
@@ -48,10 +55,10 @@ def eval_filing(label: str, nav_model: str, detect_model: str, th: int) -> list[
     order = [it["item_number"] for it in content["items"] if it.get("status") == "extracted"]
     ct_of = {k: (v.get("content_text") or "") for k, v in gt.items()}
 
-    nav = navigate(label, nav_model)["nav"]
-    toc_pages = set(extract_toc(label, nav_model)["toc_pages"])
+    nav = navigate(label, model)["nav"]
+    toc_pages = set(extract_toc(label, model)["toc_pages"])
     reader = VLMImageReader(
-        model=detect_model,
+        model=model,
         cache_dir="feedback/external_reference_validation/vlm_cache",
     )
     seq = [n for n in order if n in nav]
@@ -88,9 +95,10 @@ def eval_filing(label: str, nav_model: str, detect_model: str, th: int) -> list[
             ep = (np_ - 1) if _heading_top(pt[np_ - 1], nxt) else np_
             ep = max(ep, sp)
             next_ct = ct_of.get(nxt, "")
-            pt_pred = cached(reader, _png(folder, ep),
-                             TAIL_PROMPT.format(n=num, title=title, nn=nxt,
-                                                ntitle=gt.get(nxt, {}).get("item_title", "") or ""))
+            pages = [ep - 1, ep] if ep - 1 >= sp else [ep]
+            pt_pred = cached_multi(reader, [_png(folder, p) for p in pages],
+                                   TAIL2_PROMPT.format(n=num, title=title, nn=nxt,
+                                                       ntitle=gt.get(nxt, {}).get("item_title", "") or ""))
             if pt_pred:
                 clean = _pr(bt[-WIN:], pt_pred)
                 for op in TAIL_OPS:
@@ -103,29 +111,15 @@ def eval_filing(label: str, nav_model: str, detect_model: str, th: int) -> list[
 
 def main() -> int:
     ap = argparse.ArgumentParser()
-    ap.add_argument("--nav-model", default="google/gemini-3-flash-preview")
-    ap.add_argument("--detect-model", default="google/gemini-3-flash-preview")
+    ap.add_argument("--model", default="google/gemini-3-flash-preview")
     ap.add_argument("--th", type=int, default=DEFAULT_TH)
-    ap.add_argument("--batch", type=int, default=3, help="filing 級併發數（預設 3）")
     args = ap.parse_args()
 
-    print(f"[inject] {len(LABELS)} 份 filing，batch={args.batch}")
-    with ThreadPoolExecutor(max_workers=max(1, args.batch)) as ex:
-        parts = list(
-            ex.map(
-                lambda label: eval_filing(label, args.nav_model, args.detect_model, args.th),
-                LABELS,
-            )
-        )
-
     rows = []
-    for part in parts:
-        rows += part
+    for label in LABELS:
+        rows += eval_filing(label, args.model, args.th)
 
-    print(
-        "\n=== 端到端 §7.3 偵測率（TOC 導航頁、僅 gate 放行 item）"
-        f"  nav={args.nav_model} | detect={args.detect_model} ==="
-    )
+    print(f"\n=== 端到端 §7.3 偵測率（TOC 導航頁、僅 gate 放行 item）  {args.model} ===")
     print(f"{'op':<16} | " + " | ".join(f"{s:>7}" for s in SEVERITIES))
     print("-" * 40)
     for op in HEAD_OPS + TAIL_OPS:

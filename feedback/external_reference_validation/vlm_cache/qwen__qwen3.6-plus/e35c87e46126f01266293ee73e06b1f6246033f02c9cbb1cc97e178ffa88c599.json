@@ -1,0 +1,9 @@
+{
+  "base_url": "https://openrouter.ai/api/v1",
+  "created_at": 1780767100,
+  "image_sha256": "91ba84d98ee6183d91052798aa1d3458830bcef7c58ac1a9b3847486404c706b",
+  "model": "qwen/qwen3.6-plus",
+  "prompt": "You are shown the last 1-2 rendered pages (in order) of the region for \"Item 2. Properties\". The next section is \"Item 3. Legal Proceedings\".\nFind where Item 2 ends — right before the \"Item 3\" heading if it appears, otherwise the very bottom of the last page — and transcribe VERBATIM the last 5 lines of Item 2 before that point. Ignore running headers, page numbers, footers.\nOutput ONLY the transcribed text, no commentary, no quotes, no formatting.",
+  "source_path": "feedback\\external_reference_validation\\dataset\\GDC_2023\\pages\\page_045.png",
+  "text": "software to develop video games. We operate the game through interactive live stream, facilitating real-time engagement between players and\nviewers through interactive features embedded within the live streaming platform.\n\nWe have the right to use the two domains: gdculturegroup.com and aicatalsysis.com.\n\nItem 3. Legal Proceedings"
+}

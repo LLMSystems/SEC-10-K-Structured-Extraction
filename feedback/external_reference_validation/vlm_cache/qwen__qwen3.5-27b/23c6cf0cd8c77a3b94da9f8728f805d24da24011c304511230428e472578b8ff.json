@@ -1,0 +1,9 @@
+{
+  "base_url": "https://openrouter.ai/api/v1",
+  "created_at": 1780767596,
+  "image_sha256": "cf98e6e6375d461f62d7e31c7a144e135bcbb7f011053175dc460a1c98621f11+7aaf1f228bd4ab75ea03c8c3fb21a0cf548dec2fff00e2cc3d72d7c1cea16272",
+  "model": "qwen/qwen3.5-27b",
+  "prompt": "You are shown the last 1-2 rendered pages (in order) of the region for \"Item 1. Business\". The next section is \"Item 1A. Risk Factors\".\nFind where Item 1 ends — right before the \"Item 1A\" heading if it appears, otherwise the very bottom of the last page — and transcribe VERBATIM the last 5 lines of Item 1 before that point. Ignore running headers, page numbers, footers.\nOutput ONLY the transcribed text, no commentary, no quotes, no formatting.",
+  "source_path": "feedback\\external_reference_validation\\dataset\\RELL_2025\\pages\\page_007.png;feedback\\external_reference_validation\\dataset\\RELL_2025\\pages\\page_008.png",
+  "text": "officers, directors and committees of the Board (including committee charters) is also available on our website. The foregoing information regarding\nour website is provided for convenience and the content of our website is not deemed to be incorporated by reference in this report filed with the\nSEC. Additionally, the SEC maintains an internet site through which our reports, proxy and information statements and our other SEC filings can be\nlocated; the address of that site is http://www.sec.gov."
+}

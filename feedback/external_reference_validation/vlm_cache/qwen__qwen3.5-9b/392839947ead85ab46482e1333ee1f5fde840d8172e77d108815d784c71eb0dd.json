@@ -1,0 +1,9 @@
+{
+  "base_url": "https://openrouter.ai/api/v1",
+  "created_at": 1780768150,
+  "image_sha256": "ceeb33b3153de9571d6ec171b08353b2f54c8adcb59329968b5ef35d914b0f2e+65d92052ffed4ae2c3e3f70be30007d1907362e32a17f3f74f0e2ae9c110cfd4",
+  "model": "qwen/qwen3.5-9b",
+  "prompt": "You are shown the last 1-2 rendered pages (in order) of the region for \"Item 5. Market for Registrant's Common Equity, Related Stockholder Matters and Issuer Purchases of Equity Securities\". The next section is \"Item 7. Management's Discussion and Analysis of Financial Condition and Results of Operations\".\nFind where Item 5 ends — right before the \"Item 7\" heading if it appears, otherwise the very bottom of the last page — and transcribe VERBATIM the last 5 lines of Item 5 before that point. Ignore running headers, page numbers, footers.\nOutput ONLY the transcribed text, no commentary, no quotes, no formatting.",
+  "source_path": "feedback\\external_reference_validation\\dataset\\TSLA_2023\\pages\\page_032.png;feedback\\external_reference_validation\\dataset\\TSLA_2023\\pages\\page_033.png",
+  "text": "None.\n\nPurchases of Equity Securities by the Issuer and Affiliated Purchasers\n\nNone.\n\nITEM 6. [RESERVED]"
+}

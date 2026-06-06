@@ -1,0 +1,9 @@
+{
+  "base_url": "https://openrouter.ai/api/v1",
+  "created_at": 1780764680,
+  "image_sha256": "92423280946f223ed01b03615cf957f9f9cacc9987614c5638372f2313067374+96c16c053d3a06896c065be5b047cfaee3794b97eba80638f3470cb44203363c",
+  "model": "google/gemini-3-flash-preview",
+  "prompt": "You are shown the last 1-2 rendered pages (in order) of the region for \"Item 1A. Risk Factors\". The next section is \"Item 1C. Cybersecurity\".\nFind where Item 1A ends — right before the \"Item 1C\" heading if it appears, otherwise the very bottom of the last page — and transcribe VERBATIM the last 5 lines of Item 1A before that point. Ignore running headers, page numbers, footers.\nOutput ONLY the transcribed text, no commentary, no quotes, no formatting.",
+  "source_path": "tier2/dataset/TSLA_2023/pages/page_028.png;tier2/dataset/TSLA_2023/pages/page_029.png",
+  "text": "Our certificate of incorporation and bylaws afford certain rights and powers to our board of directors that may facilitate the delay or prevention\nof an acquisition that it deems undesirable. We are also subject to Section 203 of the Delaware General Corporation Law and other provisions of\nDelaware law that limit the ability of stockholders in certain situations to effect certain business combinations. In addition, the terms of our\nconvertible senior notes may require us to repurchase such notes in the event of a fundamental change, including a takeover of our company. Any of\nthe foregoing provisions and terms that has the effect of delaying or deterring a change in control could limit the opportunity for our stockholders to\nreceive a premium for their shares of our common stock, and could also affect the price that some investors are willing to pay for our common stock."
+}

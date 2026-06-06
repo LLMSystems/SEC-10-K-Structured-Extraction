@@ -1,0 +1,9 @@
+{
+  "base_url": "https://openrouter.ai/api/v1",
+  "created_at": 1780767060,
+  "image_sha256": "ce7941ba28ef19842f83678eb004df5b1b70552864438784c3a998b57630134a+96784352f6dc36cee613b409658aef5ee0bf5176a8572f3e38d5e218258fa87d",
+  "model": "google/gemma-4-26b-a4b-it",
+  "prompt": "You are shown the last 1-2 rendered pages (in order) of the region for \"Item 7A. Quantitative and Qualitative Disclosures About Market Risk\". The next section is \"Item 8. Financial Statements and Supplementary Data\".\nFind where Item 7A ends — right before the \"Item 8\" heading if it appears, otherwise the very bottom of the last page — and transcribe VERBATIM the last 5 lines of Item 7A before that point. Ignore running headers, page numbers, footers.\nOutput ONLY the transcribed text, no commentary, no quotes, no formatting.",
+  "source_path": "feedback\\external_reference_validation\\dataset\\WMT_2026\\pages\\page_046.png;feedback\\external_reference_validation\\dataset\\WMT_2026\\pages\\page_047.png",
+  "text": "interpretation and application of complex tax laws.\n\nITEM 7A. QUANTITATIVE AND QUALITATIVE DISCLOSURES ABOUT MARKET RISK\n\nMarket Risk"
+}
