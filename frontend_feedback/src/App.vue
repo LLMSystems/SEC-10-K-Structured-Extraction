@@ -6,6 +6,7 @@ import {
   BadgeCheck,
   Check,
   CheckCircle2,
+  ChevronDown,
   CircleDashed,
   Database,
   Eye,
@@ -14,6 +15,7 @@ import {
   Gauge,
   GitBranch,
   Layers3,
+  Menu,
   Navigation,
   Pause,
   Play,
@@ -21,7 +23,9 @@ import {
   RotateCcw,
   SearchCheck,
   ShieldCheck,
-  WalletCards
+  Sparkles,
+  WalletCards,
+  X
 } from '@lucide/vue'
 import type { BarSeriesOption, ScatterSeriesOption } from 'echarts/charts'
 import { BarChart, ScatterChart } from 'echarts/charts'
@@ -145,13 +149,6 @@ const flowPhaseClass = (phase: string, active = false) => {
   }
 
   return active ? 'border-stone-900 bg-stone-100 text-stone-950' : 'border-stone-200 bg-white text-stone-800'
-}
-
-const flowDotClass = (phase: string, active = false) => {
-  if (active) return 'bg-stone-950 text-white ring-4 ring-stone-200'
-  if (phase === 'deterministic') return 'bg-amber-100 text-amber-800'
-  if (phase === 'visual') return 'bg-teal-100 text-teal-800'
-  return 'bg-stone-100 text-stone-700'
 }
 
 const nodeCircleClass = (phase: string, index: number) => {
@@ -375,47 +372,6 @@ const navigationOption = computed<ECOption>(() => ({
       barWidth: 14,
       data: navigationRows.map((row) => percent(row.within, row.withinTotal)),
       itemStyle: { borderRadius: [4, 4, 0, 0] },
-    },
-  ],
-}))
-
-const precisionOption = computed<ECOption>(() => ({
-  color: [palette.visual, palette.ink],
-  tooltip: { trigger: 'axis' },
-  legend: {
-    bottom: 0,
-    itemWidth: 10,
-    itemHeight: 10,
-    textStyle: { color: palette.stone },
-  },
-  grid: { top: 20, right: 16, bottom: 48, left: 42 },
-  xAxis: {
-    type: 'category',
-    data: ['開頭精確度', '尾段精確度'],
-    axisLine: { lineStyle: { color: palette.line } },
-    axisTick: { show: false },
-    axisLabel: { color: palette.stone },
-  },
-  yAxis: {
-    type: 'value',
-    max: 100,
-    axisLabel: { formatter: '{value}%', color: palette.stone },
-    splitLine: { lineStyle: { color: '#e7e5e4' } },
-  },
-  series: [
-    {
-      name: '基線模型',
-      type: 'bar',
-      barWidth: 42,
-      data: [98.3, 97.7],
-      label: {
-        show: true,
-        position: 'top',
-        formatter: '{c}%',
-        color: palette.ink,
-        fontWeight: 700,
-      },
-      itemStyle: { borderRadius: [6, 6, 0, 0] },
     },
   ],
 }))
@@ -672,6 +628,33 @@ const activeFlow = computed(
       points: ['item 標題', '起始頁與結束頁', '內容文字', '文件來源'],
     } satisfies FlowNode,
 )
+
+// Mobile menu
+const mobileMenuOpen = ref(false)
+
+// Scroll active section
+const activeSection = ref('top')
+const NAV_SECTIONS = ['top', 'flow', 'visual', 'deterministic', 'data'] as const
+
+if (typeof window !== 'undefined') {
+  const observer = new IntersectionObserver(
+    (entries) => {
+      for (const entry of entries) {
+        if (entry.isIntersecting) {
+          activeSection.value = entry.target.id
+        }
+      }
+    },
+    { rootMargin: '-30% 0px -60% 0px', threshold: 0 },
+  )
+  // Wait for DOM
+  setTimeout(() => {
+    for (const id of NAV_SECTIONS) {
+      const el = document.getElementById(id)
+      if (el) observer.observe(el)
+    }
+  }, 0)
+}
 </script>
 
 <template>
@@ -683,12 +666,47 @@ const activeFlow = computed(
           SEC 10-K 驗證總覽
         </a>
         <div class="hidden items-center gap-5 text-sm text-stone-600 md:flex">
-          <a href="#flow" class="hover:text-stone-950">流程</a>
-          <a href="#visual" class="hover:text-stone-950">視覺驗證</a>
-          <a href="#deterministic" class="hover:text-stone-950">確定性驗證</a>
-          <a href="#data" class="hover:text-stone-950">資料</a>
+          <a
+            v-for="{ id, label } in [{ id: 'flow', label: '流程' }, { id: 'visual', label: '多模態視覺驗證' }, { id: 'deterministic', label: '確定性驗證' }]"
+            :key="id"
+            :href="'#' + id"
+            class="transition-colors"
+            :class="activeSection === id ? 'font-semibold text-stone-950' : 'hover:text-stone-950'"
+          >{{ label }}</a>
         </div>
+        <!-- 手機漢堡按鈕 -->
+        <button
+          type="button"
+          class="ml-auto grid size-8 place-items-center text-stone-600 hover:text-stone-950 md:hidden"
+          :aria-label="mobileMenuOpen ? '關閉選單' : '開啟選單'"
+          @click="mobileMenuOpen = !mobileMenuOpen"
+        >
+          <X v-if="mobileMenuOpen" class="size-5" />
+          <Menu v-else class="size-5" />
+        </button>
       </nav>
+      <!-- 手機展開選單 -->
+      <Transition
+        enter-active-class="transition-all duration-200"
+        enter-from-class="opacity-0 -translate-y-1"
+        enter-to-class="opacity-100 translate-y-0"
+        leave-active-class="transition-all duration-150"
+        leave-from-class="opacity-100 translate-y-0"
+        leave-to-class="opacity-0 -translate-y-1"
+      >
+        <div v-if="mobileMenuOpen" class="border-t border-stone-200 bg-stone-50/95 backdrop-blur md:hidden">
+          <div class="mx-auto flex max-w-7xl flex-col px-5 py-3 text-sm text-stone-600">
+            <a
+              v-for="{ id, label } in [{ id: 'flow', label: '流程' }, { id: 'visual', label: '多模態視覺驗證' }, { id: 'deterministic', label: '確定性驗證' }]"
+              :key="id"
+              :href="'#' + id"
+              class="border-b border-stone-100 py-3 last:border-0 hover:text-stone-950"
+              :class="activeSection === id ? 'font-semibold text-stone-950' : ''"
+              @click="mobileMenuOpen = false"
+            >{{ label }}</a>
+          </div>
+        </div>
+      </Transition>
     </div>
 
     <section id="top" class="relative overflow-hidden border-b border-stone-200 pt-24">
@@ -835,7 +853,9 @@ const activeFlow = computed(
           </div>
 
           <!-- 流程圖 -->
-          <div class="overflow-x-auto pb-2">
+          <div class="relative overflow-x-auto pb-2">
+            <div class="pointer-events-none absolute inset-y-0 right-0 z-10 w-10 bg-gradient-to-l from-stone-50 to-transparent md:hidden" />
+            <p class="mb-1 text-right text-xs text-stone-400 md:hidden">← 可左右滾動</p>
             <div class="flex min-w-[860px] items-start pt-2">
               <template v-for="(node, index) in flowNodes" :key="node.title">
                 <!-- 節點 -->
@@ -886,6 +906,7 @@ const activeFlow = computed(
                     </div>
                     <h3 class="text-sm font-bold leading-snug">{{ node.title }}</h3>
                     <p class="mt-1.5 line-clamp-2 text-xs leading-5 text-stone-600">{{ node.description }}</p>
+                    <p v-if="!isPlaying" class="mt-2 text-right text-[10px] text-stone-400">點擊跳轉</p>
                   </div>
                 </div>
 
@@ -991,10 +1012,10 @@ const activeFlow = computed(
                         <FileText class="size-4 text-stone-500" />
                         目錄頁讀取 Prompt
                       </span>
-                      <span
-                        class="text-xs font-normal text-stone-400 transition-transform duration-200"
-                        :class="showTocPrompt ? 'rotate-180' : 'rotate-0'"
-                      >▼</span>
+                      <ChevronDown
+                        class="size-4 text-stone-400 transition-transform duration-200"
+                        :class="showTocPrompt ? 'rotate-180' : ''"
+                      />
                     </button>
                     <Transition
                       enter-active-class="transition-all duration-300 overflow-hidden"
@@ -1054,10 +1075,10 @@ If this page is NOT a table of contents, output exactly: NONE</pre>
                         <FileText class="size-4 text-stone-500" />
                         多模態模型 Prompt
                       </span>
-                      <span
-                        class="text-xs font-normal text-stone-400 transition-transform duration-200"
-                        :class="showPrompt ? 'rotate-180' : 'rotate-0'"
-                      >▼</span>
+                      <ChevronDown
+                        class="size-4 text-stone-400 transition-transform duration-200"
+                        :class="showPrompt ? 'rotate-180' : ''"
+                      />
                     </button>
                     <Transition
                       enter-active-class="transition-all duration-300 overflow-hidden"
@@ -1315,7 +1336,7 @@ Output ONLY the transcribed text, no commentary, no quotes, no formatting.</pre>
               <Eye v-if="summary.eyebrow === '頁面證據'" class="size-8 text-teal-700" />
               <FileCheck2 v-else class="size-8 text-amber-700" />
             </div>
-            <p class="text-sm leading-7 text-stone-650">{{ summary.description }}</p>
+            <p class="text-sm leading-7 text-stone-600">{{ summary.description }}</p>
             <ul v-if="'proofPoints' in summary" class="mt-4 grid gap-2">
               <li
                 v-for="point in summary.proofPoints"
@@ -1345,6 +1366,87 @@ Output ONLY the transcribed text, no commentary, no quotes, no formatting.</pre>
               </span>
             </div>
           </article>
+        </div>
+      </div>
+    </section>
+
+    <section id="data" class="border-y border-stone-200 bg-stone-100/70 py-16">
+      <div class="mx-auto max-w-7xl px-5">
+        <div class="mb-8 flex flex-col gap-3 md:flex-row md:items-end md:justify-between">
+          <div>
+            <p class="text-sm font-semibold text-sky-700">候選模型池</p>
+            <h2 class="mt-2 text-3xl font-bold">多模態模型選型</h2>
+          </div>
+          <div class="max-w-2xl space-y-2 text-sm leading-6 text-stone-600">
+            <p>
+              候選池參考多模態模型評分、價格、上下文長度、速度與延遲，再篩選可穩定呼叫且支援影像輸入的模型，共挑選了
+              <span class="font-semibold text-stone-950">13 個多模態模型</span>
+              進行評測。評分來源參考
+              <a
+                href="https://llm-stats.com/benchmarks/category/multimodal"
+                target="_blank"
+                rel="noopener noreferrer"
+                class="font-semibold text-sky-700 underline decoration-sky-300 underline-offset-4 hover:text-sky-900"
+              >
+                LLM Stats 多模態排行榜
+              </a>
+              。
+            </p>
+          </div>
+        </div>
+
+        <div class="grid gap-5 lg:grid-cols-[1fr_0.48fr]">
+          <article class="border border-stone-200 bg-white p-5 shadow-sm">
+            <div class="mb-3 flex items-center gap-2">
+              <Layers3 class="size-5 text-sky-700" />
+              <h3 class="text-lg font-bold">價格與綜合評分分布</h3>
+            </div>
+            <div class="relative h-96 overflow-hidden">
+              <VChart class="absolute inset-0 size-full" :option="benchOption" autoresize />
+            </div>
+            <div class="mt-4 flex flex-wrap items-center gap-x-5 gap-y-2 text-xs font-semibold text-stone-600">
+              <span class="text-stone-500">形狀標籤</span>
+              <span class="inline-flex items-center gap-2">
+                <span class="size-2.5 rotate-45 border border-stone-500 bg-stone-200" />
+                開放權重
+              </span>
+              <span class="inline-flex items-center gap-2">
+                <span class="size-2.5 rounded-full border border-stone-500 bg-stone-200" />
+                閉源 API
+              </span>
+            </div>
+          </article>
+
+          <div class="grid gap-4">
+            <article class="border border-teal-200 bg-teal-50 p-5">
+              <p class="text-sm font-semibold text-teal-800">頁面導航模型</p>
+              <h3 class="mt-2 text-xl font-bold">google/gemini-3-flash-preview</h3>
+              <p class="mt-3 text-sm leading-6 text-teal-950/80">
+                頁面導航任務包含 TOC 辨識、頁碼對位與標題確認，比單純讀首尾段更吃穩定性，因此固定使用目前最穩定的模型。
+              </p>
+            </article>
+            <article class="border border-stone-200 bg-white p-5">
+              <p class="text-sm font-semibold text-stone-500">篩選邏輯</p>
+              <div class="mt-4 grid gap-3">
+                <div class="flex items-center gap-3 text-sm">
+                  <Database class="size-4 text-stone-500" />
+                  候選模型池
+                </div>
+                <div class="flex items-center gap-3 text-sm">
+                  <FileText class="size-4 text-stone-500" />
+                  支援影像輸入
+                </div>
+                <div class="flex items-center gap-3 text-sm">
+                  <WalletCards class="size-4 text-stone-500" />
+                  成本與速度可接受
+                </div>
+                <div class="flex items-center gap-3 text-sm">
+                  <BadgeCheck class="size-4 text-teal-700" />
+                  納入正式驗證
+                </div>
+              </div>
+            </article>
+          </div>
         </div>
       </div>
     </section>
@@ -1415,9 +1517,12 @@ Output ONLY the transcribed text, no commentary, no quotes, no formatting.</pre>
         <div class="grid gap-5 lg:grid-cols-2">
           <article class="border border-stone-200 bg-stone-50 p-5">
             <div class="mb-4 flex flex-col gap-3">
-              <div class="flex items-center gap-2">
-                <Navigation class="size-5 text-teal-700" />
-                <h3 class="text-lg font-bold">頁面導航覆蓋率</h3>
+              <div class="flex flex-col gap-2 md:flex-row md:items-center md:justify-between">
+                <div class="flex items-center gap-2">
+                  <Navigation class="size-5 text-teal-700" />
+                  <h3 class="text-lg font-bold">頁面導航覆蓋率</h3>
+                </div>
+                <p class="text-sm font-semibold text-stone-600">基線模型：google/gemini-3-flash-preview</p>
               </div>
               <p class="text-sm leading-6 text-stone-600">
                 這張圖比較「完全找到正確頁」與「落在正確頁前後一頁內」。後者代表雖然頁碼不完全精準，但仍足以進一步做可信頁面確認。
@@ -1440,9 +1545,12 @@ Output ONLY the transcribed text, no commentary, no quotes, no formatting.</pre>
 
           <article class="border border-stone-200 bg-stone-50 p-5">
             <div class="mb-4 flex flex-col gap-3">
-              <div class="flex items-center gap-2">
-                <Gauge class="size-5 text-teal-700" />
-                <h3 class="text-lg font-bold">端到端精確度</h3>
+              <div class="flex flex-col gap-2 md:flex-row md:items-center md:justify-between">
+                <div class="flex items-center gap-2">
+                  <Gauge class="size-5 text-teal-700" />
+                  <h3 class="text-lg font-bold">端到端精確度</h3>
+                </div>
+                <p class="text-sm font-semibold text-stone-600">基線模型：google/gemini-3-flash-preview</p>
               </div>
               <p class="text-sm leading-6 text-stone-600">
                 這張圖只看已通過可信頁面確認的正確樣本。開頭檢查使用起始頁，尾段檢查使用最後 1 到 2 頁，因此更能處理跨頁結尾。
@@ -1452,8 +1560,17 @@ Output ONLY the transcribed text, no commentary, no quotes, no formatting.</pre>
                 <span class="border border-teal-200 bg-teal-50 px-2 py-1 text-teal-900">尾段 43/44</span>
               </div>
             </div>
-            <div class="relative h-72 overflow-hidden">
-              <VChart class="absolute inset-0 size-full" :option="precisionOption" autoresize />
+            <div class="grid grid-cols-2 gap-4 py-4">
+              <div class="flex flex-col items-center justify-center border border-teal-200 bg-teal-50 py-8">
+                <p class="text-xs font-semibold text-teal-700">開頭精確度</p>
+                <p class="mt-2 text-5xl font-bold tabular-nums text-teal-950">98.3<span class="text-2xl">%</span></p>
+                <p class="mt-1 text-xs text-teal-600">59 / 60</p>
+              </div>
+              <div class="flex flex-col items-center justify-center border border-stone-200 bg-stone-50 py-8">
+                <p class="text-xs font-semibold text-stone-600">尾段精確度</p>
+                <p class="mt-2 text-5xl font-bold tabular-nums text-stone-950">97.7<span class="text-2xl">%</span></p>
+                <p class="mt-1 text-xs text-stone-500">43 / 44</p>
+              </div>
             </div>
             <div class="mt-4 border border-teal-200 bg-white p-4 text-sm leading-6 text-stone-700">
               <p class="font-bold text-stone-950">結論：通過可信頁面門檻後，正確解析不容易被誤殺。</p>
@@ -1511,84 +1628,6 @@ Output ONLY the transcribed text, no commentary, no quotes, no formatting.</pre>
       </div>
     </section>
 
-    <section class="border-y border-stone-200 bg-stone-100/70 py-16">
-      <div class="mx-auto max-w-7xl px-5">
-        <div class="mb-8 flex flex-col gap-3 md:flex-row md:items-end md:justify-between">
-          <div>
-            <p class="text-sm font-semibold text-sky-700">候選模型池</p>
-            <h2 class="mt-2 text-3xl font-bold">多模態模型選型</h2>
-          </div>
-          <p class="max-w-2xl text-sm leading-6 text-stone-600">
-            候選池參考多模態模型評分、價格、上下文長度、速度與延遲，再篩選可穩定呼叫且支援影像輸入的模型。
-            評分來源參考
-            <a
-              href="https://llm-stats.com/benchmarks/category/multimodal"
-              target="_blank"
-              rel="noopener noreferrer"
-              class="font-semibold text-sky-700 underline decoration-sky-300 underline-offset-4 hover:text-sky-900"
-            >
-              LLM Stats 多模態排行榜
-            </a>
-            。
-          </p>
-        </div>
-
-        <div class="grid gap-5 lg:grid-cols-[1fr_0.48fr]">
-          <article class="border border-stone-200 bg-white p-5 shadow-sm">
-            <div class="mb-3 flex items-center gap-2">
-              <Layers3 class="size-5 text-sky-700" />
-              <h3 class="text-lg font-bold">價格與綜合評分分布</h3>
-            </div>
-            <div class="relative h-96 overflow-hidden">
-              <VChart class="absolute inset-0 size-full" :option="benchOption" autoresize />
-            </div>
-            <div class="mt-4 flex flex-wrap items-center gap-x-5 gap-y-2 text-xs font-semibold text-stone-600">
-              <span class="text-stone-500">形狀標籤</span>
-              <span class="inline-flex items-center gap-2">
-                <span class="size-2.5 rotate-45 border border-stone-500 bg-stone-200" />
-                開放權重
-              </span>
-              <span class="inline-flex items-center gap-2">
-                <span class="size-2.5 rounded-full border border-stone-500 bg-stone-200" />
-                閉源 API
-              </span>
-            </div>
-          </article>
-
-          <div class="grid gap-4">
-            <article class="border border-teal-200 bg-teal-50 p-5">
-              <p class="text-sm font-semibold text-teal-800">頁面導航模型</p>
-              <h3 class="mt-2 text-xl font-bold">google/gemini-3-flash-preview</h3>
-              <p class="mt-3 text-sm leading-6 text-teal-950/80">
-                頁面導航任務包含 TOC 辨識、頁碼對位與標題確認，比單純讀首尾段更吃穩定性，因此固定使用目前最穩定的模型。
-              </p>
-            </article>
-            <article class="border border-stone-200 bg-white p-5">
-              <p class="text-sm font-semibold text-stone-500">篩選邏輯</p>
-              <div class="mt-4 grid gap-3">
-                <div class="flex items-center gap-3 text-sm">
-                  <Database class="size-4 text-stone-500" />
-                  候選模型池
-                </div>
-                <div class="flex items-center gap-3 text-sm">
-                  <FileText class="size-4 text-stone-500" />
-                  支援影像輸入
-                </div>
-                <div class="flex items-center gap-3 text-sm">
-                  <WalletCards class="size-4 text-stone-500" />
-                  成本與速度可接受
-                </div>
-                <div class="flex items-center gap-3 text-sm">
-                  <BadgeCheck class="size-4 text-teal-700" />
-                  納入正式驗證
-                </div>
-              </div>
-            </article>
-          </div>
-        </div>
-      </div>
-    </section>
-
     <section class="bg-white py-16">
       <div class="mx-auto max-w-7xl px-5">
         <div class="mb-8 flex flex-col gap-3 md:flex-row md:items-end md:justify-between">
@@ -1597,7 +1636,9 @@ Output ONLY the transcribed text, no commentary, no quotes, no formatting.</pre>
             <h2 class="mt-2 text-3xl font-bold">檢查模型精確度排行榜</h2>
           </div>
           <p class="max-w-2xl text-sm leading-6 text-stone-600">
-            這裡固定頁面導航模型，只替換負責讀頁面與比對邊界的檢查模型，避免把找頁能力和邊界判讀能力混在一起。
+            共評比
+            <span class="font-semibold text-stone-950">13 個多模態模型</span>
+            ；這裡固定頁面導航模型，只替換負責讀頁面與比對邊界的檢查模型，避免把找頁能力和邊界判讀能力混在一起。
           </p>
         </div>
 
@@ -1721,7 +1762,7 @@ Output ONLY the transcribed text, no commentary, no quotes, no formatting.</pre>
           </p>
         </div>
 
-        <div class="mb-5 border border-white/10 bg-white/6 p-5">
+        <div class="mb-5 border border-white/10 bg-white/10 p-5">
           <div class="mb-4 flex items-center gap-2">
             <FileCheck2 class="size-5 text-amber-300" />
             <h3 class="text-lg font-bold">方法與數據準備</h3>
@@ -1752,7 +1793,7 @@ Output ONLY the transcribed text, no commentary, no quotes, no formatting.</pre>
           <article
             v-for="rule in deterministicRules"
             :key="rule.rule"
-            class="border border-white/10 bg-white/6 p-5"
+            class="border border-white/10 bg-white/10 p-5"
           >
             <div class="mb-5 flex items-center justify-between">
               <span class="text-sm font-semibold text-amber-300">{{ rule.rule }}</span>
@@ -1777,7 +1818,7 @@ Output ONLY the transcribed text, no commentary, no quotes, no formatting.</pre>
 
     <footer class="border-t border-stone-200 bg-stone-100 py-8">
       <div class="mx-auto flex max-w-7xl flex-col gap-3 px-5 text-sm text-stone-600 md:flex-row md:items-center md:justify-between">
-        <p>資料來源：<a href="https://github.com/LLMSystems/SEC-10-K-Structured-Extraction/blob/main/feedback/combined_validation_report.md" class="text-blue-500 underline" target="_blank">https://github.com/LLMSystems/SEC-10-K-Structured-Extraction/blob/main/feedback/combined_validation_report.md</a></p>
+        <p>資料來源：<a href="https://github.com/LLMSystems/SEC-10-K-Structured-Extraction/blob/main/feedback/combined_validation_report.md" class="font-semibold text-teal-700 underline decoration-teal-300 underline-offset-4 hover:text-teal-900" target="_blank">https://github.com/LLMSystems/SEC-10-K-Structured-Extraction/blob/main/feedback/combined_validation_report.md</a></p>
       </div>
     </footer>
   </main>
