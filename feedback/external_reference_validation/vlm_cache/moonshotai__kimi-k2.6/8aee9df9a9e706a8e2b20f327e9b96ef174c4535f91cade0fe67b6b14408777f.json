@@ -1,0 +1,9 @@
+{
+  "base_url": "https://openrouter.ai/api/v1",
+  "created_at": 1780758735,
+  "image_sha256": "7e7c529cdd2c9b8bcf43117d6d7cf9f9b424aae6ece70748f3413123867f08c3",
+  "model": "moonshotai/kimi-k2.6",
+  "prompt": "You are shown one page from a SEC 10-K filing rendered as an image.\nItem \"1A. Risk Factors\" ENDS on this page; the next section is \"Item 1C. Cybersecurity\".\nFirst locate the bottom edge of Item 1A's text:\n- If the \"Item 1C\" heading is visible on this page, Item 1A ends on the line directly ABOVE that heading.\n- Otherwise Item 1A runs all the way to the very bottom of the page.\nThen transcribe VERBATIM the LAST 5 lines of Item 1A at that bottom edge — the FINAL lines right before the section ends, NOT lines from the top or middle of the page. Ignore running headers, page numbers, footers.\nOutput ONLY the transcribed text, no commentary, no quotes, no formatting.",
+  "source_path": "feedback\\external_reference_validation\\dataset\\RELL_2025\\pages\\page_017.png",
+  "text": "economies, inflation, governmental policies, political unrest, military action and armed conflicts (in Europe and the Middle East), terrorist activities, political and social turmoil, civil unrest and other crises.\n\nITEM 1B. Unresolved Staff Comments\n\nNone."
+}

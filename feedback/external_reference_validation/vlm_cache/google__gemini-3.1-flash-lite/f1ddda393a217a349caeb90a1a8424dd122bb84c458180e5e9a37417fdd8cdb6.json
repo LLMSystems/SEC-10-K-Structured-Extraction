@@ -1,0 +1,9 @@
+{
+  "base_url": "https://openrouter.ai/api/v1",
+  "created_at": 1780758686,
+  "image_sha256": "7e7c529cdd2c9b8bcf43117d6d7cf9f9b424aae6ece70748f3413123867f08c3",
+  "model": "google/gemini-3.1-flash-lite",
+  "prompt": "You are shown one page from a SEC 10-K filing rendered as an image.\nItem \"1A. Risk Factors\" ENDS on this page; the next section is \"Item 1C. Cybersecurity\".\nFirst locate the bottom edge of Item 1A's text:\n- If the \"Item 1C\" heading is visible on this page, Item 1A ends on the line directly ABOVE that heading.\n- Otherwise Item 1A runs all the way to the very bottom of the page.\nThen transcribe VERBATIM the LAST 5 lines of Item 1A at that bottom edge — the FINAL lines right before the section ends, NOT lines from the top or middle of the page. Ignore running headers, page numbers, footers.\nOutput ONLY the transcribed text, no commentary, no quotes, no formatting.",
+  "source_path": "feedback\\external_reference_validation\\dataset\\RELL_2025\\pages\\page_017.png",
+  "text": "developments in our business and/or factors outside of our control including certain of the risk factors discussed in this report. Many factors may\ncause the market price for our common stock to change, including: (i) our operating results as compared to investors’ expectations in any period, (ii)\nmarket perceptions concerning our future earnings prospects, (iii) adverse changes in general market conditions or economic trends and (iv) changes\nor events in our industry or the world, such as market reactions to public health issues, natural disasters, changes in global, national, or regional\neconomies, inflation, governmental policies, political unrest, military action and armed conflicts (in Europe and the Middle East), terrorist activities,"
+}

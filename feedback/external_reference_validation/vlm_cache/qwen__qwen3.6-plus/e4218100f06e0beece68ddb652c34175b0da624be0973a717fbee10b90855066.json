@@ -1,0 +1,9 @@
+{
+  "base_url": "https://openrouter.ai/api/v1",
+  "created_at": 1780758981,
+  "image_sha256": "20b2d6f4522897c67e1af2ff2fdf89b1ee22439db0c483783d2c27975b1e5f1b",
+  "model": "qwen/qwen3.6-plus",
+  "prompt": "You are shown one page from a SEC 10-K filing rendered as an image.\nItem \"5. Market for Registrant's Common Equity, Related Stockholder Matters and Issuer Purchases of Equity Securities\" ENDS on this page; the next section is \"Item 7. Management's Discussion and Analysis of Financial Condition and Results of Operations\".\nFirst locate the bottom edge of Item 5's text:\n- If the \"Item 7\" heading is visible on this page, Item 5 ends on the line directly ABOVE that heading.\n- Otherwise Item 5 runs all the way to the very bottom of the page.\nThen transcribe VERBATIM the LAST 5 lines of Item 5 at that bottom edge — the FINAL lines right before the section ends, NOT lines from the top or middle of the page. Ignore running headers, page numbers, footers.\nOutput ONLY the transcribed text, no commentary, no quotes, no formatting.",
+  "source_path": "feedback\\external_reference_validation\\dataset\\GDC_2023\\pages\\page_048.png",
+  "text": "The Company issued 400,000 shares of common stock on January 11, 2024. See “Part I – Item 1. Business – Recent Business Development – Equity Purchase Agreement dated October 27, 2023 and the Amendment to the Equity Purchase Agreement dated November 10, 2023.”\n\nThe Company issued warrants to purchase up to 331,236 shares of common stock to the placement agent of a registered direct offering on November 3, 2023. See “Part I – Item 1. Business – Recent Business Development – November 2023 Offering.”\n\nThe Company issued warrants to purchase up to 40,514 shares of common stock to the placement agent of a registered direct offering on March 26, 2024. See “Part I – Item 1. Business – Recent Business Development – March 2024 Offering.”"
+}

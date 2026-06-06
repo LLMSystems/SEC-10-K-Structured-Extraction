@@ -1,0 +1,9 @@
+{
+  "base_url": "https://openrouter.ai/api/v1",
+  "created_at": 1780758464,
+  "image_sha256": "cb021c384adc9102473c9ed64599f062ef451ea2645d57c564daf3c80e251523",
+  "model": "google/gemma-4-26b-a4b-it",
+  "prompt": "You are shown one page from a SEC 10-K filing rendered as an image.\nThis page contains the BEGINNING of \"Item 1. Business\".\nFind the \"Item 1\" heading, then transcribe VERBATIM the first 5 lines of text that come immediately after it. Include any report title, addressee, or sub-heading exactly as printed — do NOT skip them; only ignore page running-headers, page numbers, and footers.\nOutput ONLY the transcribed text, no commentary, no quotes, no formatting.",
+  "source_path": "feedback\\external_reference_validation\\dataset\\RELL_2025\\pages\\page_002.png",
+  "text": "I am sorry, but the image provided is a \"TABLE OF CONTENTS\" page, not the page containing the beginning of \"Item 1. Business\". Therefore, I cannot fulfill the request to transcribe the text following the \"Item 1\" heading."
+}

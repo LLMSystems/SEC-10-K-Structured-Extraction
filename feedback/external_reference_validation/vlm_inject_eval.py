@@ -128,7 +128,7 @@ def cached_pred(idx: dict, image: Path, side: str, num: str) -> str | None:
 
 
 def eval_model(model: str, th: int) -> dict:
-    reader = VLMImageReader(model=model, cache_dir="feedback/external_reference_validation/vlm_cache")
+    reader = VLMImageReader(model=model, cache_dir="tier2/vlm_cache")
     idx = build_cache_index(reader)
     rows = []          # 每筆：filing/item/side/op/sev/clean_ratio/inj_ratio/detected/applicable
     fp_head = fp_tail = n_head = n_tail = 0

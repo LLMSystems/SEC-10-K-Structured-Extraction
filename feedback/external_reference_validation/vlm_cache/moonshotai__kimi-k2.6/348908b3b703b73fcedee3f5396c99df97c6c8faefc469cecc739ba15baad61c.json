@@ -1,0 +1,9 @@
+{
+  "base_url": "https://openrouter.ai/api/v1",
+  "created_at": 1780758727,
+  "image_sha256": "6b293f730eaae5e532a4eb16f9323eecef1e7f860384ac94146685bbe2c0303a",
+  "model": "moonshotai/kimi-k2.6",
+  "prompt": "You are shown one page from a SEC 10-K filing rendered as an image.\nItem \"9B. Other Information\" ENDS on this page; the next section is \"Item 15. Exhibits, Financial Statement Schedules\".\nFirst locate the bottom edge of Item 9B's text:\n- If the \"Item 15\" heading is visible on this page, Item 9B ends on the line directly ABOVE that heading.\n- Otherwise Item 9B runs all the way to the very bottom of the page.\nThen transcribe VERBATIM the LAST 5 lines of Item 9B at that bottom edge — the FINAL lines right before the section ends, NOT lines from the top or middle of the page. Ignore running headers, page numbers, footers.\nOutput ONLY the transcribed text, no commentary, no quotes, no formatting.",
+  "source_path": "feedback\\external_reference_validation\\dataset\\NFLX_2025\\pages\\page_040.png",
+  "text": " Information with respect to principal independent registered public accounting firm fees and services is incorporated by reference from the information under the caption “Proposal Two: Ratification of Appointment of Independent Registered Public Accounting Firm” in our Proxy Statement for the Annual Meeting of Stockholders."
+}

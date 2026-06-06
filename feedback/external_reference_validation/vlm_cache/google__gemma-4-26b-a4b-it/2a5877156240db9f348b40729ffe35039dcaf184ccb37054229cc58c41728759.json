@@ -1,0 +1,9 @@
+{
+  "base_url": "https://openrouter.ai/api/v1",
+  "created_at": 1780758476,
+  "image_sha256": "62148fefd4f08c7409eaa53c9d09ece898ce58108805d74049fa9d50efdc2316",
+  "model": "google/gemma-4-26b-a4b-it",
+  "prompt": "You are shown one page from a SEC 10-K filing rendered as an image.\nItem \"3. Legal Proceedings\" ENDS on this page; the next section is \"Item 5. Market for Registrant's Common Equity, Related Stockholder Matters and Issuer Purchases of Equity Securities\".\nFirst locate the bottom edge of Item 3's text:\n- If the \"Item 5\" heading is visible on this page, Item 3 ends on the line directly ABOVE that heading.\n- Otherwise Item 3 runs all the way to the very bottom of the page.\nThen transcribe VERBATIM the LAST 5 lines of Item 3 at that bottom edge — the FINAL lines right before the section ends, NOT lines from the top or middle of the page. Ignore running headers, page numbers, footers.\nOutput ONLY the transcribed text, no commentary, no quotes, no formatting.",
+  "source_path": "feedback\\external_reference_validation\\dataset\\WMT_2026\\pages\\page_030.png",
+  "text": "False Claims Act Litigation: United States of America ex rel. James Marcilla and Isela Chavez, USDC, Dist. of N.M., 8/23/19, transferred to USDC Dist. of T. 7/25/24.\nASDA Equal Value Claims: Ms S Brierley & Others v. ASDA Stores Ltd (240637/2008 & Others - Manchester Employment Tribunal); Abbus &\nOthers v Asda Stores limited (KB-2022-003243) and Abusubh & Others v Asda Stores limited (KB-2022-003240).\nFederal Trade Commission and State Attorneys General Driver Platform Litigation: Federal Trade Commission, et al. v. Walmart Inc., USDC,\nN.D. Cal., 2/26/26.\nMexico Antitrust Matter: Comisión Federal de Competencia Económica de México, Investigatory Unit v. Nueva Wal-Mart de México, S.de R.l. de C.V. (Docket IC-2022-0050, consolidated with Docket DE-026-2020), Mexico, 10/6/23."
+}

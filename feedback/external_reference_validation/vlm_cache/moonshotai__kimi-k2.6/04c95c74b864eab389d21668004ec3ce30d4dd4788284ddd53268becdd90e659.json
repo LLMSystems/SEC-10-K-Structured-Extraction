@@ -1,0 +1,9 @@
+{
+  "base_url": "https://openrouter.ai/api/v1",
+  "created_at": 1780758746,
+  "image_sha256": "8bffb0dcff67ecc2ff6d4c832ca5abf46269e106829d9de4283778dcc226c796",
+  "model": "moonshotai/kimi-k2.6",
+  "prompt": "You are shown one page from a SEC 10-K filing rendered as an image.\nItem \"8. Financial Statements and Supplementary Data\" ENDS on this page; the next section is \"Item 9A. Controls and Procedures\".\nFirst locate the bottom edge of Item 8's text:\n- If the \"Item 9A\" heading is visible on this page, Item 8 ends on the line directly ABOVE that heading.\n- Otherwise Item 8 runs all the way to the very bottom of the page.\nThen transcribe VERBATIM the LAST 5 lines of Item 8 at that bottom edge — the FINAL lines right before the section ends, NOT lines from the top or middle of the page. Ignore running headers, page numbers, footers.\nOutput ONLY the transcribed text, no commentary, no quotes, no formatting.",
+  "source_path": "feedback\\external_reference_validation\\dataset\\TSLA_2023\\pages\\page_094.png",
+  "text": "The image provided is completely blank/white with no visible text. I cannot transcribe any content from this page."
+}
