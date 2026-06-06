@@ -286,6 +286,36 @@ SEC 10-K 視覺驗證器的目標，是建立一條獨立於 parser 內容的頁
 
 注意：這張表的分母來自各模型自己的 `gate + clean-pass` 子集，因此模型間分母可能略有不同；這是 e2e 設計的一部分，不是統計錯誤。
 
+#### 檢查模型錯誤偵測率排行榜
+
+為了讓模型間的錯誤偵測能力更容易比較，以下先將 `truncate_head`、`overrun_head`、`truncate_tail`、`overrun_tail` 四類錯誤，以及 `50 lines` / `50%` 兩種錯誤強度彙整成排行榜。
+
+這裡的「平均偵測率」不是直接平均各格百分比，而是按各模型實際可評估分母加權後計算：
+
+- **開頭錯誤**：彙整 `truncate_head` 與 `overrun_head` 的兩種注入強度。
+- **尾段錯誤**：彙整 `truncate_tail` 與 `overrun_tail` 的兩種注入強度。
+- **平均偵測率**：彙整開頭錯誤與尾段錯誤的所有可評估樣本。
+
+| rank | detect model | 平均偵測率 | 開頭錯誤 | 尾段錯誤 | 備註 |
+|---:|---|---:|---:|---:|---|
+| 1 | `google/gemma-4-26b-a4b-it` | `92.5%` | `92.1%` | `93.8%` | 可評估分母較小，需搭配 precision 一起看 |
+| 2 | `google/gemini-3-flash-preview` | `90.9%` | `89.8%` | `92.4%` | 主要基線模型，precision 與 detection 最均衡 |
+| 3 | `qwen/qwen3.5-122b-a10b` | `90.8%` | `90.4%` | `91.4%` | 錯誤偵測表現接近基線 |
+| 4 | `google/gemini-2.5-pro` | `90.6%` | `89.9%` | `91.7%` | Gemini 系列第一梯隊 |
+| 5 | `google/gemini-3.1-flash-lite` | `90.4%` | `90.0%` | `91.0%` | detection 穩定，但 precision 需分開看 |
+| 6 | `qwen/qwen3.6-27b` | `90.3%` | `90.0%` | `90.9%` | 開頭與尾段偵測相對均衡 |
+| 7 | `qwen/qwen3.5-35b-a3b` | `89.9%` | `90.5%` | `88.7%` | 開頭錯誤略強於尾段錯誤 |
+| 8 | `google/gemini-2.5-flash` | `89.6%` | `89.5%` | `89.8%` | 整體接近 90% |
+| 9 | `google/gemma-4-31b-it` | `89.4%` | `90.2%` | `87.9%` | 尾段錯誤略弱 |
+| 9 | `qwen/qwen3.5-27b` | `89.4%` | `90.0%` | `88.3%` | 與 Gemma 4 31B 平均相同 |
+| 11 | `qwen/qwen3.6-plus` | `89.3%` | `90.0%` | `88.1%` | precision 較強，但 detection 排名較後 |
+| 12 | `qwen/qwen3.5-9b` | `88.5%` | `90.0%` | `86.1%` | 尾段錯誤偵測較弱 |
+| 13 | `moonshotai/kimi-k2.6` | `87.0%` | `85.5%` | `89.1%` | 尾段偵測高於開頭偵測 |
+
+這張排行榜的解讀重點是：`google/gemini-3-flash-preview` 雖然不是單看 detection 平均的第一名，但它同時具有最高 precision、穩定的 navigation、以及均衡的錯誤偵測率，因此仍是目前最適合作為整體視覺驗證器基線的模型。相對地，`google/gemma-4-26b-a4b-it` 的 detection 平均最高，但 clean precision 分母與表現較弱，不能單獨解讀為最佳模型。
+
+#### 四類錯誤明細
+
 | detect model | `truncate_head` | `overrun_head` | `truncate_tail` | `overrun_tail` |
 |---|---|---|---|---|
 | `google/gemini-3-flash-preview` | `53/59 (89.8%)` / `49/59 (83.1%)` | `55/59 (93.2%)` / `55/59 (93.2%)` | `38/43 (88.4%)` / `42/43 (97.7%)` | `41/43 (95.3%)` / `38/43 (88.4%)` |
