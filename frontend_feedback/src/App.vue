@@ -42,7 +42,6 @@ import VChart from 'vue-echarts'
 import type { FlowNode } from './data/report'
 import {
   benchModels,
-  datasetCards,
   detectionOperators,
   deterministicRules,
   flowNodes,
@@ -335,6 +334,9 @@ const demoSteps: DemoStepData[] = [
 const currentDemo = computed(
   (): DemoStepData => demoSteps[activeFlowIndex.value] ?? demoSteps[0]!,
 )
+
+const showPrompt = ref(false)
+const showTocPrompt = ref(false)
 
 const navigationOption = computed<ECOption>(() => ({
   color: [palette.visual, palette.deterministicSoft],
@@ -978,6 +980,43 @@ const activeFlow = computed(
 
                 <!-- 頁面導航步驟 -->
                 <template v-else-if="currentDemo.type === 'nav'">
+                  <!-- TOC Prompt -->
+                  <div class="mb-4">
+                    <button
+                      type="button"
+                      class="flex w-full items-center justify-between border border-stone-200 bg-stone-50 px-3 py-2 text-sm font-semibold text-stone-700 transition hover:border-stone-400 hover:bg-stone-100"
+                      @click="showTocPrompt = !showTocPrompt"
+                    >
+                      <span class="flex items-center gap-2">
+                        <FileText class="size-4 text-stone-500" />
+                        目錄頁讀取 Prompt
+                      </span>
+                      <span
+                        class="text-xs font-normal text-stone-400 transition-transform duration-200"
+                        :class="showTocPrompt ? 'rotate-180' : 'rotate-0'"
+                      >▼</span>
+                    </button>
+                    <Transition
+                      enter-active-class="transition-all duration-300 overflow-hidden"
+                      enter-from-class="opacity-0 max-h-0"
+                      enter-to-class="opacity-100 max-h-[400px]"
+                      leave-active-class="transition-all duration-200 overflow-hidden"
+                      leave-from-class="opacity-100 max-h-[400px]"
+                      leave-to-class="opacity-0 max-h-0"
+                    >
+                      <div v-if="showTocPrompt" class="border border-t-0 border-stone-200 bg-stone-50/60">
+                        <div class="flex items-center gap-2 border-b border-stone-100 px-3 py-1.5">
+                          <span class="rounded bg-stone-700 px-1.5 py-0.5 text-xs font-bold text-white">TOC_PROMPT</span>
+                          <span class="text-xs text-stone-500">對每一頁判斷是否為目錄頁</span>
+                        </div>
+                        <pre class="whitespace-pre-wrap px-3 py-2.5 font-mono text-xs leading-6 text-stone-800">You are shown one page from a SEC 10-K filing.
+If this page is part of the Table of Contents (it lists Items with their page numbers), output one line per entry in exactly this form:
+  &lt;item&gt; | &lt;page&gt;
+where &lt;item&gt; is the Item identifier exactly as printed (e.g. 1, 1A, 7A) and &lt;page&gt; is its printed page number. Include every Item row visible on this page, in order. Output ONLY these lines.
+If this page is NOT a table of contents, output exactly: NONE</pre>
+                      </div>
+                    </Transition>
+                  </div>
                   <div class="grid gap-2">
                     <div
                       v-for="step in currentDemo.navSteps"
@@ -1004,6 +1043,56 @@ const activeFlow = computed(
 
                 <!-- 頁面證據比對 -->
                 <template v-else-if="currentDemo.type === 'compare'">
+                  <!-- Prompt 展示區（預設收合） -->
+                  <div class="mb-4">
+                    <button
+                      type="button"
+                      class="flex w-full items-center justify-between border border-stone-200 bg-stone-50 px-3 py-2 text-sm font-semibold text-stone-700 transition hover:border-stone-400 hover:bg-stone-100"
+                      @click="showPrompt = !showPrompt"
+                    >
+                      <span class="flex items-center gap-2">
+                        <FileText class="size-4 text-stone-500" />
+                        多模態模型 Prompt
+                      </span>
+                      <span
+                        class="text-xs font-normal text-stone-400 transition-transform duration-200"
+                        :class="showPrompt ? 'rotate-180' : 'rotate-0'"
+                      >▼</span>
+                    </button>
+                    <Transition
+                      enter-active-class="transition-all duration-300 overflow-hidden"
+                      enter-from-class="opacity-0 max-h-0"
+                      enter-to-class="opacity-100 max-h-[600px]"
+                      leave-active-class="transition-all duration-200 overflow-hidden"
+                      leave-from-class="opacity-100 max-h-[600px]"
+                      leave-to-class="opacity-0 max-h-0"
+                    >
+                      <div v-if="showPrompt" class="mt-3 grid gap-3 lg:grid-cols-2">
+                        <div class="border border-teal-200 bg-teal-50/60">
+                          <div class="flex items-center gap-2 border-b border-teal-100 px-3 py-1.5">
+                            <span class="rounded bg-teal-700 px-1.5 py-0.5 text-xs font-bold text-white">HEAD_PROMPT</span>
+                            <span class="text-xs text-teal-700">開頭擷取指令</span>
+                          </div>
+                          <pre class="whitespace-pre-wrap px-3 py-2.5 font-mono text-xs leading-6 text-teal-950">You are shown one page from a SEC 10-K filing rendered as an image.
+This page contains the BEGINNING of "Item 7. Management's Discussion..."
+Find the "Item 7" heading, then transcribe VERBATIM the first 5 lines of text that come immediately after it.
+Include any report title, addressee, or sub-heading exactly as printed — do NOT skip them; only ignore page running-headers, page numbers, and footers.
+Output ONLY the transcribed text, no commentary, no quotes, no formatting.</pre>
+                        </div>
+                        <div class="border border-stone-200 bg-stone-50/60">
+                          <div class="flex items-center gap-2 border-b border-stone-100 px-3 py-1.5">
+                            <span class="rounded bg-stone-700 px-1.5 py-0.5 text-xs font-bold text-white">TAIL_PROMPT</span>
+                            <span class="text-xs text-stone-600">尾段擷取指令</span>
+                          </div>
+                          <pre class="whitespace-pre-wrap px-3 py-2.5 font-mono text-xs leading-6 text-stone-800">You are shown the last 1-2 rendered pages of the region for "Item 7. Management's Discussion...". The next section is "Item 7A. Quantitative and Qualitative Disclosures...".
+Find where Item 7 ends — right before the "Item 7A" heading if it appears, otherwise the very bottom of the last page — and transcribe VERBATIM the last 5 lines of Item 7 before that point.
+Ignore running headers, page numbers, footers.
+Output ONLY the transcribed text, no commentary, no quotes, no formatting.</pre>
+                        </div>
+                      </div>
+                    </Transition>
+                  </div>
+                  <!-- 比對結果 -->
                   <div class="grid gap-3 lg:grid-cols-2">
                     <div>
                       <div class="mb-1.5 flex items-center gap-2">
@@ -1686,30 +1775,9 @@ const activeFlow = computed(
       </div>
     </section>
 
-    <section id="data" class="bg-white py-16">
-      <div class="mx-auto max-w-7xl px-5">
-        <div class="mb-8">
-          <p class="text-sm font-semibold text-stone-500">驗證資料</p>
-          <h2 class="mt-2 text-3xl font-bold">每個百分比都有明確分母</h2>
-        </div>
-        <div class="grid gap-4 md:grid-cols-2 xl:grid-cols-4">
-          <article
-            v-for="card in datasetCards"
-            :key="card.label"
-            class="border border-stone-200 bg-stone-50 p-5"
-          >
-            <p class="text-sm font-semibold text-stone-500">{{ card.label }}</p>
-            <p class="mt-3 text-3xl font-bold">{{ card.value }}</p>
-            <p class="mt-3 text-sm leading-6 text-stone-600">{{ card.detail }}</p>
-          </article>
-        </div>
-      </div>
-    </section>
-
     <footer class="border-t border-stone-200 bg-stone-100 py-8">
       <div class="mx-auto flex max-w-7xl flex-col gap-3 px-5 text-sm text-stone-600 md:flex-row md:items-center md:justify-between">
-        <p>資料來源：feedback/combined_validation_report.md</p>
-        <p>第一版網站原型，使用 Vue、Tailwind 與 ECharts 製作。</p>
+        <p>資料來源：<a href="https://github.com/LLMSystems/SEC-10-K-Structured-Extraction/blob/main/feedback/combined_validation_report.md" class="text-blue-500 underline" target="_blank">https://github.com/LLMSystems/SEC-10-K-Structured-Extraction/blob/main/feedback/combined_validation_report.md</a></p>
       </div>
     </footer>
   </main>
