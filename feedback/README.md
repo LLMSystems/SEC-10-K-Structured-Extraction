@@ -6,7 +6,7 @@
 - 確定性驗證器
 - 綜合報告與可重現腳本
 
-如果是進來，建議先看：
+主要報告：
 
 - [combined_validation_report.md](./combined_validation_report.md)
 
@@ -20,8 +20,6 @@
   兩套驗證器的完整整合報告。
 
 ## 最短重跑路徑
-
-如果你只想快速確認主要結果能不能跑通，先跑這三條：
 
 1. 確定性驗證器
 
@@ -41,15 +39,15 @@ python -m feedback.external_reference_validation.toc_nav.coverage --model google
 python -m feedback.external_reference_validation.e2e.inject --model google/gemini-3-flash-preview
 ```
 
-如果你還想看單一 filing 的端到端精確度，再跑：
+單一 filing 的端到端精確度：
 
 ```powershell
 python -m feedback.external_reference_validation.e2e.run --label GDC_2023 --model google/gemini-3-flash-preview --batch 4
 ```
 
-## Linux 最短重現
+## Linux 重現
 
-如果你是在 Linux 或其他預設 UTF-8 環境，最短可以直接照下面順序執行：
+照下面順序執行：
 
 ```bash
 pip install -r feedback/requirements.txt
@@ -59,7 +57,7 @@ python -m feedback.external_reference_validation.e2e.inject --model google/gemin
 python -m feedback.external_reference_validation.e2e.run --label GDC_2023 --model google/gemini-3-flash-preview --batch 4
 ```
 
-這組命令對應到本資料夾最核心的四件事：
+這組命令對應到四件事：
 
 - 確定性驗證器能否正常跑完
 - 頁面導航覆蓋率能否重現
