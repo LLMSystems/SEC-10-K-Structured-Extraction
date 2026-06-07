@@ -104,6 +104,15 @@ OPENAI_BASE_URL=https://openrouter.ai/api/v1
 
 - [runner.py](./deterministic_validation/runner.py)
 
+資料來源：
+
+- [eval_datasets/ground_truth](../eval_datasets/ground_truth/)
+
+補充說明：
+
+- `runner.py` 會透過 [model.py](./deterministic_validation/model.py) 讀取 [eval_datasets/ground_truth](../eval_datasets/ground_truth/) 下的 `*/*/*.json`
+- 這批資料是 34 份人工標註 Ground Truth，屬於 repo 根目錄下的共用評測資料，不放在 `feedback/` 內
+
 主要規則與資料：
 
 - [rules.py](./deterministic_validation/rules.py)
@@ -137,6 +146,18 @@ python -m feedback.deterministic_validation.runner --dump
 - [dataset](./external_reference_validation/dataset/)
 - [report](./external_reference_validation/report/)
 - [vlm_cache](./external_reference_validation/vlm_cache/)
+
+資料來源：
+
+- [dataset](./external_reference_validation/dataset/)
+
+資料結構：
+
+- [dataset/index.json](./external_reference_validation/dataset/index.json)：資料集索引
+- `dataset/<LABEL>/<LABEL>.pdf`：原始 filing PDF
+- `dataset/<LABEL>/<LABEL>_content.json`：item 內容標註
+- `dataset/<LABEL>/<LABEL>_pages.json`：item 對應頁碼標註
+- `dataset/<LABEL>/pages/page_XXX.png`：逐頁渲染圖片
 
 常用指令：
 
