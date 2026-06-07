@@ -115,6 +115,11 @@ const palette = {
   rose: '#be123c',
 }
 
+const visualDatasetUrl =
+  'https://github.com/LLMSystems/SEC-10-K-Structured-Extraction/tree/main/feedback/external_reference_validation/dataset'
+const deterministicDatasetUrl =
+  'https://github.com/LLMSystems/SEC-10-K-Structured-Extraction/tree/main/eval_datasets/ground_truth'
+
 const percent = (value: number, total: number) => Number(((value / total) * 100).toFixed(1))
 
 const clippedPercentBar = (value: number, min = 60) => ({
@@ -1570,6 +1575,19 @@ Output ONLY the transcribed text, no commentary, no quotes, no formatting.</pre>
               </p>
             </article>
           </div>
+          <div class="mt-4 border border-teal-200 bg-white px-4 py-3 text-sm leading-6 text-stone-700">
+            <span class="font-bold text-stone-950">資料與來源：</span>
+            本任務使用的 PDF、頁面圖像、章節內容標註與頁碼對照資料，整理在
+            <a
+              :href="visualDatasetUrl"
+              target="_blank"
+              rel="noreferrer"
+              class="font-semibold text-teal-700 underline decoration-teal-300 underline-offset-4"
+            >
+              external_reference_validation/dataset
+            </a>
+            。
+          </div>
         </div>
 
         <div class="mb-3 grid gap-3 md:grid-cols-3">
@@ -1868,6 +1886,19 @@ Output ONLY the transcribed text, no commentary, no quotes, no formatting.</pre>
                 規則只檢查正確解析必然滿足的條件；一旦違反，就能直接定位錯誤，不需要模型主觀判斷。
               </p>
             </article>
+          </div>
+          <div class="mt-4 border border-amber-300/30 bg-white/5 px-4 py-3 text-sm leading-6 text-stone-200">
+            <span class="font-bold text-white">資料與來源：</span>
+            本任務使用的人工標註 Ground Truth，整理在
+            <a
+              :href="deterministicDatasetUrl"
+              target="_blank"
+              rel="noreferrer"
+              class="font-semibold text-amber-200 underline decoration-amber-300/70 underline-offset-4"
+            >
+              eval_datasets/ground_truth
+            </a>
+            。
           </div>
         </div>
 
