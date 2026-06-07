@@ -174,7 +174,7 @@ export const flowNodes: FlowNode[] = [
 
 export const validatorSummaries = [
   {
-    title: 'SEC 10-K 視覺驗證器',
+    title: 'SEC 10-K 多模態視覺驗證器',
     eyebrow: '頁面證據',
     description: '用頁面證據檢查解析器抽出的章節邊界是否可信。',
     proofPoints: [

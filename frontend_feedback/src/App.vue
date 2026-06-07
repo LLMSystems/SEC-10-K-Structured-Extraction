@@ -608,7 +608,7 @@ const benchOption = computed<ECOption>(() => {
         data: selected.map(toPoint),
       },
       {
-        name: '頁面導航模型',
+        name: '固定流程模型',
         type: 'scatter',
         symbolSize: 22,
         data: nav.map(toPoint),
@@ -634,7 +634,7 @@ const mobileMenuOpen = ref(false)
 
 // Scroll active section
 const activeSection = ref('top')
-const NAV_SECTIONS = ['top', 'flow', 'visual', 'deterministic', 'data'] as const
+const NAV_SECTIONS = ['top', 'flow', 'visual', 'deterministic'] as const
 
 if (typeof window !== 'undefined') {
   const observer = new IntersectionObserver(
@@ -719,12 +719,12 @@ if (typeof window !== 'undefined') {
             SEC 10-K Parser 驗證總覽
           </h1>
           <p class="mt-5 max-w-2xl text-lg leading-8 text-stone-700">
-            以視覺驗證器與確定性驗證器，建立可量化的解析器驗證閉環。
+            以多模態視覺驗證器與確定性驗證器，建立可量化的解析器驗證閉環。
             先自動找到可信頁面，再檢查 item 邊界；同時用必要結構條件擋下明確錯誤。
           </p>
           <div class="mt-5 grid max-w-3xl gap-3">
             <div class="border-l-4 border-teal-500 bg-white/75 px-4 py-3 text-sm leading-6 text-stone-800 shadow-sm">
-              多模態模型有機會用來構建 SEC 10-K Parser 驗證器，讓原本難以自動確認的頁面與邊界問題變成可量化檢查。
+              實驗結果顯示，多模態模型已可用於構建 SEC 10-K Parser 驗證器，將原本難以自動確認的頁面定位與邊界核對問題轉化為可量化、可重現的檢查流程。
             </div>
             <div class="border-l-4 border-amber-500 bg-white/75 px-4 py-3 text-sm leading-6 text-stone-800 shadow-sm">
               基本且簡單的確定性驗證器可以快速建立零模型成本規則；只要規則被違反，錯誤就能被明確定位。
@@ -753,10 +753,21 @@ if (typeof window !== 'undefined') {
               詳細文字報告
               <FileText class="size-4" />
             </a>
+            <a
+              href="https://github.com/LLMSystems/SEC-10-K-Structured-Extraction/tree/main/feedback"
+              target="_blank"
+              rel="noopener noreferrer"
+              class="inline-flex items-center gap-2 border border-sky-200 bg-sky-50/90 px-4 py-2 text-sm font-semibold text-sky-900 transition hover:border-sky-400 hover:bg-sky-100"
+            >
+              程式與資料夾
+              <FileText class="size-4" />
+            </a>
           </div>
         </div>
 
-        <div class="grid gap-4 sm:grid-cols-2 xl:grid-cols-3">
+        <div>
+          <p class="mb-3 text-sm font-semibold text-stone-500">結論</p>
+          <div class="grid gap-4 sm:grid-cols-2 xl:grid-cols-3">
           <article
             v-for="metric in heroMetrics"
             :key="metric.label"
@@ -767,6 +778,7 @@ if (typeof window !== 'undefined') {
             <p class="mt-3 text-4xl font-bold leading-none">{{ metric.value }}</p>
             <p class="mt-3 text-sm leading-6 opacity-80">{{ metric.detail }}</p>
           </article>
+          </div>
         </div>
       </div>
     </section>
@@ -779,7 +791,7 @@ if (typeof window !== 'undefined') {
             <h2 class="mt-2 text-3xl font-bold">從解析器輸出到可判定結果</h2>
           </div>
           <p class="max-w-xl text-sm leading-6 text-stone-600">
-            流程先用確定性規則處理結構錯誤，再讓視覺驗證器處理需要頁面證據的邊界問題。
+            流程先用確定性規則處理結構錯誤，再讓多模態視覺驗證器處理需要頁面證據的邊界問題。
           </p>
         </div>
 
@@ -1370,18 +1382,18 @@ Output ONLY the transcribed text, no commentary, no quotes, no formatting.</pre>
       </div>
     </section>
 
-    <section id="data" class="border-y border-stone-200 bg-stone-100/70 py-16">
+    <section id="visual" class="border-y border-stone-200 bg-stone-100/70 py-16">
       <div class="mx-auto max-w-7xl px-5">
         <div class="mb-8 flex flex-col gap-3 md:flex-row md:items-end md:justify-between">
           <div>
-            <p class="text-sm font-semibold text-sky-700">候選模型池</p>
+            <p class="text-sm font-semibold text-teal-700">多模態視覺驗證器</p>
             <h2 class="mt-2 text-3xl font-bold">多模態模型選型</h2>
           </div>
           <div class="max-w-2xl space-y-2 text-sm leading-6 text-stone-600">
             <p>
               候選池參考多模態模型評分、價格、上下文長度、速度與延遲，再篩選可穩定呼叫且支援影像輸入的模型，共挑選了
               <span class="font-semibold text-stone-950">13 個多模態模型</span>
-              進行評測。評分來源參考
+              進行評測。這一步先界定多模態視覺驗證器要用哪些模型，再往下看頁面導航、精確度與錯誤偵測結果。評分來源參考
               <a
                 href="https://llm-stats.com/benchmarks/category/multimodal"
                 target="_blank"
@@ -1419,10 +1431,10 @@ Output ONLY the transcribed text, no commentary, no quotes, no formatting.</pre>
 
           <div class="grid gap-4">
             <article class="border border-teal-200 bg-teal-50 p-5">
-              <p class="text-sm font-semibold text-teal-800">頁面導航模型</p>
-              <h3 class="mt-2 text-xl font-bold">google/gemini-3-flash-preview</h3>
+              <p class="text-sm font-semibold text-teal-800">候選池觀察</p>
+              <h3 class="mt-2 text-xl font-bold">不是只挑高分模型</h3>
               <p class="mt-3 text-sm leading-6 text-teal-950/80">
-                頁面導航任務包含 TOC 辨識、頁碼對位與標題確認，比單純讀首尾段更吃穩定性，因此固定使用目前最穩定的模型。
+                候選模型同時包含開放權重與閉源 API，價格、評分、上下文長度與速度差距都很大，因此不能只看單一排行榜名次做決策。
               </p>
             </article>
             <article class="border border-stone-200 bg-white p-5">
@@ -1451,15 +1463,85 @@ Output ONLY the transcribed text, no commentary, no quotes, no formatting.</pre>
       </div>
     </section>
 
-    <section id="visual" class="bg-white py-16">
+    <section class="bg-white pb-16 pt-12">
       <div class="mx-auto max-w-7xl px-5">
         <div class="mb-8 flex flex-col gap-3 md:flex-row md:items-end md:justify-between">
           <div>
-            <p class="text-sm font-semibold text-teal-700">視覺驗證器</p>
+            <p class="text-sm font-semibold text-teal-700">多模態視覺驗證器</p>
             <h2 class="mt-2 text-3xl font-bold">頁面導航、精確度與錯誤偵測</h2>
           </div>
           <p class="max-w-2xl text-sm leading-6 text-stone-600">
-            這一區用三組圖回答同一個問題：視覺驗證器能不能先找到頁面、避免誤殺正確結果，並在解析器真的抓錯時把錯誤偵測出來。
+            多模態視覺驗證器主要做兩件事：先透過目錄找到可信頁面，再用頁面證據核對 parser 的 item 邊界。下面的圖表就是沿著這兩個任務，依序說明它能不能找到頁、會不會誤殺正確結果，以及真的出錯時能不能抓到。
+          </p>
+        </div>
+
+        <section class="mb-10 border border-teal-200 bg-[linear-gradient(135deg,rgba(20,184,166,0.08),rgba(255,255,255,0.98))] p-6 shadow-sm">
+          <div class="mb-5 flex flex-col gap-3 md:flex-row md:items-end md:justify-between">
+            <div class="flex items-center gap-2">
+              <Eye class="size-5 text-teal-700" />
+              <h3 class="text-xl font-bold">多模態視覺驗證器的兩個任務</h3>
+            </div>
+            <p class="max-w-2xl text-sm leading-6 text-stone-600">
+              先把任務講清楚，再看後面的圖表，讀者會更容易理解每張圖到底在回答哪一個問題。
+            </p>
+          </div>
+          <div class="grid gap-4 md:grid-cols-2">
+            <article class="border border-teal-200 bg-white p-4">
+              <div class="mb-3 flex items-center gap-2">
+                <Navigation class="size-4 text-teal-700" />
+                <p class="text-sm font-bold text-stone-950">任務一：透過目錄找到可信頁面</p>
+              </div>
+              <p class="text-sm leading-6 text-stone-600">
+                先從目錄讀出 item 對應的印刷頁碼，再換算成 PDF 圖像頁，最後回到正文確認該頁真的出現對應章節標題。
+              </p>
+              <ul class="mt-3 grid gap-2 text-sm leading-6 text-stone-700">
+                <li class="flex items-start gap-2">
+                  <span class="mt-2 size-1.5 shrink-0 bg-teal-700" />
+                  <span>解決的問題：parser 不告訴你該回哪一頁看證據。</span>
+                </li>
+                <li class="flex items-start gap-2">
+                  <span class="mt-2 size-1.5 shrink-0 bg-teal-700" />
+                  <span>成功條件：找到可供後續檢查的可信頁面。</span>
+                </li>
+              </ul>
+              <div class="mt-4 border border-teal-100 bg-teal-50 px-3 py-2.5 text-sm leading-6 text-teal-950">
+                <span class="font-bold">模型設定：</span>
+                固定使用 Gemini 3 Flash Preview。原因是這一步同時包含目錄辨識、印刷頁碼對位與正文標題確認，比單純讀首尾段更需要穩定性，因此先固定最穩的模型。
+              </div>
+            </article>
+            <article class="border border-stone-200 bg-white p-4">
+              <div class="mb-3 flex items-center gap-2">
+                <Gauge class="size-4 text-stone-700" />
+                <p class="text-sm font-bold text-stone-950">任務二：用頁面證據核對 parser 邊界</p>
+              </div>
+              <p class="text-sm leading-6 text-stone-600">
+                在可信頁面上，直接比對 parser 抓到的開頭與尾段，確認內容是否真的停在該 item 範圍內，而不是截斷或越界。
+              </p>
+              <ul class="mt-3 grid gap-2 text-sm leading-6 text-stone-700">
+                <li class="flex items-start gap-2">
+                  <span class="mt-2 size-1.5 shrink-0 bg-stone-700" />
+                  <span>解決的問題：JSON 看起來正常，但實際邊界可能抓錯。</span>
+                </li>
+                <li class="flex items-start gap-2">
+                  <span class="mt-2 size-1.5 shrink-0 bg-stone-700" />
+                  <span>成功條件：正確結果能通過，錯誤結果能被抓出。</span>
+                </li>
+              </ul>
+              <div class="mt-4 border border-stone-200 bg-stone-50 px-3 py-2.5 text-sm leading-6 text-stone-700">
+                <span class="font-bold text-stone-950">模型設定：</span>
+                這一步才比較不同模型的表現。原因是可信頁面一旦固定，後續差異就主要來自模型本身的邊界判讀能力，而不是找頁能力。
+              </div>
+            </article>
+          </div>
+        </section>
+
+        <div class="mb-5 flex flex-col gap-3 md:flex-row md:items-end md:justify-between">
+          <div>
+            <p class="text-sm font-semibold text-stone-500">圖表解讀</p>
+            <h3 class="text-2xl font-bold">這兩個任務如何被評估</h3>
+          </div>
+          <p class="max-w-2xl text-sm leading-6 text-stone-600">
+            下面的區塊會先交代資料與驗證方式，再用三張圖分別對應任務一與任務二的表現。
           </p>
         </div>
 
@@ -1490,25 +1572,25 @@ Output ONLY the transcribed text, no commentary, no quotes, no formatting.</pre>
           </div>
         </div>
 
-        <div class="mb-5 grid gap-3 md:grid-cols-3">
+        <div class="mb-3 grid gap-3 md:grid-cols-3">
           <article class="border border-teal-200 bg-teal-50 p-4 text-teal-950">
             <div class="mb-3 flex items-center gap-2">
               <Navigation class="size-4 text-teal-700" />
-              <h3 class="text-sm font-bold">頁面導航</h3>
+              <h3 class="text-sm font-bold">任務一指標：頁面導航</h3>
             </div>
             <p class="text-sm leading-6">看的是自動找頁能力，分母是 5 份文件中的 62 個章節。</p>
           </article>
           <article class="border border-stone-200 bg-white p-4 text-stone-800">
             <div class="mb-3 flex items-center gap-2">
               <Gauge class="size-4 text-stone-700" />
-              <h3 class="text-sm font-bold">端到端精確度</h3>
+              <h3 class="text-sm font-bold">任務二指標：端到端精確度</h3>
             </div>
             <p class="text-sm leading-6">看的是正確解析結果會不會被誤判，基線模型是 Gemini 3 Flash Preview。</p>
           </article>
           <article class="border border-rose-200 bg-rose-50 p-4 text-rose-950">
             <div class="mb-3 flex items-center gap-2">
               <Radar class="size-4 text-rose-700" />
-              <h3 class="text-sm font-bold">錯誤偵測率</h3>
+              <h3 class="text-sm font-bold">任務二指標：錯誤偵測率</h3>
             </div>
             <p class="text-sm leading-6">看的是刻意注入截斷或越界後，驗證器能不能抓出問題。</p>
           </article>
@@ -1575,7 +1657,7 @@ Output ONLY the transcribed text, no commentary, no quotes, no formatting.</pre>
             <div class="mt-4 border border-teal-200 bg-white p-4 text-sm leading-6 text-stone-700">
               <p class="font-bold text-stone-950">結論：通過可信頁面門檻後，正確解析不容易被誤殺。</p>
               <p class="mt-1">
-                開頭與尾段合計 102/104 通過，代表視覺驗證器可以作為高信心檢查器；尤其尾段改看 1 到 2 頁後，跨頁結尾更穩定。
+                  開頭與尾段合計 102/104 通過，代表多模態視覺驗證器可以作為高信心檢查器；尤其尾段改看 1 到 2 頁後，跨頁結尾更穩定。
               </p>
             </div>
           </article>
@@ -1590,7 +1672,7 @@ Output ONLY the transcribed text, no commentary, no quotes, no formatting.</pre>
                 <p class="text-sm font-semibold text-stone-600">基線模型：google/gemini-3-flash-preview</p>
               </div>
               <p class="max-w-4xl text-sm leading-6 text-stone-600">
-                這張圖是在正確樣本上刻意製造錯誤，再看視覺驗證器能不能抓到。每一類錯誤各測兩種強度：截掉或越界 50 行，以及截掉或越界 50%。
+                這張圖是在正確樣本上刻意製造錯誤，再看多模態視覺驗證器能不能抓到。每一類錯誤各測兩種強度：截掉或越界 50 行，以及截掉或越界 50%。
               </p>
               <div class="flex flex-wrap gap-2 text-xs font-semibold">
                 <span
@@ -1613,7 +1695,7 @@ Output ONLY the transcribed text, no commentary, no quotes, no formatting.</pre>
             </div>
             <div class="mt-4 grid gap-3 md:grid-cols-3">
               <div class="border border-teal-200 bg-white p-4 text-sm leading-6 text-stone-700 md:col-span-2">
-                <p class="font-bold text-stone-950">結論：視覺驗證器能有效抓出邊界錯誤，但應保留中立判定。</p>
+                <p class="font-bold text-stone-950">結論：多模態視覺驗證器能有效抓出邊界錯誤，但應保留中立判定。</p>
                 <p class="mt-1">
                   四類注入錯誤的偵測率落在 83.1% 到 95.3%；對明顯截斷與越界已有實用偵測力，但沒有找到可信頁面時，不應直接判定解析器錯。
                 </p>
@@ -1816,10 +1898,32 @@ Output ONLY the transcribed text, no commentary, no quotes, no formatting.</pre>
       </div>
     </section>
 
-    <footer class="border-t border-stone-200 bg-stone-100 py-8">
-      <div class="mx-auto flex max-w-7xl flex-col gap-3 px-5 text-sm text-stone-600 md:flex-row md:items-center md:justify-between">
-        <p>資料來源：<a href="https://github.com/LLMSystems/SEC-10-K-Structured-Extraction/blob/main/feedback/combined_validation_report.md" class="font-semibold text-teal-700 underline decoration-teal-300 underline-offset-4 hover:text-teal-900" target="_blank">https://github.com/LLMSystems/SEC-10-K-Structured-Extraction/blob/main/feedback/combined_validation_report.md</a></p>
+    <section class="border-b border-stone-200 bg-white py-16">
+      <div class="mx-auto max-w-5xl px-5">
+        <div class="mb-8 flex flex-col gap-3">
+          <p class="text-sm font-semibold text-stone-500">結論</p>
+          <h2 class="text-3xl font-bold">這套驗證方案能做什麼，不能做什麼</h2>
+        </div>
+
+        <div class="border border-teal-200 bg-teal-50 p-5 text-teal-950 shadow-sm">
+          <p class="text-sm font-bold">一句話結論</p>
+          <p class="mt-2 text-base leading-7">
+            SEC 10-K parser 的驗證，可以拆成「確定性證錯」與「多模態頁面複查」兩層，而且這兩層都已被實驗數據支持。
+          </p>
+        </div>
+
+        <div class="mt-6 space-y-5 text-base leading-8 text-stone-700">
+          <p>
+            這份工作提出了一套可落地的 SEC 10-K 解析器驗證架構，由多模態視覺驗證器與確定性驗證器組成。前者負責處理需要頁面證據的邊界問題，後者負責處理違反即證錯的結構問題。兩種能力結合後，可以把原本難以自動確認的 parser 錯誤，轉化為可量化、可重現、可定位的驗證流程。
+          </p>
+          <p>
+            從實驗結果來看，這不只是概念驗證。多模態視覺驗證器已能在大多數章節上先找到可信頁面，並在可信頁面上高信心複查開頭與尾段；確定性驗證器則能以近乎零模型成本，穩定攔下頁碼區間非法、順序錯亂、重要章節遺失與全文異常過短等明確錯誤。以 Gemini 3 Flash Preview 為最佳基線時，單份 filing 的視覺驗證成本約為 NT$0.7，也代表這套方案已具備實務使用的可行性。
+          </p>
+          <p>
+            這套方案最適合被用來驗證 parser 結果，而不是直接取代 parser 本身。當確定性規則被觸發時，錯誤可以被直接定位；當多模態視覺驗證器找到可信頁面且頁面證據不一致時，可以高信心指出邊界問題；但若找不到可信頁面，系統應保持中立，而不是武斷判錯。換句話說，它是一套適合部署在實務流程中的驗證器，而不是一個要求所有樣本都必須立即二元判定的分類器。
+          </p>
+        </div>
       </div>
-    </footer>
+    </section>
   </main>
 </template>
