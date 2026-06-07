@@ -1964,6 +1964,21 @@ Output ONLY the transcribed text, no commentary, no quotes, no formatting.</pre>
           </p>
         </div>
 
+        <div class="mt-6 grid gap-4 md:grid-cols-2">
+          <article class="border border-teal-200 bg-teal-50/70 p-5">
+            <p class="text-sm font-bold text-teal-800">這套方案能做什麼</p>
+            <p class="mt-2 text-sm leading-7 text-stone-700">
+              它能把頁碼區間、順序、重要 item 遺失、內容異常過短，以及 item 開頭與尾段邊界是否正確，轉成可量化、可重現、可定位的驗證結果。
+            </p>
+          </article>
+          <article class="border border-stone-200 bg-stone-50 p-5">
+            <p class="text-sm font-bold text-stone-900">這套方案不能做什麼</p>
+            <p class="mt-2 text-sm leading-7 text-stone-700">
+              它不能保證每個 item 都會立即得到明確判定，也不能只靠單一驗證器覆蓋所有錯誤。只有在找到可信頁面時，多模態視覺驗證器才具備高確信度；若找不到可信頁面，系統應保持中立，而不是武斷判錯。
+            </p>
+          </article>
+        </div>
+
         <div class="mt-6 space-y-5 text-base leading-8 text-stone-700">
           <p>
             這是一套被驗證的 SEC 10-K 解析器驗證架構，由多模態視覺驗證器與確定性驗證器組成。前者負責處理需要頁面證據的邊界問題，後者負責處理違反即證錯的結構問題。結合後，可以把原本難以自動確認的 parser 錯誤，轉化為可量化、可重現、可定位的驗證流程。
@@ -1972,7 +1987,7 @@ Output ONLY the transcribed text, no commentary, no quotes, no formatting.</pre>
             從實驗結果來看，多模態視覺驗證器已能在大多數章節上先找到可信頁面，並在可信頁面上高信心複查開頭與尾段；確定性驗證器則能以近乎零模型成本，穩定攔下頁碼區間非法、順序錯亂、重要章節遺失與全文異常過短等明確錯誤。以 Gemini 3 Flash Preview 為最佳基線時，單份 filing 的視覺驗證成本約為 NT$0.7，具備實務使用的可行性。
           </p>
           <p>
-            這套方案主要來驗證 parser 結果。當確定性規則被觸發時，錯誤可以被直接定位；當多模態視覺驗證器找到可信頁面且頁面證據不一致時，可以高信心指出邊界問題；但若找不到可信頁面，系統應保持中立，而不是武斷判錯。
+            這套方案主要用來驗證 parser 結果，而不是直接生成 parser 結果。當確定性規則被觸發時，錯誤可以被直接定位；當多模態視覺驗證器找到可信頁面且頁面證據不一致時，可以高信心指出邊界問題；但若找不到可信頁面，系統應保持中立，而不是武斷判錯。換句話說，它是一個有明確適用範圍的驗證器，不是要求所有樣本都必須立即得到單一結論的分類器。
           </p>
         </div>
       </div>
