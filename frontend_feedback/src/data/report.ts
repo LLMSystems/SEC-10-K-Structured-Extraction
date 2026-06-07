@@ -109,7 +109,7 @@ export const heroMetrics: Metric[] = [
   {
     label: '最佳模型單份成本',
     value: 'NT$0.7',
-    detail: 'Gemini 3 Flash Preview，約 US$0.022 / filing',
+    detail: 'Gemini 3 Flash Preview，約 NT$0.7 / filing',
     tone: 'cost',
   },
 ]
@@ -180,7 +180,7 @@ export const validatorSummaries = [
     proofPoints: [
       '先自動找到章節所在的可信頁面',
       '再檢查解析器抽出的章節開頭與尾段',
-      '如果前後邊界都和頁面一致，代表這段抽取基本上不太可能錯到別的章節',
+      '如果前後邊界都和頁面一致，代表這段抽取基本上不會出錯',
     ],
     metrics: ['頁面導航 ±1 頁內 96.8%', '開頭精確度 98.3%', '尾段精確度 97.7%'],
     catches: ['開頭抓錯', '尾段截斷', '尾端越界', '頁面導航偏移'],

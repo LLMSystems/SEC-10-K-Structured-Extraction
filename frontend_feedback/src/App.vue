@@ -40,7 +40,7 @@ import {
 import type { ComposeOption } from 'echarts/core'
 import { use } from 'echarts/core'
 import { CanvasRenderer } from 'echarts/renderers'
-import { computed, ref } from 'vue'
+import { computed, nextTick, ref } from 'vue'
 import VChart from 'vue-echarts'
 
 import type { FlowNode } from './data/report'
@@ -173,6 +173,16 @@ function clearPlayTimer() {
   }
 }
 
+function focusBranchPanel() {
+  if (typeof window === 'undefined') return
+  nextTick(() => {
+    document.getElementById('flow-branch-panel')?.scrollIntoView({
+      behavior: 'smooth',
+      block: 'nearest',
+    })
+  })
+}
+
 function resetFlow() {
   clearPlayTimer()
   isPlaying.value = false
@@ -187,6 +197,7 @@ function doAdvance() {
     clearPlayTimer()
     isPlaying.value = false
     showBranchChoice.value = true
+    focusBranchPanel()
     return
   }
   const next = activeFlowIndex.value + 1
@@ -639,7 +650,7 @@ const mobileMenuOpen = ref(false)
 
 // Scroll active section
 const activeSection = ref('top')
-const NAV_SECTIONS = ['top', 'flow', 'visual', 'deterministic'] as const
+const NAV_SECTIONS = ['top', 'flow', 'visual', 'deterministic', 'conclusion'] as const
 
 if (typeof window !== 'undefined') {
   const observer = new IntersectionObserver(
@@ -665,14 +676,14 @@ if (typeof window !== 'undefined') {
 <template>
   <main class="min-h-screen bg-stone-50 text-stone-950">
     <div class="fixed inset-x-0 top-0 z-40 border-b border-stone-200/80 bg-stone-50/85 backdrop-blur">
-      <nav class="mx-auto flex max-w-7xl items-center justify-between px-5 py-3">
+      <nav class="mx-auto flex max-w-[92rem] items-center justify-between px-5 py-3 md:px-8">
         <a href="#top" class="flex items-center gap-2 text-sm font-semibold">
           <ShieldCheck class="size-4 text-teal-700" />
           SEC 10-K 驗證總覽
         </a>
         <div class="hidden items-center gap-5 text-sm text-stone-600 md:flex">
           <a
-            v-for="{ id, label } in [{ id: 'flow', label: '流程' }, { id: 'visual', label: '多模態視覺驗證' }, { id: 'deterministic', label: '確定性驗證' }]"
+            v-for="{ id, label } in [{ id: 'flow', label: '流程' }, { id: 'visual', label: '多模態視覺驗證' }, { id: 'deterministic', label: '確定性驗證' }, { id: 'conclusion', label: '結論' }]"
             :key="id"
             :href="'#' + id"
             class="transition-colors"
@@ -699,10 +710,10 @@ if (typeof window !== 'undefined') {
         leave-from-class="opacity-100 translate-y-0"
         leave-to-class="opacity-0 -translate-y-1"
       >
-        <div v-if="mobileMenuOpen" class="border-t border-stone-200 bg-stone-50/95 backdrop-blur md:hidden">
-          <div class="mx-auto flex max-w-7xl flex-col px-5 py-3 text-sm text-stone-600">
+          <div v-if="mobileMenuOpen" class="border-t border-stone-200 bg-stone-50/95 backdrop-blur md:hidden">
+          <div class="mx-auto flex max-w-[92rem] flex-col px-5 py-3 text-sm text-stone-600 md:px-8">
             <a
-              v-for="{ id, label } in [{ id: 'flow', label: '流程' }, { id: 'visual', label: '多模態視覺驗證' }, { id: 'deterministic', label: '確定性驗證' }]"
+              v-for="{ id, label } in [{ id: 'flow', label: '流程' }, { id: 'visual', label: '多模態視覺驗證' }, { id: 'deterministic', label: '確定性驗證' }, { id: 'conclusion', label: '結論' }]"
               :key="id"
               :href="'#' + id"
               class="border-b border-stone-100 py-3 last:border-0 hover:text-stone-950"
@@ -725,11 +736,11 @@ if (typeof window !== 'undefined') {
           </h1>
           <p class="mt-5 max-w-2xl text-lg leading-8 text-stone-700">
             以多模態視覺驗證器與確定性驗證器，建立可量化的解析器驗證閉環。
-            先自動找到可信頁面，再檢查 item 邊界；同時用必要結構條件擋下明確錯誤。
+            透過多模態模型找到可信頁面，再檢查 item 邊界；同時用必要結構條件擋下明確錯誤。
           </p>
           <div class="mt-5 grid max-w-3xl gap-3">
             <div class="border-l-4 border-teal-500 bg-white/75 px-4 py-3 text-sm leading-6 text-stone-800 shadow-sm">
-              實驗結果顯示，多模態模型已可用於構建 SEC 10-K Parser 驗證器，將原本難以自動確認的頁面定位與邊界核對問題轉化為可量化、可重現的檢查流程。
+              實驗結果顯示，多模態模型已可穩定用於構建 SEC 10-K Parser 驗證器，將原本難以自動確認的頁面定位與邊界核對問題轉化為可量化、可重現的檢查流程。
             </div>
             <div class="border-l-4 border-amber-500 bg-white/75 px-4 py-3 text-sm leading-6 text-stone-800 shadow-sm">
               基本且簡單的確定性驗證器可以快速建立零模型成本規則；只要規則被違反，錯誤就能被明確定位。
@@ -923,6 +934,12 @@ if (typeof window !== 'undefined') {
                     </div>
                     <h3 class="text-sm font-bold leading-snug">{{ node.title }}</h3>
                     <p class="mt-1.5 line-clamp-2 text-xs leading-5 text-stone-600">{{ node.description }}</p>
+                    <div
+                      v-if="showBranchChoice && activeFlowIndex === index && BRANCH_CONFIG[index] !== undefined"
+                      class="mt-2 border border-rose-200 bg-rose-50 px-2 py-1.5 text-[11px] font-semibold leading-5 text-rose-700"
+                    >
+                      此步驟需要選擇，請直接看下方分支按鈕。
+                    </div>
                     <p v-if="!isPlaying" class="mt-2 text-right text-[10px] text-stone-400">點擊跳轉</p>
                   </div>
                 </div>
@@ -944,6 +961,48 @@ if (typeof window !== 'undefined') {
               </template>
             </div>
           </div>
+
+          <!-- 分岔選擇面板 -->
+          <Transition
+            enter-active-class="transition-all duration-300"
+            enter-from-class="opacity-0 -translate-y-2"
+            enter-to-class="opacity-100 translate-y-0"
+            leave-active-class="transition-all duration-200"
+            leave-from-class="opacity-100 translate-y-0"
+            leave-to-class="opacity-0 -translate-y-1"
+          >
+            <div
+              v-if="showBranchChoice && currentBranchConfig"
+              id="flow-branch-panel"
+              class="mt-5 border-2 border-rose-300 bg-rose-50/70 p-5 shadow-sm"
+            >
+              <div class="mb-4 flex items-start gap-3">
+                <GitBranch class="mt-0.5 size-5 shrink-0 text-rose-700" />
+                <div>
+                  <p class="font-bold text-stone-950">{{ currentBranchConfig.title }}</p>
+                  <p class="mt-1 text-sm text-stone-700">{{ currentBranchConfig.description }}</p>
+                </div>
+              </div>
+              <div class="flex flex-wrap gap-3">
+                <button
+                  type="button"
+                  class="inline-flex items-center gap-2 border border-teal-300 bg-teal-50 px-4 py-2.5 text-sm font-semibold text-teal-900 transition hover:bg-teal-100"
+                  @click="chooseBranch('main')"
+                >
+                  <Check class="size-4" />
+                  {{ currentBranchConfig.mainLabel }}
+                </button>
+                <button
+                  type="button"
+                  class="inline-flex items-center gap-2 border border-stone-300 bg-white px-4 py-2.5 text-sm font-semibold text-stone-700 transition hover:bg-stone-50"
+                  @click="chooseBranch('branch')"
+                >
+                  <ArrowDown class="size-4" />
+                  {{ currentBranchConfig.branchLabel }}
+                </button>
+              </div>
+            </div>
+          </Transition>
 
           <!-- 範例資料面板 -->
           <Transition
@@ -1174,44 +1233,6 @@ Output ONLY the transcribed text, no commentary, no quotes, no formatting.</pre>
             </div>
           </Transition>
 
-          <!-- 分岔選擇面板 -->
-          <Transition
-            enter-active-class="transition-all duration-300"
-            enter-from-class="opacity-0 -translate-y-2"
-            enter-to-class="opacity-100 translate-y-0"
-            leave-active-class="transition-all duration-200"
-            leave-from-class="opacity-100 translate-y-0"
-            leave-to-class="opacity-0 -translate-y-1"
-          >
-            <div v-if="showBranchChoice && currentBranchConfig" class="mt-5 border-2 border-stone-300 bg-white p-5">
-              <div class="mb-4 flex items-start gap-3">
-                <GitBranch class="mt-0.5 size-5 shrink-0 text-stone-600" />
-                <div>
-                  <p class="font-bold text-stone-950">{{ currentBranchConfig.title }}</p>
-                  <p class="mt-1 text-sm text-stone-600">{{ currentBranchConfig.description }}</p>
-                </div>
-              </div>
-              <div class="flex flex-wrap gap-3">
-                <button
-                  type="button"
-                  class="inline-flex items-center gap-2 border border-teal-300 bg-teal-50 px-4 py-2.5 text-sm font-semibold text-teal-900 transition hover:bg-teal-100"
-                  @click="chooseBranch('main')"
-                >
-                  <Check class="size-4" />
-                  {{ currentBranchConfig.mainLabel }}
-                </button>
-                <button
-                  type="button"
-                  class="inline-flex items-center gap-2 border border-stone-300 bg-stone-50 px-4 py-2.5 text-sm font-semibold text-stone-700 transition hover:bg-stone-100"
-                  @click="chooseBranch('branch')"
-                >
-                  <ArrowDown class="size-4" />
-                  {{ currentBranchConfig.branchLabel }}
-                </button>
-              </div>
-            </div>
-          </Transition>
-
           <!-- 結果：中立 -->
           <div v-if="branchTaken === 'neutral'" class="mt-5 border-2 border-dashed border-stone-400 bg-stone-50 p-5">
             <div class="flex items-start gap-3">
@@ -1219,7 +1240,7 @@ Output ONLY the transcribed text, no commentary, no quotes, no formatting.</pre>
               <div>
                 <p class="font-bold text-stone-900">中立 / 無法判定</p>
                 <p class="mt-1 text-sm leading-6 text-stone-600">
-                  找不到可信頁面代表證據不足。系統輸出「無法判定」，既不判解析器錯，也不判對。這是設計上的保守選擇，避免誤殺正確結果。
+                  找不到可信頁面代表證據不足。輸出「無法判定」，既不判解析器錯，也不判對。避免誤殺正確結果。
                 </p>
               </div>
             </div>
@@ -1322,7 +1343,7 @@ Output ONLY the transcribed text, no commentary, no quotes, no formatting.</pre>
                 </div>
               </div>
               <p class="mt-4 text-sm leading-7 text-stone-600">
-                可信頁面確認失敗代表證據不足，系統會輸出「中立 / 無法判定」；它不代表解析器一定錯，也不代表解析器一定對。
+                可信頁面確認失敗代表證據不足，會輸出「中立 / 無法判定」；它不代表解析器一定錯，也不代表解析器一定對。
               </p>
               <div class="mt-4 border-l-2 border-dashed border-stone-300 pl-4 text-sm font-semibold text-stone-700">
                 可信頁面確認 -> 中立 / 無法判定
@@ -1929,8 +1950,8 @@ Output ONLY the transcribed text, no commentary, no quotes, no formatting.</pre>
       </div>
     </section>
 
-    <section class="border-b border-stone-200 bg-white py-16">
-      <div class="mx-auto max-w-5xl px-5">
+    <section id="conclusion" class="border-b border-stone-200 bg-white py-16">
+      <div class="mx-auto max-w-7xl px-5">
         <div class="mb-8 flex flex-col gap-3">
           <p class="text-sm font-semibold text-stone-500">結論</p>
           <h2 class="text-3xl font-bold">這套驗證方案能做什麼，不能做什麼</h2>
@@ -1945,13 +1966,13 @@ Output ONLY the transcribed text, no commentary, no quotes, no formatting.</pre>
 
         <div class="mt-6 space-y-5 text-base leading-8 text-stone-700">
           <p>
-            這份工作提出了一套可落地的 SEC 10-K 解析器驗證架構，由多模態視覺驗證器與確定性驗證器組成。前者負責處理需要頁面證據的邊界問題，後者負責處理違反即證錯的結構問題。兩種能力結合後，可以把原本難以自動確認的 parser 錯誤，轉化為可量化、可重現、可定位的驗證流程。
+            這是一套被驗證的 SEC 10-K 解析器驗證架構，由多模態視覺驗證器與確定性驗證器組成。前者負責處理需要頁面證據的邊界問題，後者負責處理違反即證錯的結構問題。結合後，可以把原本難以自動確認的 parser 錯誤，轉化為可量化、可重現、可定位的驗證流程。
           </p>
           <p>
-            從實驗結果來看，這不只是概念驗證。多模態視覺驗證器已能在大多數章節上先找到可信頁面，並在可信頁面上高信心複查開頭與尾段；確定性驗證器則能以近乎零模型成本，穩定攔下頁碼區間非法、順序錯亂、重要章節遺失與全文異常過短等明確錯誤。以 Gemini 3 Flash Preview 為最佳基線時，單份 filing 的視覺驗證成本約為 NT$0.7，也代表這套方案已具備實務使用的可行性。
+            從實驗結果來看，多模態視覺驗證器已能在大多數章節上先找到可信頁面，並在可信頁面上高信心複查開頭與尾段；確定性驗證器則能以近乎零模型成本，穩定攔下頁碼區間非法、順序錯亂、重要章節遺失與全文異常過短等明確錯誤。以 Gemini 3 Flash Preview 為最佳基線時，單份 filing 的視覺驗證成本約為 NT$0.7，具備實務使用的可行性。
           </p>
           <p>
-            這套方案最適合被用來驗證 parser 結果，而不是直接取代 parser 本身。當確定性規則被觸發時，錯誤可以被直接定位；當多模態視覺驗證器找到可信頁面且頁面證據不一致時，可以高信心指出邊界問題；但若找不到可信頁面，系統應保持中立，而不是武斷判錯。換句話說，它是一套適合部署在實務流程中的驗證器，而不是一個要求所有樣本都必須立即二元判定的分類器。
+            這套方案主要來驗證 parser 結果。當確定性規則被觸發時，錯誤可以被直接定位；當多模態視覺驗證器找到可信頁面且頁面證據不一致時，可以高信心指出邊界問題；但若找不到可信頁面，系統應保持中立，而不是武斷判錯。
           </p>
         </div>
       </div>
