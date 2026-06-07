@@ -167,7 +167,7 @@ def main():
     print("=" * 64)
     for name in RULES:
         n = len(fp[name])
-        mark = "✅" if n == 0 else "❌"
+        mark = "OK" if n == 0 else "FAIL"
         detail = "" if n == 0 else f"  → {fp[name]}"
         print(f"{mark} {name:22} FP = {n}/{len(parses)}{detail}")
 

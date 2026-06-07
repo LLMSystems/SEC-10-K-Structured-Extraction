@@ -149,14 +149,14 @@ def main() -> int:
         print(f"\n=== {label} ===")
         print(f"  TOC 抓到 item: {len(r['toc'])}　頁尾有印刷頁碼的頁: {len(r['p2r'])}/{r['pages']}")
         print(f"  對照已知 start_page: {len(common)}/{len(known)} 可比"
-              f"　完全命中 {exact}　≤±1 {within1}")
+              f"　完全命中 {exact}　+/-1 頁內 {within1}")
         if len(r["toc"]) == 0:
-            print("  ⚠ 沒抓到 TOC")
+            print("  [WARN] 沒抓到 TOC")
         if len(r["p2r"]) == 0:
-            print("  ⚠ 渲染頁無頁尾印刷頁碼 → 此招不適用")
+            print("  [WARN] 渲染頁無頁尾印刷頁碼 -> 此招不適用")
 
     print("\n" + "=" * 64)
-    print(f"{'filing':<11} | toc項 | 頁尾頁 | 可比 | 完全 | ≤±1")
+    print(f"{'filing':<11} | toc項 | 頁尾頁 | 可比 | 完全 | +/-1頁")
     print("-" * 64)
     for r in rows:
         print(f"{r['label']:<11} | {r['toc_items']:>4} | {r['footer_pages']:>4}/{r['pages']:<3}"
@@ -164,7 +164,7 @@ def main() -> int:
     te = sum(r["exact"] for r in rows); tw = sum(r["within1"] for r in rows)
     tm = sum(r["matched"] for r in rows)
     print("-" * 64)
-    print(f"合計：完全命中 {te}/{tm}　≤±1 {tw}/{tm}")
+    print(f"合計：完全命中 {te}/{tm}　+/-1 頁內 {tw}/{tm}")
     return 0
 
 

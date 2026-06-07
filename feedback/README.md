@@ -1,30 +1,27 @@
 # Feedback
 
-這個資料夾放的是 SEC 10-K 解析器驗證相關的：
+這個資料夾整理了 SEC 10-K 解析器的兩套驗證方法與對應報告：
 
-- 實驗程式
-- 驗證資料
-- 可重跑結果
-- 最終報告
+- 多模態視覺驗證器
+- 確定性驗證器
+- 綜合報告與可重現腳本
 
-如果你是第一次到這裡，建議先看：
+如果是進來，建議先看：
 
 - [combined_validation_report.md](./combined_validation_report.md)
 
-這份是目前最完整的總報告；其餘子資料夾則是支撐這份報告的程式與資料。
-
-## 這裡有什麼
+## 資料夾導覽
 
 - [external_reference_validation](./external_reference_validation/)
-  多模態視覺驗證器。負責頁面導航、可信頁面確認、首尾段邊界核對、錯誤注入測試。
+  多模態視覺驗證器。核心工作是先找可信頁面，再比對頁面證據與解析器輸出是否一致。
 - [deterministic_validation](./deterministic_validation/)
-  確定性驗證器。負責檢查任何正確解析都必然滿足的結構條件。
+  確定性驗證器。核心工作是檢查違反即證錯的必要結構條件。
 - [combined_validation_report.md](./combined_validation_report.md)
-  兩個驗證器整合後的總報告。
+  兩套驗證器的完整整合報告。
 
-## 最短開始方式
+## 最短重跑路徑
 
-如果你只想先確認程式能跑通，建議從這兩個入口開始：
+如果你只想快速確認主要結果能不能跑通，先跑這三條：
 
 1. 確定性驗證器
 
@@ -32,39 +29,59 @@
 python -m feedback.deterministic_validation.runner
 ```
 
-2. 多模態視覺驗證器
+2. 多模態視覺驗證器：頁面導航覆蓋率
 
 ```powershell
 python -m feedback.external_reference_validation.toc_nav.coverage --model google/gemini-3-flash-preview
-python -m feedback.external_reference_validation.e2e.run --label GDC_2023 --nav-model google/gemini-3-flash-preview --detect-model google/gemini-3-flash-preview --batch 4
+```
+
+3. 多模態視覺驗證器：端到端錯誤偵測率
+
+```powershell
 python -m feedback.external_reference_validation.e2e.inject --model google/gemini-3-flash-preview
 ```
 
-上面三個指令對應到：
+如果你還想看單一 filing 的端到端精確度，再跑：
 
-- 頁面導航覆蓋率
-- 端到端精確度
-- 端到端錯誤偵測
+```powershell
+python -m feedback.external_reference_validation.e2e.run --label GDC_2023 --model google/gemini-3-flash-preview --batch 4
+```
 
-## 執行前準備
+## Linux 最短重現
 
+如果你是在 Linux 或其他預設 UTF-8 環境，最短可以直接照下面順序執行：
 
-### 安裝依賴
+```bash
+pip install -r feedback/requirements.txt
+python -m feedback.deterministic_validation.runner
+python -m feedback.external_reference_validation.toc_nav.coverage --model google/gemini-3-flash-preview
+python -m feedback.external_reference_validation.e2e.inject --model google/gemini-3-flash-preview
+python -m feedback.external_reference_validation.e2e.run --label GDC_2023 --model google/gemini-3-flash-preview --batch 4
+```
+
+這組命令對應到本資料夾最核心的四件事：
+
+- 確定性驗證器能否正常跑完
+- 頁面導航覆蓋率能否重現
+- 端到端錯誤偵測率能否重現
+- 單一 filing 的端到端精確度能否重現
+
+## 安裝需求
 
 ```powershell
 pip install -r feedback/requirements.txt
 ```
 
-這份 `requirements.txt` 已包含：
+這份 `requirements.txt` 包含：
 
-- 基本文字處理與比對套件
+- 結構驗證所需的文字處理套件
 - 多模態 API 呼叫套件
 - `.env` 載入套件
-- PDF 頁面處理用的 `PyMuPDF`
+- PDF 轉頁圖片所需的 `PyMuPDF`
 
-### 設定 API Key
+## API 設定
 
-多模態視覺驗證器會透過 [vlm_reader.py](./external_reference_validation/vlm_reader.py) 讀取 `.env`。
+多模態視覺驗證器會從 `.env` 讀取金鑰。
 
 如果使用 OpenAI：
 
@@ -79,23 +96,21 @@ OPENROUTER_API_KEY=...
 OPENAI_BASE_URL=https://openrouter.ai/api/v1
 ```
 
-OpenRouter 常用的額外設定可以再補：
-
-## 主程式入口
+## 主程式在哪裡
 
 ### 確定性驗證器
 
-主程式：
+主入口：
 
 - [runner.py](./deterministic_validation/runner.py)
 
-相關模組：
+主要規則與資料：
 
 - [rules.py](./deterministic_validation/rules.py)
 - [mutations.py](./deterministic_validation/mutations.py)
 - [model.py](./deterministic_validation/model.py)
 
-執行：
+常用指令：
 
 ```powershell
 python -m feedback.deterministic_validation.runner
@@ -104,20 +119,20 @@ python -m feedback.deterministic_validation.runner --dump
 
 用途：
 
-- 在 34 份正確標註資料上量誤殺率
-- 在 3,760 個注入錯誤樣本上量偵測率
-- `--dump` 會把每個規則的錯誤樣本輸出到 [mutants](./deterministic_validation/mutants/)
+- 驗證 34 份人工標註 Ground Truth 的不誤殺率
+- 驗證 3,760 個系統性注入錯誤樣本的偵測率
+- `--dump` 會把所有注入錯誤樣本輸出到 [mutants](./deterministic_validation/mutants/)
 
 ### 多模態視覺驗證器
 
-主要程式：
+主入口：
 
 - [toc_extract.py](./external_reference_validation/toc_nav/toc_extract.py)
 - [coverage.py](./external_reference_validation/toc_nav/coverage.py)
 - [run.py](./external_reference_validation/e2e/run.py)
 - [inject.py](./external_reference_validation/e2e/inject.py)
 
-相關資料：
+核心資料：
 
 - [dataset](./external_reference_validation/dataset/)
 - [report](./external_reference_validation/report/)
@@ -125,7 +140,7 @@ python -m feedback.deterministic_validation.runner --dump
 
 常用指令：
 
-頁面導航抽取目錄：
+抽出目錄：
 
 ```powershell
 python -m feedback.external_reference_validation.toc_nav.toc_extract --label GDC_2023 --model google/gemini-3-flash-preview
@@ -137,13 +152,13 @@ python -m feedback.external_reference_validation.toc_nav.toc_extract --label GDC
 python -m feedback.external_reference_validation.toc_nav.coverage --model google/gemini-3-flash-preview
 ```
 
-端到端精確度：
+單一 filing 端到端精確度：
 
 ```powershell
-python -m feedback.external_reference_validation.e2e.run --label GDC_2023 --nav-model google/gemini-3-flash-preview --detect-model google/gemini-3-flash-preview --batch 4
+python -m feedback.external_reference_validation.e2e.run --label GDC_2023 --model google/gemini-3-flash-preview --batch 4
 ```
 
-端到端錯誤偵測：
+端到端錯誤偵測率：
 
 ```powershell
 python -m feedback.external_reference_validation.e2e.inject --model google/gemini-3-flash-preview
@@ -151,34 +166,32 @@ python -m feedback.external_reference_validation.e2e.inject --model google/gemin
 
 用途：
 
-- `toc_nav`：從目錄頁抽出 `item -> 印刷頁碼`，再對齊到 PDF 頁面
+- `toc_nav`：從目錄建立 `item -> 可信頁面` 的對應，再對照 PDF 頁面
 - `e2e.run`：在可信頁面上檢查開頭與尾段是否和正確內容一致
-- `e2e.inject`：在正確樣本上注入截斷或越界，檢查模型能不能抓到
+- `e2e.inject`：在固定頁面證據下，測試注入錯誤後能不能被驗證器抓出
 
 ## 結果會寫到哪裡
 
 ### 確定性驗證器
 
-- 終端輸出：每條規則的誤殺率與偵測率
-- 檔案輸出：`--dump` 時寫到 [deterministic_validation/mutants](./deterministic_validation/mutants/)
+- 預設直接把結果印在終端
+- `--dump` 會把注入樣本寫到 [deterministic_validation/mutants](./deterministic_validation/mutants/)
 
 ### 多模態視覺驗證器
 
-- 快取：寫到 [external_reference_validation/vlm_cache](./external_reference_validation/vlm_cache/)
-- 中間結果與報表：寫到 [external_reference_validation/report](./external_reference_validation/report/)
-- 端到端報告：可參考 [external_reference_validation/e2e/report.md](./external_reference_validation/e2e/report.md)
+- 快取寫在 [external_reference_validation/vlm_cache](./external_reference_validation/vlm_cache/)
+- 報表與摘要寫在 [external_reference_validation/report](./external_reference_validation/report/)
+- 端到端結果整理在 [external_reference_validation/e2e/report.md](./external_reference_validation/e2e/report.md)
 
 ## 建議閱讀順序
 
-如果你想快速理解整體設計：
-
 1. 先看 [combined_validation_report.md](./combined_validation_report.md)
 2. 再看 [deterministic_validation](./deterministic_validation/) 與 [external_reference_validation](./external_reference_validation/)
-3. 最後視需要重跑上面的主程式
+3. 最後依需求重跑對應腳本
 
-## 常見注意事項
+## 備註
 
-- 多模態視覺驗證器需要 API key；若沒設 `.env`，會在 `vlm_reader.py` 直接報錯。
-- `e2e.inject` 會大量使用快取；若前面沒跑過對應模型與頁面，第一次仍可能打 API。
-- 多模態流程會讀 PDF 與 PNG，若本機缺 `PyMuPDF`（`fitz`），頁面相關腳本會失敗。
-- 命令中的模型名稱可以替換，但如果要重現報告中的基線，請優先使用 `google/gemini-3-flash-preview`。
+- 多模態視覺驗證器需要 API key，並透過 `.env` 提供給程式
+- `e2e.inject` 會重用既有快取；如果快取不存在，會補做必要的多模態呼叫
+- 視覺驗證會把 PDF 頁面轉成 PNG，所以需要 `PyMuPDF`
+- 若要重現報告中的主結果，建議優先使用 `google/gemini-3-flash-preview`
