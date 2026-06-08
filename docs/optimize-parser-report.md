@@ -35,7 +35,19 @@
 
 ---
 
-## 二、評分與嚴重度機制
+## 二、修正 → 驗測迴圈示意圖
+
+```mermaid
+flowchart LR
+    A[全量驗測\n507 筆] --> B{有新 error？}
+    B -- 否 --> C[確認無 regression]
+    B -- 是 --> D[排查根因\n實作修正]
+    D --> E[Spot-check\n受影響標的]
+    E -- 通過 --> A
+    E -- 又引入新迴歸 --> D
+```
+
+## 三、評分與嚴重度機制
 
 每份申報跑完後，`Validator` 針對 **raw_items**（parser 幾何輸出）與 **final items**（status 分類）執行以下規則，輸出 `QualityReport`：
 
@@ -91,17 +103,4 @@ async def main():
     print(f"flags: {[(f.code, f.severity) for f in q.flags]}")
 
 asyncio.run(main())
-```
----
-
-## 五、修正 → 驗測迴圈示意圖
-
-```mermaid
-flowchart LR
-    A[全量驗測\n507 筆] --> B{有新 error？}
-    B -- 否 --> C[✅ 確認無 regression]
-    B -- 是 --> D[排查根因\n實作修正]
-    D --> E[Spot-check\n受影響標的]
-    E -- 通過 --> A
-    E -- 又引入新迴歸 --> D
 ```
