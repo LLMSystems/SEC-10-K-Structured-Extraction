@@ -83,13 +83,24 @@ class HybridParser(BaseParser):
         metadata: FilingMetadata,
     ) -> ParseResult:
         """
-        Primary parser 信心高但仍缺少部分 item 時，用 TocAnchorParser 補缺。
-        只使用 TocAnchorParser（專為補 by_reference / anchor 缺漏設計）；
-        不使用 CrossRef / PdfStyle 等 fallback，避免它們做全文重新解析而覆蓋
-        primary 已正確找到的 item 位置。
+        Primary parser 信心高但仍缺少部分 item 時，用「補缺專用」的 fallback 補上。
+
+        只使用 TocAnchorParser（補 by_reference / anchor 缺漏）和 BareTableParser
+        （補裸表格陳列式缺漏，如信託/SPE 空殼申報）；不使用 CrossRef / PdfStyle 等
+        需要全文重新解析的 fallback，避免不必要的計算開銷。
+
+        - TocAnchorParser：標準補缺，傳入 to_replace=[]，_merge 只「新增」primary
+          缺漏的 item，不動 primary 已找到的結果。
+        - BareTableParser：先偵測「裸表格」結構，偵測不到就回傳空結果，故只在
+          確實命中這類版面時才會介入。一旦命中，代表 RegexParser 在這份文件裡
+          找到的「標題」多半只是表格陳述文字中偶然出現的 Item 字樣（交叉引用），
+          而非真正標題位置；故對它有結果的 item，BareTableParser 的結果優先於
+          primary（傳入 result.raw_items 作為 to_replace，_merge 仍只在 fallback
+          也找到對應 item 時才覆蓋，找不到的維持 primary 結果，不會整批清空）。
         """
         from src.patterns import ITEM_NUMBERS
         from src.parsers.toc_anchor_parser import TocAnchorParser
+        from src.parsers.bare_table_parser import BareTableParser
 
         found_nums = {item.item_number for item in primary.raw_items}
         expected = set(ITEM_NUMBERS)
@@ -99,20 +110,42 @@ class HybridParser(BaseParser):
         if not missing:
             return primary
 
+        result = primary
         for fallback in self.fallbacks:
+            if isinstance(fallback, BareTableParser):
+                # 只有在 primary 本身覆蓋率明顯偏低時，才允許 BareTableParser 整批覆蓋
+                # primary 的結果（如 KTH：找到 2/23，正文確實沒有可辨識標題）。
+                # 若 primary 已經找到大半 item（如 ACRL/UMEW 找到 20/22-23），
+                # 代表 _has_bare_item_table 多半是誤判（資料表格內偶然出現多個
+                # Item 字樣），此時整批覆蓋只會用交叉引用位置去蓋掉正確標題。
+                if len(found_nums) >= len(missing):
+                    continue
+                fallback_result = fallback.parse(doc, metadata)
+                if not fallback_result.raw_items:
+                    continue
+                logger.info(
+                    f"bare-table structure detected; preferring {fallback.name} "
+                    f"results for {[i.item_number for i in fallback_result.raw_items]}"
+                )
+                result = self._merge(result, fallback_result, result.raw_items, fallback)
+                continue
+
             if not isinstance(fallback, TocAnchorParser):
                 continue
-            fallback_result = fallback.parse(doc, metadata)
-            gap_items = [i for i in fallback_result.raw_items if i.item_number in missing]
-            if not gap_items:
+            still_missing = expected - {item.item_number for item in result.raw_items}
+            if not still_missing:
                 break
+            fallback_result = fallback.parse(doc, metadata)
+            gap_items = [i for i in fallback_result.raw_items if i.item_number in still_missing]
+            if not gap_items:
+                continue
             logger.info(
                 f"gap-fill: adding {[i.item_number for i in gap_items]} "
                 f"from {fallback.name}"
             )
-            return self._merge(primary, fallback_result, [], fallback)
+            result = self._merge(result, fallback_result, [], fallback)
 
-        return primary
+        return result
 
     # Fallback parsers must exceed this confidence to be accepted immediately;
     # below it we keep trying and return the highest-confidence result at the end.
