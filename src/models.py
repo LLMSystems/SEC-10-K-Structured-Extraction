@@ -55,6 +55,9 @@ class ItemResult(BaseModel):
     content_text: Optional[str]        # 純文字內容；非 extracted 時為 null
     char_range: Optional[tuple[int, int]]  # 在純文字中的起終位置；非 extracted 時為 null
     status: ItemStatus
+    confidence: Optional[float] = None  # parser 對此切割的信心（來自 RawItem）
+    flag_codes: list[str] = Field(default_factory=list)  # 此 Item 命中的 validation flag code
+    spans: list[tuple[int, int]] = Field(default_factory=list)  # 多段 span 的個別範圍；單段時與 char_range 等價
 
 
 class FilingInfo(BaseModel):
@@ -78,11 +81,43 @@ class TimingStats(BaseModel):
         return self.fetch_html_sec + self.preprocess_sec + self.parse_sec + self.postprocess_sec
 
 
+# ──────────────────────────────────────────────
+# 驗證 / 品質報告
+# ──────────────────────────────────────────────
+
+ValidationSeverity = Literal["error", "warning", "info"]
+
+
+class ValidationFlag(BaseModel):
+    """單一驗證問題。獨立於 parser，由 Validator 重新核對結構不變量後產生。"""
+    code: str                          # 機器可讀，如 "range_invalid" / "ordering_violation"
+    severity: ValidationSeverity
+    item_number: Optional[str] = None  # None 代表文件級問題
+    message: str                       # 人類可讀說明
+    detail: dict[str, Any] = Field(default_factory=dict)  # 結構化上下文
+
+
+class QualityReport(BaseModel):
+    """整份 filing 的解析品質報告，掛在 FilingOutput 上對外揭露。"""
+    is_valid: bool                     # 沒有任何 error 級 flag
+    score: float                       # 0..1 聚合分數
+    parser_name: str
+    parser_confidence: float
+    expected_item_count: int
+    found_item_count: int
+    missing_items: list[str] = Field(default_factory=list)
+    missing_required_items: list[str] = Field(default_factory=list)
+    coverage_ratio: float = 0.0        # covered / inter-item span（多 span 路徑才有意義）
+    counts: dict[str, int] = Field(default_factory=dict)  # {"error":n,"warning":m,"info":k}
+    flags: list[ValidationFlag] = Field(default_factory=list)
+
+
 class FilingOutput(BaseModel):
     """API 輸出"""
     filing_info: FilingInfo
     items: list[ItemResult]
     timing: Optional[TimingStats] = None
+    quality: Optional[QualityReport] = None
 
 
 # ──────────────────────────────────────────────

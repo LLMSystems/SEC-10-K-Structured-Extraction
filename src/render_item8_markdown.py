@@ -587,9 +587,9 @@ def render_header(payload: dict[str, Any]) -> list[str]:
             "",
             "## Contents",
             "",
-            "- [Main Statements](#main-statements)",
-            "- [Numeric Disclosures](#numeric-disclosures)",
-            "- [Text Disclosures](#text-disclosures)",
+            "- Main Statements",
+            "- Numeric Disclosures",
+            "- Text Disclosures",
             "",
         ]
     )

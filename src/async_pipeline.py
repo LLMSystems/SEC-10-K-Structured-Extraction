@@ -130,6 +130,20 @@ class AsyncPipeline(Pipeline):
         )
         postprocess_sec = time.perf_counter() - t0
 
+        quality = await loop.run_in_executor(
+            None,
+            self._apply_quality,
+            parse_result,
+            items,
+            doc.text,
+            metadata,
+        )
+        logger.info(
+            f"驗證：score={quality.score} valid={quality.is_valid} "
+            f"errors={quality.counts.get('error', 0)} "
+            f"warnings={quality.counts.get('warning', 0)}"
+        )
+
         return FilingOutput(
             filing_info=FilingInfo(
                 cik=metadata.cik,
@@ -145,4 +159,5 @@ class AsyncPipeline(Pipeline):
                 parse_sec=round(parse_sec, 3),
                 postprocess_sec=round(postprocess_sec, 3),
             ),
+            quality=quality,
         )

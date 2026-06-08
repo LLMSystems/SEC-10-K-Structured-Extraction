@@ -20,6 +20,7 @@ from src.models import (
 from src.parsers.base import BaseParser
 from src.parsers.cross_reference_multispan_parser import CrossReferenceMultiSpanParser
 from src.parsers.pdf_style_cross_reference_parser import PdfStyleCrossReferenceParser
+from src.parsers.toc_anchor_parser import TocAnchorParser
 from src.patterns import (
     ITEM_IN_TABLE_PATTERN,
     PAGE_NUMBER_PATTERN,
@@ -28,10 +29,14 @@ from src.patterns import (
     PAGE_WORD_PATTERN,
     PAGE_HEADER_PATTERN,
     SPLIT_UPPERCASE_PATTERN,
+    SPLIT_ITEM_WORD_PATTERN,
 )
 from src.parsers.regex_parser import RegexParser
 from src.parsers.hybrid import HybridParser
+from src.parsers.base import ParseResult
 from src.postprocessor import PostProcessor
+from src.validators import Validator
+from src.models import ItemResult, QualityReport
 
 logger = logging.getLogger(__name__)
 
@@ -58,9 +63,11 @@ class Pipeline:
             fallback=[
                 CrossReferenceMultiSpanParser(),
                 PdfStyleCrossReferenceParser(),
+                TocAnchorParser(),
             ],
         )
         self.postprocessor = PostProcessor()
+        self.validator = Validator()
 
     def run(
         self,
@@ -109,6 +116,14 @@ class Pipeline:
         items = self.postprocessor.process(parse_result.raw_items, doc.text, metadata)
         postprocess_sec = time.perf_counter() - t0
 
+        # 6. 驗證 → 產出 QualityReport，並回填 confidence / flag_codes
+        quality = self._apply_quality(parse_result, items, doc.text, metadata)
+        logger.info(
+            f"驗證：score={quality.score} valid={quality.is_valid} "
+            f"errors={quality.counts.get('error', 0)} "
+            f"warnings={quality.counts.get('warning', 0)}"
+        )
+
         output = FilingOutput(
             filing_info=FilingInfo(
                 cik=metadata.cik,
@@ -124,12 +139,37 @@ class Pipeline:
                 parse_sec=round(parse_sec, 3),
                 postprocess_sec=round(postprocess_sec, 3),
             ),
+            quality=quality,
         )
 
         if save_to is not None:
             self._save(output, metadata, doc.text, Path(save_to))
 
         return output
+
+    def _apply_quality(
+        self,
+        parse_result: ParseResult,
+        items: list[ItemResult],
+        text: str,
+        metadata: FilingMetadata,
+    ) -> QualityReport:
+        """跑驗證層，並把 confidence / flag_codes 回填到各 ItemResult。"""
+        quality = self.validator.validate(
+            parse_result.raw_items, items, text, metadata, parse_result
+        )
+
+        conf_map = {raw.item_number: raw.confidence for raw in parse_result.raw_items}
+        codes_by_item: dict[str, list[str]] = {}
+        for flag in quality.flags:
+            if flag.item_number:
+                codes_by_item.setdefault(flag.item_number, []).append(flag.code)
+
+        for item in items:
+            item.confidence = conf_map.get(item.item_number)
+            item.flag_codes = codes_by_item.get(item.item_number, [])
+
+        return quality
 
     def _save(
         self,
@@ -430,6 +470,7 @@ class Pipeline:
                 fixed = table_text_nl
                 while True:
                     new = SPLIT_UPPERCASE_PATTERN.sub(r"\1\2", fixed)
+                    new = SPLIT_ITEM_WORD_PATTERN.sub("Item", new)
                     if new == fixed:
                         break
                     fixed = new
@@ -474,6 +515,7 @@ class Pipeline:
         # 反覆套用直到沒有變化（應對連續多層斷字）
         while True:
             fixed = SPLIT_UPPERCASE_PATTERN.sub(r"\1\2", text)
+            fixed = SPLIT_ITEM_WORD_PATTERN.sub("Item", fixed)
             if fixed == text:
                 break
             text = fixed

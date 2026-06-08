@@ -72,23 +72,34 @@ class HybridParser(BaseParser):
 
         return primary_result
 
+    # Fallback parsers must exceed this confidence to be accepted immediately;
+    # below it we keep trying and return the highest-confidence result at the end.
+    _FALLBACK_MIN_CONFIDENCE: float = 0.5
+
     def _run_fallback_chain(
         self,
         doc: PreprocessedDocument,
         metadata: FilingMetadata,
     ) -> ParseResult | None:
         collected_warnings: list[str] = []
+        best: ParseResult | None = None
         for fallback in self.fallbacks:
             logger.info(f"[{self.primary.name}] no items found; trying fallback {fallback.name}")
             fallback_result = fallback.parse(doc, metadata)
-            if fallback_result.raw_items:
+            if not fallback_result.raw_items:
+                collected_warnings.extend(
+                    f"[{fallback.name}] {warning}"
+                    for warning in fallback_result.warnings
+                )
+                continue
+            if fallback_result.confidence >= self._FALLBACK_MIN_CONFIDENCE:
                 fallback_result.warnings = collected_warnings + list(fallback_result.warnings)
                 return fallback_result
-            collected_warnings.extend(
-                f"[{fallback.name}] {warning}"
-                for warning in fallback_result.warnings
-            )
-        return None
+            # Below threshold — keep as candidate and continue to find a better one
+            if best is None or fallback_result.confidence > best.confidence:
+                best = fallback_result
+                best.warnings = collected_warnings + list(best.warnings)
+        return best
 
     def _merge(
         self,
@@ -121,7 +132,7 @@ class HybridParser(BaseParser):
                 merged_items.append(item)
                 warnings.append(f"Item {item.item_number} added by fallback parser")
 
-        from src.parsers.regex_parser import ITEM_NUMBERS
+        from src.patterns import ITEM_NUMBERS
 
         order = {n: i for i, n in enumerate(ITEM_NUMBERS)}
         merged_items.sort(key=lambda x: order.get(x.item_number, 99))

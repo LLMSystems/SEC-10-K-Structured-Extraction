@@ -82,8 +82,9 @@ TERMINAL_PATTERN = re.compile(
 )
 
 # ── 2b. 標準 Item 標題 ────────────────────────────────────────
-# 範例匹配："\nItem 1." / "\nITEM 1A:" / "\nItem 7A—"
+# 範例匹配："\nItem 1." / "\nITEM 1A:" / "\nItem 7A—" / "\nItem 9A(T)."
 # 分隔符允許 . : - — – tab 或換行；換行格式（純頁簽）以 _EXPLICIT_SEP 區分品質
+# 編號後可能有過渡期條款括號註記，如 "9A(T)"（2008-2010 年間常見格式）
 ITEM_PATTERN = re.compile(
     rf"""
     (?:^|\n)                        # 行首或換行
@@ -92,6 +93,7 @@ ITEM_PATTERN = re.compile(
     \s+                             # 必須有空白
     (?P<num>{_NUM_ALT})             # Item 編號（多字元優先）
     \s*                             # 數字後可能有空白
+    (?:\([A-Za-z]{{1,3}}\)\s*)?     # 可選括號註記，如 "(T)"
     [.:\-—–\t\n]                    # 分隔符
     """,
     re.VERBOSE | re.MULTILINE,
@@ -162,6 +164,43 @@ BY_REF_PATTERN = re.compile(
     r"incorporat(?:ed|ion)\s+(?:herein\s+)?by\s+reference|"
     r"hereby\s+incorporat(?:ed|ion)\s+by\s+reference|"
     r"incorporat(?:ed|ion)\s+by\s+reference\s+(?:from|to|herein)",
+    re.IGNORECASE,
+)
+
+# ── 3a-2. Item 8 財報以「見另頁 / F-pages」方式呈現 ───────────
+# 實際財報置於文件他處（如 Item 15 之後的 F-pages），Item 8 僅留一段指標文字。
+# 範例："See Index to Consolidated Financial Statements"
+#       "Reference is made to Pages ... of this ... Form 10-K"
+#       "...appear on pages 162-314"
+#       "This information appears following Item 15 ... and is included herein by reference"
+#       "...are listed in the Index to the Financial Statements..."
+#       "...is included as a separate section of this Annual Report..."
+#       "...are filed under this Item, beginning on page..."
+#       "...are appended to this report. An index ... is found in Item 15."
+#       "...are attached hereto as Exhibit A"
+#       "...are filed as part of this report"
+#       "...required by this item are located in PART IV of this Annual Report"
+#       "...is submitted in response to Part IV below. See the Index to Consolidated..."
+# 樣本顯示真實內嵌財報段落極長（中位數 ≈74k 字），故下列片語只在搭配長度上限
+# （見 postprocessor._classify）時才視為 by_reference 訊號，不會誤判正常內文。
+FIN_STMT_BY_REF_PATTERN = re.compile(
+    r"see\s+(?:the\s+)?index\s+to\b|"
+    r"listed\s+in\s+(?:the\s+)?index\s+to\b|"
+    r"see\s+financial\s+statements?\s+included\s+in\b|"
+    r"reference\s+is\s+made\s+to\s+pages?\b|"
+    r"appears?\s+(?:on|beginning\s+on)\s+pages?\b|"
+    r"appears?\s+following\s+item\b|"
+    r"set\s+forth\s+(?:on|beginning\s+on)\s+pages?\b|"
+    r"(?:is|are)\s+set\s+forth\s+in\s+part\s+iv\b|"
+    r"incorporat(?:ed|ion)\s+(?:herein\s+)?by\s+reference|"
+    r"incorporated\s+into\s+this\s+item\s+\d\w*\s+by\s+reference|"
+    r"(?:is|are)\s+included\s+herein\s+by\s+reference|"
+    r"included\s+as\s+a\s+separate\s+section\b|"
+    r"filed\s+under\s+this\s+item\b|"
+    r"filed\s+as\s+part\s+of\s+this\s+report\b|"
+    r"appended\s+to\s+this\s+report\b|"
+    r"located\s+in\s+part\s+iv\b|"
+    r"attached\s+hereto\b",
     re.IGNORECASE,
 )
 
@@ -237,4 +276,15 @@ PAGE_HEADER_PATTERN = re.compile(
 # 範例匹配：獨立成行的 "I" 後接 "TEM 10." → "ITEM 10."
 SPLIT_UPPERCASE_PATTERN = re.compile(
     r"(?m)^([A-Z]{1,5})\n([A-Z])",
+)
+
+# ── 4h. "Item" 字詞斷字修復（混合大小寫、斷點不固定）──────────
+# 部分申報文件把 "Item" 從 inline span 中間斷開且維持原始大小寫，斷點因標題而異，例如：
+#   <span>It</span><span>em 1. Business.</span>        → "It\nem 1. Business."
+#   <span>Ite</span><span>m 3. Legal Proceedings.</span> → "Ite\nm 3. Legal Proceedings."
+# SPLIT_UPPERCASE_PATTERN 只處理全大寫斷字，無法匹配混合大小寫的 "It"/"Ite"，故另立此 pattern，
+# 允許在 "Item" 四個字母間任意插入換行。限定後面緊接數字，避免誤合併正常字句。
+# 範例匹配："It\nem 1A." / "Ite\nm 3." → 還原為 "Item"
+SPLIT_ITEM_WORD_PATTERN = re.compile(
+    r"\bI\n?t\n?e\n?m(?=\s*\d)",
 )

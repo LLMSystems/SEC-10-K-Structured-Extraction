@@ -11,9 +11,9 @@ from src.patterns import ITEM_META, ITEM_NUMBERS
 
 TABLE_SNIPPET_PATTERN = re.compile(r"<table\b.*?</table>", re.IGNORECASE | re.DOTALL)
 ANCHOR_MARKER_PATTERN = re.compile(r"\[\[ANCHOR:(?P<frag>[^\]]+)\]\]")
-HEADING_PATTERN = re.compile(r"form\s+10-k\s+cross-reference\s+index", re.IGNORECASE)
+HEADING_PATTERN = re.compile(r"form\s+10-k\s+cross[-\s]?reference\s+index", re.IGNORECASE)
 NUMERIC_ITEM_LABEL_PATTERN = re.compile(
-    r"^(1C|1A|1B|9C|9A|9B|7A|1|2|3|4|5|6|7|8|9|10|11|12|13|14|15|16)\.\s*$",
+    r"^(?:Item\s+)?(1C|1A|1B|9C|9A|9B|7A|1|2|3|4|5|6|7|8|9|10|11|12|13|14|15|16)\.\s*$",
     re.IGNORECASE,
 )
 PART_HEADER_PATTERN = re.compile(r"^Part\s+[IVX]+\s*$", re.IGNORECASE)
@@ -64,11 +64,29 @@ class PdfStyleCrossReferenceParser(BaseParser):
         html_source = doc.normalized_html or text
         warnings: list[str] = []
 
-        heading_match = HEADING_PATTERN.search(html_source)
+        # Prefer the heading that is a standalone section title, not a TOC hyperlink.
+        # Iterate all matches and skip those inside <a href="...">.
+        heading_match = None
+        for m in HEADING_PATTERN.finditer(html_source):
+            pre = html_source[max(0, m.start() - 200):m.start()]
+            if re.search(r'<a\s[^>]*href\s*=', pre, re.IGNORECASE):
+                continue
+            heading_match = m
+            break
+        if heading_match is None:
+            # fallback: accept any match (e.g. all are inside links)
+            heading_match = HEADING_PATTERN.search(html_source)
         if not heading_match:
             return self._make_result([], ["Missing PDF-style cross-reference index heading"])
 
-        tables = self._collect_candidate_tables(html_source, text, heading_match.end())
+        # If the heading is the first row of the table (not a standalone title before it),
+        # the <table> tag opens before heading_match.start(). Walk back to find it.
+        table_open = html_source.rfind("<table", 0, heading_match.start())
+        if 0 <= table_open and heading_match.start() - table_open <= 2000:
+            tables_search_from = table_open
+        else:
+            tables_search_from = heading_match.end()
+        tables = self._collect_candidate_tables(html_source, text, tables_search_from)
         if not tables:
             return self._make_result([], ["Missing PDF-style cross-reference index tables"])
 
