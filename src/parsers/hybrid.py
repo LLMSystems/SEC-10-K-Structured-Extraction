@@ -44,6 +44,10 @@ class HybridParser(BaseParser):
         )
 
         if not self.fallbacks or primary_result.confidence >= self.threshold:
+            # Primary parser is confident, but may still miss individual items.
+            # Attempt a targeted gap-fill via fallback parsers for any missing items.
+            if self.fallbacks and primary_result.confidence >= self.threshold:
+                primary_result = self._try_gap_fill(primary_result, doc, metadata)
             return primary_result
 
         if not primary_result.raw_items:
@@ -71,6 +75,44 @@ class HybridParser(BaseParser):
             return self._merge(primary_result, fallback_result, low_confidence_items, fallback)
 
         return primary_result
+
+    def _try_gap_fill(
+        self,
+        primary: ParseResult,
+        doc: PreprocessedDocument,
+        metadata: FilingMetadata,
+    ) -> ParseResult:
+        """
+        Primary parser 信心高但仍缺少部分 item 時，用 TocAnchorParser 補缺。
+        只使用 TocAnchorParser（專為補 by_reference / anchor 缺漏設計）；
+        不使用 CrossRef / PdfStyle 等 fallback，避免它們做全文重新解析而覆蓋
+        primary 已正確找到的 item 位置。
+        """
+        from src.patterns import ITEM_NUMBERS
+        from src.parsers.toc_anchor_parser import TocAnchorParser
+
+        found_nums = {item.item_number for item in primary.raw_items}
+        expected = set(ITEM_NUMBERS)
+        if not metadata.has_item_1c:
+            expected.discard("1C")
+        missing = expected - found_nums
+        if not missing:
+            return primary
+
+        for fallback in self.fallbacks:
+            if not isinstance(fallback, TocAnchorParser):
+                continue
+            fallback_result = fallback.parse(doc, metadata)
+            gap_items = [i for i in fallback_result.raw_items if i.item_number in missing]
+            if not gap_items:
+                break
+            logger.info(
+                f"gap-fill: adding {[i.item_number for i in gap_items]} "
+                f"from {fallback.name}"
+            )
+            return self._merge(primary, fallback_result, [], fallback)
+
+        return primary
 
     # Fallback parsers must exceed this confidence to be accepted immediately;
     # below it we keep trying and return the highest-confidence result at the end.

@@ -108,7 +108,9 @@ class TocAnchorParser(BaseParser):
                 new_pos = frag_to_pos.get(entry.fragment_id, -1)
                 existing = entries.get(entry.item_number)
                 old_pos = frag_to_pos.get(existing.fragment_id, -1) if existing else -1
-                if new_pos > old_pos:
+                # 有 anchor 的 entry 以位置比較決定；沒有 anchor 的 by-reference entry
+                # 只在尚無任何 entry 時才加入（有直接 anchor 的 entry 優先）
+                if new_pos > old_pos or (new_pos < 0 and entry.status_hint and old_pos < 0):
                     entries[entry.item_number] = entry
 
         return entries
@@ -179,9 +181,6 @@ class TocAnchorParser(BaseParser):
                             title_text = t
                         break
 
-            if not fragment_id:
-                continue
-
             # status hint 偵測（從整列文字判斷）
             row_text = self._normalize_ws(" ".join(cells))
             status_hint: str | None = None
@@ -194,6 +193,21 @@ class TocAnchorParser(BaseParser):
             elif BY_REF_RE.search(row_text):
                 status_hint = "by_reference_declared"
                 by_ref_text = row_text
+
+            if not fragment_id:
+                # TOC row 有 item 編號但無直接 anchor 連結（例如以 [b] 腳注代替）。
+                # 若有 by-reference 或 reserved/none 指標，建立無位置的狀態 entry，
+                # 讓 HybridParser 的 gap-fill 能補上這個 item（以 by_reference 狀態）。
+                footnote_marker = bool(re.search(r'\[[a-z]\]', row_text))
+                if status_hint or footnote_marker:
+                    entries.append(_TocEntry(
+                        item_number=item_num,
+                        title_text=title_text,
+                        fragment_id="",
+                        status_hint=status_hint or "by_reference_declared",
+                        by_reference_text=by_ref_text,
+                    ))
+                continue
 
             entries.append(_TocEntry(
                 item_number=item_num,
@@ -233,11 +247,25 @@ class TocAnchorParser(BaseParser):
 
         raw_items: list[RawItem] = []
         for num in ordered:
+            entry = entries[num]
             start = pos_map.get(num)
+
             if start is None:
+                # 無 anchor 但有 status_hint（如 by_reference_declared）→
+                # 建立無內容範圍的虛擬 RawItem，讓 postprocessor 轉為 incorporated_by_reference
+                if entry.status_hint:
+                    raw_items.append(RawItem(
+                        item_number=num,
+                        title_text=entry.title_text,
+                        start_char=0,
+                        end_char=None,  # None → _geometry 回傳 [] 跳過 range/ordering 檢查
+                        status_hint=entry.status_hint,
+                        by_reference_text=entry.by_reference_text,
+                        confidence=0.85,
+                        spans=[],  # 空 spans → postprocessor 走 by_reference 路徑
+                    ))
                 continue
 
-            entry = entries[num]
             confidence = 0.82 if entry.status_hint else 0.78
 
             end = text_order_ends[num]

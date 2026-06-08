@@ -57,7 +57,10 @@ ITEM_META: dict[str, tuple[str, str]] = {
 }
 
 # Item 編號的 alternation 字串，供各 pattern 共用
-_NUM_ALT = r"1C|1A|1B|9C|9A|9B|7A|1|2|3|4|5|6|7|8|9|10|11|12|13|14|15|16"
+# 含字母後綴的編號允許數字與字母間插入句點（如 "Item 9.A." 為 "Item 9A." 的常見變體）；
+# 句點變體必須排在無句點變體之前，否則 "9" 會先比對成功並把 ".A" 留在標題裡
+# （見 _find_candidates 的 .replace(".", "") 正規化，會把 "9.A" 還原成 "9A"）。
+_NUM_ALT = r"1\.A|1\.B|1\.C|9\.A|9\.B|9\.C|7\.A|1C|1A|1B|9C|9A|9B|7A|1|2|3|4|5|6|7|8|9|10|11|12|13|14|15|16"
 
 # ══════════════════════════════════════════════════════════════
 # 2. Parser 用 Pattern
@@ -82,21 +85,26 @@ TERMINAL_PATTERN = re.compile(
 )
 
 # ── 2b. 標準 Item 標題 ────────────────────────────────────────
-# 範例匹配："\nItem 1." / "\nITEM 1A:" / "\nItem 7A—" / "\nItem 9A(T)."
+# 範例匹配："\nItem 1." / "\nITEM 1A:" / "\nItem 7A—" / "\nItem 9A(T)." / "\nItem 1a." / "\nITEM 9a." / "\nITEM1."
 # 分隔符允許 . : - — – tab 或換行；換行格式（純頁簽）以 _EXPLICIT_SEP 區分品質
 # 編號後可能有過渡期條款括號註記，如 "9A(T)"（2008-2010 年間常見格式）
+# 部分申報文件把字母後綴寫成小寫（如 "Item 1a."、"ITEM 9a."），故開啟 IGNORECASE；
+# _find_candidates 已用 .upper() 正規化編號，不受影響。
+# 少數申報文件在 "ITEM" 與編號間沒有空白（如 "ITEM1.   BUSINESS"），故將原本要求至少
+# 一個空白的 \s+ 放寬為 \s*；風險低，因為 (?:^|\n)\s* 已限制 "ITEM" 必須出現在行首，
+# 一般英文散文不會有 "ITEM" 緊接數字的行首字串。
 ITEM_PATTERN = re.compile(
     rf"""
     (?:^|\n)                        # 行首或換行
     \s*                             # 可能有前置空白
     (?:ITEM|Item|item)              # ITEM 關鍵字
-    \s+                             # 必須有空白
-    (?P<num>{_NUM_ALT})             # Item 編號（多字元優先）
+    \s*                             # 與編號間可能沒有空白（如 "ITEM1."）
+    (?P<num>{_NUM_ALT})             # Item 編號（多字元優先，大小寫不拘）
     \s*                             # 數字後可能有空白
     (?:\([A-Za-z]{{1,3}}\)\s*)?     # 可選括號註記，如 "(T)"
     [.:\-—–\t\n]                    # 分隔符
     """,
-    re.VERBOSE | re.MULTILINE,
+    re.VERBOSE | re.MULTILINE | re.IGNORECASE,
 )
 
 # ── 2c. 合併 Item 標題 ────────────────────────────────────────
@@ -148,8 +156,17 @@ REFERENCE_PATTERN = re.compile(
 
 # ── 2f. Table 內是否含 Item 標題 ─────────────────────────────
 # 用於 preprocessing：若 <table> 內有 Item 標題，轉純文字讓 parser 能抓到
+# 偵測對象 table_text_compact 用 get_text("", strip=True) 取得（無分隔字元，
+# 目的是合併 inline 斷字如 "I"+"TEM"="ITEM"），但副作用是相鄰儲存格文字會直接
+# 黏在一起，例如標題格 "Item 1" 與標題格 "Business" 黏成 "Item 1Business"。
+# 原本的結尾 \b 會因為數字後緊接英文字母（同屬 \w）而判定無字界，導致比對失敗，
+# 使本應「轉純文字」的單一標題 table 被誤判為「保留原始 HTML」，讓殘留的
+# HTML 標籤滲入最終文字、破壞 ITEM_PATTERN 偵測（例如 CNET、ACONW、HIG-PG）。
+# 改用 (?!\d) 取代 \b：只禁止「數字後緊接數字」（避免把 "Item 10" 誤判成
+# "Item 1" + "0"，仍可靠 _NUM_ALT 的多字元 alternative 透過回溯比對到 "10"），
+# 但允許「數字後緊接英文字母」視為比對成功（因為這正是黏接造成的常態）。
 ITEM_IN_TABLE_PATTERN = re.compile(
-    rf"\bITEM\s+(?:{_NUM_ALT})\b",
+    rf"\bITEM\s+(?:{_NUM_ALT})(?!\d)",
     re.IGNORECASE,
 )
 

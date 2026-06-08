@@ -31,7 +31,7 @@ from src.patterns import HTML_TAG_PATTERN, ITEM_NUMBERS
 # 例：Item 3 可為 not_applicable（無訴訟）、Item 8 可為 by_reference（財報見 F-pages）、
 #     Part III(10–14) 以 by_reference 為主，missing 屬異常。
 ITEM_EXPECTED_STATUS: dict[str, set[str]] = {
-    "1":  {"extracted"},
+    "1":  {"extracted", "not_applicable"},   # 信託/特殊目的實體可合法為 N/A
     "1A": {"extracted"},
     "1B": {"not_applicable", "extracted"},
     "1C": {"extracted", "not_applicable", "missing"},   # 2023+ 新規，過渡期較不穩
@@ -42,7 +42,7 @@ ITEM_EXPECTED_STATUS: dict[str, set[str]] = {
     "6":  {"reserved", "extracted", "not_applicable", "missing"},
     "7":  {"extracted"},
     "7A": {"extracted", "not_applicable"},              # SRC 常為 N/A
-    "8":  {"extracted", "incorporated_by_reference"},
+    "8":  {"extracted", "incorporated_by_reference", "not_applicable"},  # 信託/特殊目的實體可合法為 N/A
     "9":  {"not_applicable", "extracted", "missing"},
     "9A": {"extracted"},
     "9B": {"not_applicable", "extracted"},

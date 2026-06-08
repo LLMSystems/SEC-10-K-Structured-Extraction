@@ -75,15 +75,17 @@ class RegexParser(BaseParser):
         results = []
 
         # 單一 Item
+        # .replace(".", "") 將 "9.A" 這類數字字母間插入句點的變體正規化為 "9A"
+        # （_NUM_ALT 已把句點變體排在無句點變體之前，確保優先比對到完整編號）
         for m in ITEM_PATTERN.finditer(text):
-            num = m.group("num").upper()
+            num = m.group("num").upper().replace(".", "")
             if num in ITEM_META:
                 results.append((num, m.start(), m.group()))
 
         # 合併 Item（Items X. and Y.）
         for m in COMBINED_ITEM_PATTERN.finditer(text):
-            num1 = m.group("num1").upper()
-            num2 = m.group("num2").upper()
+            num1 = m.group("num1").upper().replace(".", "")
+            num2 = m.group("num2").upper().replace(".", "")
             matched = m.group()
             if num1 in ITEM_META:
                 results.append((num1, m.start(), matched))
@@ -92,7 +94,7 @@ class RegexParser(BaseParser):
 
         # PART + Item 同行格式（Page PART I Item 1. Business）
         for m in PART_ITEM_PATTERN.finditer(text):
-            num = m.group("num").upper()
+            num = m.group("num").upper().replace(".", "")
             if num in ITEM_META:
                 results.append((num, m.start(), m.group()))
 
@@ -174,7 +176,9 @@ class RegexParser(BaseParser):
                     # Otherwise, high_q[0] IS the real heading (e.g. a SPAC that renumbers
                     # Part III items starting from "Item 1.").
                     first_pos = high_q[0][0]
-                    in_toc_cluster = any(
+                    # TOC cluster only plausible in front portion of document;
+                    # items appearing after 40% of text are body sections, not TOC.
+                    in_toc_cluster = first_pos < len(text) * 0.4 and any(
                         other_num != num
                         and abs(first_hq_pos.get(other_num, -1) - first_pos) <= self._PAGE_GAP
                         for other_num in first_hq_pos
@@ -218,31 +222,37 @@ class RegexParser(BaseParser):
 
     def _assign_end_chars(self, items: list[RawItem], text_len: int, text: str = "") -> list[RawItem]:
         """
-        每個 Item 的 end_char = 下一個 Item 的 start_char
+        每個 Item 的 end_char = 下一個「位置不同」Item 的 start_char
         最後一個 Item 的 end_char = TERMINAL 起點（若有），否則文字總長
 
         使用物理文字順序（而非 canonical 順序）來指派 end_char，避免 TOC-only 項目
         （如 Item 1B 只出現在目錄、位置很小）與正文項目（位置很大）混排造成 start > end。
         """
-        terminal = text_len
-        if text:
-            m = TERMINAL_PATTERN.search(text)
-            if m:
-                terminal = m.start()
-
         # Sort by physical text position to prevent start > end when TOC-only items
         # (small positions) are interleaved with content items (large positions).
         phys = sorted(items, key=lambda x: x.start_char)
 
+        # TERMINAL_PATTERN 含有 "CONSOLIDATED"、"INDEX TO ... FINANCIAL STATEMENTS" 等字樣，
+        # 這些字樣常常「提早」出現在 Item 8 財報段落本身內部（例如子標題），而非文件真正結尾。
+        # 若從文件開頭搜尋會誤抓提早出現的位置，導致最後一個 Item 的 end_char < start_char。
+        # 故只在「最後一個 Item 的起點之後」搜尋，確保抓到的是真正的文件結尾標記。
+        terminal = text_len
+        if text and phys:
+            m = TERMINAL_PATTERN.search(text, phys[-1].start_char)
+            if m:
+                terminal = m.start()
+
         for i, item in enumerate(phys):
-            if i + 1 < len(phys):
-                item.end_char = phys[i + 1].start_char
-            else:
-                if item.start_char >= terminal:
-                    m = TERMINAL_PATTERN.search(text, item.start_char)
-                    if m:
-                        terminal = m.start()
-                item.end_char = terminal
+            # 合併標題（如 "Items 1 and 2. Business and Properties"）會讓多個 Item
+            # 共用同一個 start_char；略過位置相同的後續 Item，改取下一個「位置不同」的
+            # candidate 當 end，讓共用標題的所有 Item 都拿到完整內容範圍，
+            # 而非其中一個被指派 start == end 的零長度範圍。
+            end = terminal
+            for nxt in phys[i + 1:]:
+                if nxt.start_char != item.start_char:
+                    end = nxt.start_char
+                    break
+            item.end_char = end
 
         # Mark TOC-only items (tiny ranges in a document that also has large items) with
         # spans to signal non-linear structure.  This causes the validator to downgrade
