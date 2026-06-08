@@ -99,6 +99,9 @@ ITEM_PATTERN = re.compile(
     \s*                             # 可能有前置空白
     (?:ITEM|Item|item)              # ITEM 關鍵字
     \s*                             # 與編號間可能沒有空白（如 "ITEM1."）
+    (?:\[\[ANCHOR:[^\]]*\]\]\s*)?   # pipeline 注入的錨點標記可能切在 "Item" 與編號之間
+                                    # （如 "Item\n\n[[ANCHOR:item9a]]\n\n9A. Controls..."，
+                                    # 因原始 HTML 把錨點目標元素只包住編號部分）
     (?P<num>{_NUM_ALT})             # Item 編號（多字元優先，大小寫不拘）
     \s*                             # 數字後可能有空白
     (?:\([A-Za-z]{{1,3}}\)\s*)?     # 可選括號註記，如 "(T)"

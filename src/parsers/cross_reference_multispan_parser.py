@@ -30,6 +30,13 @@ NONE_DECLARED_PATTERN = re.compile(r"\b(?:none|not\s+applicable|n/?a)\b", re.IGN
 RESERVED_DECLARED_PATTERN = re.compile(r"\[\s*reserved\s*\]|\breserved\b", re.IGNORECASE)
 TOC_LABEL = "table of contents"
 
+# 部分 PDF/Word 轉檔的 SEC 文件（如 FMCCI）會在每個實體頁結尾放一個只含
+# 頁碼數字的獨立 <span>（頁尾頁碼），且嚴格遞增、從 1 開始連續編號。
+# 當 cross-reference table 的頁碼只用純文字標示（無超連結，frag_to_body_pos
+# 無法解析）時，可改用這些頁尾標記重建 page → body 位置對照表。
+PAGE_FOOTER_SPAN_PATTERN = re.compile(r"<div><span>\s*(\d{1,4})\s*</span></div>")
+_MIN_PAGE_FOOTER_RUN = 20
+
 
 @dataclass
 class PageLink:
@@ -81,6 +88,15 @@ class CrossReferenceMultiSpanParser(BaseParser):
         if not entries:
             warnings.append("Cross-reference table 未解析出任何 item")
             return self._make_result([], warnings)
+
+        if self._page_map_insufficient(entries, page_to_pos):
+            footer_pages = self._detect_page_footer_positions(text)
+            if footer_pages:
+                for page_num, pos in footer_pages.items():
+                    page_to_pos.setdefault(page_num, pos)
+                warnings.append(
+                    f"索引表頁碼無對應超連結；改用頁尾頁碼標記重建 {len(footer_pages)} 個頁面位置"
+                )
 
         raw_items = self._build_raw_items(entries, page_to_pos, frag_to_body_pos, text, metadata)
         if not raw_items:
@@ -184,6 +200,59 @@ class CrossReferenceMultiSpanParser(BaseParser):
 
         return entries, page_to_pos
 
+    def _page_map_insufficient(
+        self,
+        entries: dict[str, ItemEntry],
+        page_to_pos: dict[int, int],
+    ) -> bool:
+        """
+        判斷目前以超連結建立的 page_to_pos 是否「不夠用」：索引表引用的頁碼
+        中，超過半數無法解析到 body 位置（例如 FMCCI 的 Form 10-K Index
+        只用純文字標示頁碼、完全沒有超連結）。此時才需要啟用頁尾頁碼標記
+        的補救機制，避免對「本來就靠超連結正常運作」的文件做不必要的全文掃描。
+        """
+        referenced: set[int] = set()
+        for entry in entries.values():
+            for ref in entry.references:
+                referenced.add(ref.start_page)
+                referenced.add(ref.end_page)
+
+        if not referenced:
+            return False
+
+        missing = referenced - set(page_to_pos)
+        return len(missing) > len(referenced) / 2
+
+    def _detect_page_footer_positions(self, text: str) -> dict[int, int]:
+        """
+        從全文偵測「頁尾頁碼」標記，重建 page → body 位置對照表。
+
+        部分由 PDF/Word 轉檔的 SEC 文件（如 FMCCI）會在每個實體頁結尾放一個
+        只含頁碼數字的獨立 <span>，且頁碼嚴格遞增、從 1 開始連續編號
+        （正規化後型態為 "<div><span>N</span></div>"）。
+
+        為避免把正文中偶然出現、剛好遞增的數字 span 誤判成頁碼標記，只接受
+        「嚴格遞增、從 1/2/3 開始、且長度達到門檻」的最長連續序列。
+        """
+        candidates = [
+            (int(m.group(1)), m.start())
+            for m in PAGE_FOOTER_SPAN_PATTERN.finditer(text)
+        ]
+
+        best_run: list[tuple[int, int]] = []
+        current_run: list[tuple[int, int]] = []
+        for num, pos in candidates:
+            if current_run and num == current_run[-1][0] + 1:
+                current_run.append((num, pos))
+            else:
+                current_run = [(num, pos)] if num <= 3 else []
+            if len(current_run) > len(best_run):
+                best_run = current_run
+
+        if len(best_run) < _MIN_PAGE_FOOTER_RUN:
+            return {}
+        return dict(best_run)
+
     def _build_raw_items(
         self,
         entries: dict[str, ItemEntry],
@@ -213,10 +282,17 @@ class CrossReferenceMultiSpanParser(BaseParser):
                 start_char = spans[0].start_char
                 end_char = spans[-1].end_char
                 confidence = 0.82
-            else:
+            elif entry.status_hint:
                 start_char = 0
                 end_char = None
-                confidence = 0.72 if entry.status_hint else 0.0
+                confidence = 0.72
+            else:
+                # 既無法定位內容位置、也沒有 status_hint 可用：與其產生
+                # start=0/end=None 的佔位 RawItem（postprocessor 會把它當成
+                # 「從文件開頭到結尾」，導致 char_range 覆蓋整份文件、產生
+                # 荒謬的 overlap 統計），不如直接跳過，讓它維持「missing」，
+                # 交由 postprocessor 的 _handle_missing 正確處理。
+                continue
 
             raw_items.append(
                 RawItem(

@@ -418,14 +418,19 @@ class PostProcessor:
             return False
 
         title_norm = self._normalize_ws(std_title).lower()
+        substantive_chars = 0
         for line in lines:
             norm = self._normalize_ws(line).lower()
             if self._is_na_token(line) or NOT_APPLICABLE_PATTERN.search(norm):
                 continue                                  # N/A 宣告行
             if title_norm and (norm in title_norm or title_norm in norm):
                 continue                                  # 標題（含換行/標點變體）
-            if len(norm) >= self._SUBSTANTIVE_LEN:
-                return False                              # 有實質長句 → 不是純 NA
+            substantive_chars += len(norm)
+            # Single long line OR accumulated short lines both signal real content.
+            # Preprocessors sometimes break inline links across lines, producing
+            # many sub-80-char fragments that together form a substantive sentence.
+            if len(norm) >= self._SUBSTANTIVE_LEN or substantive_chars >= self._SUBSTANTIVE_LEN:
+                return False                              # 有實質內容 → 不是純 NA
         return True
 
     def _looks_like_financial_by_reference(self, plain: str) -> bool:

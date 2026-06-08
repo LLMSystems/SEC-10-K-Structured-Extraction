@@ -21,6 +21,7 @@ from src.parsers.base import BaseParser
 from src.parsers.cross_reference_multispan_parser import CrossReferenceMultiSpanParser
 from src.parsers.pdf_style_cross_reference_parser import PdfStyleCrossReferenceParser
 from src.parsers.toc_anchor_parser import TocAnchorParser
+from src.parsers.bare_table_parser import BareTableParser
 from src.patterns import (
     _NUM_ALT,
     ITEM_IN_TABLE_PATTERN,
@@ -51,6 +52,27 @@ _ITEM_LABEL_RE = re.compile(rf'(?:Item|ITEM|item)\s+(?:{_NUM_ALT})(?!\d)\.?', re
 # 確認 body element 是否已有 Item 編號（有則不注入，避免重複）
 _ITEM_START_RE = re.compile(rf'(?:Item|ITEM|item)\s*(?:{_NUM_ALT})(?!\d)', re.IGNORECASE)
 
+# 佔位字元：在 compact 抽取時暫代 \xa0，避免被 strip=True 連同分隔語意一起吃掉
+_NBSP_PLACEHOLDER = "\x01"
+
+
+def _compact_table_text(table) -> str:
+    """
+    取得 table 的「無分隔」文字，能合併 inline 斷字（如 "I"+"TEM"="ITEM"），
+    同時保留 \xa0 作為分隔語意（如 "<b>Item&nbsp;</b><b>1.</b>" 不應被併成
+    "Item1." 而失去可偵測的 "Item 1" 邊界）。
+
+    做法：逐一取出文字節點，先把 \xa0 換成不會被 strip() 吃掉的佔位字元，
+    各自 strip 後直接相連（重現 get_text("", strip=True) 的合併行為），
+    最後把佔位字元還原成空白。
+    """
+    parts = []
+    for nav_str in table.find_all(string=True):
+        s = str(nav_str).replace("\xa0", _NBSP_PLACEHOLDER).strip()
+        if s:
+            parts.append(s)
+    return "".join(parts).replace(_NBSP_PLACEHOLDER, " ")
+
 
 class Pipeline:
     """
@@ -70,6 +92,7 @@ class Pipeline:
                 CrossReferenceMultiSpanParser(),
                 PdfStyleCrossReferenceParser(),
                 TocAnchorParser(),
+                BareTableParser(),
             ],
         )
         self.postprocessor = PostProcessor()
@@ -435,7 +458,7 @@ class Pipeline:
         toc_item_labels: dict[str, str] = {}  # anchor_id → "Item N." from TOC link text
 
         for table in soup.find_all("table"):
-            table_text_compact = table.get_text("", strip=True)
+            table_text_compact = _compact_table_text(table)
             item_refs = {m.upper() for m in ITEM_IN_TABLE_PATTERN.findall(table_text_compact)}
             hash_links = [
                 link for link in table.find_all("a", href=True)
@@ -479,7 +502,7 @@ class Pipeline:
 
         for table in soup.find_all("table"):
             # compact（無分隔）用於偵測，能正確合併 inline 斷字（"I"+"TEM"="ITEM"）
-            table_text_compact = table.get_text("", strip=True)
+            table_text_compact = _compact_table_text(table)
 
             # 計算此 table 中出現幾個「不同」的 Item 編號
             # TOC 型 table 通常包含 10+ 個 Item；章節標題 table 通常只有 1–3 個

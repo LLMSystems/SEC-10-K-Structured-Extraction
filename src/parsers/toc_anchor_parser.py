@@ -239,11 +239,19 @@ class TocAnchorParser(BaseParser):
             if pos >= 0:
                 pos_map[num] = pos
 
-        # Pre-compute end_chars using physical text order → guarantees no overlap
+        # Pre-compute end_chars using physical text order → guarantees no overlap.
+        # When multiple items share the same anchor (e.g. "Items 10-14." pointing to one
+        # fragment), skip same-position entries and find the next DISTINCT position so all
+        # co-anchored items get the full content range rather than a zero-length span.
         text_sorted = sorted(pos_map.items(), key=lambda x: x[1])
         text_order_ends: dict[str, int] = {}
-        for i, (n, _) in enumerate(text_sorted):
-            text_order_ends[n] = text_sorted[i + 1][1] if i + 1 < len(text_sorted) else len(text)
+        for i, (n, pos) in enumerate(text_sorted):
+            end = len(text)
+            for j in range(i + 1, len(text_sorted)):
+                if text_sorted[j][1] != pos:
+                    end = text_sorted[j][1]
+                    break
+            text_order_ends[n] = end
 
         raw_items: list[RawItem] = []
         for num in ordered:
