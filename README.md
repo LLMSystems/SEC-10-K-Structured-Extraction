@@ -1,130 +1,132 @@
 <div align="center">
 
-# SEC 10-K 財報結構化抽取工具
+# SEC 10-K Structured Extraction Tool
 
-將 SEC EDGAR 上的 Form 10-K 年報解析成標準化 JSON，自動識別所有 Item 的內容與狀態（`extracted` / `incorporated_by_reference` / `not_applicable` / `reserved` / `missing`）。
+Parses SEC EDGAR Form 10-K annual reports into standardized JSON, automatically identifying the content and status of every Item (`extracted` / `incorporated_by_reference` / `not_applicable` / `reserved` / `missing`).
+
+[English](README.md) | [中文](README_zh-CN.md)
 
 </div>
 
 ---
 
-## 評測結果
+## Evaluation Results
 
-> 35 筆申報、12 家公司、2016–2026 年、涵蓋 Large / Accelerated / Non-accelerated filer / Smaller reporting company
-> Ground truth 由本人人工標註，使用自行開發的標註工具 [SEC-10-K-Annotation-Tool](https://github.com/LLMSystems/SEC-10-K-Annotation-Tool)
+> 35 filings, 12 companies, 2016–2026, covering Large / Accelerated / Non-accelerated filer / Smaller reporting company
+> Ground truth manually annotated by the author using the self-developed annotation tool [SEC-10-K-Annotation-Tool](https://github.com/LLMSystems/SEC-10-K-Annotation-Tool)
 
-| 指標 | 數值 |
+| Metric | Value |
 |---|---|
-| Status 準確率 | **100.0%**（788 / 788 items） |
+| Status Accuracy | **100.0%** (788 / 788 items) |
 | Critical Regressions | **0** |
-| Warning 數 | 5（全為 Item 15 / Item 1 邊界問題，見失敗模式分析） |
-| 內容長度正常比例 | 99.0%（484 / 489 extracted items） |
-| 頭尾比對通過率 | 頭部 99.8% / 尾部 100.0% |
-| 平均耗時 | **0.687 秒**（下載 0.159s + 預處理 0.494s + 解析 0.035s） |
-| LLM 費用 | **$0** |
+| Warnings | 5 (all Item 15 / Item 1 boundary issues, see failure mode analysis) |
+| Content Length Normal Rate | 99.0% (484 / 489 extracted items) |
+| Head/Tail Match Pass Rate | Head 99.8% / Tail 100.0% |
+| Average Latency | **0.687s** (download 0.159s + preprocess 0.494s + parse 0.035s) |
+| LLM Cost | **$0** |
 
-- 上述詳細結果可參考以下[彙整檔案](eval_datasets/results/驗測結果/summary.md)
-- 標註資料(ground truth)檔案詳見 [標註資料](eval_datasets/ground_truth)
-
----
-
-## 專案概覽
-
-美國上市公司每年須向 SEC 提交 Form 10-K 年報，其結構雖由 SEC 規範（Part I–IV，Item 1–16），但現實中格式差異極大：HTML 排版不一致、標題寫法多元、Part III 常以 incorporated by reference 指向 Proxy Statement。
-
-本專案建立一條純規則式的結構化抽取 Pipeline：
-
-```
-輸入（CIK + Accession Number 或直接 URL）
-  ↓ fetch：從 SEC EDGAR API 取得 metadata 與 HTML
-  ↓ preprocess：HTML → 純文字（處理 iXBRL、table、斷字）
-  ↓ parse：RegexParser 找到各 Item 的起終位置
-  ↓ postprocess：分類每個 Item 的 status
-輸出（標準化 JSON）
-```
+- Detailed results: [summary file](eval_datasets/results/驗測結果/summary.md)
+- Ground truth data: [eval_datasets/ground_truth](eval_datasets/ground_truth)
 
 ---
 
-## 解析策略：為什麼選擇規則式
+## Project Overview
 
-### 10-K 格式具備足夠的結構性
+US public companies are required to file Form 10-K annual reports with the SEC each year. While the structure is governed by SEC regulations (Part I–IV, Items 1–16), real-world formatting varies enormously: inconsistent HTML layouts, diverse heading styles, and Part III frequently fulfilled via incorporated by reference to a Proxy Statement.
 
-SEC 規範強制要求 Item 編號與順序，標題寫法雖有變異（大小寫、分隔符），但可窮舉：
+This project builds a purely rule-based structured extraction pipeline:
+
+```
+Input (CIK + Accession Number or direct URL)
+  ↓ fetch: retrieve metadata and HTML from the SEC EDGAR API
+  ↓ preprocess: HTML → plain text (handle iXBRL, tables, hyphenation)
+  ↓ parse: RegexParser locates the start and end position of each Item
+  ↓ postprocess: classify the status of each Item
+Output (standardized JSON)
+```
+
+---
+
+## Parsing Strategy: Why Rule-Based
+
+### 10-K Filings Have Sufficient Structure
+
+SEC regulations mandate Item numbering and ordering. Heading styles vary (case, punctuation), but they are exhaustively enumerable:
 
 ```
 Item 1.  /  ITEM 1A:  /  Item 7—  /  ITEM 7A\n
 ```
 
-格式變的是排版與視覺樣式，語意結構是固定的。這讓規則式 parser 有明確的錨點可以依賴。
+What varies is visual formatting; the semantic structure is fixed. This gives a rule-based parser reliable anchors to depend on.
 
-### 成本：$0，延遲：< 1 秒
+### Cost: $0, Latency: < 1 Second
 
-若用 LLM 處理整份 10-K（平均 100,000–1000,000 tokens），即使用最便宜的模型，35 筆 eval set 也需數十美元，且每次呼叫需要額外的網路延遲。
+Processing a full 10-K with an LLM (averaging 100,000–1,000,000 tokens) would cost tens of dollars for even the cheapest model on a 35-filing eval set, plus additional network latency per call.
 
-規則式的耗時幾乎全來自 EDGAR 下載（0.159 秒），解析本身只需 0.030 秒。
+The rule-based approach spends nearly all its time on EDGAR download (0.159s); parsing itself takes only 0.030s.
 
-### 可預測的失敗模式
+### Predictable Failure Modes
 
-規則式出錯時原因明確（邊界偏移、標題未被偵測到），可直接定位並修復。LLM 出錯時難以系統性分析（幻覺、格式不穩定、每次輸出不一致）。
+When rule-based parsing fails, the cause is explicit (boundary offset, heading not detected) and can be located and fixed directly. LLM failures are difficult to analyze systematically (hallucinations, unstable output format, inconsistency across runs).
 
-### 實測結果已達標
+### Benchmarks Met
 
-35 筆申報 Status 準確率 100%、0 critical regression，規則式在這個問題域的準確度已足夠，引入 LLM 只會增加複雜度與成本，而不會帶來顯著收益。
+100% Status accuracy and 0 critical regressions across 35 filings — the rule-based approach is accurate enough for this problem domain. Introducing an LLM would add complexity and cost without meaningful gains.
 
-#### 大規模驗測報告（507 筆，2025-06-08）
+#### Large-Scale Validation Report (507 Filings, 2025-06-08)
 
-在隨機挑選的 507 份申報的驗測上，解析器經過數輪修正迭代，結構錯誤率大幅下降從 **133 筆降至 6 筆**，錯誤率減少約 **95.5%**。
+Across 507 randomly sampled filings, iterative parser fixes reduced structural errors from **133 to 6** — a **~95.5% reduction**.
 
-雖然目前仍無法保證能完整涵蓋所有申報格式，但相較於先前版本，解析器可穩定處理的申報範圍已大幅提升。
+While full coverage of every possible filing format cannot be guaranteed, the parser's stable range has improved substantially compared to prior versions.
 
-> **註記**：優化過程中發現，部分特殊格式申報（如交叉引用型、多 span 路徑）的章節位置區間可能出現合法重疊。此類重疊並非解析錯誤，驗證器已針對此情況將嚴重度降為 info，不計入錯誤統計。
+> **Note**: During optimization, certain special-format filings (e.g., cross-reference type, multi-span paths) were found to have legitimately overlapping section position ranges, where the same page may be referenced by multiple sections. This is not a parse error; the validator has been updated to downgrade the severity for such cases to `info`, which is excluded from error counts.
 
-詳細報告請見 [docs/optimize-parser-report.md](docs/optimize-parser-report.md)。
+Full report: [docs/optimize-parser-report.md](docs/optimize-parser-report.md)
 
-##### 資料準備
+##### Data Preparation
 
-| 項目 | 說明 |
+| Item | Description |
 |---|---|
-| 資料來源 | EDGAR XBRL Viewer（SEC 官方 API） |
-| 有效標的 | **507 筆**（含 accession_number 的公司） |
-| 抓取方式 | `CachedAsyncPipeline`：首次從 EDGAR 下載 HTML，之後讀本地快取 |
-| 涵蓋年份 | 以各公司最新一份 10-K 為準 |
+| Data Source | EDGAR XBRL Viewer (SEC official API) |
+| Valid Targets | **507 filings** (companies with an accession_number) |
+| Fetch Method | `CachedAsyncPipeline`: downloads HTML from EDGAR on first run, then reads local cache |
+| Year Coverage | Latest 10-K filing per company |
 
-##### 驗證規則（嚴重缺失錯誤等級）
+##### Validation Rules (Critical Error Level)
 
-| 規則 | 觸發條件 |
+| Rule | Trigger Condition |
 |---|---|
-| 章節覆蓋率過低 | 所有章節可讀字數加總不足全文的 25% |
-| 核心章節缺失 | 核心章節（第 1、1A、2、3、5、7、8、9A、15 條）最終狀態不符預期 |
-| 欄位契約矛盾 | 狀態與內容欄位不一致（如標記為已抽取卻無內容文字） |
-| 抽取內容近乎空 | 狀態標記為已抽取，但可讀字元不足 50 字 |
-| 文件過短 | 全文可讀字元低於 30,000 字 |
-| 範圍不合法 | 章節起始位置 ≥ 結束位置 |
+| Low section coverage | Total readable characters across all sections < 25% of full document |
+| Missing core sections | Core sections (Items 1, 1A, 2, 3, 5, 7, 8, 9A, 15) have unexpected final status |
+| Field contract violation | Status and content fields are inconsistent (e.g., marked extracted but no content text) |
+| Near-empty extracted content | Status is extracted but readable characters < 50 |
+| Document too short | Full document readable characters < 30,000 |
+| Invalid range | Section start position ≥ end position |
 
 ---
 
-## XBRL 財報擷取（Item 8）
+## XBRL Financial Data Extraction (Item 8)
 
-除了文字結構化抽取，本專案另提供從 XBRL 直接還原 Item 8 主要財務報表的功能。
+In addition to text-based structured extraction, this project also supports reconstructing Item 8 primary financial statements directly from XBRL.
 
-### 運作方式
+### How It Works
 
-從 SEC EDGAR 下載四份 XBRL 原始檔案並解析：
+Four XBRL source files are downloaded from SEC EDGAR and parsed:
 
-| 來源檔案 | 用途 |
+| Source File | Purpose |
 |---|---|
-| Instance Document (`.xml`) | 所有財務數字與 context（期間、幣別、維度） |
-| Presentation Linkbase (`_pre.xml`) | 各財務報表的展示順序與層級 |
-| Label Linkbase (`_lab.xml`) | 將 XBRL concept 名稱轉換為人類可讀標籤 |
-| Schema (`.xsd`) | Role 定義（收益表、資產負債表等的識別） |
+| Instance Document (`.xml`) | All financial figures and contexts (period, currency, dimensions) |
+| Presentation Linkbase (`_pre.xml`) | Display order and hierarchy for each financial statement |
+| Label Linkbase (`_lab.xml`) | Maps XBRL concept names to human-readable labels |
+| Schema (`.xsd`) | Role definitions (identifies income statement, balance sheet, etc.) |
 
-解析後自動分類為三個區塊：
+After parsing, results are automatically classified into three blocks:
 
-- **Main Statements**：損益表、綜合損益表、資產負債表、股東權益表、現金流量表
-- **Numeric Disclosures**：附註中的數字揭露（可含多維度拆分）
-- **Text Disclosures**：附註中的文字 block（含 HTML 表格轉 Markdown）
+- **Main Statements**: Income statement, comprehensive income, balance sheet, shareholders' equity, cash flow statement
+- **Numeric Disclosures**: Numeric disclosures in notes (may include multi-dimensional breakdowns)
+- **Text Disclosures**: Text blocks in notes (including HTML table → Markdown conversion)
 
-### 使用方式
+### Usage
 
 ```python
 from src.item8_xbrl_facts import get_item8_xbrl_facts
@@ -137,106 +139,108 @@ payload = get_item8_xbrl_facts(cik, accession_number)
 write_item8_markdown(payload, f"{cik}_{accession_number}_item8.md")
 ```
 
-### 輸出
+### Output
 
-`write_item8_markdown` 產生一份 Markdown 報告，包含：
-- 各財務報表以多期間欄位呈現（例如 FY2025 vs FY2024）
-- 數字自動格式化（千分位、USD/share）
-- 多維度揭露（如分業務線、分地區）展開為子表格
+`write_item8_markdown` generates a Markdown report containing:
+
+- Each financial statement presented with multi-period columns (e.g., FY2025 vs FY2024)
+- Automatically formatted numbers (thousands separator, USD/share)
+- Multi-dimensional disclosures (e.g., by business segment, by geography) expanded into sub-tables
 
 ---
 
-## 系統架構
+## System Architecture
 
 ```
 src/
-├── models.py               資料結構（FilingInput / FilingOutput / RawItem…）
-├── patterns.py             全部 Regex Pattern 集中定義
-├── pipeline.py             10-K 文字抽取主流程
-├── async_pipeline.py       非同步版本 Pipeline
-├── postprocessor.py        Item status 分類
-├── item8_xbrl_facts.py     XBRL 財報擷取（Instance / Presentation / Label / Schema）
-├── render_item8_markdown.py XBRL 結果渲染為 Markdown 報告
+├── models.py               Data structures (FilingInput / FilingOutput / RawItem…)
+├── patterns.py             Centralized regex pattern definitions
+├── pipeline.py             10-K text extraction main pipeline
+├── async_pipeline.py       Async version of the pipeline
+├── postprocessor.py        Item status classification
+├── item8_xbrl_facts.py     XBRL financial extraction (Instance / Presentation / Label / Schema)
+├── render_item8_markdown.py Renders XBRL results as a Markdown report
 ├── parsers/
-│   ├── base.py             Parser 介面
-│   ├── regex_parser.py     主 Parser（規則式）
-│   ├── hybrid.py           調度器（支援未來接入 LLM fallback）
-│   └── llm_parser.py       LLM Parser stub（架構已備，尚未實作）
+│   ├── base.py             Parser interface
+│   ├── regex_parser.py     Main parser (rule-based)
+│   ├── hybrid.py           Dispatcher (supports future LLM fallback)
+│   └── llm_parser.py       LLM parser stub (architecture ready, not yet implemented)
 └── eval/
-    ├── metrics.py          評測程式（比對 ground truth、產生報告）
-    └── runner.py           批次執行多筆 filing 的評測入口
+    ├── metrics.py          Evaluation script (compare ground truth, generate report)
+    └── runner.py           Batch evaluation entry point for multiple filings
 ```
 
-**10-K 文字抽取 Pipeline 各步驟：**
+**10-K Text Extraction Pipeline Steps:**
 
-- **fetch**：呼叫 SEC EDGAR Submissions API 取得公司 metadata，組出 HTML URL 後下載。
-- **preprocess**：用 BeautifulSoup 解析 HTML；拆除 iXBRL 命名空間 tag（`ix:*`）、修復 inline 斷字（`I\nTEM` → `ITEM`）、將章節標題型 table 轉純文字、清除頁碼與頁眉。
-- **parse**：RegexParser 用三種 pattern 找 Item 標題位置，去重後以相鄰 Item 的起點作為前一個 Item 的終點。
-- **postprocess**：依序偵測 `incorporated_by_reference`（Part III 含引用字樣）、`reserved`（Item 6 依年份規則、或內容只有「Reserved」）、`not_applicable`（內容只有 N/A）、`extracted`（正常），找不到則標記 `missing`。
+- **fetch**: Calls the SEC EDGAR Submissions API to retrieve company metadata, constructs the HTML URL, and downloads it.
+- **preprocess**: Parses HTML with BeautifulSoup; strips iXBRL namespace tags (`ix:*`), repairs inline hyphenation (`I\nTEM` → `ITEM`), converts section-heading tables to plain text, and removes page numbers and headers.
+- **parse**: RegexParser uses three patterns to locate Item heading positions, deduplicates, then uses each Item's start as the end of the previous Item.
+- **postprocess**: Sequentially detects `incorporated_by_reference` (Part III contains reference language), `reserved` (Item 6 by year rule, or content is only "Reserved"), `not_applicable` (content is only N/A), `extracted` (normal); marks `missing` if nothing is found.
 
-**XBRL 財報擷取流程：**
+**XBRL Financial Extraction Flow:**
 
-- **`item8_xbrl_facts.py`**：下載 Schema / Presentation / Label / Instance 四份 XBRL 檔案，解析 role 定義、labels、contexts、facts，按財務報表類型分類輸出。
-- **`render_item8_markdown.py`**：將擷取結果渲染為多期間財務報表 Markdown，包含數字格式化、多維度揭露展開、HTML 附註表格轉換。
+- **`item8_xbrl_facts.py`**: Downloads the four XBRL files (Schema / Presentation / Label / Instance), parses role definitions, labels, contexts, and facts, then classifies output by financial statement type.
+- **`render_item8_markdown.py`**: Renders extraction results as multi-period financial statement Markdown, including number formatting, multi-dimensional disclosure expansion, and HTML note table conversion.
 
 ---
 
-## Evaluation Set 設計
+## Evaluation Set Design
 
-### 涵蓋範圍
+### Coverage
 
-| 維度 | 內容 |
+| Dimension | Details |
 |---|---|
-| 公司數 | 12 家 |
-| 申報數 | 35 筆 |
-| 年份跨度 | 2016–2026 |
-| 產業 | 科技（AAPL、NFLX、TSLA）、金融（JPM）、餐飲（DENN）、零售（WMT、VRA、RELL）、工業（HURC、GDC）、資安（CISO）、電信設備（WSTL） |
+| Companies | 12 |
+| Filings | 35 |
+| Year Range | 2016–2026 |
+| Industries | Technology (AAPL, NFLX, TSLA), Finance (JPM), Restaurant (DENN), Retail (WMT, VRA, RELL), Industrial (HURC, GDC), Cybersecurity (CISO), Telecom Equipment (WSTL) |
 | Filer Category | Large accelerated / Accelerated / Non-accelerated / Smaller reporting company |
 
-### 刻意挑選的 Edge Case
+### Intentionally Selected Edge Cases
 
-| Edge Case | 代表案例 |
+| Edge Case | Representative Examples |
 |---|---|
-| Part III incorporated by reference | AAPL、NFLX、JPM 等大型公司 |
-| Item 6 Reserved（2021 後規則改變） | 2021 年後所有申報 |
-| Item 1C Cybersecurity（2023 後新增） | AAPL 2023+、TSLA 2023+ 等 |
-| Item 4 Mine Safety Not Applicable | 非採礦業各公司 |
-| iXBRL 格式（2019 後大型公司強制） | AAPL 2021+、TSLA 2020+ |
-| 較舊的 HTML 格式 | WSTL 2016、2018 |
-| 小公司非標準排版 | GDC、CISO、WSTL |
-| 超大型申報（JPM 年報約 400 頁） | JPM 2025 |
+| Part III incorporated by reference | AAPL, NFLX, JPM and other large-cap companies |
+| Item 6 Reserved (rule changed after 2021) | All filings after 2021 |
+| Item 1C Cybersecurity (added after 2023) | AAPL 2023+, TSLA 2023+, etc. |
+| Item 4 Mine Safety Not Applicable | All non-mining companies |
+| iXBRL format (mandatory for large filers after 2019) | AAPL 2021+, TSLA 2020+ |
+| Older HTML formats | WSTL 2016, 2018 |
+| Non-standard layouts from small companies | GDC, CISO, WSTL |
+| Very large filings (JPM ~400 pages) | JPM 2025 |
 
-### Ground Truth 建立方式
+### Ground Truth Construction
 
-1. 用 Pipeline 產出初版結果，存成 Markdown（含原文對照）
-2. 匯入自行開發標註工具 [SEC-10-K-Annotation-Tool](https://github.com/LLMSystems/SEC-10-K-Annotation-Tool) 核對起始邊界，內容正確性、結束邊界是否正確等
-3. 對有疑問的 Item 回到 EDGAR 原始 HTML 確認
-4. 修正後存成 ground truth JSON
+1. Run the pipeline to produce an initial result, saved as Markdown (with original text for comparison)
+2. Import into the self-developed annotation tool [SEC-10-K-Annotation-Tool](https://github.com/LLMSystems/SEC-10-K-Annotation-Tool) to verify start/end boundaries, content correctness, etc.
+3. Return to the original EDGAR HTML for any Items in doubt
+4. Save corrected annotations as ground truth JSON
 
 ---
 
-## 發現錯誤優化循環
-當 parser 出現問題（新公司格式、邊界錯誤、status 判斷失誤）時，透過以下流程快速修正並驗證，結合自行開發標註工具 [SEC-10-K-Annotation-Tool](https://github.com/LLMSystems/SEC-10-K-Annotation-Tool) 可快速建立優化循環，持續提升解析準確度
+## Bug Fix Optimization Loop
+
+When the parser encounters issues (new company formats, boundary errors, incorrect status classification), use the following workflow for rapid fix-and-verify cycles. Combined with the self-developed annotation tool [SEC-10-K-Annotation-Tool](https://github.com/LLMSystems/SEC-10-K-Annotation-Tool), this enables a continuous improvement loop.
 
 ```mermaid
 flowchart TD
-    Start([開始：新 filing 或修改 parser])
+    Start([Start: new filing or parser change])
     
     Start --> Run
 
-    subgraph pipeline ["PIPELINE 執行"]
+    subgraph pipeline ["PIPELINE EXECUTION"]
         direction TB
-        Run["執行 Pipeline<br/><code>python -m src.pipeline</code>"]
-        Run --> Output["產生輸出檔案<br/><code>_fulltext.md + item.json</code>"]
+        Run["Run Pipeline<br/><code>python -m src.pipeline</code>"]
+        Run --> Output["Generate output files<br/><code>_fulltext.md + item.json</code>"]
     end
 
-    Output --> Import{{"匯入開發標註工具"}}
+    Output --> Import{{"Import into annotation tool"}}
 
-    subgraph annotation ["人工標註驗證"]
+    subgraph annotation ["Manual Annotation Review"]
         direction LR
-        D1["① 確認邊界<br/>起始 / 結束位置"]
-        D2["② 確認 Status<br/>extracted / N/A / reserved"]
-        D3["③ 確認 Missing<br/>原文確實找不到？"]
+        D1["① Verify boundaries<br/>start / end positions"]
+        D2["② Verify Status<br/>extracted / N/A / reserved"]
+        D3["③ Verify Missing<br/>truly absent from source?"]
     end
 
     Import --> D1
@@ -247,31 +251,31 @@ flowchart TD
     D2 --> Export
     D3 --> Export
 
-    subgraph eval ["自動化評估"]
+    subgraph eval ["Automated Evaluation"]
         direction TB
-        Export["匯出 Ground Truth<br/><code>eval_datasets/ground_truth/</code>"]
-        Export --> Evaluate["執行評估<br/><code>python -m src.eval.metrics</code>"]
-        Evaluate --> Result{{"評估結果"}}
+        Export["Export Ground Truth<br/><code>eval_datasets/ground_truth/</code>"]
+        Export --> Evaluate["Run evaluation<br/><code>python -m src.eval.metrics</code>"]
+        Evaluate --> Result{{"Evaluation Result"}}
     end
 
-    Result -->|"PASS<br/>Status 正確 · 無 regression"| Done([完成：可進行下一筆])
+    Result -->|"PASS<br/>Status correct · no regression"| Done([Done: proceed to next filing])
 
-    Result -->|"FAIL / WARNING"| Diagnose{{"診斷問題類型"}}
+    Result -->|"FAIL / WARNING"| Diagnose{{"Diagnose issue type"}}
 
-    subgraph fix ["問題修正"]
+    subgraph fix ["Issue Fix"]
         direction LR
-        F1["Status 判斷錯誤<br/><code>src/postprocessor.py</code>"]
-        F2["邊界偏移<br/><code>src/parser.py</code><br/><code>src/patterns.py</code>"]
-        F3["其他標的解析錯誤<br/><code>src/pipeline.py</code><br/><code>src/parser.py</code><br/><code>src/patterns.py</code>"]
-        F4["標題未偵測<br/><code>src/parser.py</code><br/><code>src/patterns.py</code>"]
+        F1["Status misclassification<br/><code>src/postprocessor.py</code>"]
+        F2["Boundary offset<br/><code>src/parser.py</code><br/><code>src/patterns.py</code>"]
+        F3["Other filing parse error<br/><code>src/pipeline.py</code><br/><code>src/parser.py</code><br/><code>src/patterns.py</code>"]
+        F4["Heading not detected<br/><code>src/parser.py</code><br/><code>src/patterns.py</code>"]
     end
 
     Diagnose -->|"extracted → missing"| F1
-    Diagnose -->|"length_ratio 異常"| F2
-    Diagnose -->|"其他 Status 錯誤"| F3
-    Diagnose -->|"特殊格式公司"| F4
+    Diagnose -->|"abnormal length_ratio"| F2
+    Diagnose -->|"other status error"| F3
+    Diagnose -->|"special-format company"| F4
 
-    F1 --> ReEval["重新執行評估<br/><code>python -m src.eval.metrics</code>"]
+    F1 --> ReEval["Re-run evaluation<br/><code>python -m src.eval.metrics</code>"]
     F2 --> ReEval
     F3 --> ReEval
     F4 --> ReEval
@@ -301,9 +305,9 @@ flowchart TD
 ```
 ---
 
-## 快速開始
+## Quick Start
 
-### 安裝
+### Installation
 
 ```bash
 python -m venv .venv
@@ -311,30 +315,33 @@ source .venv/bin/activate
 pip install -r requirements.txt
 ```
 
-### 使用方式
-**同步**
+### Usage
+
+#### Synchronous
+
 ```python
 from src.pipeline import Pipeline
 from src.models import FilingInput
 
 pipeline = Pipeline()
 
-# 方式一：CIK + Accession Number
+# Option 1: CIK + Accession Number
 result = pipeline.run(FilingInput(
     cik="0000320193",
     accession_number="0000320193-23-000106",
 ))
 
-# 方式二：直接給 URL
+# Option 2: Direct URL
 result = pipeline.run(FilingInput(
     url="https://www.sec.gov/Archives/edgar/data/.../filing.htm",
 ))
 
-# 儲存結果（JSON + Markdown）
+# Save results (JSON + Markdown)
 result = pipeline.run(input, save_to="output/")
 ```
 
-**異步**
+#### Async
+
 ```python
 from src.async_pipeline import AsyncPipeline
 from src.models import FilingInput
@@ -343,13 +350,13 @@ import asyncio
 async def main():
     pipeline = AsyncPipeline()
 
-    # 方式一：CIK + Accession Number
+    # Option 1: CIK + Accession Number
     result = await pipeline.run_async(FilingInput(
         cik="0000320193",
         accession_number="0000320193-23-000106",
     ))
 
-    # 方式二：直接給 URL
+    # Option 2: Direct URL
     result = await pipeline.run_async(FilingInput(
         url="https://www.sec.gov/Archives/edgar/data/.../filing.htm",
     ))
@@ -358,7 +365,7 @@ if __name__ == "__main__":
     asyncio.run(main())
 ```
 
-### 輸出格式
+### Output Format
 
 ```json
 {
@@ -389,7 +396,7 @@ if __name__ == "__main__":
 }
 ```
 
-### 使用人工標註資料集進行評測
+### Running Evaluation Against the Annotated Dataset
 
 ```bash
 python -m src.eval.metrics \
@@ -397,31 +404,31 @@ python -m src.eval.metrics \
     --output eval_datasets/results
 ```
 
-每次執行會在 `eval_datasets/results/` 下建立時間戳子目錄，結構如下：
+Each run creates a timestamped subdirectory under `eval_datasets/results/`:
 
 ```
 eval_datasets/results/
 └── 2026-05-11_23-46-54/
-    ├── summary.md          # 整體評估報告（人類可讀）
-    ├── summary.json        # 整體評估報告（機器可讀）
+    ├── summary.md          # Overall evaluation report (human-readable)
+    ├── summary.json        # Overall evaluation report (machine-readable)
     └── per_filing/
-        ├── AAPL_2023.json  # 單筆 filing 的逐 Item 比對結果
+        ├── AAPL_2023.json  # Item-by-item comparison for a single filing
         ├── TSLA_2021.json
         └── ...
 ```
 
-**`summary.md` 包含以下項目：**
+**`summary.md` includes:**
 
-- **整體指標**：Status 準確率、Critical Regressions 數、Warning 數、平均耗時
-- **Status 混淆矩陣**：GT vs Pred 的 5×5 交叉比對，確認各 status 是否互相錯判
-- **Length Ratio 統計**：pred 內容長度 / GT 長度的分佈（P10、中位數、P90），偵測邊界截短或越界
-- **頭尾比對通過率**：GT 頭尾各 150 字是否出現在 pred 中，驗證起終邊界的精確度
-- **各 Item 錯誤率排行**：哪些 Item 最容易出錯
-- **各 Filing 概覽**：每筆申報的準確率與等級（PASS / WARNING / FAIL）
-- **問題明細**：非 PASS 的 filing 逐 Item 列出嚴重程度與原因
+- **Overall metrics**: Status accuracy, critical regression count, warning count, average latency
+- **Status confusion matrix**: 5×5 cross-comparison of GT vs Pred, verifying no cross-status misclassification
+- **Length ratio statistics**: Distribution of pred content length / GT length (P10, median, P90), detecting boundary truncation or overrun
+- **Head/tail match pass rate**: Whether the first and last 150 characters of GT appear in pred, verifying start/end boundary precision
+- **Per-item error rate ranking**: Which Items are most error-prone
+- **Per-filing overview**: Accuracy and grade per filing (PASS / WARNING / FAIL)
+- **Issue details**: Non-PASS filings listed Item-by-Item with severity and reason
 
 ---
 
-## 已知限制
+## Known Limitations
 
-- **適用年份下限**：約 2000 年後的 HTML 格式申報。1996 年前的 SGML / 純文字格式無 HTML 結構，preprocessing 無法正確處理。
+- **Minimum supported year**: HTML-format filings from approximately 2000 onward. SGML / plain-text formats from before 1996 have no HTML structure and cannot be correctly processed by the preprocessor.
