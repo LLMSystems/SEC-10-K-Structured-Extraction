@@ -18,8 +18,8 @@
 > **註記**：優化過程中發現，部分特殊格式申報（如交叉引用型、多 span 路徑）的章節位置區間可能出現合法重疊，例如同一頁面被多個章節引用。此類重疊並非解析錯誤，驗證器已針對此情況將嚴重度降為 info，不計入錯誤統計。
 
 結果資料來源：
-- `validation_results_507_unoptimized.json`（優化前）
-- `validation_results_507_optimized.json`（優化後）
+- [優化前](../eval_datasets/general_truth/validation_results_507_unoptimized.json)
+- [優化後](../eval_datasets/general_truth/validation_results_507_optimized.json)
 
 ---
 
@@ -28,7 +28,7 @@
 | 項目 | 說明 |
 |---|---|
 | 資料來源 | EDGAR EDGAR XBRL Viewer（SEC 官方 API） |
-| 樣本檔案 | `company_tickers_sample500.json` |
+| 樣本檔案 | [company_tickers_sample500](../eval_datasets/general_truth/company_tickers_sample500.json) |
 | 有效標的 | **507 筆**（含 accession_number 的公司） |
 | 抓取方式 | `CachedAsyncPipeline`：首次從 EDGAR 下載 HTML，之後讀本地快取，避免重複打 API |
 | 涵蓋年份 | 以各公司最新一份 10-K 為準 |
@@ -79,6 +79,7 @@ pip install -r requirements.txt   # beautifulsoup4, lxml, pydantic, httpx …
 ### 執行全量驗測
 
 ```bash
+cd src/eval
 python run_companys_advance.py
 ```
 
